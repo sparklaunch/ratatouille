@@ -11,7 +11,21 @@ export default function News() {
             <Link href="#">
                 <Image src="/Logo.svg" alt="씨즈 로고" width={163} height={51} />
             </Link>
-            <div>
+            <div className={styles.navigationContainer}>
+                <div className={styles.navigation}>
+                    <Link href="#" className={styles.menuItem}>
+                        <p>브랜드 스토리</p>
+                    </Link>
+                    <Link href="#" className={styles.menuItem}>
+                        <p>프로젝트</p>
+                    </Link>
+                    <Link href="#" className={styles.menuItem}>
+                        <p>소식</p>
+                    </Link>
+                    <Link href="#" className={styles.menuItem}>
+                        <p>소통</p>
+                    </Link>
+                </div>
                 <Link href="#" className={styles.sponsor}>
                     <p>후원하기</p>
                 </Link>

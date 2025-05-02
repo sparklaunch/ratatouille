@@ -8,12 +8,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.keeper > p {
-    color: white;
-    font-weight: bold;
-    font-size: 23px;
+    & > p {
+        color: white;
+        font-weight: bold;
+        font-size: 23px;
+    }
 }
 
 .menu {
@@ -21,6 +20,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
 
 .sponsor > p {
@@ -36,5 +36,27 @@
         background-color: white;
         color: var(--primary-color);
         border: 1px solid var(--primary-color);
+    }
+}
+
+.navigationContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.navigation {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 130px;
+    margin-right: 130px;
+}
+
+.menuItem > p {
+    font-weight: bold;
+    font-size: 20px;
+    transition: all 0.3s;
+    &:hover {
+        color: var(--primary-color);
     }
 }
