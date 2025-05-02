@@ -1,0 +1,23 @@
+.container {
+    width: 100%;
+}
+
+.keeper {
+    height: 50px;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.keeper > p {
+    color: white;
+    font-weight: bold;
+    font-size: 23px;
+}
+
+.menu {
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+}
