@@ -64,9 +64,13 @@
 
 .subMenuContainer {
     position: relative;
+    &:hover > .subMenu {
+        display: block;
+    }
 }
 
 .subMenu {
+    display: none;
     position: absolute;
     width: 200px;
     box-shadow: 0 9px 10px 0 rgba(0, 0, 0, 0.1);
@@ -87,12 +91,4 @@
     &:hover > p {
         color: var(--primary-color);
     }
-}
-
-.shown {
-    display: block;
-}
-
-.hidden {
-    display: none;
 }
