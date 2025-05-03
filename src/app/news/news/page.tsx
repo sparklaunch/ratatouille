@@ -5,7 +5,7 @@ import styles from "./style.module.scss";
 export default function News() {
     return <div className={styles.container}>
         <Link href="#" className={styles.keeper}>
-            <p>SEED:S KEEPER</p>
+            <span>SEED:S KEEPER</span>
         </Link>
         <div className={styles.menu}>
             <Link href="#">
@@ -14,30 +14,32 @@ export default function News() {
             <div className={styles.navigationContainer}>
                 <div className={styles.navigation}>
                     <Link href="#" className={styles.menuItem}>
-                        <p>브랜드 스토리</p>
+                        <span>브랜드 스토리</span>
                     </Link>
                     <Link href="#" className={styles.menuItem}>
-                        <p>프로젝트</p>
+                        <span>프로젝트</span>
                     </Link>
                     <div className={styles.subMenuContainer}>
                         <Link href="#" className={styles.menuItem}>
-                            <p>소식</p>
+                            <span>소식</span>
                         </Link>
-                        <div className={styles.subMenu}>
-                            <Link href="#" className={styles.subMenuItem}>
-                                <p>공지 사항</p>
-                            </Link>
-                            <Link href="#" className={styles.subMenuItem}>
-                                <p>언론 보도</p>
-                            </Link>
+                        <div className={styles.subMenuOuterContainer}>
+                            <div className={styles.subMenu}>
+                                <Link href="#" className={styles.subMenuItem}>
+                                    <span>공지 사항</span>
+                                </Link>
+                                <Link href="#" className={styles.subMenuItem}>
+                                    <span>언론 보도</span>
+                                </Link>
+                            </div>
                         </div>
                     </div>
                     <Link href="#" className={styles.menuItem}>
-                        <p>소통</p>
+                        <span>소통</span>
                     </Link>
                 </div>
                 <Link href="#" className={styles.sponsor}>
-                    <p>후원하기</p>
+                    <span>후원하기</span>
                 </Link>
             </div>
         </div>

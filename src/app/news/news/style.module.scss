@@ -8,7 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    & > p {
+    & > span {
         color: white;
         font-weight: bold;
         font-size: 23px;
@@ -24,7 +24,7 @@
     align-items: center;
 }
 
-.sponsor > p {
+.sponsor > span {
     font-weight: bold;
     font-size: 20px;
     color: white;
@@ -43,7 +43,6 @@
 .navigationContainer {
     display: flex;
     flex-direction: row;
-    align-items: center;
 }
 
 .navigation {
@@ -53,7 +52,7 @@
     margin-right: 130px;
 }
 
-.menuItem > p {
+.menuItem > span {
     font-weight: bold;
     font-size: 20px;
     transition: all 0.3s;
@@ -62,20 +61,24 @@
     }
 }
 
+.subMenuOuterContainer {
+    position: absolute;
+    padding-top: 30px;
+    transform: translateX(-50%);
+    left: 50%;
+}
+
 .subMenuContainer {
     position: relative;
-    &:hover > .subMenu {
+    &:hover .subMenu {
         display: block;
     }
 }
 
 .subMenu {
     display: none;
-    position: absolute;
     width: 200px;
     box-shadow: 0 9px 10px 0 rgba(0, 0, 0, 0.1);
-    transform: translateX(-50%);
-    left: 50%;
 }
 
 .subMenuItem {
@@ -83,12 +86,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    & > p {
+    & > span {
         font-weight: bold;
         font-size: 23px;
         transition: all 0.3s;
     }
-    &:hover > p {
+    &:hover > span {
         color: var(--primary-color);
     }
 }
