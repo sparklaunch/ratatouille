@@ -1,8 +1,18 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import styles from "./style.module.scss";
 
 export default function News() {
+    const [isHovered, setIsHovered] = useState(false);
+    function showSubMenu() {
+        setIsHovered(true);
+    }
+    function hideSubMenu() {
+        setIsHovered(false);
+    }
     return <div className={styles.container}>
         <Link href="#" className={styles.keeper}>
             <p>SEED:S KEEPER</p>
@@ -19,9 +29,19 @@ export default function News() {
                     <Link href="#" className={styles.menuItem}>
                         <p>프로젝트</p>
                     </Link>
-                    <Link href="#" className={styles.menuItem}>
-                        <p>소식</p>
-                    </Link>
+                    <div className={styles.subMenuContainer}>
+                        <Link href="#" className={styles.menuItem} onMouseEnter={showSubMenu} onMouseLeave={hideSubMenu}>
+                            <p>소식</p>
+                        </Link>
+                        <div className={`${styles.subMenu} ${isHovered ? styles.shown : styles.hidden}`} onMouseEnter={showSubMenu} onMouseLeave={hideSubMenu}>
+                            <Link href="#" className={styles.subMenuItem}>
+                                <p>공지 사항</p>
+                            </Link>
+                            <Link href="#" className={styles.subMenuItem}>
+                                <p>언론 보도</p>
+                            </Link>
+                        </div>
+                    </div>
                     <Link href="#" className={styles.menuItem}>
                         <p>소통</p>
                     </Link>

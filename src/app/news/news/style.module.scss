@@ -17,6 +17,7 @@
 
 .menu {
     height: 100px;
+    margin: 0 200px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -59,4 +60,39 @@
     &:hover {
         color: var(--primary-color);
     }
+}
+
+.subMenuContainer {
+    position: relative;
+}
+
+.subMenu {
+    position: absolute;
+    width: 200px;
+    box-shadow: 0 9px 10px 0 rgba(0, 0, 0, 0.1);
+    transform: translateX(-50%);
+    left: 50%;
+}
+
+.subMenuItem {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & > p {
+        font-weight: bold;
+        font-size: 23px;
+        transition: all 0.3s;
+    }
+    &:hover > p {
+        color: var(--primary-color);
+    }
+}
+
+.shown {
+    display: block;
+}
+
+.hidden {
+    display: none;
 }
