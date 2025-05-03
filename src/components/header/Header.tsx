@@ -9,7 +9,7 @@ export default function Header() {
         </Link>
         <div className={styles.menu}>
             <Link href="/">
-                <Image src="/Logo.svg" alt="씨즈 로고" width={163} height={51} />
+                <Image src="/logos/Logo.svg" alt="씨즈 로고" width={163} height={51} />
             </Link>
             <div className={styles.navigationContainer}>
                 <div className={styles.navigation}>
