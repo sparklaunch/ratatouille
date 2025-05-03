@@ -25,7 +25,7 @@ export default function Header() {
                         </Link>
                         <div className={styles.subMenuOuterContainer}>
                             <div className={styles.subMenu}>
-                                <Link href="#" className={styles.subMenuItem}>
+                                <Link href="/news/notice" className={styles.subMenuItem}>
                                     <span>공지 사항</span>
                                 </Link>
                                 <Link href="#" className={styles.subMenuItem}>
