@@ -10,4 +10,22 @@
 .header {
     font-weight: bold;
     font-size: 50px;
+    margin-bottom: 35px;
+}
+
+.subheader {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    span {
+        font-weight: bold;
+        font-size: 20px;
+        transition: all 0.3s;
+        &:hover {
+            color: var(--primary-color);
+        }
+    }
+    .activeSubheader {
+        color: var(--primary-color);
+    }
 }

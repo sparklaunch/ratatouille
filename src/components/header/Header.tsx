@@ -8,7 +8,7 @@ export default function Header() {
             <span>SEED:S KEEPER</span>
         </Link>
         <div className={styles.menu}>
-            <Link href="#">
+            <Link href="/">
                 <Image src="/Logo.svg" alt="씨즈 로고" width={163} height={51} />
             </Link>
             <div className={styles.navigationContainer}>
