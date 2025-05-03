@@ -34,9 +34,24 @@ export default function News() {
                             </div>
                         </div>
                     </div>
-                    <Link href="#" className={styles.menuItem}>
-                        <span>소통</span>
-                    </Link>
+                    <div className={styles.subMenuContainer}>
+                        <Link href="#" className={styles.menuItem}>
+                            <span>소통</span>
+                        </Link>
+                        <div className={styles.subMenuOuterContainer}>
+                            <div className={styles.subMenu}>
+                                <Link href="#" className={styles.subMenuItem}>
+                                    <span>뉴스레터</span>
+                                </Link>
+                                <Link href="#" className={styles.subMenuItem}>
+                                    <span>찾아오시는 길</span>
+                                </Link>
+                                <Link href="#" className={styles.subMenuItem}>
+                                    <span>문의하기</span>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <Link href="#" className={styles.sponsor}>
                     <span>후원하기</span>
