@@ -2,6 +2,7 @@
 
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
+import formatDate from "@/utilities/formatDate";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import styles from "./style.module.scss";
@@ -61,10 +62,18 @@ export default function Notice() {
                     ) : (
                         <>
                             {notices.fixedNotices.map((notice, index) => (
-                                <div key={`fixed-${index}`}>{notice.title}</div>
+                                <div key={`fixed-${index}`} className={styles.fixedNotice}>
+                                    <p>{notice.id}</p>
+                                    <p>{notice.title}</p>
+                                    <p>{formatDate(notice.created_at)}</p>
+                                </div>
                             ))}
                             {notices.normalNotices.map((notice, index) => (
-                                <div key={`normal-${index}`}>{notice.title}</div>
+                                <div key={`normal-${index}`} className={styles.normalNotice}>
+                                    <p>{notice.id}</p>
+                                    <p>{notice.title}</p>
+                                    <p>{formatDate(notice.created_at)}</p>
+                                </div>
                             ))}
                         </>
                     )}
