@@ -30,3 +30,45 @@
         color: var(--primary-color);
     }
 }
+
+.board {
+    width: 100%;
+    border-top: 1px solid black;
+}
+
+.boardHeader {
+    display: grid;
+    grid-template-columns: 50px auto 80px;
+    height: 70px;
+    & > p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        font-size: 19px;
+    }
+}
+
+.boardContent {
+    margin-bottom: 50px;
+}
+
+.searchBox {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 33px;
+    & > input {
+        width: 220px;
+        height: 34px;
+        outline: 1px solid #d9d9d9;
+        border: none;
+    }
+    & > input:focus {
+        outline: 1px solid #d9d9d9;
+        border: none;
+    }
+}
+
+.pagination {
+    margin-bottom: 164px;
+}

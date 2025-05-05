@@ -3,17 +3,17 @@ import Header from "@/components/header/Header";
 import Link from "next/link";
 import styles from "./style.module.scss";
 
-async function getNotices() {
-    const response = await fetch(`http://localhost:3000/api/notices?token=${process.env.API_SECRET_KEY}`, {
-        cache: "no-store"
-    });
-    if (!response.ok)
-        throw new Error("Failed to fetch");
-    return response.json();
-}
+// async function getNotices() {
+//     const response = await fetch(`http://localhost:3000/api/notices?token=${process.env.API_SECRET_KEY}`, {
+//         cache: "no-store"
+//     });
+//     if (!response.ok)
+//         throw new Error("Failed to fetch");
+//     return response.json();
+// }
 
 export default async function Notice() {
-    const notices = await getNotices();
+    // const notices = await getNotices();
     return <>
         <Header />
         <div className={styles.container}>
@@ -26,10 +26,21 @@ export default async function Notice() {
                     <span>언론 보도</span>
                 </Link>
             </div>
-            <div>
-                {notices.map((notice: any) => {
-                    return <div key={notice.id}>{notice.title}</div>;
-                })}
+            <div className={styles.board}>
+                <div className={styles.boardHeader}>
+                    <p>번호</p>
+                    <p>제목</p>
+                    <p>작성일</p>
+                </div>
+                <div className={styles.boardContent}>
+
+                </div>
+                <div className={styles.searchBox}>
+                    <input type="search" />
+                </div>
+                <div className={styles.pagination}>
+
+                </div>
             </div>
         </div>
         <Footer />
