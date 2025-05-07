@@ -5,7 +5,7 @@
 .innerContainer {
     width: 1200px;
     margin: auto;
-    padding: 80px 0 150px 0;
+    padding: 90px 0 87px 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -15,7 +15,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 400px;
+    height: 340px;
 }
 
 .header {
@@ -27,8 +27,8 @@
 .gridContainer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 36px;
+    grid-template-rows: repeat(2, auto);
+    gap: 37px;
 }
 
 .information,
@@ -37,7 +37,7 @@
     & > h3 {
         font-weight: bold;
         font-size: 18px;
-        margin-bottom: 6px;
+        margin-bottom: 14px;
     }
     & > p {
         line-height: 27px;
@@ -66,6 +66,13 @@
     display: flex;
     flex-direction: row;
     gap: 20px;
+    & img {
+        transition: all 0.3s;
+    }
+    & img:hover {
+        filter: invert(36%) sepia(89%) saturate(4860%) hue-rotate(348deg)
+            brightness(107%) contrast(109%);
+    }
 }
 
 .copyright {

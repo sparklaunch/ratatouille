@@ -83,20 +83,20 @@ export default function NoticePage() {
                     <input type="search" />
                 </div>
                 <div className={styles.pagination}>
-                    <p onClick={() => setCurrentPage(previous => Math.max(1, previous - 1))}>&lt;</p>
+                    <p onClick={() => setCurrentPage(previous => Math.max(1, previous - 1))} className={styles.leftCaret}>&lt;</p>
                     {[...Array(endPage - startPage + 1)].map((_, index) => {
                         const page = startPage + index;
                         return (
                             <p
                                 key={page}
                                 onClick={() => setCurrentPage(page)}
-                                className={page === currentPage ? styles.activePage : ""}
+                                className={page === currentPage ? styles.activePage : styles.inactivePage}
                             >
                                 {page}
                             </p>
                         );
                     })}
-                    <p onClick={() => setCurrentPage(previous => previous + 1)}>&gt;</p>
+                    <p onClick={() => setCurrentPage(previous => previous + 1)} className={styles.rightCaret}>&gt;</p>
                 </div>
             </div>
         </div>

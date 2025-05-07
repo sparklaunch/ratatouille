@@ -5,7 +5,7 @@ import styles from "./style.module.scss";
 export default function Footer() {
     return <div className={styles.outerContainer}>
         <div className={styles.innerContainer}>
-            <Image src="/logos/Logo.svg" width={163} height={51} alt="씨즈 로고" />
+            <Image src="/logos/Logo.svg" width={161} height={50} alt="씨즈 로고" />
             <div className={styles.rightContainer}>
                 <h2 className={styles.header}>We Believe in The Power of Small SEED:S</h2>
                 <div className={styles.gridContainer}>
