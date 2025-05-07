@@ -7,9 +7,9 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import styles from "./style.module.scss";
 
-export default function Notice() {
+export default function NoticePage() {
     const [currentPage, setCurrentPage] = useState(1);
-    const [notices, setNotices] = useState<{ fixedNotices: any[]; normalNotices: any[] }>({
+    const [notices, setNotices] = useState<{ fixedNotices: Notice[]; normalNotices: Notice[] }>({
         fixedNotices: [],
         normalNotices: []
     });
@@ -24,10 +24,11 @@ export default function Notice() {
             if (response.ok) {
                 const data = await response.json();
                 setNotices({
-                    fixedNotices: data.fixedNotices,
+                    fixedNotices: data.allFixedNotices,
                     normalNotices: data.normalNotices
                 });
-                const computedPages = Math.ceil(data.totalCount / 10);
+                const totalNormalCount = data.totalNormalCount || 0;
+                const computedPages = Math.ceil(totalNormalCount / 10);
                 setTotalPages(computedPages);
             } else {
                 console.error("Failed to fetch notices");
@@ -65,14 +66,14 @@ export default function Notice() {
                                 <div key={`fixed-${index}`} className={styles.fixedNotice}>
                                     <p>{notice.id}</p>
                                     <p>{notice.title}</p>
-                                    <p>{formatDate(notice.created_at)}</p>
+                                    <p>{formatDate(notice.createdAt)}</p>
                                 </div>
                             ))}
                             {notices.normalNotices.map((notice, index) => (
                                 <div key={`normal-${index}`} className={styles.normalNotice}>
                                     <p>{notice.id}</p>
                                     <p>{notice.title}</p>
-                                    <p>{formatDate(notice.created_at)}</p>
+                                    <p>{formatDate(notice.createdAt)}</p>
                                 </div>
                             ))}
                         </>
