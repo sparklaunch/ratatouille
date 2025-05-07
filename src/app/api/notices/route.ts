@@ -22,7 +22,7 @@ export async function GET(request: Request) {
         orderBy: {
             createdAt: "desc"
         },
-        skip: (page - 1) * pageSize,
+        skip: (page - 1) * normalPageSize,
         take: normalPageSize
     });
     const totalNormalCount = await prisma.notices.count({

@@ -28,7 +28,7 @@ export default function NoticePage() {
                     normalNotices: data.normalNotices
                 });
                 const totalNormalCount = data.totalNormalCount || 0;
-                const computedPages = Math.ceil(totalNormalCount / 10);
+                const computedPages = Math.ceil(totalNormalCount / (10 - data.totalFixedNotices.length));
                 setTotalPages(computedPages);
             } else {
                 console.error("Failed to fetch notices");
@@ -83,7 +83,6 @@ export default function NoticePage() {
                     <input type="search" />
                 </div>
                 <div className={styles.pagination}>
-                    {/* 이전 묶음으로 이동 */}
                     <p
                         onClick={() => {
                             if (startPage > 1) {
@@ -94,8 +93,6 @@ export default function NoticePage() {
                     >
                         &lt;
                     </p>
-
-                    {/* 페이지 목록 */}
                     {[...Array(endPage - startPage + 1)].map((_, index) => {
                         const page = startPage + index;
                         return (
@@ -108,8 +105,6 @@ export default function NoticePage() {
                             </p>
                         );
                     })}
-
-                    {/* 다음 묶음으로 이동 */}
                     <p
                         onClick={() => {
                             if (endPage < totalPages) {
