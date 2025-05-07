@@ -17,42 +17,58 @@
     }
 }
 
+.menuContainer {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 .menu {
     background-color: white;
     height: 100px;
-    margin: 0 200px;
+    width: 1200px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
 
-.sponsor > span {
-    font-weight: bold;
-    font-size: 20px;
-    color: white;
-    padding: 15px 30px;
+.sponsor {
+    width: 137px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: var(--primary-color);
-    border-radius: 30px;
-    border: 1px solid transparent;
+    border-radius: 50px;
+    border: 1px solid var(--primary-color);
     transition: all 0.3s;
+    & > span {
+        font-weight: bold;
+        font-size: 20px;
+        color: white;
+        transition: all 0.3s;
+    }
     &:hover {
         background-color: white;
-        color: var(--primary-color);
-        border: 1px solid var(--primary-color);
+        & > span {
+            color: var(--primary-color);
+        }
     }
 }
 
 .navigationContainer {
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 .navigation {
     display: grid;
     grid-template-columns: repeat(4, auto);
-    gap: 130px;
-    margin-right: 130px;
+    gap: 60px;
+    margin-right: 60px;
 }
 
 .menuItem > span {
@@ -80,7 +96,7 @@
 
 .subMenu {
     display: none;
-    width: 200px;
+    width: 190px;
     background-color: white;
     box-shadow: 0 9px 10px 0 rgba(0, 0, 0, 0.1);
 }
@@ -92,7 +108,7 @@
     align-items: center;
     & > span {
         font-weight: bold;
-        font-size: 23px;
+        font-size: 20px;
         transition: all 0.3s;
     }
     &:hover > span {
