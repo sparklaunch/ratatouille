@@ -9,7 +9,7 @@ import styles from "./style.module.scss";
 
 export default function NoticePage() {
     const [currentPage, setCurrentPage] = useState(1);
-    const [notices, setNotices] = useState<{ fixedNotices: Notice[]; normalNotices: Notice[] }>({
+    const [notices, setNotices] = useState<Notices>({
         fixedNotices: [],
         normalNotices: []
     });
@@ -22,9 +22,9 @@ export default function NoticePage() {
                 cache: "no-store"
             });
             if (response.ok) {
-                const data = await response.json();
+                const data = await response.json() as NoticeData;
                 setNotices({
-                    fixedNotices: data.allFixedNotices,
+                    fixedNotices: data.totalFixedNotices,
                     normalNotices: data.normalNotices
                 });
                 const totalNormalCount = data.totalNormalCount || 0;

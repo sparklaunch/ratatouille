@@ -5,7 +5,7 @@ export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
     const page = parseInt(searchParams.get("page") as string);
     const pageSize = 10;
-    const allFixedNotices = await prisma.notices.findMany({
+    const totalFixedNotices = await prisma.notices.findMany({
         where: {
             isFixed: true
         },
@@ -13,7 +13,7 @@ export async function GET(request: Request) {
             createdAt: "desc"
         }
     });
-    const fixedNoticesCount = allFixedNotices.length;
+    const fixedNoticesCount = totalFixedNotices.length;
     const normalPageSize = Math.max(0, pageSize - fixedNoticesCount);
     const normalNotices = await prisma.notices.findMany({
         where: {
@@ -31,7 +31,7 @@ export async function GET(request: Request) {
         }
     });
     return NextResponse.json({
-        allFixedNotices,
+        totalFixedNotices,
         normalNotices,
         totalNormalCount
     });
