@@ -83,7 +83,19 @@ export default function NoticePage() {
                     <input type="search" />
                 </div>
                 <div className={styles.pagination}>
-                    <p onClick={() => setCurrentPage(previous => Math.max(1, previous - 1))} className={styles.leftCaret}>&lt;</p>
+                    {/* 이전 묶음으로 이동 */}
+                    <p
+                        onClick={() => {
+                            if (startPage > 1) {
+                                setCurrentPage(startPage - 1);
+                            }
+                        }}
+                        className={`${styles.leftCaret} ${startPage === 1 ? styles.disabledCaret : ""}`}
+                    >
+                        &lt;
+                    </p>
+
+                    {/* 페이지 목록 */}
                     {[...Array(endPage - startPage + 1)].map((_, index) => {
                         const page = startPage + index;
                         return (
@@ -96,7 +108,18 @@ export default function NoticePage() {
                             </p>
                         );
                     })}
-                    <p onClick={() => setCurrentPage(previous => previous + 1)} className={styles.rightCaret}>&gt;</p>
+
+                    {/* 다음 묶음으로 이동 */}
+                    <p
+                        onClick={() => {
+                            if (endPage < totalPages) {
+                                setCurrentPage(endPage + 1);
+                            }
+                        }}
+                        className={`${styles.rightCaret} ${endPage >= totalPages ? styles.disabledCaret : ""}`}
+                    >
+                        &gt;
+                    </p>
                 </div>
             </div>
         </div>
