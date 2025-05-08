@@ -85,11 +85,11 @@ export default function NoticePage() {
                 <div className={styles.pagination}>
                     <p
                         onClick={() => {
-                            if (startPage > 1) {
-                                setCurrentPage(startPage - 1);
+                            if (currentPage > 1) {
+                                setCurrentPage(currentPage - 1);
                             }
                         }}
-                        className={`${styles.leftCaret} ${startPage === 1 ? styles.disabledCaret : ""}`}
+                        className={`${styles.leftCaret} ${currentPage === 1 ? styles.disabledCaret : ""}`}
                     >
                         &lt;
                     </p>
@@ -107,11 +107,11 @@ export default function NoticePage() {
                     })}
                     <p
                         onClick={() => {
-                            if (endPage < totalPages) {
-                                setCurrentPage(endPage + 1);
+                            if (currentPage < totalPages) {
+                                setCurrentPage(currentPage + 1);
                             }
                         }}
-                        className={`${styles.rightCaret} ${endPage >= totalPages ? styles.disabledCaret : ""}`}
+                        className={`${styles.rightCaret} ${currentPage === totalPages ? styles.disabledCaret : ""}`}
                     >
                         &gt;
                     </p>
