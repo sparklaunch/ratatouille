@@ -60,7 +60,9 @@ export default function NoticePage() {
                 </div>
                 <div className={styles.boardContent}>
                     {loading ? (
-                        <Skeleton variant="rounded" height={710} />
+                        <Skeleton variant="rounded" height={710} animation="wave" sx={{
+                            backgroundColor: "#d9d9d9"
+                        }} />
                     ) : (
                         <>
                             {notices.fixedNotices.map((notice, index) => (
