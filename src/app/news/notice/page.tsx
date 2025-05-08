@@ -3,7 +3,8 @@
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
 import formatDate from "@/utilities/formatDate";
-import { Autocomplete, Skeleton, TextField } from "@mui/material";
+import SearchIcon from '@mui/icons-material/Search';
+import { InputAdornment, OutlinedInput, Skeleton } from "@mui/material";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import styles from "./style.module.scss";
@@ -83,9 +84,9 @@ export default function NoticePage() {
                     )}
                 </div>
                 <div className={styles.searchBox}>
-                    <Autocomplete freeSolo renderInput={(params) => <TextField {...params} label="검색" />} options={[]} sx={{
-                        width: 270
-                    }} />
+                    <OutlinedInput
+                        endAdornment={<InputAdornment position="end"><SearchIcon /></InputAdornment>}
+                    />
                 </div>
                 <div className={styles.pagination}>
                     <p
