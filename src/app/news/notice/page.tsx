@@ -3,6 +3,7 @@
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
 import formatDate from "@/utilities/formatDate";
+import { Skeleton } from "@mui/material";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import styles from "./style.module.scss";
@@ -59,7 +60,7 @@ export default function NoticePage() {
                 </div>
                 <div className={styles.boardContent}>
                     {loading ? (
-                        <p>로딩 중...</p>
+                        <Skeleton variant="rounded" height={710} />
                     ) : (
                         <>
                             {notices.fixedNotices.map((notice, index) => (
