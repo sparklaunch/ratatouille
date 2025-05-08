@@ -58,17 +58,6 @@
     display: flex;
     justify-content: center;
     margin-bottom: 37px;
-    & > input {
-        width: 270px;
-        height: 40px;
-        outline: 1px solid #d9d9d9;
-        border: none;
-        font-size: 18px;
-    }
-    & > input:focus {
-        outline: 1px solid #d9d9d9;
-        border: none;
-    }
 }
 
 .pagination {
