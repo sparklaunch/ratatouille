@@ -20,17 +20,34 @@ export default function IntroductionPage() {
             </div>
             <div className={styles.historyContainer}>
                 <h2 className={styles.historyHeader}>History</h2>
-                <Accordion sx={{
-                    boxShadow: "none",
-                    borderTop: "1px solid black"
-                }}>
+                <Accordion className={styles.accordion} disableGutters>
                     <AccordionSummary
                         expandIcon={<ExpandMore />}
-                        sx={{
-                            height: 80
-                        }}
+                        className={styles.accordionSummary}
                     >
                         <h3 className={styles.accordionHeader}><span className={styles.accordionHeaderTitle}>SEASON 3</span> (2020~현재) 청년 정책 사각 지대 해소와 사회적 경제 커먼즈 구축</h3>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        This is content.
+                    </AccordionDetails>
+                </Accordion>
+                <Accordion className={styles.accordion} disableGutters>
+                    <AccordionSummary
+                        expandIcon={<ExpandMore />}
+                        className={styles.accordionSummary}
+                    >
+                        <h3 className={styles.accordionHeader}><span className={styles.accordionHeaderTitle}>SEASON 2</span> (2013~2019) 사회적 경제의 성장 및 정책 확산</h3>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        This is content.
+                    </AccordionDetails>
+                </Accordion>
+                <Accordion className={styles.accordion} disableGutters>
+                    <AccordionSummary
+                        expandIcon={<ExpandMore />}
+                        className={styles.accordionSummary}
+                    >
+                        <h3 className={styles.accordionHeader}><span className={styles.accordionHeaderTitle}>SEASON 1</span> (2010~2012) 청년 주도의 사회 문제 해결 및 주체 성장 지원</h3>
                     </AccordionSummary>
                     <AccordionDetails>
                         This is content.

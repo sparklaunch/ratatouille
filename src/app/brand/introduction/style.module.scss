@@ -35,6 +35,7 @@
 .historyContainer {
     width: 1200px;
     margin: auto;
+    margin-bottom: 180px;
 }
 
 .historyHeader {
@@ -51,4 +52,16 @@
 
 .accordionHeaderTitle {
     color: var(--primary-color);
+}
+
+.accordion {
+    box-shadow: none;
+    border-top: 1px solid black;
+    &:last-of-type {
+        border-bottom: 1px solid black;
+    }
+}
+
+.accordionSummary {
+    height: 80px;
 }
