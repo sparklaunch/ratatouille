@@ -28,7 +28,37 @@ export default function IntroductionPage() {
                         <h3 className={styles.accordionHeader}><span className={styles.accordionHeaderTitle}>SEASON 3</span> (2020~현재) 청년 정책 사각 지대 해소와 사회적 경제 커먼즈 구축</h3>
                     </AccordionSummary>
                     <AccordionDetails>
-                        This is content.
+                        <p className={styles.accordionContent}>씨즈는 팬데믹이 드러낸 '재난의 양극화'를 체감한 이후, 서울시 청년허브 운영을 통해 청년 정책의 사각 지대를 해소하고, 은둔·고립 청년을 지원해 왔습니다. 세대·국가·계층을 넘는 시민 협력으로 대안 경제의 해결 역량을 키워왔으며, 지금도 새로운 변화의 씨앗을 심고 있습니다. 앞으로는 청년·시니어 간 서로 돌봄 도시 실험, 사회적 경제 기반 그린 스마트 클러스터 조성, 586세대의 사회적 유산을 활용한 금융 확충 등을 통해, 또 다른 10년의 도전을 이어갑니다.</p>
+                        <div className={styles.accordionHistory}>
+                            <div className={styles.accordionHistoryHeader}>
+                                <p>2022 ~ 현재</p>
+                            </div>
+                            <div className={styles.accordionHistoryContent}>
+                                <p>청년 문화 예술 창작자 및 은둔·고립 청년의 사회 치유형 공공 임대 주택 운영 제안 (LH, 나눔과미래 협력)</p>
+                            </div>
+                            <div className={styles.accordionHistoryHeader}>
+                                <p>2021 ~ 2022</p>
+                            </div>
+                            <div className={styles.accordionHistoryContent}>
+                                <p>경기도 미취업 취약층 청년 '버팀목 일자리 인턴쉽 지원' (SK M & Service 및 모금회)</p>
+                            </div>
+                            <div className={styles.accordionHistoryHeader}>
+                                <p>2020 ~ 2021</p>
+                            </div>
+                            <div className={styles.accordionHistoryContent}>
+                                <p>• 서울시 청년 정책 개발 및 청년 네트워크 지원을 위한 청년허브 위탁 운영 (서울시)</p>
+                                <p>• 은둔·고립 청년 온라인 플랫폼 및 서로 돌봄 서클 지원, 1인 가구 청년 고독사 예방 협력망 구축 (사무 금융 우분투 재단 外)</p>
+                                <p>• 지역 순환 경제 협업형 사회적 경제 클러스터 조성 시민 자산화 추진 (행안부)</p>
+                            </div>
+                            <div className={styles.accordionHistoryHeader}>
+                                <p>2020</p>
+                            </div>
+                            <div className={styles.accordionHistoryContent}>
+                                <p>• 인도네시아 청년 혁신 기업가 창업 지원 (공동 모금회 지정 기부)</p>
+                                <p>• 팬데믹 위기 상황의 저개발국 사회적 경제 발굴 지원 (KOICA 협력)</p>
+                                <p>• 지역 순환 경제 거점 모델 조성을 위한 기초 연구 (서울연구원)</p>
+                            </div>
+                        </div>
                     </AccordionDetails>
                 </Accordion>
                 <Accordion className={styles.accordion} disableGutters>
