@@ -107,3 +107,24 @@
     font-size: 23px;
     line-height: 45px;
 }
+
+.partnersContainer {
+    width: 100%;
+}
+
+.partnersHeader {
+    font-weight: bolder;
+    font-size: 30px;
+    margin-bottom: 76px;
+}
+
+.partners {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 50px;
+    row-gap: 60px;
+    & > img {
+        position: relative !important;
+        object-fit: contain;
+    }
+}

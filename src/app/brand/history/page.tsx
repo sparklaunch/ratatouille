@@ -2,6 +2,7 @@ import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
 import { ExpandMore } from "@mui/icons-material";
 import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
+import Image from "next/image";
 import Link from "next/link";
 import styles from "./style.module.scss";
 
@@ -192,6 +193,14 @@ export default function HistoryPage() {
                         </div>
                     </AccordionDetails>
                 </Accordion>
+            </div>
+            <div className={styles.partnersContainer}>
+                <h2 className={styles.partnersHeader}>Partners</h2>
+                <div className={styles.partners}>
+                    <Image src="/partners/MOEL.svg" alt="고용노동부 로고" fill />
+                    <Image src="/partners/KHS.svg" alt="국가유산청 로고" fill />
+                    <Image src="/partners/NTS.svg" alt="국세청 로고" fill />
+                </div>
             </div>
         </div>
         <Footer />
