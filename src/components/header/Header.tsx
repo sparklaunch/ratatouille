@@ -14,9 +14,21 @@ export default function Header() {
                 </Link>
                 <div className={styles.navigationContainer}>
                     <div className={styles.navigation}>
-                        <Link href="/brand/introduction" className={styles.menuItem}>
-                            <span>브랜드 스토리</span>
-                        </Link>
+                        <div className={styles.subMenuContainer}>
+                            <Link href="/brand/introduction" className={styles.menuItem}>
+                                <span>브랜드 스토리</span>
+                            </Link>
+                            <div className={styles.subMenuOuterContainer}>
+                                <div className={styles.subMenu}>
+                                    <Link href="/brand/introduction" className={styles.subMenuItem}>
+                                        <span>씨즈 소개</span>
+                                    </Link>
+                                    <Link href="/brand/history" className={styles.subMenuItem}>
+                                        <span>연혁</span>
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
                         <Link href="#" className={styles.menuItem}>
                             <span>프로젝트</span>
                         </Link>
