@@ -14,7 +14,7 @@ export default function Header() {
                 </Link>
                 <div className={styles.navigationContainer}>
                     <div className={styles.navigation}>
-                        <Link href="#" className={styles.menuItem}>
+                        <Link href="/brand/introduction" className={styles.menuItem}>
                             <span>브랜드 스토리</span>
                         </Link>
                         <Link href="#" className={styles.menuItem}>
