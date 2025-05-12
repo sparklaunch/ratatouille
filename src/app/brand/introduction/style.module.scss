@@ -88,6 +88,14 @@
     margin-bottom: 70px;
 }
 
+.season1Container {
+    display: grid;
+    grid-template-columns: 220px auto;
+    grid-template-rows: repeat(8, auto);
+    row-gap: 8px;
+    margin-bottom: 70px;
+}
+
 .accordionHistoryHeader > p {
     font-weight: bold;
     font-size: 23px;

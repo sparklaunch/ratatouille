@@ -136,7 +136,60 @@ export default function IntroductionPage() {
                         <h3 className={styles.accordionHeader}><span className={styles.accordionHeaderTitle}>SEASON 1</span> (2010~2012) 청년 주도의 사회 문제 해결 및 주체 성장 지원</h3>
                     </AccordionSummary>
                     <AccordionDetails>
-                        This is content.
+                        <div className={styles.season1Container}>
+                            <div className={styles.accordionHistoryHeader}>
+                                <p>2012</p>
+                            </div>
+                            <div className={styles.accordionHistoryContent}>
+                                <p>Seoul Sustainability Jam 주관</p>
+                            </div>
+                            <div className={styles.accordionHistoryHeader}>
+                                <p>2012 ~ 2020</p>
+                            </div>
+                            <div className={styles.accordionHistoryContent}>
+                                <p>H-온드림 오디션 (현대자동차)</p>
+                            </div>
+                            <div className={styles.accordionHistoryHeader}>
+                                <p>2011 ~ 2016</p>
+                            </div>
+                            <div className={styles.accordionHistoryContent}>
+                                <p>국내 최초 청년 사회적 기업가 공유 오피스 '서초 창의허브' 운영 (현대자동차, 서초구청)</p>
+                            </div>
+                            <div className={styles.accordionHistoryHeader}>
+                                <p>2011 ~ 2022</p>
+                            </div>
+                            <div className={styles.accordionHistoryContent}>
+                                <p>• 청년 사회적 기업가 육성 사업 정책 개발 및 전국 확산 (고용노동부 外)</p>
+                                <p>• NHN Fellow 사회적 금융 지원 (NHN 창업가)</p>
+                            </div>
+                            <div className={styles.accordionHistoryHeader}>
+                                <p>2011 ~ 2019</p>
+                            </div>
+                            <div className={styles.accordionHistoryContent}>
+                                <p>• SEEKER:S 청년 해외 탐방 지원 (교보생명 外)</p>
+                                <p>• BORA 활동 지속</p>
+                            </div>
+                            <div className={styles.accordionHistoryHeader}>
+                                <p>2010 ~ 2022</p>
+                            </div>
+                            <div className={styles.accordionHistoryContent}>
+                                <p>사회적 경제 정책 개발 지원 생태계 조성 (충청남도, 서울시, 강원특별자치도, 청와대 등)</p>
+                            </div>
+                            <div className={styles.accordionHistoryHeader}>
+                                <p>2010 ~ 2011</p>
+                            </div>
+                            <div className={styles.accordionHistoryContent}>
+                                <p>• '청년 체인지메이커의 이야기' (삼선배움과나눔재단 후원)</p>
+                                <p>• 청년 윤리적 소비 캠페인단 'BORA' 조직화 시작</p>
+                            </div>
+                            <div className={styles.accordionHistoryHeader}>
+                                <p>기타</p>
+                            </div>
+                            <div className={styles.accordionHistoryContent}>
+                                <p>• 세상콘테스트, SK 사회적 기업 스쿨 멘토링</p>
+                                <p>• '우리 마을이 학교가 되다' (포스코) 등 다수</p>
+                            </div>
+                        </div>
                     </AccordionDetails>
                 </Accordion>
             </div>
