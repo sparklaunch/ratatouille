@@ -223,7 +223,7 @@ export default function HistoryPage() {
                     <Image src="/partners/POSCO.svg" alt="포스코 로고" fill />
                     <Image src="/partners/HanwhaLife.svg" alt="한화생명 로고" fill />
                     <Image src="/partners/HyundaiMotors.svg" alt="현대자동차 로고" fill />
-                    <Image src="/partners/ChungMongKooFoundation.png" alt="정몽구재단 로고" fill />
+                    <Image src="/partners/ChungMongKooFoundation.svg" alt="정몽구재단 로고" fill />
                     <Image src="/partners/KCCSE.svg" alt="한국사회적기업중앙협의회 로고" fill />
                     <Image src="/partners/CCEI.svg" alt="광주창조경제혁신센터 로고" fill />
                     <Image src="/partners/DDP.svg" alt="DDP 로고" fill />

@@ -1,3 +1,4 @@
+import Logo from "@/../public/logos/Logo.svg";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./style.module.scss";
@@ -10,7 +11,7 @@ export default function Header() {
         <div className={styles.menuContainer}>
             <div className={styles.menu}>
                 <Link href="/">
-                    <Image src="/logos/Logo.svg" alt="씨즈 로고" width={161} height={50} />
+                    <Image src={Logo} alt="씨즈 로고" width={161} height={50} priority />
                 </Link>
                 <div className={styles.navigationContainer}>
                     <div className={styles.navigation}>

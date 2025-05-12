@@ -1,3 +1,4 @@
+import Logo from "@/../public/logos/Logo.svg";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./style.module.scss";
@@ -5,7 +6,7 @@ import styles from "./style.module.scss";
 export default function Footer() {
     return <div className={styles.outerContainer}>
         <div className={styles.innerContainer}>
-            <Image src="/logos/Logo.svg" width={161} height={50} alt="씨즈 로고" />
+            <Image src={Logo} width={161} height={50} alt="씨즈 로고" priority />
             <div className={styles.rightContainer}>
                 <h2 className={styles.header}>We Believe in The Power of Small SEED:S</h2>
                 <div className={styles.gridContainer}>
