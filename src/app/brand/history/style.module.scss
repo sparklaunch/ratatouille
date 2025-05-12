@@ -123,8 +123,9 @@
     grid-template-columns: repeat(5, 1fr);
     column-gap: 50px;
     row-gap: 60px;
+    position: relative;
     & > img {
-        position: relative !important;
+        position: inherit !important;
         object-fit: contain;
     }
 }
