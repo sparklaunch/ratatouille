@@ -6,11 +6,15 @@ import formatDate from "@/utilities/formatDate";
 import SearchIcon from '@mui/icons-material/Search';
 import { InputAdornment, OutlinedInput, Skeleton } from "@mui/material";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import styles from "./style.module.scss";
 
 export default function NoticePage() {
-    const [currentPage, setCurrentPage] = useState(1);
+    const searchParams = useSearchParams();
+    const router = useRouter();
+    const currentPage = Number(searchParams.get("page")) ?? 1;
     const [notices, setNotices] = useState<Notices>({
         fixedNotices: [],
         normalNotices: []
@@ -90,7 +94,7 @@ export default function NoticePage() {
                     <p
                         onClick={() => {
                             if (currentPage > 1) {
-                                setCurrentPage(currentPage - 1);
+                                router.push(`/news/notice?page=${currentPage - 1}`);
                             }
                         }}
                         className={`${styles.leftCaret} ${currentPage === 1 ? styles.disabledCaret : ""}`}
@@ -102,7 +106,9 @@ export default function NoticePage() {
                         return (
                             <p
                                 key={page}
-                                onClick={() => setCurrentPage(page)}
+                                onClick={() => {
+                                    router.push(`/news/notice?page=${currentPage}`);
+                                }}
                                 className={page === currentPage ? styles.activePage : styles.inactivePage}
                             >
                                 {page}
@@ -112,7 +118,7 @@ export default function NoticePage() {
                     <p
                         onClick={() => {
                             if (currentPage < totalPages) {
-                                setCurrentPage(currentPage + 1);
+                                router.push(`/news/notice?page=${currentPage + 1}`);
                             }
                         }}
                         className={`${styles.rightCaret} ${currentPage === totalPages ? styles.disabledCaret : ""}`}
