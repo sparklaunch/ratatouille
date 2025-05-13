@@ -1,31 +1,21 @@
-"use client";
-
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
 import Link from "next/link";
-import { use, useEffect, useState } from "react";
+import { prisma } from "../../../../../lib/prisma";
 import styles from "./style.module.scss";
 
-export default function NoticeContentPage({ params }: { params: Promise<{ noticeID: String }> }) {
-    const { noticeID } = use(params);
-    const [, setIsLoading] = useState(false);
-    const [, setNotice] = useState<Notice>();
-    useEffect(() => {
-        const getNotice = async () => {
-            setIsLoading(true);
-            const response = await fetch(`/api/notice?id=${noticeID}`, {
-                cache: "no-store"
-            });
-            if (response.ok) {
-                const data = await response.json() as Notice;
-                setNotice(data);
-            } else {
-                console.error("Failed to fetch notice");
-            }
-            setIsLoading(false);
-        };
-        getNotice();
-    }, []);
+export default async function NoticeContentPage({ params }: { params: Promise<{ noticeID: String }> }) {
+    const { noticeID } = await params;
+    const notice = await prisma.notices.findUnique({
+        where: {
+            id: Number(noticeID)
+        }
+    });
+    if (!notice) {
+        return <>
+            <p>공지 사항을 찾을 수 없습니다.</p>
+        </>;
+    }
     return <>
         <Header />
         <div className={styles.container}>
@@ -39,7 +29,15 @@ export default function NoticeContentPage({ params }: { params: Promise<{ notice
                 </Link>
             </div>
             <div className={styles.contentContainer}>
-
+                <div className={styles.titleContainer}>
+                    <h2 className={styles.title}>{notice.title}</h2>
+                    <h3 className={styles.createdDate}>작성일: {notice.createdAt.toLocaleDateString("ko-KR")}</h3>
+                </div>
+                <div className={styles.bodyContainer}>
+                    <div dangerouslySetInnerHTML={{
+                        __html: notice.content
+                    }} />
+                </div>
             </div>
         </div>
         <Footer />

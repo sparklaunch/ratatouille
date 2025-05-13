@@ -36,3 +36,21 @@
     width: 100%;
     border-top: 1px solid black;
 }
+
+.titleContainer {
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.title {
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.createdDate {
+    font-weight: bold;
+    font-size: 19px;
+}
