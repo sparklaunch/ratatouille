@@ -36,7 +36,7 @@ export default function NoticePage() {
                     setTotalPages(computedPages);
                 }
             } catch (error) {
-                console.log(error);
+                console.error(error);
             }
         };
         getNotices();

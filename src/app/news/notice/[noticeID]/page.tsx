@@ -19,7 +19,7 @@ export default function NoticeContentPage({ params }: { params: Promise<{ notice
             try {
                 const response = await fetch(`/api/notice?id=${noticeID}`);
                 if (response.ok) {
-                    const { notice } = await response.json();
+                    const notice = await response.json() as Notice;
                     setNotice(notice);
                 }
             } catch (error) {

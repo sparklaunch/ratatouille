@@ -9,7 +9,5 @@ export async function GET(request: Request) {
             id
         }
     });
-    return NextResponse.json({
-        notice
-    });
+    return NextResponse.json(notice);
 }
