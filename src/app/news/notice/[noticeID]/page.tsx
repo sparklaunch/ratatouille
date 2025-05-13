@@ -1,5 +1,6 @@
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
+import formatDate from "@/utilities/formatDate";
 import Link from "next/link";
 import { prisma } from "../../../../../lib/prisma";
 import styles from "./style.module.scss";
@@ -31,7 +32,7 @@ export default async function NoticeContentPage({ params }: { params: Promise<{ 
             <div className={styles.contentContainer}>
                 <div className={styles.titleContainer}>
                     <h2 className={styles.title}>{notice.title}</h2>
-                    <h3 className={styles.createdDate}>작성일: {notice.createdAt.toLocaleDateString("ko-KR")}</h3>
+                    <h3 className={styles.createdDate}>작성일: {formatDate(notice.createdAt)}</h3>
                 </div>
                 <div className={styles.bodyContainer}>
                     <div dangerouslySetInnerHTML={{
