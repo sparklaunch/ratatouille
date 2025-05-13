@@ -6,15 +6,17 @@ import formatDate from "@/utilities/formatDate";
 import SearchIcon from '@mui/icons-material/Search';
 import { InputAdornment, OutlinedInput, Skeleton } from "@mui/material";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
-import { useRouter } from "next/router";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import styles from "./style.module.scss";
 
 export default function NoticePage() {
     const searchParams = useSearchParams();
     const router = useRouter();
-    const currentPage = Number(searchParams.get("page")) ?? 1;
+    let currentPage = 1;
+    if (searchParams.has("page")) {
+        currentPage = Number(searchParams.get("page")) ?? 1;
+    }
     const [notices, setNotices] = useState<Notices>({
         fixedNotices: [],
         normalNotices: []
@@ -107,7 +109,7 @@ export default function NoticePage() {
                             <p
                                 key={page}
                                 onClick={() => {
-                                    router.push(`/news/notice?page=${currentPage}`);
+                                    router.push(`/news/notice?page=${page}`);
                                 }}
                                 className={page === currentPage ? styles.activePage : styles.inactivePage}
                             >
