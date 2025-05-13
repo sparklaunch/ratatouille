@@ -40,6 +40,11 @@ export default async function NoticeContentPage({ params }: { params: Promise<{ 
                     }} />
                 </div>
             </div>
+            <div className={styles.goBackToListButton}>
+                <Link href="/news/notice">
+                    <span>목록 보기</span>
+                </Link>
+            </div>
         </div>
         <Footer />
     </>;
