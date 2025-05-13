@@ -8,11 +8,11 @@ import styles from "./style.module.scss";
 
 export default function NoticeContentPage({ params }: { params: Promise<{ noticeID: String }> }) {
     const { noticeID } = use(params);
-    const [, setLoading] = useState(false);
-    const [notice, setNotice] = useState<Notice>();
+    const [, setIsLoading] = useState(false);
+    const [, setNotice] = useState<Notice>();
     useEffect(() => {
         const getNotice = async () => {
-            setLoading(true);
+            setIsLoading(true);
             const response = await fetch(`/api/notice?id=${noticeID}`, {
                 cache: "no-store"
             });
@@ -22,7 +22,7 @@ export default function NoticeContentPage({ params }: { params: Promise<{ notice
             } else {
                 console.error("Failed to fetch notice");
             }
-            setLoading(false);
+            setIsLoading(false);
         };
         getNotice();
     }, []);

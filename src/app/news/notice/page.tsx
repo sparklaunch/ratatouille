@@ -16,10 +16,10 @@ export default function NoticePage() {
         normalNotices: []
     });
     const [totalPages, setTotalPages] = useState(1);
-    const [loading, setLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
         const getNotices = async () => {
-            setLoading(true);
+            setIsLoading(true);
             const response = await fetch(`/api/notices?page=${currentPage}`, {
                 cache: "no-store"
             });
@@ -35,7 +35,7 @@ export default function NoticePage() {
             } else {
                 console.error("Failed to fetch notices");
             }
-            setLoading(false);
+            setIsLoading(false);
         };
         getNotices();
     }, [currentPage]);
@@ -60,7 +60,7 @@ export default function NoticePage() {
                     <p>작성일</p>
                 </div>
                 <div className={styles.boardContent}>
-                    {loading ? (
+                    {isLoading ? (
                         <Skeleton variant="rounded" height={710} animation="wave" className={styles.skeleton} />
                     ) : (
                         <>
