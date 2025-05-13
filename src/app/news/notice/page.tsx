@@ -17,15 +17,10 @@ export default function NoticePage() {
     if (searchParams.has("page")) {
         currentPage = Number(searchParams.get("page")) ?? 1;
     }
-    const [notices, setNotices] = useState<Notices>({
-        fixedNotices: [],
-        normalNotices: []
-    });
+    const [notices, setNotices] = useState<Notices>();
     const [totalPages, setTotalPages] = useState(1);
-    const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
         const getNotices = async () => {
-            setIsLoading(true);
             const response = await fetch(`/api/notices?page=${currentPage}`, {
                 cache: "no-store"
             });
@@ -41,7 +36,6 @@ export default function NoticePage() {
             } else {
                 console.error("Failed to fetch notices");
             }
-            setIsLoading(false);
         };
         getNotices();
     }, [currentPage]);
@@ -59,33 +53,27 @@ export default function NoticePage() {
                     <span>언론 보도</span>
                 </Link>
             </div>
-            <div className={styles.board}>
+            {!notices ? <Skeleton /> : <div className={styles.board}>
                 <div className={styles.boardHeader}>
                     <p>번호</p>
                     <p>제목</p>
                     <p>작성일</p>
                 </div>
                 <div className={styles.boardContent}>
-                    {isLoading ? (
-                        <Skeleton variant="rounded" height={710} animation="wave" className={styles.skeleton} />
-                    ) : (
-                        <>
-                            {notices.fixedNotices.map((notice, index) => (
-                                <Link key={`fixed-${index}`} className={styles.fixedNotice} href={`/news/notice/${notice.id}`}>
-                                    <p>{notice.id}</p>
-                                    <p>{notice.title}</p>
-                                    <p>{formatDate(notice.createdAt)}</p>
-                                </Link>
-                            ))}
-                            {notices.normalNotices.map((notice, index) => (
-                                <Link key={`normal-${index}`} className={styles.normalNotice} href={`/news/notice/${notice.id}`}>
-                                    <p>{notice.id}</p>
-                                    <p>{notice.title}</p>
-                                    <p>{formatDate(notice.createdAt)}</p>
-                                </Link>
-                            ))}
-                        </>
-                    )}
+                    {notices.fixedNotices.map((notice, index) => (
+                        <Link key={`fixed-${index}`} className={styles.fixedNotice} href={`/news/notice/${notice.id}`}>
+                            <p>{notice.id}</p>
+                            <p>{notice.title}</p>
+                            <p>{formatDate(notice.createdAt)}</p>
+                        </Link>
+                    ))}
+                    {notices.normalNotices.map((notice, index) => (
+                        <Link key={`normal-${index}`} className={styles.normalNotice} href={`/news/notice/${notice.id}`}>
+                            <p>{notice.id}</p>
+                            <p>{notice.title}</p>
+                            <p>{formatDate(notice.createdAt)}</p>
+                        </Link>
+                    ))}
                 </div>
                 <div className={styles.searchBox}>
                     <OutlinedInput
@@ -128,7 +116,7 @@ export default function NoticePage() {
                         &gt;
                     </p>
                 </div>
-            </div>
+            </div>}
         </div>
         <Footer />
     </>;
