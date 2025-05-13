@@ -21,20 +21,22 @@ export default function NoticePage() {
     const [totalPages, setTotalPages] = useState(1);
     useEffect(() => {
         const getNotices = async () => {
-            const response = await fetch(`/api/notices?page=${currentPage}`, {
-                cache: "no-store"
-            });
-            if (response.ok) {
-                const data = await response.json() as NoticeData;
-                setNotices({
-                    fixedNotices: data.totalFixedNotices,
-                    normalNotices: data.normalNotices
+            try {
+                const response = await fetch(`/api/notices?page=${currentPage}`, {
+                    cache: "no-store"
                 });
-                const totalNormalCount = data.totalNormalCount || 0;
-                const computedPages = Math.ceil(totalNormalCount / (10 - data.totalFixedNotices.length));
-                setTotalPages(computedPages);
-            } else {
-                console.error("Failed to fetch notices");
+                if (response.ok) {
+                    const data = await response.json() as NoticeData;
+                    setNotices({
+                        fixedNotices: data.totalFixedNotices,
+                        normalNotices: data.normalNotices
+                    });
+                    const totalNormalCount = data.totalNormalCount || 0;
+                    const computedPages = Math.ceil(totalNormalCount / (10 - data.totalFixedNotices.length));
+                    setTotalPages(computedPages);
+                }
+            } catch (error) {
+                console.log(error);
             }
         };
         getNotices();

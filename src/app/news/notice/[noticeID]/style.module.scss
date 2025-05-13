@@ -70,14 +70,12 @@
     gap: 20px;
 }
 
-.goBackToListButton > a {
-    display: inline-block;
+.goBackToListButton > p {
+    cursor: pointer;
     padding: 18px 30px;
     border: 1px solid #d9d9d9;
     border-radius: 30px;
     margin-bottom: 200px;
-    & > span {
-        font-weight: bold;
-        font-size: 20px;
-    }
+    font-weight: bold;
+    font-size: 20px;
 }
