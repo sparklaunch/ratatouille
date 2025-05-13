@@ -1,6 +1,7 @@
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
 import formatDate from "@/utilities/formatDate";
+import Image from "next/image";
 import Link from "next/link";
 import { prisma } from "../../../../../lib/prisma";
 import styles from "./style.module.scss";
@@ -39,6 +40,10 @@ export default async function NoticeContentPage({ params }: { params: Promise<{ 
                         __html: notice.content
                     }} />
                 </div>
+            </div>
+            <div className={styles.appendix}>
+                <Image src="/icons/Share.svg" alt="공유" width={24} height={24} />
+                <Image src="/icons/Print.svg" alt="인쇄" width={24} height={24} />
             </div>
             <div className={styles.goBackToListButton}>
                 <Link href="/news/notice">

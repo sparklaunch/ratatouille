@@ -63,11 +63,19 @@
     margin-bottom: 300px;
 }
 
+.appendix {
+    align-self: flex-end;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
 .goBackToListButton > a {
     display: inline-block;
     padding: 18px 30px;
     border: 1px solid #d9d9d9;
     border-radius: 30px;
+    margin-bottom: 200px;
     & > span {
         font-weight: bold;
         font-size: 20px;
