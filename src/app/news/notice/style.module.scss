@@ -123,6 +123,15 @@
     & > p {
         font-weight: bold;
     }
+    &:hover {
+        background-color: #d9d9d9;
+    }
+}
+
+.normalNotice {
+    &:hover {
+        background-color: #f6f6f6;
+    }
 }
 
 .skeleton {

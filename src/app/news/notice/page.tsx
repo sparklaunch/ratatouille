@@ -65,18 +65,18 @@ export default function NoticePage() {
                     ) : (
                         <>
                             {notices.fixedNotices.map((notice, index) => (
-                                <div key={`fixed-${index}`} className={styles.fixedNotice}>
+                                <Link key={`fixed-${index}`} className={styles.fixedNotice} href={`/news/notice/${notice.id}`}>
                                     <p>{notice.id}</p>
                                     <p>{notice.title}</p>
                                     <p>{formatDate(notice.createdAt)}</p>
-                                </div>
+                                </Link>
                             ))}
                             {notices.normalNotices.map((notice, index) => (
-                                <div key={`normal-${index}`} className={styles.normalNotice}>
+                                <Link key={`normal-${index}`} className={styles.normalNotice} href={`/news/notice/${notice.id}`}>
                                     <p>{notice.id}</p>
                                     <p>{notice.title}</p>
                                     <p>{formatDate(notice.createdAt)}</p>
-                                </div>
+                                </Link>
                             ))}
                         </>
                     )}
