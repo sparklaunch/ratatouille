@@ -53,7 +53,7 @@ export default function NoticeContentPage({ params }: { params: Promise<{ notice
             </div>}
             <div className={styles.appendix}>
                 <Image src="/icons/Share.svg" alt="공유" width={24} height={24} />
-                <Image src="/icons/Print.svg" alt="인쇄" width={24} height={24} />
+                <Image src="/icons/Print.svg" alt="인쇄" width={24} height={24} onClick={() => window.print()} />
             </div>
             <div className={styles.goBackToListButton}>
                 <p onClick={() => router.back()}>목록 보기</p>
