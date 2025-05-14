@@ -5,11 +5,10 @@ import Header from "@/components/header/Header";
 import type { Notice } from "@/types/notice";
 import defaultNotice from "@/types/notice";
 import formatDate from "@/utilities/formatDate";
-import { Skeleton } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Suspense, use, useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 import styles from "./style.module.scss";
 
 export default function NoticeContentPage({ params }: { params: Promise<{ noticeID: string }> }) {
@@ -42,19 +41,17 @@ export default function NoticeContentPage({ params }: { params: Promise<{ notice
                     <span>언론 보도</span>
                 </Link>
             </div>
-            <Suspense fallback={<Skeleton />}>
-                <div className={styles.contentContainer}>
-                    <div className={styles.titleContainer}>
-                        <h2 className={styles.title}>{notice.title}</h2>
-                        <h3 className={styles.createdDate}>작성일: {formatDate(notice.createdAt)}</h3>
-                    </div>
-                    <div className={styles.bodyContainer}>
-                        <div dangerouslySetInnerHTML={{
-                            __html: notice.content
-                        }} />
-                    </div>
+            <div className={styles.contentContainer}>
+                <div className={styles.titleContainer}>
+                    <h2 className={styles.title}>{notice.title}</h2>
+                    <h3 className={styles.createdDate}>작성일: {formatDate(notice.createdAt)}</h3>
                 </div>
-            </Suspense>
+                <div className={styles.bodyContainer}>
+                    <div dangerouslySetInnerHTML={{
+                        __html: notice.content
+                    }} />
+                </div>
+            </div>
             <div className={styles.appendix}>
                 <Image src="/icons/Share.svg" alt="공유" width={24} height={24} />
                 <Image src="/icons/Print.svg" alt="인쇄" width={24} height={24} onClick={() => window.print()} />

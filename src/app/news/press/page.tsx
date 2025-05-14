@@ -1,5 +1,3 @@
-"use client";
-
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
 import { Skeleton } from "@mui/material";
@@ -8,7 +6,7 @@ import { Suspense } from "react";
 import ArticleList from "./ArticleList";
 import styles from "./style.module.scss";
 
-export default function PressPage() {
+export default async function PressPage() {
     return <>
         <Header />
         <div className={styles.container}>

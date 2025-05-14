@@ -1,14 +1,12 @@
-"use client";
-
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
-import styles from "./style.module.scss";
 import { Skeleton } from "@mui/material";
 import Link from "next/link";
 import { Suspense } from "react";
 import NoticeList from "./NoticeList";
+import styles from "./style.module.scss";
 
-export default function NoticePage() {
+export default async function NoticePage() {
     return <>
         <Header />
         <div className={styles.container}>
