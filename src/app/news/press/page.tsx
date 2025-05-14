@@ -2,40 +2,13 @@
 
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
-import type { Article } from "@/types/article";
-import type { ArticleData } from "@/types/articleData";
 import { Skeleton } from "@mui/material";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
-import { Suspense, useEffect, useState } from "react";
+import { Suspense } from "react";
+import ArticleList from "./ArticleList";
 import styles from "./style.module.scss";
 
 export default function PressPage() {
-    const searchParams = useSearchParams();
-    const [, setArticles] = useState<Article[]>([]);
-    const [, setTotalPages] = useState(1);
-    let currentPage = 1;
-    if (searchParams.has("page")) {
-        currentPage = Number(searchParams.get("page"));
-    }
-    useEffect(() => {
-        const getArticles = async () => {
-            try {
-                const response = await fetch(`/api/articles?page=${currentPage}`, {
-                    cache: "no-store"
-                });
-                if (response.ok) {
-                    const { totalCount, articles } = await response.json() as ArticleData;
-                    setArticles(articles);
-                    const computedPages = Math.ceil(totalCount / 12);
-                    setTotalPages(computedPages);
-                }
-            } catch (error) {
-                console.error(error);
-            }
-        }
-        getArticles();
-    }, [currentPage]);
     return <>
         <Header />
         <div className={styles.container}>
@@ -49,9 +22,7 @@ export default function PressPage() {
                 </Link>
             </div>
             <Suspense fallback={<Skeleton />}>
-                <div className={styles.pressContainer}>
-
-                </div>
+                <ArticleList />
             </Suspense>
         </div>
         <Footer />
