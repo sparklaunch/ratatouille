@@ -1,4 +1,4 @@
-import type { Notice } from "./notice";
+import type { Notice } from "./Notice";
 
 type Notices = {
     normalNotices: Notice[];

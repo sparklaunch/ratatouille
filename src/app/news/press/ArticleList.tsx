@@ -1,7 +1,7 @@
 "use client";
 
-import { Article } from "@/types/article";
-import { ArticleData } from "@/types/articleData";
+import { Article } from "@/types/Article";
+import { ArticleData } from "@/types/ArticleData";
 import formatDate from "@/utilities/formatDate";
 import SearchIcon from "@mui/icons-material/SearchOutlined";
 import { InputAdornment, OutlinedInput } from "@mui/material";

@@ -1,69 +1,56 @@
 "use client";
 
-import { NoticeData } from "@/types/NoticeData";
-import defaultNotices, { Notices } from "@/types/Notices";
+import { NewsLetter } from "@/types/NewsLetter";
+import { NewsLetterData } from "@/types/NewsLetterData";
 import formatDate from "@/utilities/formatDate";
-import SearchIcon from '@mui/icons-material/Search';
+import SearchIcon from "@mui/icons-material/SearchOutlined";
 import { InputAdornment, OutlinedInput } from "@mui/material";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import styles from "./style.module.scss";
 
-export default function NoticeList() {
-    const searchParams = useSearchParams();
+export default function NewsLetterList() {
     const router = useRouter();
+    const searchParams = useSearchParams();
+    const [newsLetters, setNewsLetters] = useState<NewsLetter[]>([]);
+    const [totalPages, setTotalPages] = useState(1);
     let currentPage = 1;
     if (searchParams.has("page")) {
-        currentPage = Number(searchParams.get("page")) ?? 1;
+        currentPage = Number(searchParams.get("page"));
     }
-    const [notices, setNotices] = useState<Notices>(defaultNotices);
-    const [totalPages, setTotalPages] = useState(1);
     useEffect(() => {
-        const getNotices = async () => {
+        const getNewsLetters = async () => {
             try {
-                const response = await fetch(`/api/notices?page=${currentPage}`, {
+                const response = await fetch(`/api/newsletters?page=${currentPage}`, {
                     cache: "no-store"
                 });
                 if (response.ok) {
-                    const data = await response.json() as NoticeData;
-                    setNotices({
-                        fixedNotices: data.totalFixedNotices,
-                        normalNotices: data.normalNotices
-                    });
-                    const totalNormalCount = data.totalNormalCount || 0;
-                    const computedPages = Math.ceil(totalNormalCount / (10 - data.totalFixedNotices.length));
+                    const { totalCount, newsLetters } = await response.json() as NewsLetterData;
+                    setNewsLetters(newsLetters);
+                    const computedPages = Math.ceil(totalCount / 12);
                     setTotalPages(computedPages);
                 }
             } catch (error) {
                 console.error(error);
             }
-        };
-        getNotices();
+        }
+        getNewsLetters();
     }, [currentPage]);
     const startPage = Math.floor((currentPage - 1) / 5) * 5 + 1;
     const endPage = Math.min(startPage + 5 - 1, totalPages);
-    return <div className={styles.board}>
-        <div className={styles.boardHeader}>
-            <p>번호</p>
-            <p>제목</p>
-            <p>작성일</p>
-        </div>
-        <div className={styles.boardContent}>
-            {notices.fixedNotices.map((notice, index) => (
-                <Link key={`fixed-${index}`} className={styles.fixedNotice} href={`/news/notice/${notice.id}`}>
-                    <p>{notice.id}</p>
-                    <p>{notice.title}</p>
-                    <p>{formatDate(notice.createdAt)}</p>
-                </Link>
-            ))}
-            {notices.normalNotices.map((notice, index) => (
-                <Link key={`normal-${index}`} className={styles.normalNotice} href={`/news/notice/${notice.id}`}>
-                    <p>{notice.id}</p>
-                    <p>{notice.title}</p>
-                    <p>{formatDate(notice.createdAt)}</p>
-                </Link>
-            ))}
+    return <div className={styles.newsLetterContainer}>
+        <div className={styles.newsLettersContainer}>
+            {newsLetters.map(newsLetter => {
+                return <Link href={`/communication/newsletter/${newsLetter.id}`} className={styles.newsLetterItemContainer} key={newsLetter.id}>
+                    <Image src="/images/Placeholder.jpg" alt="Placeholder image" fill className={styles.newsLetterThumbnail} />
+                    <div className={styles.newsLetterTitle}>
+                        <h2>{newsLetter.title}</h2>
+                        <p>{formatDate(newsLetter.createdAt)}</p>
+                    </div>
+                </Link>;
+            })}
         </div>
         <div className={styles.searchBox}>
             <OutlinedInput
@@ -74,7 +61,7 @@ export default function NoticeList() {
             <p
                 onClick={() => {
                     if (currentPage > 1) {
-                        router.push(`/news/notice?page=${currentPage - 1}`);
+                        router.push(`/communication/newsletter?page=${currentPage - 1}`);
                     }
                 }}
                 className={`${styles.leftCaret} ${currentPage === 1 ? styles.disabledCaret : ""}`}
@@ -87,7 +74,7 @@ export default function NoticeList() {
                     <p
                         key={page}
                         onClick={() => {
-                            router.push(`/news/notice?page=${page}`);
+                            router.push(`/communication/newsletter?page=${page}`);
                         }}
                         className={page === currentPage ? styles.activePage : styles.inactivePage}
                     >
@@ -98,7 +85,7 @@ export default function NoticeList() {
             <p
                 onClick={() => {
                     if (currentPage < totalPages) {
-                        router.push(`/news/notice?page=${currentPage + 1}`);
+                        router.push(`/communication/newsletter?page=${currentPage + 1}`);
                     }
                 }}
                 className={`${styles.rightCaret} ${currentPage === totalPages ? styles.disabledCaret : ""}`}

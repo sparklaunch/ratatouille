@@ -2,8 +2,8 @@
 
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
-import type { Notice } from "@/types/notice";
-import defaultNotice from "@/types/notice";
+import type { Notice } from "@/types/Notice";
+import defaultNotice from "@/types/Notice";
 import formatDate from "@/utilities/formatDate";
 import Image from "next/image";
 import Link from "next/link";

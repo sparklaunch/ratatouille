@@ -2,13 +2,13 @@
 
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
+import defaultArticle, { Article } from "@/types/Article";
+import formatDate from "@/utilities/formatDate";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { use, useEffect, useState } from "react";
 import styles from "./style.module.scss";
-import defaultArticle, { Article } from "@/types/article";
-import formatDate from "@/utilities/formatDate";
 
 export default function ArticleContentPage({ params }: { params: Promise<{ articleID: string }> }) {
     const router = useRouter();
