@@ -32,11 +32,17 @@
 }
 
 .pressContainer {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.articlesContainer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 20px;
     row-gap: 35px;
-    align-self: stretch;
     margin-bottom: 65px;
 }
 
@@ -60,4 +66,10 @@
         font-size: 15px;
         color: #656565;
     }
+}
+
+.searchBox {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 37px;
 }

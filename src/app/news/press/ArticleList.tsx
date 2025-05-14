@@ -3,6 +3,8 @@
 import { Article } from "@/types/article";
 import { ArticleData } from "@/types/articleData";
 import formatDate from "@/utilities/formatDate";
+import SearchIcon from "@mui/icons-material/SearchOutlined";
+import { InputAdornment, OutlinedInput } from "@mui/material";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -35,14 +37,21 @@ export default function ArticleList() {
         getArticles();
     }, [currentPage]);
     return <div className={styles.pressContainer}>
-        {articles.map(article => {
-            return <div className={styles.articleContainer} key={article.id}>
-                <Image src="/images/Placeholder.jpg" alt="Placeholder image" fill className={styles.articleThumbnail} />
-                <div className={styles.articleTitle}>
-                    <h2>{article.title}</h2>
-                    <p>{formatDate(article.createdAt)}</p>
-                </div>
-            </div>;
-        })}
+        <div className={styles.articlesContainer}>
+            {articles.map(article => {
+                return <div className={styles.articleContainer} key={article.id}>
+                    <Image src="/images/Placeholder.jpg" alt="Placeholder image" fill className={styles.articleThumbnail} />
+                    <div className={styles.articleTitle}>
+                        <h2>{article.title}</h2>
+                        <p>{formatDate(article.createdAt)}</p>
+                    </div>
+                </div>;
+            })}
+        </div>
+        <div className={styles.searchBox}>
+            <OutlinedInput
+                endAdornment={<InputAdornment position="end"><SearchIcon /></InputAdornment>}
+            />
+        </div>
     </div>;
 }
