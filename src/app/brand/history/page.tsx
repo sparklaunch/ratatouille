@@ -72,6 +72,7 @@ export default function HistoryPage() {
                         <h3 className={styles.accordionHeader}><span className={styles.accordionHeaderTitle}>SEASON 2</span> (2013~2019) 사회적 경제의 성장 및 정책 확산</h3>
                     </AccordionSummary>
                     <AccordionDetails>
+                        <p className={styles.accordionContent}>씨즈는 사회적 경제에 다양한 세대가 참여할 수 있도록 기반을 마련하고, 여러 지역에서 정책 개발과 협업 거점 조성, 미션 분야별 성장 지원을 확대해 왔습니다. 또한, 사회적 경제가 직면한 '고비용 구조'와 '재화 다양성 부족' 문제를 해결하기 위해, 2017년에는 국내 제조업 기술 장인들의 집적지인 세운상가에 거점 공간을 조성하며 사업을 본격화했습니다.</p>
                         <div className={styles.season2Container}>
                             <div className={styles.accordionHistoryHeader}>
                                 <p>2019 ~ 2020</p>
@@ -139,6 +140,7 @@ export default function HistoryPage() {
                         <h3 className={styles.accordionHeader}><span className={styles.accordionHeaderTitle}>SEASON 1</span> (2010~2012) 청년 주도의 사회 문제 해결 및 주체 성장 지원</h3>
                     </AccordionSummary>
                     <AccordionDetails>
+                        <p className={styles.accordionContent}>씨즈는 2010년부터 부모 세대보다 가난한 첫 세대인 베이비 붐 세대의 자녀, 즉 20·30 청년 세대의 문제에 주목해 왔습니다. 문제의 원인을 진단하기 위한 연구, 토론, 정책 개발은 물론, 청년 주도의 새로운 사회 혁신 과정을 지속적으로 지원해 왔습니다.</p>
                         <div className={styles.season1Container}>
                             <div className={styles.accordionHistoryHeader}>
                                 <p>2012</p>
