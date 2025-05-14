@@ -6,6 +6,7 @@ import formatDate from "@/utilities/formatDate";
 import SearchIcon from "@mui/icons-material/SearchOutlined";
 import { InputAdornment, OutlinedInput } from "@mui/material";
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import styles from "./style.module.scss";
@@ -42,13 +43,13 @@ export default function ArticleList() {
     return <div className={styles.pressContainer}>
         <div className={styles.articlesContainer}>
             {articles.map(article => {
-                return <div className={styles.articleContainer} key={article.id}>
+                return <Link href={`/news/press/${article.id}`} className={styles.articleContainer} key={article.id}>
                     <Image src="/images/Placeholder.jpg" alt="Placeholder image" fill className={styles.articleThumbnail} />
                     <div className={styles.articleTitle}>
                         <h2>{article.title}</h2>
                         <p>{formatDate(article.createdAt)}</p>
                     </div>
-                </div>;
+                </Link>;
             })}
         </div>
         <div className={styles.searchBox}>
