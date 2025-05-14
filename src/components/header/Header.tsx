@@ -57,10 +57,10 @@ export default function Header() {
                                     <Link href="/communication/newsletter" className={styles.subMenuItem}>
                                         <span>뉴스레터</span>
                                     </Link>
-                                    <Link href="#" className={styles.subMenuItem}>
+                                    <Link href="/communication/direction" className={styles.subMenuItem}>
                                         <span>찾아오시는 길</span>
                                     </Link>
-                                    <Link href="#" className={styles.subMenuItem}>
+                                    <Link href="/communication/inquiry" className={styles.subMenuItem}>
                                         <span>문의하기</span>
                                     </Link>
                                 </div>
