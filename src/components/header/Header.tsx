@@ -49,12 +49,12 @@ export default function Header() {
                             </div>
                         </div>
                         <div className={styles.subMenuContainer}>
-                            <Link href="#" className={styles.menuItem}>
+                            <Link href="/communication/newsletter" className={styles.menuItem}>
                                 <span>소통</span>
                             </Link>
                             <div className={styles.subMenuOuterContainer}>
                                 <div className={styles.subMenu}>
-                                    <Link href="#" className={styles.subMenuItem}>
+                                    <Link href="/communication/newsletter" className={styles.subMenuItem}>
                                         <span>뉴스레터</span>
                                     </Link>
                                     <Link href="#" className={styles.subMenuItem}>
