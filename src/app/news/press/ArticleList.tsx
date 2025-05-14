@@ -6,14 +6,15 @@ import formatDate from "@/utilities/formatDate";
 import SearchIcon from "@mui/icons-material/SearchOutlined";
 import { InputAdornment, OutlinedInput } from "@mui/material";
 import Image from "next/image";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import styles from "./style.module.scss";
 
 export default function ArticleList() {
+    const router = useRouter();
     const searchParams = useSearchParams();
     const [articles, setArticles] = useState<Article[]>([]);
-    const [, setTotalPages] = useState(1);
+    const [totalPages, setTotalPages] = useState(1);
     let currentPage = 1;
     if (searchParams.has("page")) {
         currentPage = Number(searchParams.get("page"));
@@ -36,6 +37,8 @@ export default function ArticleList() {
         }
         getArticles();
     }, [currentPage]);
+    const startPage = Math.floor((currentPage - 1) / 5) * 5 + 1;
+    const endPage = Math.min(startPage + 5 - 1, totalPages);
     return <div className={styles.pressContainer}>
         <div className={styles.articlesContainer}>
             {articles.map(article => {
@@ -52,6 +55,42 @@ export default function ArticleList() {
             <OutlinedInput
                 endAdornment={<InputAdornment position="end"><SearchIcon /></InputAdornment>}
             />
+        </div>
+        <div className={styles.pagination}>
+            <p
+                onClick={() => {
+                    if (currentPage > 1) {
+                        router.push(`/news/press?page=${currentPage - 1}`);
+                    }
+                }}
+                className={`${styles.leftCaret} ${currentPage === 1 ? styles.disabledCaret : ""}`}
+            >
+                &lt;
+            </p>
+            {[...Array(endPage - startPage + 1)].map((_, index) => {
+                const page = startPage + index;
+                return (
+                    <p
+                        key={page}
+                        onClick={() => {
+                            router.push(`/news/press?page=${page}`);
+                        }}
+                        className={page === currentPage ? styles.activePage : styles.inactivePage}
+                    >
+                        {page}
+                    </p>
+                );
+            })}
+            <p
+                onClick={() => {
+                    if (currentPage < totalPages) {
+                        router.push(`/news/press?page=${currentPage + 1}`);
+                    }
+                }}
+                className={`${styles.rightCaret} ${currentPage === totalPages ? styles.disabledCaret : ""}`}
+            >
+                &gt;
+            </p>
         </div>
     </div>;
 }
