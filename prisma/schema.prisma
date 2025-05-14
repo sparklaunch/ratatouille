@@ -7,7 +7,6 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
 model notices {
   id        Int      @id @default(autoincrement())
   title     String   @db.VarChar(255)
@@ -15,4 +14,13 @@ model notices {
   author    String   @db.VarChar(100)
   createdAt DateTime @default(now()) @db.Timestamptz(6)
   isFixed   Boolean  @default(false)
+}
+
+model articles {
+  id        Int      @id @default(autoincrement())
+  title     String   @db.VarChar(255)
+  createdAt DateTime @default(now()) @db.Timestamptz(6)
+  author    String   @db.VarChar(100)
+  content   String
+  thumbnail Bytes?
 }
