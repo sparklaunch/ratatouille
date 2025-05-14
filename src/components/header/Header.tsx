@@ -34,7 +34,7 @@ export default function Header() {
                             <span>프로젝트</span>
                         </Link>
                         <div className={styles.subMenuContainer}>
-                            <Link href="#" className={styles.menuItem}>
+                            <Link href="/news/notice" className={styles.menuItem}>
                                 <span>소식</span>
                             </Link>
                             <div className={styles.subMenuOuterContainer}>
@@ -42,7 +42,7 @@ export default function Header() {
                                     <Link href="/news/notice" className={styles.subMenuItem}>
                                         <span>공지 사항</span>
                                     </Link>
-                                    <Link href="#" className={styles.subMenuItem}>
+                                    <Link href="/news/press" className={styles.subMenuItem}>
                                         <span>언론 보도</span>
                                     </Link>
                                 </div>
