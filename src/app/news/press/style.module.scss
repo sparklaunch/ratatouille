@@ -32,4 +32,32 @@
 }
 
 .pressContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    row-gap: 35px;
+    align-self: stretch;
+    margin-bottom: 65px;
+}
+
+.articleContainer {
+    border: 1px solid #d9d9d9;
+}
+
+.articleThumbnail {
+    position: relative !important;
+    height: inherit !important;
+}
+
+.articleTitle {
+    padding: 20px;
+    & > h2 {
+        font-size: 17px;
+        line-height: 21px;
+        margin-bottom: 26px;
+    }
+    & > p {
+        font-size: 15px;
+        color: #656565;
+    }
 }
