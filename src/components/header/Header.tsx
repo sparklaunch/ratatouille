@@ -10,7 +10,7 @@ export default function Header() {
         </Link>
         <div className={styles.menuContainer}>
             <div className={styles.menu}>
-                <Link href="/" as="image">
+                <Link href="/">
                     <Image src={Logo} alt="씨즈 로고" width={161} height={50} priority />
                 </Link>
                 <div className={styles.navigationContainer}>

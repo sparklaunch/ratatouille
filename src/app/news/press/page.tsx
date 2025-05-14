@@ -16,6 +16,9 @@ export default async function PressPage() {
                     <span className={styles.activeSubheader}>언론 보도</span>
                 </Link>
             </div>
+            <div className={styles.pressContainer}>
+
+            </div>
         </div>
         <Footer />
     </>;
