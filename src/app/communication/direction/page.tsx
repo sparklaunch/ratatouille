@@ -42,6 +42,9 @@ export default function DirectionPage() {
                 </div>
             </div>
         </div>
+        <div className={styles.mapContainer}>
+            <Image src="/images/Map.jpg" alt="두더집 위치" fill />
+        </div>
         <Footer />
     </>;
 }

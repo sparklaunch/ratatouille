@@ -33,7 +33,7 @@
 }
 
 .addressContainer {
-    width: 1200px;
+    width: 100%;
     display: flex;
     flex-direction: row;
     height: 300px;
@@ -65,5 +65,11 @@
         font-size: 17px;
         color: #292d33;
         line-height: 24px;
+    }
+}
+
+.mapContainer {
+    & > img {
+        position: relative !important;
     }
 }
