@@ -5,3 +5,48 @@
 .video {
     width: 100%;
 }
+
+.preludeContainer {
+    width: 1200px;
+    height: 500px;
+    margin: 250px auto 340px auto;
+    display: flex;
+    flex-direction: row;
+    gap: 120px;
+}
+
+.prelude {
+    display: flex;
+    flex-direction: column;
+    & > h1 {
+        font-weight: bold;
+        font-size: 50px;
+        line-height: 55px;
+        flex-grow: 1;
+    }
+    & > p {
+        font-size: 25px;
+        line-height: 45px;
+    }
+}
+
+.moreLink {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 36px;
+    transition: all 0.3s;
+    margin-top: 20px;
+    & > p {
+        font-weight: bold;
+        font-size: 25px;
+    }
+    &:hover {
+        filter: invert(22%) sepia(90%) saturate(2340%) hue-rotate(349deg)
+            brightness(110%) contrast(103%);
+    }
+}
+
+.preludeImage {
+    position: relative !important;
+}
