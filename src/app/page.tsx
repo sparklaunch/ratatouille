@@ -25,6 +25,10 @@ export default function Home() {
                 </div>
                 <Image src="/images/Prelude.jpg" alt="새싹이 자라나는 이미지" fill className={styles.preludeImage} />
             </div>
+            <div className={styles.jumbotronContainer}>
+                <Image src="/images/Jumbotron.jpg" alt="씨즈 점보트론 이미지" fill />
+                <h2>We Believe in The Power of Small SEED:S</h2>
+            </div>
             <Footer />
         </>
     );
