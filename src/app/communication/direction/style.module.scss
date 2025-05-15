@@ -31,3 +31,39 @@
 .activeSubheader {
     color: var(--primary-color);
 }
+
+.addressContainer {
+    width: 1200px;
+    display: flex;
+    flex-direction: row;
+    height: 300px;
+    justify-content: space-between;
+    margin-bottom: 135px;
+}
+
+.addressPhoto {
+    height: inherit !important;
+    position: relative !important;
+    width: auto !important;
+}
+
+.address {
+    flex-basis: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.addressItem {
+    & > h2 {
+        font-weight: bolder;
+        font-size: 18px;
+        margin-bottom: 4px;
+        line-height: 24px;
+    }
+    & > p {
+        font-size: 17px;
+        color: #292d33;
+        line-height: 24px;
+    }
+}
