@@ -29,6 +29,27 @@ export default function Home() {
                 <Image src="/images/Jumbotron.jpg" alt="씨즈 점보트론 이미지" fill />
                 <h2>We Believe in The Power of Small SEED:S</h2>
             </div>
+            <div className={styles.valuesContainer}>
+                <h3>VALUES</h3>
+                <p>모든 생명은 서로에게 기대어 자랍니다. 우리는 연대의 힘을 믿습니다.</p>
+                <div className={styles.valuesGridContainer}>
+                    <div className={styles.value}>
+                        <Image src="/images/Value.png" alt="가치 이미지" fill />
+                        <h4>청년 다차원적 빈곤 해결의 씨앗</h4>
+                        <p>사회 혁신가로 성장하는 과정 및 생태계 조성에 함께 합니다.</p>
+                    </div>
+                    <div className={styles.value}>
+                        <Image src="/images/Value.png" alt="가치 이미지" fill />
+                        <h4>모두를 위한 경제의 씨앗</h4>
+                        <p>경제가 아닌 삶을 중심에 두는 새로운 길을 엽니다.</p>
+                    </div>
+                    <div className={styles.value}>
+                        <Image src="/images/Value.png" alt="가치 이미지" fill />
+                        <h4>경계를 허무는 씨앗</h4>
+                        <p>경계를 넘어 연결되고 협력하는 사회를 만듭니다.</p>
+                    </div>
+                </div>
+            </div>
             <Footer />
         </>
     );
