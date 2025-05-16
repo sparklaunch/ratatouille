@@ -2,6 +2,7 @@ import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
 import Image from "next/image";
 import Link from "next/link";
+import Map from "./Map";
 import styles from "./style.module.scss";
 
 export default function DirectionPage() {
@@ -42,9 +43,7 @@ export default function DirectionPage() {
                 </div>
             </div>
         </div>
-        <div className={styles.mapContainer}>
-            <Image src="/images/Map.jpg" alt="두더집 위치" fill />
-        </div>
+        <Map />
         <Footer />
     </>;
 }

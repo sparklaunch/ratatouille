@@ -11,6 +11,7 @@
     },
     "devDependencies": {
         "@eslint/eslintrc": "^3",
+        "@types/navermaps": "^3.7.10",
         "@types/node": "^20",
         "@types/react": "^19",
         "@types/react-dom": "^19",
