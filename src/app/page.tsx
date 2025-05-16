@@ -50,6 +50,9 @@ export default function Home() {
                     </div>
                 </div>
             </div>
+            <div className={styles.projectsContainer}>
+                <h3>PROJECT: OUR 3 SEED:S</h3>
+            </div>
             <Footer />
         </>
     );
