@@ -5,7 +5,7 @@ import Link from "next/link";
 import Map from "./Map";
 import styles from "./style.module.scss";
 
-export default function DirectionPage() {
+export default async function DirectionPage() {
     return <>
         <Header />
         <div className={styles.container}>

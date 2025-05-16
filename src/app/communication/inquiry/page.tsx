@@ -3,7 +3,7 @@ import Header from "@/components/header/Header";
 import Link from "next/link";
 import styles from "./style.module.scss";
 
-export default function InquiryPage() {
+export default async function InquiryPage() {
     return <>
         <Header />
         <div className={styles.container}>

@@ -3,7 +3,7 @@ import Header from "@/components/header/Header";
 import Link from "next/link";
 import styles from "./style.module.scss";
 
-export default function IntroductionPage() {
+export default async function IntroductionPage() {
     return <>
         <Header />
         <div className={styles.container}>
