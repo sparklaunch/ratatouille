@@ -27,6 +27,9 @@ const textFieldSlotProps = {
 export default function InquiryForm() {
     const [type, setType] = useState("inquiry");
     const [name, setName] = useState("");
+    const [affiliation, setAffiliation] = useState("");
+    const [contact, setContact] = useState("");
+    const [email, setEmail] = useState("");
     return <div className={styles.inquiryContainer}>
         <Image src="/images/Inquiry.png" alt="문의하기 이미지" fill className={styles.inquiryImage} />
         <Form action="/api/inquiry">
@@ -45,15 +48,15 @@ export default function InquiryForm() {
                     <TextField label="성명" variant="outlined" placeholder="이름을 입력해주세요" slotProps={textFieldSlotProps} value={name} onChange={(event) => setName(event.target.value)} />
                 </FormControl>
                 <FormControl fullWidth>
-                    <TextField label="소속" variant="outlined" placeholder="소속팀" slotProps={textFieldSlotProps} />
+                    <TextField label="소속" variant="outlined" placeholder="소속팀" slotProps={textFieldSlotProps} value={affiliation} onChange={(event) => setAffiliation(event.target.value)} />
                 </FormControl>
             </div>
             <div className={styles.inquiryGridContainer}>
                 <FormControl fullWidth>
-                    <TextField label="연락처" variant="outlined" placeholder="000-000-0000" type="tel" slotProps={textFieldSlotProps} />
+                    <TextField label="연락처" variant="outlined" placeholder="000-000-0000" type="tel" slotProps={textFieldSlotProps} value={contact} onChange={(event) => setContact(event.target.value)} />
                 </FormControl>
                 <FormControl fullWidth>
-                    <TextField label="이메일" variant="outlined" placeholder="example@email.com" type="email" slotProps={textFieldSlotProps} />
+                    <TextField label="이메일" variant="outlined" placeholder="example@email.com" type="email" slotProps={textFieldSlotProps} value={email} onChange={(event) => setEmail(event.target.value)} />
                 </FormControl>
             </div>
         </Form>
