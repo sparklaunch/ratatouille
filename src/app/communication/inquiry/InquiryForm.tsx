@@ -31,6 +31,7 @@ export default function InquiryForm() {
     const [contact, setContact] = useState("");
     const [email, setEmail] = useState("");
     const [other, setOther] = useState("");
+    const [termsAgreed, setTermsAgreed] = useState(false);
     return <div className={styles.inquiryContainer}>
         <Image src="/images/Inquiry.png" alt="문의하기 이미지" fill className={styles.inquiryImage} />
         <Form action="/api/inquiry">
@@ -68,7 +69,7 @@ export default function InquiryForm() {
                 "&.Mui-checked": {
                     color: "#FF301E"
                 }
-            }} />} label="이용 약관 / 개인 정보 수집 및 이용 동의" slotProps={{
+            }} value={termsAgreed} onChange={(event) => setTermsAgreed(event.target.checked)} />} label="이용 약관 / 개인 정보 수집 및 이용 동의" slotProps={{
                 typography: {
                     fontFamily: "Nanum Gothic",
                     fontSize: 15
