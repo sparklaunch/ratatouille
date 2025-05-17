@@ -75,6 +75,7 @@ export default function InquiryForm() {
                     fontSize: 15
                 }
             }} />
+            <button className={styles.submitButton} type="submit">보내기</button>
         </Form>
     </div >;
 }
