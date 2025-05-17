@@ -1,6 +1,6 @@
 "use client";
 
-import { FormControl, InputLabel, MenuItem, Select, TextField } from "@mui/material";
+import { Checkbox, FormControl, FormControlLabel, InputLabel, MenuItem, Select, TextField } from "@mui/material";
 import Form from "next/form";
 import Image from "next/image";
 import { useState } from "react";
@@ -30,6 +30,7 @@ export default function InquiryForm() {
     const [affiliation, setAffiliation] = useState("");
     const [contact, setContact] = useState("");
     const [email, setEmail] = useState("");
+    const [other, setOther] = useState("");
     return <div className={styles.inquiryContainer}>
         <Image src="/images/Inquiry.png" alt="문의하기 이미지" fill className={styles.inquiryImage} />
         <Form action="/api/inquiry">
@@ -59,6 +60,20 @@ export default function InquiryForm() {
                     <TextField label="이메일" variant="outlined" placeholder="example@email.com" type="email" slotProps={textFieldSlotProps} value={email} onChange={(event) => setEmail(event.target.value)} />
                 </FormControl>
             </div>
+            <FormControl fullWidth sx={{ marginBottom: "20px" }}>
+                <TextField label="기타 사항" variant="outlined" placeholder="기타 사항을 입력하세요" multiline rows="5" slotProps={textFieldSlotProps} value={other} onChange={(event) => setOther(event.target.value)} />
+            </FormControl>
+            <FormControlLabel control={<Checkbox sx={{
+                color: "#FF301E",
+                "&.Mui-checked": {
+                    color: "#FF301E"
+                }
+            }} />} label="이용 약관 / 개인 정보 수집 및 이용 동의" slotProps={{
+                typography: {
+                    fontFamily: "Nanum Gothic",
+                    fontSize: 15
+                }
+            }} />
         </Form>
     </div >;
 }
