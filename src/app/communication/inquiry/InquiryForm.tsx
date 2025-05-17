@@ -1,9 +1,8 @@
 "use client";
 
 import { Checkbox, FormControl, FormControlLabel, InputLabel, MenuItem, Select, TextField } from "@mui/material";
-import Form from "next/form";
 import Image from "next/image";
-import { useState } from "react";
+import React, { useState } from "react";
 import styles from "./style.module.scss";
 
 const sharedFontSettings = {
@@ -32,9 +31,33 @@ export default function InquiryForm() {
     const [email, setEmail] = useState("");
     const [other, setOther] = useState("");
     const [termsAgreed, setTermsAgreed] = useState(false);
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        const payload = {
+            type,
+            name,
+            affiliation,
+            contact,
+            email,
+            other,
+            termsAgreed
+        }
+        const response = await fetch(`/api/inquiry`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(payload)
+        });
+        if (response.ok) {
+            alert("문의가 접수되었습니다.");
+        } else {
+            alert("오류가 발생하였습니다.");
+        }
+    }
     return <div className={styles.inquiryContainer}>
         <Image src="/images/Inquiry.png" alt="문의하기 이미지" fill className={styles.inquiryImage} />
-        <Form action="/api/inquiry">
+        <form onSubmit={handleSubmit}>
             <FormControl fullWidth sx={{ marginBottom: "20px" }}>
                 <InputLabel id="type" sx={{
                     sharedFontSettings,
@@ -76,6 +99,6 @@ export default function InquiryForm() {
                 }
             }} />
             <button className={styles.submitButton} type="submit">보내기</button>
-        </Form>
+        </form>
     </div >;
 }
