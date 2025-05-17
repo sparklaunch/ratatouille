@@ -1,7 +1,8 @@
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
-import Link from "next/link";
 import styles from "./style.module.scss";
+import Link from "next/link";
+import InquiryForm from "./InquiryForm";
 
 export default async function InquiryPage() {
     return <>
@@ -20,6 +21,7 @@ export default async function InquiryPage() {
                 </Link>
             </div>
         </div>
+        <InquiryForm />
         <Footer />
     </>;
 }
