@@ -1,5 +1,6 @@
 "use client";
 
+import InquiryType from "@/enums/InquiryType";
 import { Checkbox, FormControl, FormControlLabel, InputLabel, MenuItem, Select, TextField } from "@mui/material";
 import Image from "next/image";
 import React, { useState } from "react";
@@ -24,7 +25,7 @@ const textFieldSlotProps = {
 }
 
 export default function InquiryForm() {
-    const [type, setType] = useState("inquiry");
+    const [type, setType] = useState(InquiryType.Inquiry);
     const [name, setName] = useState("");
     const [affiliation, setAffiliation] = useState("");
     const [contact, setContact] = useState("");
@@ -33,26 +34,33 @@ export default function InquiryForm() {
     const [termsAgreed, setTermsAgreed] = useState(false);
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        const payload = {
-            type,
-            name,
-            affiliation,
-            contact,
-            email,
-            other,
-            termsAgreed
-        }
-        const response = await fetch(`/api/inquiry`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(payload)
-        });
-        if (response.ok) {
-            alert("문의가 접수되었습니다.");
-        } else {
-            alert("오류가 발생하였습니다.");
+        switch (type) {
+            case InquiryType.Inquiry: {
+                const payload = {
+                    name,
+                    affiliation,
+                    contact,
+                    email,
+                    other,
+                    termsAgreed
+                }
+                const response = await fetch(`/api/inquiry`, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(payload)
+                });
+                if (response.ok) {
+                    alert("문의가 접수되었습니다.");
+                } else {
+                    alert("오류가 발생하였습니다.");
+                }
+                break;
+            }
+            case InquiryType.Visit: {
+
+            }
         }
     }
     return <div className={styles.inquiryContainer}>
@@ -64,8 +72,8 @@ export default function InquiryForm() {
                     fontWeight: "bold"
                 }}>선택</InputLabel>
                 <Select labelId="type" label="선택" value={type} MenuProps={{ disableScrollLock: true }} sx={sharedFontSettings} onChange={(event) => setType(event.target.value)}>
-                    <MenuItem value="inquiry" sx={sharedFontSettings}>문의하기</MenuItem>
-                    <MenuItem value="visit" sx={sharedFontSettings}>두더집 탐방 신청하기</MenuItem>
+                    <MenuItem value={InquiryType.Inquiry} sx={sharedFontSettings}>문의하기</MenuItem>
+                    <MenuItem value={InquiryType.Visit} sx={sharedFontSettings}>두더집 탐방 신청하기</MenuItem>
                 </Select>
             </FormControl>
             <div className={styles.inquiryGridContainer}>
