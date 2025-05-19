@@ -40,6 +40,30 @@ export default function InquiryForm() {
     const [termsAgreed, setTermsAgreed] = useState(false);
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
+        if (!name.trim()) {
+            alert("이름을 입력해주세요");
+            return;
+        }
+        if (!contact) {
+            alert("연락처를 입력해주세요");
+            return;
+        }
+        if (contact.length < 11) {
+            alert("올바른 연락처를 입력해주세요");
+            return;
+        }
+        if (!email) {
+            alert("이메일을 입력해주세요");
+            return;
+        }
+        if (!/^[a-z0-9._%+-]{1,}@[a-z0-9-]+(\.[a-z0-9-]+)*\.[a-z]{2,}$/.test(email)) {
+            alert("올바른 이메일을 입력해주세요");
+            return;
+        }
+        if (!termsAgreed) {
+            alert("이용 약관 / 개인 정보 수집 및 이용에 동의해주세요");
+            return;
+        }
         switch (type) {
             case InquiryType.Inquiry: {
                 const payload = {
@@ -136,9 +160,9 @@ export default function InquiryForm() {
                 <FormControl fullWidth>
                     <TextField label="성명" variant="outlined" placeholder="이름을 입력해주세요" value={name} onChange={(event) => {
                         const input = event.target.value;
-                        const name = formatPhoneNumber(input);
+                        const name = input.replace(/[^ㄱ-ㅎ|ㅏ-ㅣ|가-힣|a-zA-ZÀ-ž|\-|'|\s]/g, "");
                         setName(name);
-                    }} slotProps={textFieldSharedSlotProps} />
+                    }} slotProps={textFieldSharedSlotProps} required title="이름을 입력해주세요" />
                 </FormControl>
                 <FormControl fullWidth>
                     <TextField label="소속" variant="outlined" placeholder="소속팀" value={affiliation} onChange={(event) => setAffiliation(event.target.value)} slotProps={textFieldSharedSlotProps} />
@@ -150,10 +174,15 @@ export default function InquiryForm() {
                         const input = event.target.value;
                         const contact = formatPhoneNumber(input);
                         setContact(contact);
-                    }} slotProps={textFieldSharedSlotProps} />
+                    }} slotProps={textFieldSharedSlotProps} required title="연락처를 입력해주세요" />
                 </FormControl>
                 <FormControl fullWidth>
-                    <TextField label="이메일" variant="outlined" placeholder="example@email.com" type="email" value={email} onChange={(event) => setEmail(event.target.value)} slotProps={textFieldSharedSlotProps} />
+                    <TextField label="이메일" variant="outlined" placeholder="example@email.com" value={email} onChange={(event) => {
+                        console.log("event!");
+                        const input = event.target.value;
+                        const email = input.replace(/\s/g, "");
+                        setEmail(email);
+                    }} slotProps={textFieldSharedSlotProps} required title="이메일을 입력해주세요" />
                 </FormControl>
             </div>
             {type === InquiryType.Visit && <>
@@ -194,7 +223,7 @@ export default function InquiryForm() {
                             const headCount = parseInt(input.replace(/\D/g, ""));
                             setHeadCount(headCount);
                         }
-                    }} slotProps={textFieldSharedSlotProps} />
+                    }} slotProps={textFieldSharedSlotProps} required title="방문 인원을 입력해주세요" />
                 </FormControl>
                 <div className={styles.purposeOuterContainer}>
                     <p>방문 목적</p>
