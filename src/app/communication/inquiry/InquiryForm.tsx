@@ -35,7 +35,7 @@ export default function InquiryForm() {
     const [other, setOther] = useState("");
     const [applicationDate, setApplicationDate] = useState<Dayjs | null>(dayjs());
     const [visitDateTime, setVisitDateTime] = useState<Dayjs | null>(dayjs());
-    const [headCount, setHeadCount] = useState("");
+    const [headCount, setHeadCount] = useState(0);
     const [purposeOfFieldTrip, setPurposeOfFieldTrip] = useState(false);
     const [purposeOfListening, setPurposeOfListening] = useState(false);
     const [termsAgreed, setTermsAgreed] = useState(false);
@@ -50,8 +50,8 @@ export default function InquiryForm() {
                     email,
                     other,
                     termsAgreed
-                }
-                const response = await fetch(`/api/inquiry`, {
+                };
+                const response = await fetch("/api/inquiry", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
@@ -67,7 +67,33 @@ export default function InquiryForm() {
                 break;
             }
             case InquiryType.Visit: {
-
+                const payload = {
+                    name,
+                    affiliation,
+                    contact,
+                    email,
+                    applicationDate,
+                    visitDateTime,
+                    headCount,
+                    purposeOfFieldTrip,
+                    purposeOfListening,
+                    other,
+                    termsAgreed
+                };
+                const response = await fetch("/api/visit", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(payload)
+                });
+                if (response.ok) {
+                    const { hasSucceeded } = await response.json();
+                    alert(hasSucceeded);
+                } else {
+                    alert("오류가 발생하였습니다.");
+                }
+                break;
             }
         }
     }
@@ -127,7 +153,15 @@ export default function InquiryForm() {
                     </FormControl>
                 </div>
                 <FormControl fullWidth sx={{ marginBottom: "20px" }}>
-                    <TextField label="방문 인원" variant="outlined" placeholder="신청인 外 00명 (소속을 달리할 경우 소속별 인원 기재)" value={headCount} onChange={(event) => setHeadCount(event.target.value)} slotProps={textFieldSharedSlotProps} />
+                    <TextField label="방문 인원" variant="outlined" placeholder="신청인 外 00명 (소속을 달리할 경우 소속별 인원 기재)" value={headCount} onChange={(event) => {
+                        const input = event.target.value;
+                        if (input === "") {
+                            setHeadCount(0);
+                        } else {
+                            const number = parseInt(input.replace(/\D/g, ""));
+                            setHeadCount(number);
+                        }
+                    }} slotProps={textFieldSharedSlotProps} />
                 </FormControl>
                 <div className={styles.purposeOuterContainer}>
                     <p>방문 목적</p>
