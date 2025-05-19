@@ -33,3 +33,14 @@ model newsletters {
   content   String
   thumbnail Bytes?
 }
+
+model inquiries {
+  id String @id @default(uuid())
+  name String @db.VarChar(100)
+  affiliation String? @db.VarChar(100)
+  contact String @db.VarChar(100)
+  email String @db.VarChar(100)
+  other String
+  termsAgreed Boolean
+  sentAt DateTime @default(now()) @db.Timestamptz(6)
+}
