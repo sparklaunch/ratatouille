@@ -14,7 +14,6 @@ import "dayjs/locale/ko";
 import Image from "next/image";
 import React, { useState } from "react";
 import styles from "./style.module.scss";
-
 const textFieldSharedSlotProps = {
     inputLabel: {
         shrink: true
@@ -96,6 +95,32 @@ export default function InquiryForm() {
                 break;
             }
         }
+    };
+    function formatPhoneNumber(input: string): string {
+        const numbers = input.replace(/\D/g, "");
+        let formatted = "";
+        if (numbers.startsWith("02")) {
+            if (numbers.length < 3) {
+                formatted = numbers;
+            } else if (numbers.length < 7) {
+                formatted = "02-" + numbers.slice(2);
+            } else if (numbers.length < 10) {
+                formatted = "02-" + numbers.slice(2, 5) + "-" + numbers.slice(5);
+            } else {
+                formatted = "02-" + numbers.slice(2, 6) + "-" + numbers.slice(6, 10);
+            }
+        } else {
+            if (numbers.length < 4) {
+                formatted = numbers;
+            } else if (numbers.length < 7) {
+                formatted = numbers.slice(0, 3) + "-" + numbers.slice(3);
+            } else if (numbers.length < 11) {
+                formatted = numbers.slice(0, 3) + "-" + numbers.slice(3, 6) + "-" + numbers.slice(6);
+            } else {
+                formatted = numbers.slice(0, 3) + "-" + numbers.slice(3, 7) + "-" + numbers.slice(7, 11);
+            }
+        }
+        return formatted;
     }
     return <div className={styles.inquiryContainer}>
         <Image src="/images/Inquiry.png" alt="문의하기 이미지" fill className={styles.inquiryImage} />
@@ -111,7 +136,7 @@ export default function InquiryForm() {
                 <FormControl fullWidth>
                     <TextField label="성명" variant="outlined" placeholder="이름을 입력해주세요" value={name} onChange={(event) => {
                         const input = event.target.value;
-                        const name = input.replace(/[^ㄱ-ㅎ|ㅏ-ㅣ|가-힣|a-zA-ZÀ-ž|\s|'|-]/g, "");
+                        const name = formatPhoneNumber(input);
                         setName(name);
                     }} slotProps={textFieldSharedSlotProps} />
                 </FormControl>
@@ -121,7 +146,11 @@ export default function InquiryForm() {
             </div>
             <div className={styles.inquiryGridContainer}>
                 <FormControl fullWidth>
-                    <TextField label="연락처" variant="outlined" placeholder="000-000-0000" type="tel" value={contact} onChange={(event) => setContact(event.target.value)} slotProps={textFieldSharedSlotProps} />
+                    <TextField label="연락처" variant="outlined" placeholder="000-000-0000" type="tel" value={contact} onChange={(event) => {
+                        const input = event.target.value;
+                        const contact = formatPhoneNumber(input);
+                        setContact(contact);
+                    }} slotProps={textFieldSharedSlotProps} />
                 </FormControl>
                 <FormControl fullWidth>
                     <TextField label="이메일" variant="outlined" placeholder="example@email.com" type="email" value={email} onChange={(event) => setEmail(event.target.value)} slotProps={textFieldSharedSlotProps} />
