@@ -1,50 +1,37 @@
 import { NextRequest, NextResponse } from "next/server";
+import { z } from "zod/v4";
 import { prisma } from "../../../../lib/prisma";
 
+const inquirySchema = z.object({
+    name: z.string().trim().min(1).max(100),
+    affiliation: z.string().max(100),
+    contact: z.string().trim().regex(/^\d{2,3}-\d{3,4}-\d{4}$/),
+    email: z.string().trim().regex(/^[a-zA-Z0-9+-\_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/),
+    other: z.string(),
+    termsAgreed: z.literal(true)
+});
+
 export async function POST(request: NextRequest) {
-    const body = await request.json();
-    const { name, contact, email, termsAgreed } = body;
-    if (!name.trim()) {
+    try {
+        const body = await request.json();
+        inquirySchema.parse(body);
+        await prisma.inquiries.create({
+            data: body
+        });
+        return NextResponse.json({
+            hasSucceeded: true,
+            message: "Inquiry accepted"
+        });
+    } catch (error) {
+        if (error instanceof Error) {
+            return NextResponse.json({
+                hasSucceeded: false,
+                message: error.message
+            });
+        }
         return NextResponse.json({
             hasSucceeded: false,
-            message: "Name is required"
+            message: String(error)
         });
     }
-    if (!contact) {
-        return NextResponse.json({
-            hasSucceeded: false,
-            message: "Contact is required"
-        });
-    }
-    if (contact.length < 11) {
-        return NextResponse.json({
-            hasSucceeded: false,
-            message: "Contact is invalid"
-        });
-    }
-    if (!email) {
-        return NextResponse.json({
-            hasSucceeded: false,
-            message: "Email is required"
-        });
-    }
-    if (!/^[a-z0-9._%+-]{1,}@[a-z0-9-]+(\.[a-z0-9-]+)*\.[a-z]{2,}$/.test(email)) {
-        return NextResponse.json({
-            hasSucceeded: false,
-            message: "Email is invalid"
-        });
-    }
-    if (!termsAgreed) {
-        return NextResponse.json({
-            hasSucceeded: false,
-            message: "Terms are not agreed"
-        });
-    }
-    await prisma.inquiries.create({
-        data: body
-    });
-    return NextResponse.json({
-        hasSucceeded: true,
-        message: "Inquiry accepted"
-    });
 }

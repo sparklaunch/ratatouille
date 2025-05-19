@@ -10,8 +10,8 @@
       "dom.iterable",
       "esnext"
     ],
-    "module": "esnext",
-    "moduleResolution": "node",
+    "module": "NodeNext",
+    "moduleResolution": "nodenext",
     "noEmit": true,
     "paths": {
       "@/*": [

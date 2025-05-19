@@ -181,7 +181,6 @@ export default function InquiryForm() {
                 </FormControl>
                 <FormControl fullWidth>
                     <TextField label="이메일" variant="outlined" placeholder="example@email.com" value={email} onChange={(event) => {
-                        console.log("event!");
                         const input = event.target.value;
                         const email = input.replace(/\s/g, "");
                         setEmail(email);
