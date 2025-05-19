@@ -61,6 +61,29 @@
     margin-bottom: 20px;
 }
 
+.purposeOuterContainer {
+    & > p {
+        font-weight: bold;
+        font-size: 17px;
+        line-height: 27px;
+        margin-bottom: 6px;
+        color: #5e5e5e;
+    }
+}
+
+.purposeInnerContainer {
+    border: 1px solid #dedede;
+    border-radius: 4px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    & > p {
+        font-weight: bold;
+        font-size: 17px;
+        color: #5e5e5e;
+        margin-bottom: 16px;
+    }
+}
+
 .submitButton {
     margin: 60px auto 0 auto;
     padding: 15px 40px;

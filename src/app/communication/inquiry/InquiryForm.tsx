@@ -35,6 +35,9 @@ export default function InquiryForm() {
     const [other, setOther] = useState("");
     const [applicationDate, setApplicationDate] = useState<Dayjs | null>(dayjs());
     const [visitDateTime, setVisitDateTime] = useState<Dayjs | null>(dayjs());
+    const [headCount, setHeadCount] = useState("");
+    const [purposeOfFieldTrip, setPurposeOfFieldTrip] = useState(false);
+    const [purposeOfListening, setPurposeOfListening] = useState(false);
     const [termsAgreed, setTermsAgreed] = useState(false);
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -94,34 +97,67 @@ export default function InquiryForm() {
                     <TextField label="이메일" variant="outlined" placeholder="example@email.com" type="email" value={email} onChange={(event) => setEmail(event.target.value)} slotProps={textFieldSharedSlotProps} />
                 </FormControl>
             </div>
-            {type === InquiryType.Visit && <div className={styles.inquiryGridContainer}>
-                <FormControl fullWidth>
-                    <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="ko">
-                        <DatePicker label="신청 날짜" value={applicationDate} onChange={(date) => setApplicationDate(date)} sx={{
-                            ".MuiPickersSectionList-sectionContent": {
-                                fontFamily: "Nanum Gothic",
-                                fontSize: "17px"
-                            }
-                        }} />
-                    </LocalizationProvider>
-                </FormControl>
-                <FormControl fullWidth>
-                    <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="ko">
-                        <DateTimePicker label="방문 일시" value={visitDateTime} onChange={(dateTime) => setVisitDateTime(dateTime)} slotProps={{
-                            textField: {
-                                InputLabelProps: {
-                                    shrink: true
+            {type === InquiryType.Visit && <>
+                <div className={styles.inquiryGridContainer}>
+                    <FormControl fullWidth>
+                        <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="ko">
+                            <DatePicker label="신청 날짜" value={applicationDate} onChange={(date) => setApplicationDate(date)} sx={{
+                                ".MuiPickersSectionList-sectionContent": {
+                                    fontFamily: "Nanum Gothic",
+                                    fontSize: "17px"
                                 }
+                            }} />
+                        </LocalizationProvider>
+                    </FormControl>
+                    <FormControl fullWidth>
+                        <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="ko">
+                            <DateTimePicker label="방문 일시" value={visitDateTime} onChange={(dateTime) => setVisitDateTime(dateTime)} slotProps={{
+                                textField: {
+                                    InputLabelProps: {
+                                        shrink: true
+                                    }
+                                }
+                            }} sx={{
+                                ".MuiPickersSectionList-sectionContent": {
+                                    fontFamily: "Nanum Gothic",
+                                    fontSize: "17px"
+                                }
+                            }} />
+                        </LocalizationProvider>
+                    </FormControl>
+                </div>
+                <FormControl fullWidth sx={{ marginBottom: "20px" }}>
+                    <TextField label="방문 인원" variant="outlined" placeholder="신청인 外 00명 (소속을 달리할 경우 소속별 인원 기재)" value={headCount} onChange={(event) => setHeadCount(event.target.value)} slotProps={textFieldSharedSlotProps} />
+                </FormControl>
+                <div className={styles.purposeOuterContainer}>
+                    <p>방문 목적</p>
+                    <div className={styles.purposeInnerContainer}>
+                        <p>희망 시 체크</p>
+                        <FormControlLabel control={<Checkbox sx={{
+                            color: "#FF301E",
+                            "&.Mui-checked": {
+                                color: "#FF301E"
                             }
-                        }} sx={{
-                            ".MuiPickersSectionList-sectionContent": {
+                        }} value={purposeOfFieldTrip} onChange={(event) => setPurposeOfFieldTrip(event.target.checked)} />} label="두더집 탐방 (시설 및 운영, 두더지땅굴 소개 등)" slotProps={{
+                            typography: {
                                 fontFamily: "Nanum Gothic",
-                                fontSize: "17px"
+                                fontSize: 17
                             }
                         }} />
-                    </LocalizationProvider>
-                </FormControl>
-            </div>}
+                        <FormControlLabel control={<Checkbox sx={{
+                            color: "#FF301E",
+                            "&.Mui-checked": {
+                                color: "#FF301E"
+                            }
+                        }} value={purposeOfListening} onChange={(event) => setPurposeOfListening(event.target.checked)} />} label="고립·은둔 청년 사업 관련 설명 청취" slotProps={{
+                            typography: {
+                                fontFamily: "Nanum Gothic",
+                                fontSize: 17
+                            }
+                        }} />
+                    </div>
+                </div>
+            </>}
             <FormControl fullWidth sx={{ marginBottom: "20px" }}>
                 <TextField label="기타 사항" variant="outlined" placeholder="기타 사항을 입력하세요" multiline rows="5" value={other} onChange={(event) => setOther(event.target.value)} slotProps={textFieldSharedSlotProps} />
             </FormControl>
