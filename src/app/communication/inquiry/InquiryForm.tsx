@@ -101,9 +101,13 @@ export default function InquiryForm() {
                     body: JSON.stringify(payload)
                 });
                 if (response.ok) {
-                    const { hasSucceeded } = await response.json();
-                    clearFields();
-                    alert(hasSucceeded);
+                    const { hasSucceeded, message } = await response.json();
+                    if (hasSucceeded) {
+                        clearFields();
+                        alert("문의가 성공적으로 접수되었습니다.");
+                    } else {
+                        alert(message);
+                    }
                 } else {
                     alert("오류가 발생하였습니다.");
                 }
