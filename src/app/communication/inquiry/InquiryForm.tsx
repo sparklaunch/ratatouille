@@ -109,7 +109,11 @@ export default function InquiryForm() {
             </FormControl>
             <div className={styles.inquiryGridContainer}>
                 <FormControl fullWidth>
-                    <TextField label="성명" variant="outlined" placeholder="이름을 입력해주세요" value={name} onChange={(event) => setName(event.target.value)} slotProps={textFieldSharedSlotProps} />
+                    <TextField label="성명" variant="outlined" placeholder="이름을 입력해주세요" value={name} onChange={(event) => {
+                        const input = event.target.value;
+                        const name = input.replace(/[^ㄱ-ㅎ|ㅏ-ㅣ|가-힣|a-zA-ZÀ-ž|\s|'|-]/g, "");
+                        setName(name);
+                    }} slotProps={textFieldSharedSlotProps} />
                 </FormControl>
                 <FormControl fullWidth>
                     <TextField label="소속" variant="outlined" placeholder="소속팀" value={affiliation} onChange={(event) => setAffiliation(event.target.value)} slotProps={textFieldSharedSlotProps} />
@@ -158,8 +162,8 @@ export default function InquiryForm() {
                         if (input === "") {
                             setHeadCount(0);
                         } else {
-                            const number = parseInt(input.replace(/\D/g, ""));
-                            setHeadCount(number);
+                            const headCount = parseInt(input.replace(/\D/g, ""));
+                            setHeadCount(headCount);
                         }
                     }} slotProps={textFieldSharedSlotProps} />
                 </FormControl>
