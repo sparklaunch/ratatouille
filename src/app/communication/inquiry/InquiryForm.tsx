@@ -161,6 +161,22 @@ export default function InquiryForm() {
             <FormControl fullWidth sx={{ marginBottom: "20px" }}>
                 <TextField label="기타 사항" variant="outlined" placeholder="기타 사항을 입력하세요" multiline rows="5" value={other} onChange={(event) => setOther(event.target.value)} slotProps={textFieldSharedSlotProps} />
             </FormControl>
+            {type === InquiryType.Visit && <div className={styles.informationContainer}>
+                <p>탐방비 안내</p>
+                <ul>
+                    <li>- 1시간 기준: 200,000원, 1시간 ~ 2시간: 300,000원
+                        <ul className={styles.informationList}>
+                            <li>• 방문 기관 사정에 따라 강사비(지급 기준 적용)로 지급 가능하며, 기타 비용으로 납부 시, 기부금 영수증 발행 가능. (신한은행 100-026-478197 (사)씨즈)</li>
+                            <li>• 탐방비는 고립·은둔 청년들을 위한 공간 및 프로그램 운영비로 사용됩니다.</li>
+                        </ul>
+                    </li>
+                    <li>- 운영 시간 안내
+                        <ul className={styles.informationList}>
+                            <li>• 수 ~ 토: 12:00 ~ 20:00</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>}
             <FormControlLabel control={<Checkbox sx={{
                 color: "#FF301E",
                 "&.Mui-checked": {
