@@ -15,6 +15,7 @@ import "dayjs/locale/ko";
 import Image from "next/image";
 import React, { useState } from "react";
 import styles from "./style.module.scss";
+
 const textFieldSharedSlotProps = {
     inputLabel: {
         shrink: true
@@ -39,6 +40,19 @@ export default function InquiryForm() {
     const [purposeOfFieldTrip, setPurposeOfFieldTrip] = useState(false);
     const [purposeOfListening, setPurposeOfListening] = useState(false);
     const [termsAgreed, setTermsAgreed] = useState(false);
+    const clearFields = () => {
+        setName("");
+        setAffiliation("");
+        setContact("");
+        setEmail("");
+        setOther("");
+        setApplicationDate(dayjs());
+        setVisitDateTime(dayjs());
+        setHeadCount(0);
+        setPurposeOfFieldTrip(false);
+        setPurposeOfListening(false);
+        setTermsAgreed(false);
+    };
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         if (!name.trim()) {
@@ -88,6 +102,7 @@ export default function InquiryForm() {
                 });
                 if (response.ok) {
                     const { hasSucceeded } = await response.json();
+                    clearFields();
                     alert(hasSucceeded);
                 } else {
                     alert("오류가 발생하였습니다.");
@@ -117,6 +132,7 @@ export default function InquiryForm() {
                 });
                 if (response.ok) {
                     const { hasSucceeded } = await response.json();
+                    clearFields();
                     alert(hasSucceeded);
                 } else {
                     alert("오류가 발생하였습니다.");
@@ -213,7 +229,7 @@ export default function InquiryForm() {
                             "&.Mui-checked": {
                                 color: "#FF301E"
                             }
-                        }} value={purposeOfFieldTrip} onChange={(event) => setPurposeOfFieldTrip(event.target.checked)} />} label="두더집 탐방 (시설 및 운영, 두더지땅굴 소개 등)" slotProps={{
+                        }} checked={purposeOfFieldTrip} onChange={(event) => setPurposeOfFieldTrip(event.target.checked)} />} label="두더집 탐방 (시설 및 운영, 두더지땅굴 소개 등)" slotProps={{
                             typography: {
                                 fontFamily: "Nanum Gothic",
                                 fontSize: 17
@@ -224,7 +240,7 @@ export default function InquiryForm() {
                             "&.Mui-checked": {
                                 color: "#FF301E"
                             }
-                        }} value={purposeOfListening} onChange={(event) => setPurposeOfListening(event.target.checked)} />} label="고립·은둔 청년 사업 관련 설명 청취" slotProps={{
+                        }} checked={purposeOfListening} onChange={(event) => setPurposeOfListening(event.target.checked)} />} label="고립·은둔 청년 사업 관련 설명 청취" slotProps={{
                             typography: {
                                 fontFamily: "Nanum Gothic",
                                 fontSize: 17
@@ -257,7 +273,7 @@ export default function InquiryForm() {
                 "&.Mui-checked": {
                     color: "#FF301E"
                 }
-            }} value={termsAgreed} onChange={(event) => setTermsAgreed(event.target.checked)} />} label="이용 약관 / 개인 정보 수집 및 이용 동의" slotProps={{
+            }} checked={termsAgreed} onChange={(event) => setTermsAgreed(event.target.checked)} />} label="이용 약관 / 개인 정보 수집 및 이용 동의" slotProps={{
                 typography: {
                     fontFamily: "Nanum Gothic",
                     fontSize: 15
