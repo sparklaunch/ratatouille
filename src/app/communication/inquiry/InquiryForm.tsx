@@ -2,6 +2,10 @@
 
 import InquiryType from "@/enums/InquiryType";
 import { Checkbox, FormControl, FormControlLabel, InputLabel, MenuItem, Select, TextField } from "@mui/material";
+import { DatePicker, DateTimePicker, LocalizationProvider } from "@mui/x-date-pickers";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import dayjs, { Dayjs } from "dayjs";
+import "dayjs/locale/ko";
 import Image from "next/image";
 import React, { useState } from "react";
 import styles from "./style.module.scss";
@@ -31,6 +35,7 @@ export default function InquiryForm() {
     const [contact, setContact] = useState("");
     const [email, setEmail] = useState("");
     const [other, setOther] = useState("");
+    const [applicationDate, setApplicationDate] = useState<Dayjs | null>(dayjs());
     const [termsAgreed, setTermsAgreed] = useState(false);
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -93,6 +98,34 @@ export default function InquiryForm() {
                     <TextField label="이메일" variant="outlined" placeholder="example@email.com" type="email" slotProps={textFieldSlotProps} value={email} onChange={(event) => setEmail(event.target.value)} />
                 </FormControl>
             </div>
+            {type === InquiryType.Visit && <div className={styles.inquiryGridContainer}>
+                <FormControl fullWidth>
+                    <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="ko">
+                        <DatePicker label="신청 날짜" value={applicationDate} onChange={(date) => setApplicationDate(date)} sx={{
+                            ".MuiInputLabel-outlined": {
+                                fontFamily: "Nanum Gothic",
+                                fontSize: "17px",
+                                fontWeight: "bold"
+                            },
+                            ".MuiPickersSectionList-sectionContent": {
+                                fontFamily: "Nanum Gothic",
+                                fontSize: "17px"
+                            }
+                        }} />
+                    </LocalizationProvider>
+                </FormControl>
+                <FormControl fullWidth>
+                    <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="ko">
+                        <DateTimePicker label="방문 일시" slotProps={{
+                            textField: {
+                                InputLabelProps: {
+                                    shrink: true
+                                }
+                            }
+                        }} />
+                    </LocalizationProvider>
+                </FormControl>
+            </div>}
             <FormControl fullWidth sx={{ marginBottom: "20px" }}>
                 <TextField label="기타 사항" variant="outlined" placeholder="기타 사항을 입력하세요" multiline rows="5" slotProps={textFieldSlotProps} value={other} onChange={(event) => setOther(event.target.value)} />
             </FormControl>
