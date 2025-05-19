@@ -1,6 +1,7 @@
 "use client";
 
 import InquiryType from "@/enums/InquiryType";
+import formatPhoneNumber from "@/utilities/formatPhoneNumber";
 import {
     Checkbox, FormControl, FormControlLabel, InputLabel,
     MenuItem,
@@ -64,6 +65,10 @@ export default function InquiryForm() {
             alert("이용 약관 / 개인 정보 수집 및 이용에 동의해주세요");
             return;
         }
+        if (type === InquiryType.Visit && headCount === 0) {
+            alert("방문 인원을 입력해주세요");
+            return;
+        }
         switch (type) {
             case InquiryType.Inquiry: {
                 const payload = {
@@ -120,32 +125,6 @@ export default function InquiryForm() {
             }
         }
     };
-    function formatPhoneNumber(input: string): string {
-        const numbers = input.replace(/\D/g, "");
-        let formatted = "";
-        if (numbers.startsWith("02")) {
-            if (numbers.length < 3) {
-                formatted = numbers;
-            } else if (numbers.length < 7) {
-                formatted = "02-" + numbers.slice(2);
-            } else if (numbers.length < 10) {
-                formatted = "02-" + numbers.slice(2, 5) + "-" + numbers.slice(5);
-            } else {
-                formatted = "02-" + numbers.slice(2, 6) + "-" + numbers.slice(6, 10);
-            }
-        } else {
-            if (numbers.length < 4) {
-                formatted = numbers;
-            } else if (numbers.length < 7) {
-                formatted = numbers.slice(0, 3) + "-" + numbers.slice(3);
-            } else if (numbers.length < 11) {
-                formatted = numbers.slice(0, 3) + "-" + numbers.slice(3, 6) + "-" + numbers.slice(6);
-            } else {
-                formatted = numbers.slice(0, 3) + "-" + numbers.slice(3, 7) + "-" + numbers.slice(7, 11);
-            }
-        }
-        return formatted;
-    }
     return <div className={styles.inquiryContainer}>
         <Image src="/images/Inquiry.png" alt="문의하기 이미지" fill className={styles.inquiryImage} />
         <form onSubmit={handleSubmit} className={styles.inquiryForm}>
@@ -217,7 +196,7 @@ export default function InquiryForm() {
                 <FormControl fullWidth sx={{ marginBottom: "20px" }}>
                     <TextField label="방문 인원" variant="outlined" placeholder="신청인 外 00명 (소속을 달리할 경우 소속별 인원 기재)" value={headCount} onChange={(event) => {
                         const input = event.target.value;
-                        if (input === "") {
+                        if (!input) {
                             setHeadCount(0);
                         } else {
                             const headCount = parseInt(input.replace(/\D/g, ""));
