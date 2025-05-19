@@ -52,7 +52,8 @@ export default function InquiryForm() {
                     body: JSON.stringify(payload)
                 });
                 if (response.ok) {
-                    alert("문의가 접수되었습니다.");
+                    const { hasSucceeded } = await response.json();
+                    alert(hasSucceeded);
                 } else {
                     alert("오류가 발생하였습니다.");
                 }
