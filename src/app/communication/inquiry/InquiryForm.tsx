@@ -34,6 +34,7 @@ export default function InquiryForm() {
     const [email, setEmail] = useState("");
     const [other, setOther] = useState("");
     const [applicationDate, setApplicationDate] = useState<Dayjs | null>(dayjs());
+    const [visitDateTime, setVisitDateTime] = useState<Dayjs | null>(dayjs());
     const [termsAgreed, setTermsAgreed] = useState(false);
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -106,11 +107,16 @@ export default function InquiryForm() {
                 </FormControl>
                 <FormControl fullWidth>
                     <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="ko">
-                        <DateTimePicker label="방문 일시" slotProps={{
+                        <DateTimePicker label="방문 일시" value={visitDateTime} onChange={(dateTime) => setVisitDateTime(dateTime)} slotProps={{
                             textField: {
                                 InputLabelProps: {
                                     shrink: true
                                 }
+                            }
+                        }} sx={{
+                            ".MuiPickersSectionList-sectionContent": {
+                                fontFamily: "Nanum Gothic",
+                                fontSize: "17px"
                             }
                         }} />
                     </LocalizationProvider>
