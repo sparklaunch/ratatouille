@@ -1,7 +1,12 @@
 "use client";
 
 import InquiryType from "@/enums/InquiryType";
-import { Checkbox, FormControl, FormControlLabel, InputLabel, MenuItem, Select, TextField } from "@mui/material";
+import {
+    Checkbox, FormControl, FormControlLabel, InputLabel,
+    MenuItem,
+    Select,
+    TextField
+} from "@mui/material";
 import { DatePicker, DateTimePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import dayjs, { Dayjs } from "dayjs";
@@ -10,23 +15,16 @@ import Image from "next/image";
 import React, { useState } from "react";
 import styles from "./style.module.scss";
 
-const sharedFontSettings = {
+const textFieldSharedSlotProps = {
+    inputLabel: {
+        shrink: true
+    }
+};
+
+const menuItemSharedStyles = {
     fontFamily: "Nanum Gothic",
     fontSize: "17px"
-}
-
-const textFieldSlotProps = {
-    inputLabel: {
-        shrink: true,
-        sx: {
-            sharedFontSettings,
-            fontWeight: "bold"
-        }
-    },
-    htmlInput: {
-        sx: sharedFontSettings
-    }
-}
+};
 
 export default function InquiryForm() {
     const [type, setType] = useState(InquiryType.Inquiry);
@@ -71,42 +69,34 @@ export default function InquiryForm() {
     }
     return <div className={styles.inquiryContainer}>
         <Image src="/images/Inquiry.png" alt="문의하기 이미지" fill className={styles.inquiryImage} />
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className={styles.inquiryForm}>
             <FormControl fullWidth sx={{ marginBottom: "20px" }}>
-                <InputLabel id="type" sx={{
-                    sharedFontSettings,
-                    fontWeight: "bold"
-                }}>선택</InputLabel>
-                <Select labelId="type" label="선택" value={type} MenuProps={{ disableScrollLock: true }} sx={sharedFontSettings} onChange={(event) => setType(event.target.value)}>
-                    <MenuItem value={InquiryType.Inquiry} sx={sharedFontSettings}>문의하기</MenuItem>
-                    <MenuItem value={InquiryType.Visit} sx={sharedFontSettings}>두더집 탐방 신청하기</MenuItem>
+                <InputLabel id="type">선택</InputLabel>
+                <Select labelId="type" label="선택" value={type} MenuProps={{ disableScrollLock: true }} onChange={(event) => setType(event.target.value)} >
+                    <MenuItem value={InquiryType.Inquiry} sx={menuItemSharedStyles}>문의하기</MenuItem>
+                    <MenuItem value={InquiryType.Visit} sx={menuItemSharedStyles}>두더집 탐방 신청하기</MenuItem>
                 </Select>
             </FormControl>
             <div className={styles.inquiryGridContainer}>
                 <FormControl fullWidth>
-                    <TextField label="성명" variant="outlined" placeholder="이름을 입력해주세요" slotProps={textFieldSlotProps} value={name} onChange={(event) => setName(event.target.value)} />
+                    <TextField label="성명" variant="outlined" placeholder="이름을 입력해주세요" value={name} onChange={(event) => setName(event.target.value)} slotProps={textFieldSharedSlotProps} />
                 </FormControl>
                 <FormControl fullWidth>
-                    <TextField label="소속" variant="outlined" placeholder="소속팀" slotProps={textFieldSlotProps} value={affiliation} onChange={(event) => setAffiliation(event.target.value)} />
+                    <TextField label="소속" variant="outlined" placeholder="소속팀" value={affiliation} onChange={(event) => setAffiliation(event.target.value)} slotProps={textFieldSharedSlotProps} />
                 </FormControl>
             </div>
             <div className={styles.inquiryGridContainer}>
                 <FormControl fullWidth>
-                    <TextField label="연락처" variant="outlined" placeholder="000-000-0000" type="tel" slotProps={textFieldSlotProps} value={contact} onChange={(event) => setContact(event.target.value)} />
+                    <TextField label="연락처" variant="outlined" placeholder="000-000-0000" type="tel" value={contact} onChange={(event) => setContact(event.target.value)} slotProps={textFieldSharedSlotProps} />
                 </FormControl>
                 <FormControl fullWidth>
-                    <TextField label="이메일" variant="outlined" placeholder="example@email.com" type="email" slotProps={textFieldSlotProps} value={email} onChange={(event) => setEmail(event.target.value)} />
+                    <TextField label="이메일" variant="outlined" placeholder="example@email.com" type="email" value={email} onChange={(event) => setEmail(event.target.value)} slotProps={textFieldSharedSlotProps} />
                 </FormControl>
             </div>
             {type === InquiryType.Visit && <div className={styles.inquiryGridContainer}>
                 <FormControl fullWidth>
                     <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="ko">
                         <DatePicker label="신청 날짜" value={applicationDate} onChange={(date) => setApplicationDate(date)} sx={{
-                            ".MuiInputLabel-outlined": {
-                                fontFamily: "Nanum Gothic",
-                                fontSize: "17px",
-                                fontWeight: "bold"
-                            },
                             ".MuiPickersSectionList-sectionContent": {
                                 fontFamily: "Nanum Gothic",
                                 fontSize: "17px"
@@ -127,7 +117,7 @@ export default function InquiryForm() {
                 </FormControl>
             </div>}
             <FormControl fullWidth sx={{ marginBottom: "20px" }}>
-                <TextField label="기타 사항" variant="outlined" placeholder="기타 사항을 입력하세요" multiline rows="5" slotProps={textFieldSlotProps} value={other} onChange={(event) => setOther(event.target.value)} />
+                <TextField label="기타 사항" variant="outlined" placeholder="기타 사항을 입력하세요" multiline rows="5" value={other} onChange={(event) => setOther(event.target.value)} slotProps={textFieldSharedSlotProps} />
             </FormControl>
             <FormControlLabel control={<Checkbox sx={{
                 color: "#FF301E",
