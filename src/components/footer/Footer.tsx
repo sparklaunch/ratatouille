@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./style.module.scss";
 
-export default function Footer() {
+export default async function Footer() {
     return <div className={styles.outerContainer}>
         <div className={styles.innerContainer}>
             <Image src={Logo} width={161} height={50} alt="씨즈 로고" priority />
