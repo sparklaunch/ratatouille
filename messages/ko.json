@@ -1,0 +1,32 @@
+{
+    "footer": {
+        "address": "주소: (03355) 서울시 은평구 불광로 89-4",
+        "facebook-alternate": "페이스북 로고",
+        "instagram-alternate": "인스타그램 로고",
+        "introduction": "씨즈 소개",
+        "logo-alternate": "씨즈 로고",
+        "owner": "사단법인 씨즈 대표자: 이은애",
+        "tax-id": "사업자 등록 번호: 110-82-15053",
+        "visit-information": "방문 안내",
+        "x-alternate": "X 로고",
+        "youtube-alternate": "유투브 로고"
+    },
+    "header": {
+        "brand-story": "브랜드 스토리",
+        "communication": "소통",
+        "directions": "찾아오시는 길",
+        "history": "연혁",
+        "inquiry": "문의하기",
+        "introduction": "소개",
+        "logo-alternate": "씨즈 로고",
+        "news": "소식",
+        "news-letters": "뉴스레터",
+        "notices": "공지 사항",
+        "press": "언론 보도",
+        "projects": "프로젝트",
+        "sponsor": "후원하기"
+    },
+    "history": {
+        "season3-header": "(2020~현재) 청년 정책 사각 지대 해소와 사회적 경제 커먼즈 구축"
+    }
+}

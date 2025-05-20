@@ -1,12 +1,9 @@
 "use client";
 
-import Footer from "@/components/footer/Footer";
-import Header from "@/components/header/Header";
+import { Link, useRouter } from "@/i18n/routing";
 import defaultNewsLetter, { NewsLetter } from "@/types/NewsLetter";
 import formatDate from "@/utilities/formatDate";
 import Image from "next/image";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { use, useEffect, useState } from "react";
 import styles from "./style.module.scss";
 
@@ -29,7 +26,6 @@ export default function NewsLetterContentPage({ params }: { params: Promise<{ ne
         getNewsLetter();
     }, [newsLetterID]);
     return <>
-        <Header />
         <div className={styles.container}>
             <h1 className={styles.header}>소통</h1>
             <div className={styles.subheader}>
@@ -62,6 +58,5 @@ export default function NewsLetterContentPage({ params }: { params: Promise<{ ne
                 <p onClick={() => router.back()}>목록 보기</p>
             </div>
         </div>
-        <Footer />
     </>;
 }

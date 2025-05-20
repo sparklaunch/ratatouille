@@ -1,29 +1,11 @@
-import { fallbackLanguage, locales } from "@/utilities/localization/settings";
-import { NextRequest, NextResponse } from "next/server";
+import createMiddleware from "next-intl/middleware";
+import { routing } from "./i18n/routing";
 
-export function middleware(request: NextRequest) {
-    const pathname = request.nextUrl.pathname;
-    if (pathname.startsWith(`/${fallbackLanguage}/`) || pathname === `/${fallbackLanguage}`) {
-        return NextResponse.redirect(
-            new URL(
-                pathname.replace(
-                    `/${fallbackLanguage}`,
-                    pathname === `/${fallbackLanguage}` ? "/" : "",
-                ),
-                request.url,
-            ),
-        );
-    }
-    const pathnameIsMissingLocale = locales.every(
-        locale => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`,
-    );
-    if (pathnameIsMissingLocale) {
-        return NextResponse.rewrite(
-            new URL(`/${fallbackLanguage}${pathname}`, request.url),
-        );
-    }
-}
+export default createMiddleware({
+    ...routing,
+    localeDetection: false
+});
 
 export const config = {
-    matcher: ["/((?!api|.*\\..*|_next/static|_next/image|manifest.json|assets|favicon.ico).*)"]
+    matcher: ["/((?!api|_next|_vercel|favicon.ico|.*\\..*).*)"]
 };

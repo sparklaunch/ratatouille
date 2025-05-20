@@ -1,13 +1,10 @@
 "use client";
 
-import Footer from "@/components/footer/Footer";
-import Header from "@/components/header/Header";
-import type { Notice } from "@/types/Notice";
-import defaultNotice from "@/types/Notice";
+import { useRouter } from "@/i18n/routing";
+import defaultNotice, { Notice } from "@/types/Notice";
 import formatDate from "@/utilities/formatDate";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { use, useEffect, useState } from "react";
 import styles from "./style.module.scss";
 
@@ -30,7 +27,6 @@ export default function NoticeContentPage({ params }: { params: Promise<{ notice
         getNotice();
     }, [noticeID]);
     return <>
-        <Header />
         <div className={styles.container}>
             <h1 className={styles.header}>소식</h1>
             <div className={styles.subheader}>
@@ -60,6 +56,5 @@ export default function NoticeContentPage({ params }: { params: Promise<{ notice
                 <p onClick={() => router.back()}>목록 보기</p>
             </div>
         </div>
-        <Footer />
     </>;
 }

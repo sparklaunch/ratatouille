@@ -1,13 +1,11 @@
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
-import { LocaleTypes } from "@/utilities/localization/settings";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import styles from "./style.module.scss";
 
-export default async function IntroductionPage({ params }: { params: Promise<{ locale: LocaleTypes }> }) {
-    const parameters = await params;
+export default async function IntroductionPage() {
     return <>
-        <Header params={parameters} />
+        <Header />
         <div className={styles.container}>
             <h1 className={styles.header}>브랜드 스토리</h1>
             <div className={styles.subheader}>

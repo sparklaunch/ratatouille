@@ -1,7 +1,7 @@
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
+import { Link } from "@/i18n/routing";
 import { Skeleton } from "@mui/material";
-import Link from "next/link";
 import { Suspense } from "react";
 import ArticleList from "./ArticleList";
 import styles from "./style.module.scss";

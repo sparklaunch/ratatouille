@@ -1,14 +1,11 @@
 import Logo from "@/../public/logos/Logo.svg";
-import { createTranslation } from "@/utilities/localization/server";
-import { LocaleTypes } from "@/utilities/localization/settings";
+import { Link } from "@/i18n/routing";
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
-import Link from "next/link";
 import styles from "./style.module.scss";
 
-export default async function Footer({ params: { locale } }: {
-    params: { locale: LocaleTypes }
-}) {
-    const { t } = await createTranslation(locale, "footer");
+export default async function Footer() {
+    const t = await getTranslations("footer");
     return <div className={styles.outerContainer}>
         <div className={styles.innerContainer}>
             <Image src={Logo} width={161} height={50} alt={t("logo-alternate")} priority />

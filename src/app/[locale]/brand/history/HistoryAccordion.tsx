@@ -1,10 +1,12 @@
 "use client";
 
-import { ExpandMore } from "@mui/icons-material";
-import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
+import { useTranslations } from "next-intl";
 import styles from "./style.module.scss";
+import { ExpandMore } from "@mui/icons-material";
+import { Accordion, AccordionSummary, AccordionDetails } from "@mui/material";
 
 export default function HistoryAccordion() {
+    const t = useTranslations("history");
     return <div className={styles.historyContainer}>
         <h2 className={styles.historyHeader}>History</h2>
         <Accordion className={styles.accordion} disableGutters>
@@ -12,7 +14,7 @@ export default function HistoryAccordion() {
                 expandIcon={<ExpandMore />}
                 className={styles.accordionSummary}
             >
-                <h3 className={styles.accordionHeader}><span className={styles.accordionHeaderTitle}>SEASON 3</span> (2020~현재) 청년 정책 사각 지대 해소와 사회적 경제 커먼즈 구축</h3>
+                <h3 className={styles.accordionHeader}><span className={styles.accordionHeaderTitle}>SEASON 3 </span>{t("season3-header")}</h3>
             </AccordionSummary>
             <AccordionDetails>
                 <p className={styles.accordionContent}>씨즈는 팬데믹이 드러낸 &lsquo;재난의 양극화&rsquo;를 체감한 이후, 서울시 청년허브 운영을 통해 청년 정책의 사각 지대를 해소하고, 은둔·고립 청년을 지원해 왔습니다. 세대·국가·계층을 넘는 시민 협력으로 대안 경제의 해결 역량을 키워왔으며, 지금도 새로운 변화의 씨앗을 심고 있습니다. 앞으로는 청년·시니어 간 서로 돌봄 도시 실험, 사회적 경제 기반 그린 스마트 클러스터 조성, 586세대의 사회적 유산을 활용한 금융 확충 등을 통해, 또 다른 10년의 도전을 이어갑니다.</p>
@@ -53,7 +55,7 @@ export default function HistoryAccordion() {
                 expandIcon={<ExpandMore />}
                 className={styles.accordionSummary}
             >
-                <h3 className={styles.accordionHeader}><span className={styles.accordionHeaderTitle}>SEASON 2</span> (2013~2019) 사회적 경제의 성장 및 정책 확산</h3>
+                <h3 className={styles.accordionHeader}><span className={styles.accordionHeaderTitle}>SEASON 2 </span>(2013~2019) 사회적 경제의 성장 및 정책 확산</h3>
             </AccordionSummary>
             <AccordionDetails>
                 <p className={styles.accordionContent}>씨즈는 사회적 경제에 다양한 세대가 참여할 수 있도록 기반을 마련하고, 여러 지역에서 정책 개발과 협업 거점 조성, 미션 분야별 성장 지원을 확대해 왔습니다. 또한, 사회적 경제가 직면한 &lsquo;고비용 구조&rsquo;와 &lsquo;재화 다양성 부족&rsquo; 문제를 해결하기 위해, 2017년에는 국내 제조업 기술 장인들의 집적지인 세운상가에 거점 공간을 조성하며 사업을 본격화했습니다.</p>
@@ -121,7 +123,7 @@ export default function HistoryAccordion() {
                 expandIcon={<ExpandMore />}
                 className={styles.accordionSummary}
             >
-                <h3 className={styles.accordionHeader}><span className={styles.accordionHeaderTitle}>SEASON 1</span> (2010~2012) 청년 주도의 사회 문제 해결 및 주체 성장 지원</h3>
+                <h3 className={styles.accordionHeader}><span className={styles.accordionHeaderTitle}>SEASON 1 </span>(2010~2012) 청년 주도의 사회 문제 해결 및 주체 성장 지원</h3>
             </AccordionSummary>
             <AccordionDetails>
                 <p className={styles.accordionContent}>씨즈는 2010년부터 부모 세대보다 가난한 첫 세대인 베이비 붐 세대의 자녀, 즉 20·30 청년 세대의 문제에 주목해 왔습니다. 문제의 원인을 진단하기 위한 연구, 토론, 정책 개발은 물론, 청년 주도의 새로운 사회 혁신 과정을 지속적으로 지원해 왔습니다.</p>

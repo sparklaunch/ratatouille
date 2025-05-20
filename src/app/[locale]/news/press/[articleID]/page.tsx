@@ -1,12 +1,10 @@
 "use client";
 
-import Footer from "@/components/footer/Footer";
-import Header from "@/components/header/Header";
+import { useRouter } from "@/i18n/routing";
 import defaultArticle, { Article } from "@/types/Article";
 import formatDate from "@/utilities/formatDate";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { use, useEffect, useState } from "react";
 import styles from "./style.module.scss";
 
@@ -29,7 +27,6 @@ export default function ArticleContentPage({ params }: { params: Promise<{ artic
         getArticle();
     }, [articleID]);
     return <>
-        <Header />
         <div className={styles.container}>
             <h1 className={styles.header}>소식</h1>
             <div className={styles.subheader}>
@@ -59,6 +56,5 @@ export default function ArticleContentPage({ params }: { params: Promise<{ artic
                 <p onClick={() => router.back()}>목록 보기</p>
             </div>
         </div>
-        <Footer />
     </>;
 }

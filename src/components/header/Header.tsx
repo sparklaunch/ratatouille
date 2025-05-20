@@ -1,14 +1,11 @@
 import Logo from "@/../public/logos/Logo.svg";
-import { createTranslation } from "@/utilities/localization/server";
-import { LocaleTypes } from "@/utilities/localization/settings";
+import { Link } from "@/i18n/routing";
 import Image from "next/image";
-import Link from "next/link";
 import styles from "./style.module.scss";
+import { getTranslations } from "next-intl/server";
 
-export default async function Header({ params: { locale } }: {
-    params: { locale: LocaleTypes }
-}) {
-    const { t } = await createTranslation(locale, "header");
+export default async function Header() {
+    const t = await getTranslations("header");
     return <div className={styles.container}>
         <Link href="#" className={styles.keeper}>
             <span>SEED:S KEEPER</span>

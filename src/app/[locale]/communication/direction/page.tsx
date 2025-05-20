@@ -1,7 +1,7 @@
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
+import { Link } from "@/i18n/routing";
 import Image from "next/image";
-import Link from "next/link";
 import Map from "./Map";
 import styles from "./style.module.scss";
 

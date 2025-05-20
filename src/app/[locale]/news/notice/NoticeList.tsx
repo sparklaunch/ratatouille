@@ -1,11 +1,11 @@
 "use client";
 
+import { Link } from "@/i18n/routing";
 import { NoticeData } from "@/types/NoticeData";
 import defaultNotices, { Notices } from "@/types/Notices";
 import formatDate from "@/utilities/formatDate";
 import SearchIcon from '@mui/icons-material/Search';
 import { InputAdornment, OutlinedInput } from "@mui/material";
-import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import styles from "./style.module.scss";

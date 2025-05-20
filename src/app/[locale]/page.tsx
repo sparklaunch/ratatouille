@@ -1,17 +1,13 @@
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
-import { LocaleTypes } from "@/utilities/localization/settings";
+import { Link } from "@/i18n/routing";
 import Image from "next/image";
-import Link from "next/link";
 import styles from "./style.module.scss";
 
-export default async function HomePage({ params }: {
-    params: Promise<{ locale: LocaleTypes }>
-}) {
-    const { locale } = await params;
+export default async function HomePage() {
     return (
         <>
-            <Header params={{ locale }} />
+            <Header />
             <div className={styles.videoContainer}>
                 <video autoPlay loop muted playsInline className={styles.video}>
                     <source src="/videos/Video.mp4" type="video/mp4" />
@@ -74,7 +70,7 @@ export default async function HomePage({ params }: {
                     </div>
                 </div>
             </div>
-            <Footer params={{ locale }} />
+            <Footer />
         </>
     );
 }

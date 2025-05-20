@@ -1,8 +1,8 @@
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
-import styles from "./style.module.scss";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import InquiryForm from "./InquiryForm";
+import styles from "./style.module.scss";
 
 export default async function InquiryPage() {
     return <>

@@ -1,12 +1,12 @@
 "use client";
 
+import { Link } from "@/i18n/routing";
 import { Article } from "@/types/Article";
 import { ArticleData } from "@/types/ArticleData";
 import formatDate from "@/utilities/formatDate";
 import SearchIcon from "@mui/icons-material/SearchOutlined";
 import { InputAdornment, OutlinedInput } from "@mui/material";
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import styles from "./style.module.scss";
