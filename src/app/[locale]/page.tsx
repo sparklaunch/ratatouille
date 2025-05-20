@@ -74,7 +74,7 @@ export default async function HomePage({ params }: {
                     </div>
                 </div>
             </div>
-            <Footer />
+            <Footer params={{ locale }} />
         </>
     );
 }
