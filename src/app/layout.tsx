@@ -1,8 +1,9 @@
-import { NextIntlClientProvider } from "next-intl";
+import { Metadata } from "next";
+import { Locale, NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import Script from "next/script";
+import { ReactNode } from "react";
 import "./globals.css";
-import { Metadata } from "next";
 
 export const metadata: Metadata = {
     title: "씨즈",
@@ -13,13 +14,13 @@ export default async function RootLayout({
     children,
     params
 }: Readonly<{
-    children: React.ReactNode;
-    params: {
-        locale: string
-    }
+    children: ReactNode;
+    params: Promise<{
+        locale: Locale
+    }>
 }>) {
     const messages = await getMessages();
-    const { locale } = params;
+    const { locale } = await params;
     return (
         <html lang={locale}>
             <Script src={`https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=${process.env.NAVER_MAP_API_ID}`} />
