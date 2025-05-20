@@ -16,7 +16,7 @@ export default async function Header({ params: { locale } }: {
         <div className={styles.menuContainer}>
             <div className={styles.menu}>
                 <Link href="/">
-                    <Image src={Logo} alt="씨즈 로고" width={161} height={50} priority />
+                    <Image src={Logo} alt={t("logo-alternate")} width={161} height={50} priority />
                 </Link>
                 <div className={styles.navigationContainer}>
                     <div className={styles.navigation}>
