@@ -1,9 +1,14 @@
 import Logo from "@/../public/logos/Logo.svg";
+import { createTranslation } from "@/utilities/localization/server";
+import { LocaleTypes } from "@/utilities/localization/settings";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./style.module.scss";
 
-export default async function Header() {
+export default async function Header({ params: { locale } }: {
+    params: { locale: LocaleTypes }
+}) {
+    const { t } = await createTranslation(locale, "header");
     return <div className={styles.container}>
         <Link href="#" className={styles.keeper}>
             <span>SEED:S KEEPER</span>
@@ -17,58 +22,58 @@ export default async function Header() {
                     <div className={styles.navigation}>
                         <div className={styles.subMenuContainer}>
                             <Link href="/brand/introduction" className={styles.menuItem}>
-                                <span>브랜드 스토리</span>
+                                <span>{t("brand-story")}</span>
                             </Link>
                             <div className={styles.subMenuOuterContainer}>
                                 <div className={styles.subMenu}>
                                     <Link href="/brand/introduction" className={styles.subMenuItem}>
-                                        <span>씨즈 소개</span>
+                                        <span>{t("introduction")}</span>
                                     </Link>
                                     <Link href="/brand/history" className={styles.subMenuItem}>
-                                        <span>연혁</span>
+                                        <span>{t("history")}</span>
                                     </Link>
                                 </div>
                             </div>
                         </div>
                         <Link href="#" className={styles.menuItem}>
-                            <span>프로젝트</span>
+                            <span>{t("projects")}</span>
                         </Link>
                         <div className={styles.subMenuContainer}>
                             <Link href="/news/notice" className={styles.menuItem}>
-                                <span>소식</span>
+                                <span>{t("news")}</span>
                             </Link>
                             <div className={styles.subMenuOuterContainer}>
                                 <div className={styles.subMenu}>
                                     <Link href="/news/notice" className={styles.subMenuItem}>
-                                        <span>공지 사항</span>
+                                        <span>{t("notices")}</span>
                                     </Link>
                                     <Link href="/news/press" className={styles.subMenuItem}>
-                                        <span>언론 보도</span>
+                                        <span>{t("press")}</span>
                                     </Link>
                                 </div>
                             </div>
                         </div>
                         <div className={styles.subMenuContainer}>
                             <Link href="/communication/newsletter" className={styles.menuItem}>
-                                <span>소통</span>
+                                <span>{t("communication")}</span>
                             </Link>
                             <div className={styles.subMenuOuterContainer}>
                                 <div className={styles.subMenu}>
                                     <Link href="/communication/newsletter" className={styles.subMenuItem}>
-                                        <span>뉴스레터</span>
+                                        <span>{t("news-letters")}</span>
                                     </Link>
                                     <Link href="/communication/direction" className={styles.subMenuItem}>
-                                        <span>찾아오시는 길</span>
+                                        <span>{t("directions")}</span>
                                     </Link>
                                     <Link href="/communication/inquiry" className={styles.subMenuItem}>
-                                        <span>문의하기</span>
+                                        <span>{t("inquiry")}</span>
                                     </Link>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <Link href="#" className={styles.sponsor}>
-                        <span>후원하기</span>
+                        <span>{t("sponsor")}</span>
                     </Link>
                 </div>
             </div>
