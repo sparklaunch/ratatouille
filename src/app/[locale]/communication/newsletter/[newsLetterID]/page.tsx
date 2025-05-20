@@ -4,12 +4,13 @@ import { Link, useRouter } from "@/i18n/routing";
 import defaultNewsLetter, { NewsLetter } from "@/types/NewsLetter";
 import formatDate from "@/utilities/formatDate";
 import Image from "next/image";
-import { use, useEffect, useState } from "react";
+import { useParams } from "next/navigation";
+import { useEffect, useState } from "react";
 import styles from "./style.module.scss";
 
-export default function NewsLetterContentPage({ params }: { params: Promise<{ newsLetterID: string }> }) {
+export default function NewsLetterContentPage() {
+    const { newsLetterID } = useParams() as { newsLetterID: string };
     const router = useRouter();
-    const { newsLetterID } = use(params);
     const [newsLetter, setNewsLetter] = useState<NewsLetter>(defaultNewsLetter);
     useEffect(() => {
         const getNewsLetter = async () => {

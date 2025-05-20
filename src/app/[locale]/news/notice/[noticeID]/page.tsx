@@ -5,12 +5,13 @@ import defaultNotice, { Notice } from "@/types/Notice";
 import formatDate from "@/utilities/formatDate";
 import Image from "next/image";
 import Link from "next/link";
-import { use, useEffect, useState } from "react";
+import { useParams } from "next/navigation";
+import { useEffect, useState } from "react";
 import styles from "./style.module.scss";
 
-export default function NoticeContentPage({ params }: { params: Promise<{ noticeID: string }> }) {
+export default function NoticeContentPage() {
+    const { noticeID } = useParams() as { noticeID: string };
     const router = useRouter();
-    const { noticeID } = use(params);
     const [notice, setNotice] = useState<Notice>(defaultNotice);
     useEffect(() => {
         const getNotice = async () => {

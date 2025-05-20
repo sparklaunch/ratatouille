@@ -5,12 +5,13 @@ import defaultArticle, { Article } from "@/types/Article";
 import formatDate from "@/utilities/formatDate";
 import Image from "next/image";
 import Link from "next/link";
-import { use, useEffect, useState } from "react";
+import { useParams } from "next/navigation";
+import { useEffect, useState } from "react";
 import styles from "./style.module.scss";
 
-export default function ArticleContentPage({ params }: { params: Promise<{ articleID: string }> }) {
+export default function ArticleContentPage() {
+    const { articleID } = useParams() as { articleID: string };
     const router = useRouter();
-    const { articleID } = use(params);
     const [article, setArticle] = useState<Article>(defaultArticle);
     useEffect(() => {
         const getArticle = async () => {
