@@ -12,7 +12,7 @@ export default async function HistoryPage() {
             <h1 className={styles.header}>브랜드 스토리</h1>
             <div className={styles.subheader}>
                 <Link href="/brand/introduction">
-                    <span>씨즈 소개</span>
+                    <span>소개</span>
                 </Link>
                 <Link href="/brand/history" className={styles.activeSubheader}>
                     <span>연혁</span>
