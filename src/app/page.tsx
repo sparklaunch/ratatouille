@@ -52,6 +52,23 @@ export default async function Home() {
             </div>
             <div className={styles.projectsContainer}>
                 <h3>PROJECT: OUR 3 SEED:S</h3>
+                <div className={styles.projectsGridContainer}>
+                    <div className={styles.project}>
+                        <Image src="/images/Project.gif" alt="프로젝트 이미지" fill unoptimized />
+                        <h4>사회 혁신</h4>
+                        <p>우리는 청년 당사자의 삶에서 출발합니다.</p>
+                    </div>
+                    <div className={styles.project}>
+                        <Image src="/images/Project.gif" alt="프로젝트 이미지" fill unoptimized />
+                        <h4>지속 가능성</h4>
+                        <p>모두의 내일을 위한 뿌리깊은 변화에 집중합니다.</p>
+                    </div>
+                    <div className={styles.project}>
+                        <Image src="/images/Project.gif" alt="프로젝트 이미지" fill unoptimized />
+                        <h4>연대</h4>
+                        <p>고립된 청년이 사회와 연결되고, 세대와 지역을 넘어 연대합니다.</p>
+                    </div>
+                </div>
             </div>
             <Footer />
         </>
