@@ -3,6 +3,7 @@
 import { useRouter } from "@/i18n/routing";
 import defaultArticle, { Article } from "@/types/Article";
 import formatDate from "@/utilities/formatDate";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
@@ -10,6 +11,7 @@ import { useEffect, useState } from "react";
 import styles from "./style.module.scss";
 
 export default function ArticleContentPage() {
+    const t = useTranslations("article");
     const { articleID } = useParams() as { articleID: string };
     const router = useRouter();
     const [article, setArticle] = useState<Article>(defaultArticle);
@@ -29,19 +31,19 @@ export default function ArticleContentPage() {
     }, [articleID]);
     return <>
         <div className={styles.container}>
-            <h1 className={styles.header}>소식</h1>
+            <h1 className={styles.header}>{t("news")}</h1>
             <div className={styles.subheader}>
                 <Link href="/news/notice">
-                    <span>공지 사항</span>
+                    <span>{t("notice")}</span>
                 </Link>
                 <Link href="/news/press">
-                    <span className={styles.activeSubheader}>언론 보도</span>
+                    <span className={styles.activeSubheader}>{t("press-release")}</span>
                 </Link>
             </div>
             <div className={styles.contentContainer}>
                 <div className={styles.titleContainer}>
                     <h2 className={styles.title}>{article.title}</h2>
-                    <h3 className={styles.createdDate}>작성일: {formatDate(article.createdAt)}</h3>
+                    <h3 className={styles.createdDate}>{t("date")}: {formatDate(article.createdAt)}</h3>
                 </div>
                 <div className={styles.bodyContainer}>
                     <div dangerouslySetInnerHTML={{
@@ -50,11 +52,11 @@ export default function ArticleContentPage() {
                 </div>
             </div>
             <div className={styles.appendix}>
-                <Image src="/icons/Share.svg" alt="공유" width={24} height={24} />
-                <Image src="/icons/Print.svg" alt="인쇄" width={24} height={24} onClick={() => window.print()} />
+                <Image src="/icons/Share.svg" alt={t("share-alternate")} width={24} height={24} />
+                <Image src="/icons/Print.svg" alt={t("print-alternate")} width={24} height={24} onClick={() => window.print()} />
             </div>
             <div className={styles.goBackToListButton}>
-                <p onClick={() => router.back()}>목록 보기</p>
+                <p onClick={() => router.back()}>{t("go-back")}</p>
             </div>
         </div>
     </>;

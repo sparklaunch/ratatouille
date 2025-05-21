@@ -8,7 +8,7 @@ import ArticleList from "./ArticleList";
 import styles from "./style.module.scss";
 
 export default async function PressPage() {
-    const t = await getTranslations("press");
+    const t = await getTranslations("articles");
     return <>
         <Header />
         <div className={styles.container}>
