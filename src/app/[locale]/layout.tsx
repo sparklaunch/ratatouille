@@ -2,7 +2,6 @@
 
 import { Locale, useLocale } from "next-intl";
 import localFont from "next/font/local";
-import Script from "next/script";
 import { ReactNode } from "react";
 
 const pretendard = localFont({
@@ -39,7 +38,6 @@ export default function HomeLayout({
             break;
     }
     return <html lang={locale}>
-        <Script src={`https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=${process.env.NAVER_MAP_API_ID}`} />
         <body className={fontClassName}>
             {children}
         </body>

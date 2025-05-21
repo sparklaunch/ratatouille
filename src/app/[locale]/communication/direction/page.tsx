@@ -2,11 +2,13 @@ import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
 import { Link } from "@/i18n/routing";
 import Image from "next/image";
+import Script from "next/script";
 import Map from "./Map";
 import styles from "./style.module.scss";
 
 export default async function DirectionPage() {
     return <>
+        <Script src={`https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=${process.env.NAVER_MAP_API_ID}`} strategy="beforeInteractive" />
         <Header />
         <div className={styles.container}>
             <h1 className={styles.header}>소통</h1>
