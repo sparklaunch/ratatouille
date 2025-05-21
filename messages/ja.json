@@ -1,32 +1,32 @@
 {
     "footer": {
-        "address": "Address: (03355) 89-4, Bulgwang-ro, Eunpyeong-gu, Seoul, Republic of Korea",
-        "facebook-alternate": "Facebook logo",
-        "instagram-alternate": "Instagram logo",
-        "introduction": "Introduction",
-        "logo-alternate": "Seeds logo",
-        "owner": "Owner: 이은애 (Lee Eun Ae)",
-        "tax-id": "Tax ID: 110-82-15053",
-        "visit-information": "Visit information",
-        "x-alternate": "X logo",
-        "youtube-alternate": "YouTube logo"
+        "address": "住所：（03355）ソウル特別市 恩平区 仏光路 89-4",
+        "facebook-alternate": "フェイスブックのロゴ",
+        "instagram-alternate": "インスタグラムのロゴ",
+        "introduction": "Seedsの紹介",
+        "logo-alternate": "Seedsのロゴ",
+        "owner": "法人Seeds 代表者：イ・ウネ",
+        "tax-id": "事業者登録番号：110-82-15053",
+        "visit-information": "訪問案内",
+        "x-alternate": "Xのロゴ",
+        "youtube-alternate": "ユーチューブのロゴ"
     },
     "header": {
-        "brand-story": "Brand story",
-        "communication": "Communication",
-        "directions": "Directions",
-        "history": "History",
-        "inquiry": "Inquiries",
-        "introduction": "Introduction",
-        "logo-alternate": "Seeds logo",
-        "news": "News",
-        "news-letters": "Newsletters",
-        "notices": "Notices",
-        "press": "Press releases",
-        "projects": "Projects",
-        "sponsor": "Sponsor"
+        "brand-story": "ブランドストーリー",
+        "communication": "コミュニケーション",
+        "directions": "アクセス",
+        "history": "沿革",
+        "inquiry": "お問い合わせ",
+        "introduction": "紹介",
+        "logo-alternate": "Seedsのロゴ",
+        "news": "ニュース",
+        "news-letters": "ニュースレター",
+        "notices": "お知らせ",
+        "press": "報道",
+        "projects": "プロジェクト",
+        "sponsor": "寄付する"
     },
     "history": {
-        "season3-header": "(2020~Present) Addressing gaps in youth policies and building social economy commons"
+        "season3-header": "（2020年～現在）若者政策の空白地帯の解消と社会的経済コモンズの構築"
     }
 }
