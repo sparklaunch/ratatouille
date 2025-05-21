@@ -36,9 +36,9 @@ export default function HomeLayout({
             break;
     }
     return <html lang={locale} >
-        <Script src={`https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=${process.env.NEXT_PUBLIC_NAVER_MAP_API_ID}`} strategy="beforeInteractive" />
         <body className={fontClassName}>
             {children}
         </body>
+        <Script src={`https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=${process.env.NEXT_PUBLIC_NAVER_MAP_API_ID}`} strategy="afterInteractive" />
     </html>;
 }
