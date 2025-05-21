@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
 import { ReactNode } from "react";
 import "./globals.css";
 
@@ -19,7 +20,8 @@ export default async function RootLayout({
 }: Readonly<{
     children: ReactNode;
 }>) {
-    return <NextIntlClientProvider>
+    const messages = await getMessages();
+    return <NextIntlClientProvider messages={messages}>
         {children}
     </NextIntlClientProvider>;
 }
