@@ -157,9 +157,19 @@
     },
     "inquiry": {
         "communication": "소통",
+        "contact-alert": "연락처를 입력해주세요",
         "directions": "찾아오시는 길",
+        "email-alert": "이메일을 입력해주세요",
+        "error-alert": "오류가 발생하였습니다",
+        "head-count-alert": "방문 인원을 입력해주세요",
         "inquiry": "문의하기",
-        "news-letter": "뉴스레터"
+        "inquiry-accepted-alert": "문의가 성공적으로 접수되었습니다",
+        "invalid-contact-alert": "올바른 연락처를 입력해주세요",
+        "invalid-email-alert": "올바른 이메일을 입력해주세요",
+        "name-alert": "이름을 입력해주세요",
+        "news-letter": "뉴스레터",
+        "terms-alert": "이용 약관 / 개인 정보 수집 및 이용에 동의해주세요",
+        "visit-accepted-alert": "방문 예약이 성공적으로 접수되었습니다"
     },
     "introduction": {
         "brand-story": "브랜드 스토리",

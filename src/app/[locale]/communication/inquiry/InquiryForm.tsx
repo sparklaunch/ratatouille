@@ -12,6 +12,7 @@ import { DatePicker, DateTimePicker, LocalizationProvider } from "@mui/x-date-pi
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import dayjs, { Dayjs } from "dayjs";
 import "dayjs/locale/ko";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import React, { useState } from "react";
 import styles from "./style.module.scss";
@@ -28,6 +29,7 @@ const menuItemSharedStyles = {
 };
 
 export default function InquiryForm() {
+    const t = useTranslations("inquiry");
     const [type, setType] = useState(InquiryType.Inquiry);
     const [name, setName] = useState("");
     const [affiliation, setAffiliation] = useState("");
@@ -56,31 +58,31 @@ export default function InquiryForm() {
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         if (!name.trim()) {
-            alert("이름을 입력해주세요");
+            alert(t("name-alert"));
             return;
         }
         if (!contact) {
-            alert("연락처를 입력해주세요");
+            alert(t("contact-alert"));
             return;
         }
         if (contact.length < 11) {
-            alert("올바른 연락처를 입력해주세요");
+            alert(t("invalid-contact-alert"));
             return;
         }
         if (!email) {
-            alert("이메일을 입력해주세요");
+            alert(t("email-alert"));
             return;
         }
         if (!/^[a-z0-9._%+-]{1,}@[a-z0-9-]+(\.[a-z0-9-]+)*\.[a-z]{2,}$/.test(email)) {
-            alert("올바른 이메일을 입력해주세요");
+            alert(t("invalid-email-alert"));
             return;
         }
         if (!termsAgreed) {
-            alert("이용 약관 / 개인 정보 수집 및 이용에 동의해주세요");
+            alert(t("terms-alert"));
             return;
         }
         if (type === InquiryType.Visit && headCount === 0) {
-            alert("방문 인원을 입력해주세요");
+            alert(t("head-count-alert"));
             return;
         }
         switch (type) {
@@ -104,12 +106,12 @@ export default function InquiryForm() {
                     const { hasSucceeded, message } = await response.json();
                     if (hasSucceeded) {
                         clearFields();
-                        alert("문의가 성공적으로 접수되었습니다.");
+                        alert(t("inquiry-accepted-alert"));
                     } else {
                         alert(message);
                     }
                 } else {
-                    alert("오류가 발생하였습니다.");
+                    alert(t("error-alert"));
                 }
                 break;
             }
@@ -138,12 +140,12 @@ export default function InquiryForm() {
                     const { hasSucceeded, message } = await response.json();
                     if (hasSucceeded) {
                         clearFields();
-                        alert("방문 예약이 성공적으로 접수되었습니다.");
+                        alert(t("visit-accepted-alert"));
                     } else {
                         alert(message);
                     }
                 } else {
-                    alert("오류가 발생하였습니다.");
+                    alert(t("error-alert"));
                 }
                 break;
             }
