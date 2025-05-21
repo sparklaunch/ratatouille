@@ -13,6 +13,21 @@
         "notice": "공지 사항",
         "press-release": "언론 보도"
     },
+    "directions": {
+        "address": "서울시 은평구 불광로 89-4",
+        "address-title": "주소",
+        "communication": "소통",
+        "contact": "02-355-7910",
+        "contact-title": "연락처",
+        "directions": "찾아오시는 길",
+        "email": "seeds@theseeds.asia",
+        "email-title": "이메일",
+        "hours": "수~토 12:00 ~ 20:00",
+        "hours-title": "운영 시간",
+        "inquiry": "문의하기",
+        "news-letter": "뉴스레터",
+        "photo": "두더집 사진"
+    },
     "footer": {
         "address": "주소: (03355) 서울시 은평구 불광로 89-4",
         "facebook-alternate": "페이스북 로고",

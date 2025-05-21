@@ -1,46 +1,48 @@
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
 import { Link } from "@/i18n/routing";
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import Script from "next/script";
 import Map from "./Map";
 import styles from "./style.module.scss";
 
 export default async function DirectionPage() {
+    const t = await getTranslations("directions");
     return <>
         <Script src={`https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=${process.env.NAVER_MAP_API_ID}`} strategy="beforeInteractive" />
         <Header />
         <div className={styles.container}>
-            <h1 className={styles.header}>소통</h1>
+            <h1 className={styles.header}>{t("communication")}</h1>
             <div className={styles.subheader}>
                 <Link href="/communication/newsletter">
-                    <span>뉴스레터</span>
+                    <span>{t("news-letter")}</span>
                 </Link>
                 <Link href="/communication/direction" className={styles.activeSubheader}>
-                    <span>찾아오시는 길</span>
+                    <span>{t("directions")}</span>
                 </Link>
                 <Link href="/communication/inquiry">
-                    <span>문의하기</span>
+                    <span>{t("inquiry")}</span>
                 </Link>
             </div>
             <div className={styles.addressContainer}>
-                <Image src="/images/Disney.webp" alt="두더집 사진" fill className={styles.addressPhoto} />
+                <Image src="/images/Disney.webp" alt={t("photo")} fill className={styles.addressPhoto} />
                 <div className={styles.address}>
                     <div className={styles.addressItem}>
-                        <h2>주소</h2>
-                        <p>서울시 은평구 불광로 89-4</p>
+                        <h2>{t("address-title")}</h2>
+                        <p>{t("address")}</p>
                     </div>
                     <div className={styles.addressItem}>
-                        <h2>연락처</h2>
-                        <p>02-355-7910</p>
+                        <h2>{t("contact-title")}</h2>
+                        <p>{t("contact")}</p>
                     </div>
                     <div className={styles.addressItem}>
-                        <h2>이메일</h2>
-                        <p>seeds@theseeds.asia</p>
+                        <h2>{t("email-title")}</h2>
+                        <p>{t("email")}</p>
                     </div>
                     <div className={styles.addressItem}>
-                        <h2>운영 시간</h2>
-                        <p>수~토 12:00 ~ 20:00</p>
+                        <h2>{t("hours-title")}</h2>
+                        <p>{t("hours")}</p>
                     </div>
                 </div>
             </div>
