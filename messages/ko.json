@@ -133,6 +133,15 @@
     },
     "notice": {
         "date": "작성일",
+        "go-back": "목록 보기",
+        "news": "소식",
+        "notice": "공지 사항",
+        "press-release": "언론 보도",
+        "print-alternate": "인쇄",
+        "share-alternate": "공유"
+    },
+    "notices": {
+        "date": "작성일",
         "index": "번호",
         "news": "소식",
         "notice": "공지 사항",

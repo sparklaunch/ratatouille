@@ -12,7 +12,7 @@ import { useEffect, useState } from "react";
 import styles from "./style.module.scss";
 
 export default function NoticeList() {
-    const t = useTranslations("notice");
+    const t = useTranslations("notices");
     const searchParams = useSearchParams();
     const router = useRouter();
     let currentPage = 1;

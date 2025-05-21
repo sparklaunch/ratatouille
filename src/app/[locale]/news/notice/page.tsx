@@ -8,7 +8,7 @@ import NoticeList from "./NoticeList";
 import styles from "./style.module.scss";
 
 export default async function NoticePage() {
-    const t = await getTranslations("notice");
+    const t = await getTranslations("notices");
     return <>
         <Header />
         <div className={styles.container}>
