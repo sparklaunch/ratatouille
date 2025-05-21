@@ -11,8 +11,10 @@ import {
 import { DatePicker, DateTimePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import dayjs, { Dayjs } from "dayjs";
+import "dayjs/locale/en";
+import "dayjs/locale/ja";
 import "dayjs/locale/ko";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
 import React, { useState } from "react";
 import styles from "./style.module.scss";
@@ -29,6 +31,7 @@ const menuItemSharedStyles = {
 };
 
 export default function InquiryForm() {
+    const locale = useLocale();
     const t = useTranslations("inquiry");
     const [type, setType] = useState(InquiryType.Inquiry);
     const [name, setName] = useState("");
@@ -192,7 +195,7 @@ export default function InquiryForm() {
             {type === InquiryType.Visit && <>
                 <div className={styles.inquiryGridContainer}>
                     <FormControl fullWidth>
-                        <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="ko">
+                        <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale={locale}>
                             <DatePicker label={t("application-date")} value={applicationDate} onChange={(date) => setApplicationDate(date)} sx={{
                                 ".MuiPickersSectionList-sectionContent": {
                                     fontFamily: "Nanum Gothic",
@@ -202,7 +205,7 @@ export default function InquiryForm() {
                         </LocalizationProvider>
                     </FormControl>
                     <FormControl fullWidth>
-                        <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="ko">
+                        <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale={locale}>
                             <DateTimePicker label={t("visit-datetime")} value={visitDateTime} onChange={(dateTime) => setVisitDateTime(dateTime)} slotProps={{
                                 textField: {
                                     InputLabelProps: {
