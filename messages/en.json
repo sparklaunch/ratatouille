@@ -26,7 +26,7 @@
         "hours-title": "Opening Hours",
         "inquiry": "Contact Us",
         "news-letter": "Newsletters",
-        "photo": "Dudeojib photo"
+        "photo": "두더집 photo"
     },
     "footer": {
         "address": "Address: (03355) 89-4, Bulgwang-ro, Eunpyeong-gu, Seoul",
@@ -182,7 +182,7 @@
         "hours-content": "• Wed–Sat: 12:00 PM – 8:00 PM",
         "hours-title": "- Operating Hours",
         "inquire": "Submit Inquiry",
-        "inquiry": "Inquiry",
+        "inquiry": "Contact Us",
         "inquiry-accepted-alert": "Your inquiry has been received successfully",
         "inquiry-alternate": "Inquiry Image",
         "invalid-contact-alert": "Please enter a valid contact number",
@@ -198,9 +198,9 @@
         "terms-alert": "Please agree to the terms and conditions",
         "terms-checkbox": "Agree to Terms & Conditions / Privacy Policy",
         "type": "Select",
-        "visit": "Apply for a Dudeojib Visit",
+        "visit": "Apply for a 두더집 Visit",
         "visit-accepted-alert": "Your visit has been booked successfully",
-        "visit-checkbox": "Dudeojib Visit (Facilities, Programs, etc.)",
+        "visit-checkbox": "두더집 Visit (Facilities, Programs, etc.)",
         "visit-datetime": "Date & Time of Visit",
         "visit-purpose": "Purpose of Visit"
     },
