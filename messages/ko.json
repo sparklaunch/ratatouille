@@ -147,5 +147,10 @@
         "notice": "공지 사항",
         "press-release": "언론 보도",
         "title": "제목"
+    },
+    "press": {
+        "news": "소식",
+        "notice": "공지 사항",
+        "press-release": "언론 보도"
     }
 }
