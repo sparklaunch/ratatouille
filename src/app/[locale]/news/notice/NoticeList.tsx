@@ -6,11 +6,13 @@ import defaultNotices, { Notices } from "@/types/Notices";
 import formatDate from "@/utilities/formatDate";
 import SearchIcon from '@mui/icons-material/Search';
 import { InputAdornment, OutlinedInput } from "@mui/material";
+import { useTranslations } from "next-intl";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import styles from "./style.module.scss";
 
 export default function NoticeList() {
+    const t = useTranslations("notice");
     const searchParams = useSearchParams();
     const router = useRouter();
     let currentPage = 1;
@@ -45,9 +47,9 @@ export default function NoticeList() {
     const endPage = Math.min(startPage + 5 - 1, totalPages);
     return <div className={styles.board}>
         <div className={styles.boardHeader}>
-            <p>번호</p>
-            <p>제목</p>
-            <p>작성일</p>
+            <p>{t("index")}</p>
+            <p>{t("title")}</p>
+            <p>{t("date")}</p>
         </div>
         <div className={styles.boardContent}>
             {notices.fixedNotices.map((notice, index) => (
