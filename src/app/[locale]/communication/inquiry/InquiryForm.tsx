@@ -26,7 +26,6 @@ const textFieldSharedSlotProps = {
 };
 
 const menuItemSharedStyles = {
-    fontFamily: "Nanum Gothic",
     fontSize: "17px"
 };
 
@@ -198,7 +197,6 @@ export default function InquiryForm() {
                         <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale={locale}>
                             <DatePicker label={t("application-date")} value={applicationDate} onChange={(date) => setApplicationDate(date)} sx={{
                                 ".MuiPickersSectionList-sectionContent": {
-                                    fontFamily: "Nanum Gothic",
                                     fontSize: "17px"
                                 }
                             }} />
@@ -214,7 +212,6 @@ export default function InquiryForm() {
                                 }
                             }} sx={{
                                 ".MuiPickersSectionList-sectionContent": {
-                                    fontFamily: "Nanum Gothic",
                                     fontSize: "17px"
                                 }
                             }} />
@@ -243,7 +240,6 @@ export default function InquiryForm() {
                             }
                         }} checked={purposeOfFieldTrip} onChange={(event) => setPurposeOfFieldTrip(event.target.checked)} />} label={t("visit-checkbox")} slotProps={{
                             typography: {
-                                fontFamily: "Nanum Gothic",
                                 fontSize: 17
                             }
                         }} />
@@ -254,7 +250,6 @@ export default function InquiryForm() {
                             }
                         }} checked={purposeOfListening} onChange={(event) => setPurposeOfListening(event.target.checked)} />} label={t("listening-checkbox")} slotProps={{
                             typography: {
-                                fontFamily: "Nanum Gothic",
                                 fontSize: 17
                             }
                         }} />
@@ -287,7 +282,6 @@ export default function InquiryForm() {
                 }
             }} checked={termsAgreed} onChange={(event) => setTermsAgreed(event.target.checked)} />} label={t("terms-checkbox")} slotProps={{
                 typography: {
-                    fontFamily: "Nanum Gothic",
                     fontSize: 15
                 }
             }} />

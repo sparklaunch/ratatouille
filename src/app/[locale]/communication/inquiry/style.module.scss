@@ -39,11 +39,9 @@
 
 .inquiryForm {
     & label {
-        font-family: "Nanum Gothic";
         font-size: 17px;
         font-weight: bold;
         & + div {
-            font-family: "Nanum Gothic";
             font-size: 17px;
         }
     }
@@ -106,7 +104,6 @@
     color: white;
     font-weight: bolder;
     font-size: 20px;
-    font-family: "Nanum Gothic";
     cursor: pointer;
     transition: all 0.3s;
     &:hover {
