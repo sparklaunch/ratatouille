@@ -2,6 +2,7 @@
 
 import { useLocale } from "next-intl";
 import localFont from "next/font/local";
+import Script from "next/script";
 import { ReactNode } from "react";
 
 const pretendard = localFont({
@@ -34,7 +35,8 @@ export default function HomeLayout({
             fontClassName = hiragino.className;
             break;
     }
-    return <html lang={locale}>
+    return <html lang={locale} >
+        <Script src={`https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=${process.env.NEXT_PUBLIC_NAVER_MAP_API_ID}`} strategy="beforeInteractive" />
         <body className={fontClassName}>
             {children}
         </body>

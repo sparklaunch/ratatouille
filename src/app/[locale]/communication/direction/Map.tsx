@@ -1,13 +1,12 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useEffect, useRef } from "react";
 import styles from "./style.module.scss";
 
 export default function Map() {
     const mapRef = useRef(null);
     useEffect(() => {
         const initializeMap = () => {
-            console.log("Initializing");
             const mapElement = mapRef.current;
             if (mapElement) {
                 const map = new naver.maps.Map("map", {
