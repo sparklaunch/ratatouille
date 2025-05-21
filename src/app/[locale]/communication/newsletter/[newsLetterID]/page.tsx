@@ -3,12 +3,14 @@
 import { Link, useRouter } from "@/i18n/routing";
 import defaultNewsLetter, { NewsLetter } from "@/types/NewsLetter";
 import formatDate from "@/utilities/formatDate";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import styles from "./style.module.scss";
 
 export default function NewsLetterContentPage() {
+    const t = useTranslations("news-letter");
     const { newsLetterID } = useParams() as { newsLetterID: string };
     const router = useRouter();
     const [newsLetter, setNewsLetter] = useState<NewsLetter>(defaultNewsLetter);
@@ -28,22 +30,22 @@ export default function NewsLetterContentPage() {
     }, [newsLetterID]);
     return <>
         <div className={styles.container}>
-            <h1 className={styles.header}>소통</h1>
+            <h1 className={styles.header}>{t("communication")}</h1>
             <div className={styles.subheader}>
                 <Link href="/communication/newsletter">
-                    <span className={styles.activeSubheader}>뉴스레터</span>
+                    <span className={styles.activeSubheader}>{t("news-letter")}</span>
                 </Link>
                 <Link href="/communication/direction">
-                    <span>찾아오시는 길</span>
+                    <span>{t("directions")}</span>
                 </Link>
                 <Link href="/communication/inquiry">
-                    <span>문의하기</span>
+                    <span>{t("inquiry")}</span>
                 </Link>
             </div>
             <div className={styles.contentContainer}>
                 <div className={styles.titleContainer}>
                     <h2 className={styles.title}>{newsLetter.title}</h2>
-                    <h3 className={styles.createdDate}>작성일: {formatDate(newsLetter.createdAt)}</h3>
+                    <h3 className={styles.createdDate}>{t("date")}: {formatDate(newsLetter.createdAt)}</h3>
                 </div>
                 <div className={styles.bodyContainer}>
                     <div dangerouslySetInnerHTML={{
@@ -52,11 +54,11 @@ export default function NewsLetterContentPage() {
                 </div>
             </div>
             <div className={styles.appendix}>
-                <Image src="/icons/Share.svg" alt="공유" width={24} height={24} />
-                <Image src="/icons/Print.svg" alt="인쇄" width={24} height={24} onClick={() => window.print()} />
+                <Image src="/icons/Share.svg" alt={t("share-alternate")} width={24} height={24} />
+                <Image src="/icons/Print.svg" alt={t("print-alternate")} width={24} height={24} onClick={() => window.print()} />
             </div>
             <div className={styles.goBackToListButton}>
-                <p onClick={() => router.back()}>목록 보기</p>
+                <p onClick={() => router.back()}>{t("go-back")}</p>
             </div>
         </div>
     </>;
