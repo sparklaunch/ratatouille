@@ -3,12 +3,16 @@
         "flag": "Union Jack",
         "language": "English"
     },
+    "es": {
+        "flag": "Rojigualda",
+        "language": "Español"
+    },
     "ja": {
-        "flag": "Flag of Japan",
+        "flag": "日章旗",
         "language": "日本語"
     },
     "ko": {
-        "flag": "Taegeukgi",
+        "flag": "태극기",
         "language": "한국어"
     }
 }
