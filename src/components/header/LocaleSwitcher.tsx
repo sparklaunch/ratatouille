@@ -6,11 +6,26 @@ import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import { Locale, useLocale } from "next-intl";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./style.module.scss";
 
 export default function LocaleSwitcher() {
     const pathname = usePathname();
+    const [isOpen, setIsOpen] = useState(false);
+    const locale = useLocale();
+    const currentLocale = localeMapper[locale];
+    const containerRef = useRef<HTMLDivElement>(null);
+    useEffect(() => {
+        function handleClickOutside(event: MouseEvent) {
+            if (isOpen && containerRef.current && !containerRef.current.contains(event.target as Node)) {
+                setIsOpen(false);
+            }
+        }
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [isOpen]);
     function changeLocale(nextLocale: Locale) {
         let basePath = pathname;
         for (const localeItem of routing.locales) {
@@ -23,10 +38,7 @@ export default function LocaleSwitcher() {
         const newPath = `/${nextLocale}${basePath}`;
         window.location.href = newPath;
     }
-    const [isOpen, setIsOpen] = useState(false);
-    const locale = useLocale();
-    const currentLocale = localeMapper[locale];
-    return <div className={styles.switcherContainer}>
+    return <div className={styles.switcherContainer} ref={containerRef}>
         <div className={styles.togglerContainer} onClick={() => setIsOpen(!isOpen)}>
             <Image src={`/flags/${locale}.svg`} alt={currentLocale.flag} width={30} height={20} className={styles.flagImage} />
             {isOpen ? <ArrowDropDownIcon style={{ color: "#FF301E" }} fontSize="large" /> : <ArrowDropUpIcon style={{ color: "#FF301E" }} fontSize="large" />}
