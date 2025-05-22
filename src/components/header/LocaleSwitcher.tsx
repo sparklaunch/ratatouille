@@ -1,6 +1,6 @@
 "use client";
 
-import { routing, usePathname, useRouter } from "@/i18n/routing";
+import { routing, usePathname } from "@/i18n/routing";
 import localeMapper from "@/utilities/localeMapper.json";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
@@ -10,7 +10,6 @@ import { useState } from "react";
 import styles from "./style.module.scss";
 
 export default function LocaleSwitcher() {
-    const router = useRouter();
     const pathname = usePathname();
     function changeLocale(nextLocale: Locale) {
         let basePath = pathname;
@@ -21,7 +20,8 @@ export default function LocaleSwitcher() {
                 basePath = basePath.replace(`/${localeItem}`, "");
             }
         }
-        router.push(basePath || "/", { locale: nextLocale });
+        const newPath = `/${nextLocale}${basePath}`;
+        window.location.href = newPath;
     }
     const [isOpen, setIsOpen] = useState(false);
     const locale = useLocale();
