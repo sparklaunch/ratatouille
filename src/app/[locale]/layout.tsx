@@ -1,6 +1,4 @@
-"use client";
-
-import { useLocale } from "next-intl";
+import { Locale } from "next-intl";
 import localFont from "next/font/local";
 import Script from "next/script";
 import { ReactNode } from "react";
@@ -17,12 +15,16 @@ const hiragino = localFont({
     variable: "--font-hiragino"
 });
 
-export default function HomeLayout({
-    children
+export default async function HomeLayout({
+    children,
+    params
 }: {
-    children: ReactNode
+    children: ReactNode;
+    params: Promise<{
+        locale: Locale
+    }>
 }) {
-    const locale = useLocale();
+    const { locale } = await params;
     let fontClassName: string;
     switch (locale) {
         case "ko":
