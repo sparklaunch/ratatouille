@@ -1,8 +1,9 @@
 import Logo from "@/../public/logos/Logo.svg";
 import { Link } from "@/i18n/routing";
-import Image from "next/image";
-import styles from "./style.module.scss";
 import { getTranslations } from "next-intl/server";
+import Image from "next/image";
+import LocaleSwitcher from "./LocaleSwitcher";
+import styles from "./style.module.scss";
 
 export default async function Header() {
     const t = await getTranslations("header");
@@ -72,6 +73,7 @@ export default async function Header() {
                     <Link href="#" className={styles.sponsor}>
                         <span>{t("sponsor")}</span>
                     </Link>
+                    <LocaleSwitcher />
                 </div>
             </div>
         </div>

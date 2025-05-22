@@ -115,3 +115,49 @@
         color: var(--primary-color);
     }
 }
+
+.switcherContainer {
+    position: relative;
+}
+
+.togglerContainer {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 7px 10px 7px 20px;
+    border: 1px solid white;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+        border: 1px solid var(--primary-color);
+    }
+}
+
+.flagImage {
+    position: relative !important;
+    border: 1px solid black;
+}
+
+.panelContainer {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 9px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.locale {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    & > p {
+        text-transform: uppercase;
+    }
+}

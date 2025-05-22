@@ -1,0 +1,17 @@
+{
+    "en": {
+        "flag": "Union Jack",
+        "language": "English",
+        "nation": "England"
+    },
+    "ja": {
+        "flag": "Flag of Japan",
+        "language": "日本語",
+        "nation": "Japan"
+    },
+    "ko": {
+        "flag": "Taegeukgi",
+        "language": "한국어",
+        "nation": "Republic of Korea"
+    }
+}
