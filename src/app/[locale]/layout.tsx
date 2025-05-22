@@ -36,6 +36,9 @@ export default async function HomeLayout({
         case "ja":
             fontClassName = hiragino.className;
             break;
+        case "es":
+            fontClassName = pretendard.className;
+            break;
     }
     return <html lang={locale} >
         <body className={fontClassName}>
