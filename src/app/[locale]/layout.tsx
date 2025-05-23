@@ -39,6 +39,9 @@ export default async function HomeLayout({
         case "es":
             fontClassName = pretendard.className;
             break;
+        case "fr":
+            fontClassName = pretendard.className;
+            break;
     }
     return <html lang={locale} >
         <body className={fontClassName}>

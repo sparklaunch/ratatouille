@@ -13,6 +13,7 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import dayjs, { Dayjs } from "dayjs";
 import "dayjs/locale/en";
 import "dayjs/locale/es";
+import "dayjs/locale/fr";
 import "dayjs/locale/ja";
 import "dayjs/locale/ko";
 import { useLocale, useTranslations } from "next-intl";
