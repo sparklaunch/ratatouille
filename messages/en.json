@@ -200,7 +200,7 @@
         "type": "Select",
         "visit": "Apply for a 두더집 Visit",
         "visit-accepted-alert": "Your visit has been booked successfully",
-        "visit-checkbox": "두더집 Visit (Facilities, Programs, etc.)",
+        "visit-checkbox": "I want to visit 두더집 (Facilities, Programs, etc.)",
         "visit-datetime": "Date & Time of Visit",
         "visit-purpose": "Purpose of Visit"
     },

@@ -25,7 +25,7 @@
         "hours": "De miércoles a sábado, de 12:00 a 18:00",
         "hours-title": "Horario de atención",
         "inquiry": "Contactar",
-        "news-letter": "Boletín",
+        "news-letter": "Boletinos",
         "photo": "Foto de 두더집"
     },
     "footer": {
@@ -182,7 +182,7 @@
         "hours-content": "• Miércoles a sábado: de 12:00 a 18:00",
         "hours-title": "- Información sobre el horario de atención",
         "inquire": "Contactar",
-        "inquiry": "Consulta",
+        "inquiry": "Contactar",
         "inquiry-accepted-alert": "La consulta se ha recibido correctamente",
         "inquiry-alternate": "Imagen para contactar",
         "invalid-contact-alert": "Por favor, introduzca un número de contacto válido",
@@ -191,16 +191,16 @@
         "name": "Nombre",
         "name-alert": "Por favor, introduzca su nombre",
         "name-placeholder": "Por favor, introduzca su nombre",
-        "news-letter": "Boletín",
+        "news-letter": "Boletinos",
         "other": "Otros",
         "other-placeholder": "Introduzca información adicional",
         "submit": "Enviar",
         "terms-alert": "Por favor, acepte los Términos de uso y la Política de privacidad",
-        "terms-checkbox": "Aceptación de los Términos de uso y de la Política de privacidad",
+        "terms-checkbox": "Aceptar los Términos de uso y de la Política de privacidad",
         "type": "Seleccionar",
         "visit": "Solicitar visita a 두더집",
         "visit-accepted-alert": "La reserva de visita se ha recibido correctamente",
-        "visit-checkbox": "Visita a 두더집 (instalaciones, funcionamiento y presentación de 두더지땅굴)",
+        "visit-checkbox": "Visitar 두더집 (instalaciones, funcionamiento y presentación de 두더지땅굴)",
         "visit-datetime": "Fecha y hora de la visita",
         "visit-purpose": "Motivo de la visita"
     },
@@ -223,7 +223,7 @@
         "communication": "Comunicación",
         "directions": "Cómo llegar",
         "inquiry": "Consulta",
-        "news-letter": "Boletín"
+        "news-letter": "Boletinos"
     },
     "notice": {
         "date": "Fecha de redacción",
