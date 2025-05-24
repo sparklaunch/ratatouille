@@ -81,7 +81,7 @@ export default function NoticeList() {
                         router.push(`/news/notice?page=${currentPage - 1}`);
                     }
                 }}
-                className={`${styles.leftCaret} ${currentPage === 1 ? styles.disabledCaret : ""}`}
+                className={`${styles.leftCaret} ${currentPage === 1 && styles.disabledCaret}`}
             >
                 &lt;
             </p>
@@ -105,7 +105,7 @@ export default function NoticeList() {
                         router.push(`/news/notice?page=${currentPage + 1}`);
                     }
                 }}
-                className={`${styles.rightCaret} ${currentPage === totalPages ? styles.disabledCaret : ""}`}
+                className={`${styles.rightCaret} ${currentPage === totalPages && styles.disabledCaret}`}
             >
                 &gt;
             </p>

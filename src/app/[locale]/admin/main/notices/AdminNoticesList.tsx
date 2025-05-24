@@ -79,7 +79,7 @@ export default function AdminNoticesList() {
                         router.push(`/admin/main/notices?page=${currentPage - 1}`);
                     }
                 }}
-                className={`${styles.leftCaret} ${currentPage === 1 ? styles.disabledCaret : ""}`}
+                className={`${styles.leftCaret} ${currentPage === 1 && styles.disabledCaret}`}
             >
                 &lt;
             </p>
@@ -103,7 +103,7 @@ export default function AdminNoticesList() {
                         router.push(`/admin/main/notices?page=${currentPage + 1}`);
                     }
                 }}
-                className={`${styles.rightCaret} ${currentPage === totalPages ? styles.disabledCaret : ""}`}
+                className={`${styles.rightCaret} ${currentPage === totalPages && styles.disabledCaret}`}
             >
                 &gt;
             </p>
