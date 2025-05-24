@@ -1,6 +1,7 @@
 import Logo from "@/../public/logos/Logo.svg";
 import { Link } from "@/i18n/routing";
 import Image from "next/image";
+import SignOutButton from "./SignOutButton";
 import styles from "./style.module.scss";
 
 export default async function AdminHeader() {
@@ -22,7 +23,7 @@ export default async function AdminHeader() {
                             <span>뉴스레터</span>
                         </Link>
                     </div>
-                    <p className={styles.signOutButton}>로그아웃</p>
+                    <SignOutButton />
                 </div>
             </div>
         </div>
