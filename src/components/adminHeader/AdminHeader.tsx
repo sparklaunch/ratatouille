@@ -22,6 +22,7 @@ export default async function AdminHeader() {
                             <span>뉴스레터</span>
                         </Link>
                     </div>
+                    <p className={styles.signOutButton}>로그아웃</p>
                 </div>
             </div>
         </div>
