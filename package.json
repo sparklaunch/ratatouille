@@ -6,6 +6,7 @@
         "@mui/material": "^7.1.0",
         "@mui/x-date-pickers": "^8.3.1",
         "@prisma/client": "^6.7.0",
+        "bcrypt": "^6.0.0",
         "dayjs": "^1.11.13",
         "next": "15.3.1",
         "next-auth": "^4.24.11",
@@ -16,6 +17,7 @@
     },
     "devDependencies": {
         "@eslint/eslintrc": "^3",
+        "@types/bcrypt": "^5.0.2",
         "@types/navermaps": "^3.7.10",
         "@types/node": "^20",
         "@types/react": "^19",

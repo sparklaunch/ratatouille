@@ -1,3 +1,4 @@
+import bcrypt from "bcrypt";
 import NextAuth, { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { prisma } from "../../../../../../lib/prisma";
@@ -20,10 +21,13 @@ export const authOptions: NextAuthOptions = {
         try {
           const administrator = await prisma.administrators.findFirst({
             where: {
-              email: credentials?.email,
-              password: credentials?.password
+              email: credentials?.email
             }
           });
+          const isPasswordCorrect = await bcrypt.compare(credentials!.password, administrator!.password);
+          if (!isPasswordCorrect) {
+            return null;
+          }
           return administrator;
         } catch (error) {
           throw error;
