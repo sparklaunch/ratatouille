@@ -8,10 +8,10 @@ datasource db {
 }
 
 model notices {
-  id        Int      @id @default(autoincrement())
+  id String @id @default(uuid())
+  index Int @default(autoincrement())
   title     String   @db.VarChar(255)
   content   String
-  author    String   @db.VarChar(100)
   createdAt DateTime @default(now()) @db.Timestamptz(6)
   isFixed   Boolean  @default(false)
 }

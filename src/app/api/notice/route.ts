@@ -4,9 +4,9 @@ import { prisma } from "../../../../lib/prisma";
 export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
     const id = parseInt(searchParams.get("id") as string);
-    const notice = await prisma.notices.findUnique({
+    const notice = await prisma.notices.findFirst({
         where: {
-            id
+            index: id
         }
     });
     return NextResponse.json(notice);
