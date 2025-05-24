@@ -1,0 +1,81 @@
+.container {
+    width: 100%;
+    position: fixed;
+    z-index: 2;
+}
+
+.menuContainer {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.menu {
+    background-color: white;
+    height: 100px;
+    width: 1200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigationContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.navigation {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 60px;
+    margin-right: 60px;
+}
+
+.menuItem > span {
+    font-weight: bold;
+    font-size: 20px;
+    transition: all 0.3s;
+    &:hover {
+        color: var(--primary-color);
+    }
+}
+
+.subMenuOuterContainer {
+    position: absolute;
+    padding-top: 30px;
+    transform: translateX(-50%);
+    left: 50%;
+}
+
+.subMenuContainer {
+    position: relative;
+    &:hover .subMenu {
+        display: block;
+    }
+}
+
+.subMenu {
+    display: none;
+    width: 190px;
+    background-color: white;
+    box-shadow: 0 9px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.subMenuItem {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & > span {
+        font-weight: bold;
+        font-size: 20px;
+        transition: all 0.3s;
+        text-align: center;
+    }
+    &:hover > span {
+        color: var(--primary-color);
+    }
+}

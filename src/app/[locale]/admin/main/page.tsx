@@ -1,5 +1,7 @@
+import AdminHeader from "@/components/adminHeader/AdminHeader";
+
 export default async function AdminMainPage() {
     return <>
-        <p>Can you see this?</p>
+        <AdminHeader />
     </>;
 }
