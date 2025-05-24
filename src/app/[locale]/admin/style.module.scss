@@ -1,5 +1,23 @@
 .container {
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.formContainer {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    & > label {
+        margin-bottom: 5px;
+    }
+    & > input {
+        margin-bottom: 10px;
+    }
 }
