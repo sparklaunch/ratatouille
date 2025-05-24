@@ -26,10 +26,10 @@ model articles {
 }
 
 model newsletters {
-  id        Int      @id @default(autoincrement())
+  id String @id @default(uuid())
+  index Int @default(autoincrement())
   title     String   @db.VarChar(255)
   createdAt DateTime @default(now()) @db.Timestamptz(6)
-  author    String   @db.VarChar(100)
   content   String
   thumbnail Bytes?
 }

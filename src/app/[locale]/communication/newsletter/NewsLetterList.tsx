@@ -1,13 +1,13 @@
 "use client";
 
-import { Link } from "@/i18n/routing";
+import { Link, useRouter } from "@/i18n/routing";
 import { NewsLetter } from "@/types/NewsLetter";
 import { NewsLetterData } from "@/types/NewsLetterData";
 import formatDate from "@/utilities/formatDate";
 import SearchIcon from "@mui/icons-material/SearchOutlined";
 import { InputAdornment, OutlinedInput } from "@mui/material";
 import Image from "next/image";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import styles from "./style.module.scss";
 
@@ -40,6 +40,7 @@ export default function NewsLetterList() {
     }, [currentPage]);
     const startPage = Math.floor((currentPage - 1) / 5) * 5 + 1;
     const endPage = Math.min(startPage + 5 - 1, totalPages);
+    const pageRange = Math.max(0, endPage - startPage + 1);
     return <div className={styles.newsLetterContainer}>
         <div className={styles.newsLettersContainer}>
             {newsLetters.map(newsLetter => {
@@ -64,31 +65,32 @@ export default function NewsLetterList() {
                         router.push(`/communication/newsletter?page=${currentPage - 1}`);
                     }
                 }}
-                className={`${styles.leftCaret} ${currentPage === 1 ? styles.disabledCaret : ""}`}
+                className={`${styles.leftCaret} ${currentPage === 1 && styles.disabledCaret}`}
             >
                 &lt;
             </p>
-            {[...Array(endPage - startPage + 1)].map((_, index) => {
-                const page = startPage + index;
-                return (
-                    <p
-                        key={page}
-                        onClick={() => {
-                            router.push(`/communication/newsletter?page=${page}`);
-                        }}
-                        className={page === currentPage ? styles.activePage : styles.inactivePage}
-                    >
-                        {page}
-                    </p>
-                );
-            })}
+            {pageRange > 0 &&
+                [...Array(pageRange)].map((_, index) => {
+                    const page = startPage + index;
+                    return (
+                        <p
+                            key={page}
+                            onClick={() => {
+                                router.push(`/communication/newsletter?page=${page}`);
+                            }}
+                            className={page === currentPage ? styles.activePage : styles.inactivePage}
+                        >
+                            {page}
+                        </p>
+                    );
+                })}
             <p
                 onClick={() => {
                     if (currentPage < totalPages) {
                         router.push(`/communication/newsletter?page=${currentPage + 1}`);
                     }
                 }}
-                className={`${styles.rightCaret} ${currentPage === totalPages ? styles.disabledCaret : ""}`}
+                className={`${styles.rightCaret} ${currentPage === totalPages && styles.disabledCaret}`}
             >
                 &gt;
             </p>
