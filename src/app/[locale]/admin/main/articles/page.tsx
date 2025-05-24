@@ -1,4 +1,5 @@
 import AdminHeader from "@/components/adminHeader/AdminHeader";
+import AdminArticlesList from "./AdminArticlesList";
 import styles from "./style.module.scss";
 
 export default async function AdminArticlesPage() {
@@ -6,6 +7,7 @@ export default async function AdminArticlesPage() {
         <AdminHeader />
         <div className={styles.container}>
             <h1 className={styles.header}>언론 보도</h1>
+            <AdminArticlesList />
         </div>
     </>;
 }
