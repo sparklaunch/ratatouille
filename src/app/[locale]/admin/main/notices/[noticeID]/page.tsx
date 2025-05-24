@@ -39,7 +39,7 @@ export default function AdminNoticeContentPage() {
                 </div>
             </div>
             <div className={styles.goBackToListButton}>
-                <p onClick={() => router.back()}>목록으로</p>
+                <p onClick={() => router.back()}>목록 보기</p>
             </div>
         </div>
     </>;

@@ -1,40 +1,40 @@
 "use client";
 
 import { useRouter } from "@/i18n/routing";
-import defaultArticle, { Article } from "@/types/Article";
+import defaultNewsLetter, { NewsLetter } from "@/types/NewsLetter";
 import formatDate from "@/utilities/formatDate";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import styles from "./style.module.scss";
 
-export default function AdminArticleContentPage() {
-    const { articleID } = useParams() as { articleID: string };
+export default function AdminNewsLetterContentPage() {
+    const { newsLetterID } = useParams() as { newsLetterID: string };
     const router = useRouter();
-    const [article, setArticle] = useState<Article>(defaultArticle);
+    const [newsLetter, setNewsLetter] = useState<NewsLetter>(defaultNewsLetter);
     useEffect(() => {
-        const getArticle = async () => {
+        const getNewsLetter = async () => {
             try {
-                const response = await fetch(`/api/article?id=${articleID}`);
+                const response = await fetch(`/api/newsletter?id=${newsLetterID}`);
                 if (response.ok) {
-                    const article = await response.json() as Article;
-                    setArticle(article);
+                    const newsLetter = await response.json() as NewsLetter;
+                    setNewsLetter(newsLetter);
                 }
             } catch (error) {
                 console.error(error);
             }
         };
-        getArticle();
-    }, [articleID]);
+        getNewsLetter();
+    }, [newsLetterID]);
     return <>
         <div className={styles.container}>
             <div className={styles.contentContainer}>
                 <div className={styles.titleContainer}>
-                    <h2 className={styles.title}>{article.title}</h2>
-                    <h3 className={styles.createdDate}>작성일: {formatDate(article.createdAt)}</h3>
+                    <h2 className={styles.title}>{newsLetter.title}</h2>
+                    <h3 className={styles.createdDate}>작성일: {formatDate(newsLetter.createdAt)}</h3>
                 </div>
                 <div className={styles.bodyContainer}>
                     <div dangerouslySetInnerHTML={{
-                        __html: article.content
+                        __html: newsLetter.content
                     }} />
                 </div>
             </div>
