@@ -60,3 +60,9 @@ model visits {
   termsAgreed Boolean
   sentAt DateTime @default(now()) @db.Timestamptz(6)
 }
+
+model administrators {
+  id String @id @default(uuid())
+  email String @db.VarChar(100)
+  password String @db.VarChar(100)
+}
