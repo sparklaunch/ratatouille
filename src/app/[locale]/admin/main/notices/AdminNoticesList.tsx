@@ -1,12 +1,12 @@
 "use client";
 
-import { Link } from "@/i18n/routing";
+import { Link, useRouter } from "@/i18n/routing";
 import { NoticeData } from "@/types/NoticeData";
 import defaultNotices, { Notices } from "@/types/Notices";
 import formatDate from "@/utilities/formatDate";
 import SearchIcon from '@mui/icons-material/Search';
 import { InputAdornment, OutlinedInput } from "@mui/material";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import styles from "./style.module.scss";
 
@@ -31,8 +31,9 @@ export default function AdminNoticesList() {
                         fixedNotices: data.totalFixedNotices,
                         normalNotices: data.normalNotices
                     });
-                    const totalNormalCount = data.totalNormalCount || 0;
-                    const computedPages = Math.ceil(totalNormalCount / (10 - data.totalFixedNotices.length));
+                    const fixedLength = data.totalFixedNotices.length;
+                    const perPage = Math.max(1, 10 - fixedLength);
+                    const computedPages = Math.ceil(data.totalNormalCount / perPage);
                     setTotalPages(computedPages);
                 }
             } catch (error) {
@@ -43,6 +44,7 @@ export default function AdminNoticesList() {
     }, [currentPage]);
     const startPage = Math.floor((currentPage - 1) / 5) * 5 + 1;
     const endPage = Math.min(startPage + 5 - 1, totalPages);
+    const pageRange = Math.max(0, endPage - startPage + 1);
     return <div className={styles.board}>
         <div className={styles.boardHeader}>
             <p>번호</p>
@@ -52,14 +54,14 @@ export default function AdminNoticesList() {
         <div className={styles.boardContent}>
             {notices.fixedNotices.map((notice, index) => (
                 <Link key={`fixed-${index}`} className={styles.fixedNotice} href={`/admin/main/notices/${notice.id}`}>
-                    <p>{notice.id}</p>
+                    <p>{notice.index}</p>
                     <p>{notice.title}</p>
                     <p>{formatDate(notice.createdAt)}</p>
                 </Link>
             ))}
             {notices.normalNotices.map((notice, index) => (
                 <Link key={`normal-${index}`} className={styles.normalNotice} href={`/admin/main/notices/${notice.id}`}>
-                    <p>{notice.id}</p>
+                    <p>{notice.index}</p>
                     <p>{notice.title}</p>
                     <p>{formatDate(notice.createdAt)}</p>
                 </Link>
@@ -81,20 +83,20 @@ export default function AdminNoticesList() {
             >
                 &lt;
             </p>
-            {[...Array(endPage - startPage + 1)].map((_, index) => {
-                const page = startPage + index;
-                return (
-                    <p
-                        key={page}
-                        onClick={() => {
-                            router.push(`/admin/main/notices?page=${page}`);
-                        }}
-                        className={page === currentPage ? styles.activePage : styles.inactivePage}
-                    >
-                        {page}
-                    </p>
-                );
-            })}
+            {pageRange > 0 &&
+                [...Array(pageRange)].map((_, index) => {
+                    const page = startPage + index;
+                    return (
+                        <p
+                            key={page}
+                            onClick={() => router.push(`/admin/main/notices?page=${page}`)}
+                            className={page === currentPage ? styles.activePage : styles.inactivePage}
+                        >
+                            {page}
+                        </p>
+                    );
+                })
+            }
             <p
                 onClick={() => {
                     if (currentPage < totalPages) {
