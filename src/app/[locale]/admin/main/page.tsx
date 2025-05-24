@@ -1,3 +1,5 @@
 export default async function AdminMainPage() {
-    return <></>;
+    return <>
+        <p>Can you see this?</p>
+    </>;
 }
