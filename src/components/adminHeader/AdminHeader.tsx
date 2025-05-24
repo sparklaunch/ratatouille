@@ -12,23 +12,14 @@ export default async function AdminHeader() {
                 </Link>
                 <div className={styles.navigationContainer}>
                     <div className={styles.navigation}>
-                        <div className={styles.subMenuContainer}>
-                            <Link href="/brand/introduction" className={styles.menuItem}>
-                                <span>브랜드 스토리</span>
-                            </Link>
-                            <div className={styles.subMenuOuterContainer}>
-                                <div className={styles.subMenu}>
-                                    <Link href="/brand/introduction" className={styles.subMenuItem}>
-                                        <span>소개</span>
-                                    </Link>
-                                    <Link href="/brand/history" className={styles.subMenuItem}>
-                                        <span>연혁</span>
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
-                        <Link href="#" className={styles.menuItem}>
-                            <span>프로젝트</span>
+                        <Link href="/admin/main/notices" className={styles.menuItem}>
+                            <span>공지 사항</span>
+                        </Link>
+                        <Link href="/admin/main/articles" className={styles.menuItem}>
+                            <span>언론 보도</span>
+                        </Link>
+                        <Link href="/admin/main/newsletters" className={styles.menuItem}>
+                            <span>뉴스레터</span>
                         </Link>
                     </div>
                 </div>
