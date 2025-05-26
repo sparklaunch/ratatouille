@@ -11,6 +11,22 @@
     margin-bottom: 100px;
 }
 
+.newNoticeLink {
+    display: inline-block;
+    padding: 15px 20px;
+    border-radius: 30px;
+    background-color: var(--primary-color);
+    margin-bottom: 20px;
+    color: white;
+    border: 1px solid var(--primary-color);
+    transition: all 0.3s;
+    font-weight: bold;
+    &:hover {
+        color: var(--primary-color);
+        background-color: white;
+    }
+}
+
 .board {
     width: 100%;
     border-top: 1px solid black;
