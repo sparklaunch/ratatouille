@@ -13,4 +13,20 @@
 
 .titleInput {
     width: 100%;
+    margin-bottom: 20px;
+}
+
+.toolBar {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 3px;
+}
+
+.editor {
+    border: 1px solid gray;
+    padding: 5px;
+}
+
+.submitButton {
+    margin-top: 20px;
 }

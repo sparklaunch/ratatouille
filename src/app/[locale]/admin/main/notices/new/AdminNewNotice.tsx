@@ -13,6 +13,6 @@ export default function AdminNewNotice() {
     return <>
         <input type="text" value={title} onChange={event => setTitle(event.target.value)} placeholder="제목 입력" className={styles.titleInput} />
         <AdminNewNoticeEditor content={content} onChange={setContent} />
-        <button onClick={handleSubmit}>게시</button>
+        <button onClick={handleSubmit} className={styles.submitButton}>게시</button>
     </>;
 }

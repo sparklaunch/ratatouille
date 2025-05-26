@@ -136,3 +136,11 @@ a {
 :root {
     --primary-color: #ff301e;
 }
+
+strong {
+    font-weight: bold;
+}
+
+em {
+    font-style: italic;
+}
