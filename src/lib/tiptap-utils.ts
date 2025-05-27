@@ -123,13 +123,13 @@ export function findNodePosition(props: {
 /**
  * Handles image upload with progress tracking and abort capability
  * @param file The file to upload
- * @param onProgress Optional callback for tracking upload progress
+ * @param _onProgress Optional callback for tracking upload progress
  * @param abortSignal Optional AbortSignal for cancelling the upload
  * @returns Promise resolving to the URL of the uploaded image
  */
 export const handleImageUpload = async (
 	file: File,
-	onProgress?: (event: { progress: number }) => void,
+	_onProgress?: (event: { progress: number }) => void,
 	abortSignal?: AbortSignal
 ): Promise<string> => {
 	// Validate file
@@ -143,18 +143,19 @@ export const handleImageUpload = async (
 		)
 	}
 
-	// For demo/testing: Simulate upload progress
-	for (let progress = 0; progress <= 100; progress += 10) {
-		if (abortSignal?.aborted) {
-			throw new Error("Upload cancelled")
-		}
-		await new Promise((resolve) => setTimeout(resolve, 500))
-		onProgress?.({ progress })
+	const formData = new FormData();
+	formData.append("image", file);
+	const response = await fetch("/api/image", {
+		method: "POST",
+		body: formData,
+		signal: abortSignal
+	});
+	if (response.ok) {
+		const image = await response.json();
+		return image.url;
+	} else {
+		return "";
 	}
-
-	return "/images/placeholder-image.png"
-
-	// Uncomment for production use:
 	// return convertFileToBase64(file, abortSignal);
 }
 
