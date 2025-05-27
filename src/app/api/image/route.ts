@@ -7,8 +7,9 @@ export async function POST(request: Request) {
     const file = formData.get("image") as File;
     const buffer = Buffer.from(await file.arrayBuffer());
     const originalName = file.name.replace(/\.[^/.]+$/, "");
+    const uploadDirectory = "/root/uploads";
     const fileName = `${Date.now()}-${originalName}.webp`;
-    const outputPath = path.join(process.cwd(), "public/uploadedImages", fileName);
-    await sharp(buffer).webp({ quality: 80 }).toFile(outputPath);
-    return NextResponse.json({ url: `/uploadedImages/${fileName}` });
+    const filePath = path.join(uploadDirectory, fileName);
+    await sharp(buffer).webp({ quality: 80 }).toFile(filePath);
+    return NextResponse.json({ url: `/uploads/${fileName}` });
 }

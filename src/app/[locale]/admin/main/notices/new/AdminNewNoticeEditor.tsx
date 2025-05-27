@@ -2,6 +2,8 @@
 
 import { SimpleEditor } from "@/components/tiptap-templates/simple/simple-editor";
 import { useState } from "react";
+import "../../../../../../styles/_keyframe-animations.css";
+import "../../../../../../styles/_variables.css";
 import styles from "./style.module.scss";
 
 export default function AdminNewNoticeEditor() {
