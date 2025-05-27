@@ -163,3 +163,8 @@ em {
     margin: 0 !important;
     line-height: normal !important;
 }
+
+body {
+    height: auto !important;
+    overflow-y: auto !important;
+}
