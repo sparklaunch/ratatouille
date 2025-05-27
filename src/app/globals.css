@@ -144,3 +144,22 @@ strong {
 em {
     font-style: italic;
 }
+
+.simple-editor-content {
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: inherit !important;
+}
+
+.ProseMirror {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 1rem !important;
+    overflow-y: visible !important;
+    max-height: none !important;
+}
+
+.ProseMirror p {
+    margin: 0 !important;
+    line-height: normal !important;
+}

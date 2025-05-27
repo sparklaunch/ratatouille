@@ -1,61 +1,30 @@
 "use client";
 
-import FormatBoldIcon from '@mui/icons-material/FormatBold';
-import FormatItalicIcon from '@mui/icons-material/FormatItalic';
-import FormatUnderlinedIcon from '@mui/icons-material/FormatUnderlined';
-import Image from "@tiptap/extension-image";
-import Link from "@tiptap/extension-link";
-import Table from "@tiptap/extension-table";
-import TableCell from "@tiptap/extension-table-cell";
-import TableHeader from "@tiptap/extension-table-header";
-import TableRow from "@tiptap/extension-table-row";
-import Underline from "@tiptap/extension-underline";
-import { EditorContent, useEditor } from "@tiptap/react";
-import StarterKit from "@tiptap/starter-kit";
-import { useEffect } from "react";
+import { SimpleEditor } from "@/components/tiptap-templates/simple/simple-editor";
+import { useState } from "react";
 import styles from "./style.module.scss";
 
-export default function AdminNewNoticeEditor({ content, onChange }: { content: string, onChange: (html: string) => void }) {
-    const editor = useEditor({
-        extensions: [
-            StarterKit,
-            Image,
-            Link,
-            Table.configure({
-                resizable: true
-            }),
-            TableRow,
-            TableCell,
-            TableHeader,
-            Underline
-        ],
-        content: content || "",
-        onUpdate: ({ editor }) => {
-            onChange(editor.getHTML());
+export default function AdminNewNoticeEditor() {
+    const [title, setTitle] = useState("");
+    const [content, setContent] = useState("");
+    const handleSubmit = async () => {
+        const response = await fetch("/api/admin/notices/new", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                title,
+                content
+            })
+        });
+        if (response.ok) {
+            alert("Successfully posted a notice");
         }
-    });
-    useEffect(() => {
-        if (editor) {
-            return () => {
-                editor.destroy();
-            };
-        }
-    }, [editor]);
-    if (!editor) {
-        return <p>에디터 로딩 중...</p>;
-    }
+    };
     return <>
-        <div className={styles.toolBar}>
-            <button onClick={() => editor.chain().focus().toggleBold().run()}>
-                <FormatBoldIcon />
-            </button>
-            <button onClick={() => editor.chain().focus().toggleItalic().run()}>
-                <FormatItalicIcon />
-            </button>
-            <button onClick={() => editor.chain().focus().toggleUnderline().run()}>
-                <FormatUnderlinedIcon />
-            </button>
-        </div>
-        <EditorContent editor={editor} className={styles.editor} />
+        <input type="text" value={title} onChange={event => setTitle(event.target.value)} placeholder="제목 입력" className={styles.titleInput} />
+        <SimpleEditor content={content} onChange={setContent} />
+        <button onClick={handleSubmit} className={styles.submitButton}>게시</button>
     </>;
 }
