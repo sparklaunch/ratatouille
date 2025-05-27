@@ -145,6 +145,16 @@ em {
     font-style: italic;
 }
 
+sup {
+    vertical-align: super;
+    font-size: smaller;
+}
+
+sub {
+    vertical-align: sub;
+    font-size: smaller;
+}
+
 .simple-editor-content {
     margin: 0 !important;
     width: 100% !important;
@@ -162,6 +172,22 @@ em {
 .ProseMirror p {
     margin: 0 !important;
     line-height: normal !important;
+}
+
+.ProseMirror h1 {
+    margin-top: 0 !important;
+}
+
+.ProseMirror h2 {
+    margin-top: 0 !important;
+}
+
+.ProseMirror h3 {
+    margin-top: 0 !important;
+}
+
+.ProseMirror h4 {
+    margin-top: 0 !important;
 }
 
 body {

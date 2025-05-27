@@ -19,7 +19,7 @@ export default function AdminNewNoticeEditor() {
             })
         });
         if (response.ok) {
-            alert("Successfully posted a notice");
+            alert("공지 사항을 성공적으로 등록하였습니다.");
         }
     };
     return <>
