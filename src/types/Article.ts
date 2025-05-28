@@ -4,6 +4,7 @@ type Article = {
     title: string;
     createdAt: Date;
     content: string;
+    attachedFiles?: string;
     thumbnail?: string;
 }
 

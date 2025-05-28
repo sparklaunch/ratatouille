@@ -11,19 +11,20 @@ model Notice {
   id String @id @default(uuid())
   index Int @default(autoincrement())
   title     String   @db.VarChar(255)
-  content   String
+  content   String @db.Text
   attachedFiles String? @db.Text
   createdAt DateTime @default(now()) @db.Timestamptz(6)
   isFixed   Boolean  @default(false)
 }
 
-model articles {
+model Article {
   id String @id @default(uuid())
   index Int @default(autoincrement())
   title     String   @db.VarChar(255)
   createdAt DateTime @default(now()) @db.Timestamptz(6)
-  content   String
-  thumbnail Bytes?
+  content   String @db.Text
+  attachedFiles String? @db.Text
+  thumbnail String? @db.Text
 }
 
 model newsletters {
