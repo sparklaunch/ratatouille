@@ -7,11 +7,12 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model notices {
+model Notice {
   id String @id @default(uuid())
   index Int @default(autoincrement())
   title     String   @db.VarChar(255)
   content   String
+  attachedFiles String? @db.Text
   createdAt DateTime @default(now()) @db.Timestamptz(6)
   isFixed   Boolean  @default(false)
 }

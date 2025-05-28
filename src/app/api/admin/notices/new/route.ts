@@ -14,7 +14,7 @@ export async function POST(request: NextRequest) {
     try {
         const data = await request.json() as NewNotice;
         const validatedData = newNoticeSchema.parse(data);
-        const newNotice = await prisma.notices.create({
+        const newNotice = await prisma.notice.create({
             data: {
                 ...validatedData
             }

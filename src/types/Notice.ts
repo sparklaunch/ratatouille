@@ -3,6 +3,7 @@ type Notice = {
     index: number;
     title: string;
     content: string;
+    attachedFiles?: string;
     createdAt: Date;
     isFixed: boolean;
 };
