@@ -22,12 +22,20 @@
     margin-bottom: 3px;
 }
 
+.isFixedCheckBox {
+    margin: 20px 0;
+}
+
+.datePicker p {
+    margin-top: 5px;
+}
+
 .editor {
     border: 1px solid gray;
     padding: 5px;
 }
 
 .submitButton {
-    margin-top: 20px;
-    margin-bottom: 100px;
+    margin: 20px 0 100px 0;
+    display: block;
 }
