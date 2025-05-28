@@ -1,6 +1,7 @@
 "use client"
 
-import * as React from "react"
+import "@/components/tiptap-ui-primitive/dropdown-menu/dropdown-menu.scss"
+import { Separator } from "@/components/tiptap-ui-primitive/separator"
 import type { Placement } from "@floating-ui/react"
 import {
   autoUpdate,
@@ -20,8 +21,7 @@ import {
   useRole,
   useTypeahead,
 } from "@floating-ui/react"
-import "@/components/tiptap-ui-primitive/dropdown-menu/dropdown-menu.scss"
-import { Separator } from "@/components/tiptap-ui-primitive/separator"
+import * as React from "react"
 
 interface DropdownMenuOptions {
   initialOpen?: boolean
@@ -48,7 +48,7 @@ function useDropdownMenuContext() {
   const context = React.useContext(DropdownMenuContext)
   if (!context) {
     throw new Error(
-      "DropdownMenu components must be wrapped in <DropdownMenu />"
+      "드롭다운 메뉴는 반드시 <DropdownMenu /> 안에 싸여 있어야 해요"
     )
   }
   return context
@@ -160,9 +160,9 @@ export const DropdownMenuTrigger = React.forwardRef<
   const childrenRef = React.isValidElement(children)
     ? parseInt(React.version, 10) >= 19
       ? // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        (children as { props: { ref?: React.Ref<any> } }).props.ref
+      (children as { props: { ref?: React.Ref<any> } }).props.ref
       : // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        (children as any).ref
+      (children as any).ref
     : undefined
   const ref = useMergeRefs([context.refs.setReference, propRef, childrenRef])
 

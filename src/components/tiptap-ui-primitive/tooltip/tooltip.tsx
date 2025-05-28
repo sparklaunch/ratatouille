@@ -1,25 +1,25 @@
 "use client"
 
-import * as React from "react"
+import "@/components/tiptap-ui-primitive/tooltip/tooltip.scss"
 import {
-  useFloating,
   autoUpdate,
-  offset,
   flip,
+  FloatingDelayGroup,
+  FloatingPortal,
+  offset,
   shift,
-  useHover,
-  useFocus,
   useDismiss,
-  useRole,
+  useFloating,
+  useFocus,
+  useHover,
   useInteractions,
   useMergeRefs,
-  FloatingPortal,
+  useRole,
   type Placement,
-  type UseFloatingReturn,
   type ReferenceType,
-  FloatingDelayGroup,
+  type UseFloatingReturn,
 } from "@floating-ui/react"
-import "@/components/tiptap-ui-primitive/tooltip/tooltip.scss"
+import * as React from "react"
 
 interface TooltipProviderProps {
   children: React.ReactNode
@@ -123,7 +123,7 @@ function useTooltipContext() {
   const context = React.useContext(TooltipContext)
 
   if (context == null) {
-    throw new Error("Tooltip components must be wrapped in <TooltipProvider />")
+    throw new Error("툴팁 요소는 반드시 <TooltipProvider /> 안에 싸여 있어야 해요")
   }
 
   return context
@@ -160,9 +160,9 @@ export const TooltipTrigger = React.forwardRef<
   const childrenRef = React.isValidElement(children)
     ? parseInt(React.version, 10) >= 19
       ? // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        (children as { props: { ref?: React.Ref<any> } }).props.ref
+      (children as { props: { ref?: React.Ref<any> } }).props.ref
       : // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        (children as any).ref
+      (children as any).ref
     : undefined
   const ref = useMergeRefs([context.refs.setReference, propRef, childrenRef])
 

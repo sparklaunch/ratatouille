@@ -1,7 +1,7 @@
 "use client"
 
-import * as React from "react"
 import { isNodeSelection, type Editor } from "@tiptap/react"
+import * as React from "react"
 
 // --- Hooks ---
 import { useTiptapEditor } from "@/hooks/use-tiptap-editor"
@@ -48,17 +48,17 @@ export interface ListButtonProps extends Omit<ButtonProps, "type"> {
 
 export const listOptions: ListOption[] = [
   {
-    label: "Bullet List",
+    label: "가운뎃점 목록",
     type: "bulletList",
     icon: ListIcon,
   },
   {
-    label: "Ordered List",
+    label: "순서 목록",
     type: "orderedList",
     icon: ListOrderedIcon,
   },
   {
-    label: "Task List",
+    label: "작업 목록",
     type: "taskList",
     icon: ListTodoIcon,
   },

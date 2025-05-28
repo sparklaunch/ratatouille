@@ -1,7 +1,7 @@
 "use client"
 
-import * as React from "react"
 import { type Editor } from "@tiptap/react"
+import * as React from "react"
 
 // --- Hooks ---
 import { useTiptapEditor } from "@/hooks/use-tiptap-editor"
@@ -45,8 +45,8 @@ export const historyShortcutKeys: Partial<Record<HistoryAction, string>> = {
 }
 
 export const historyActionLabels: Record<HistoryAction, string> = {
-  undo: "Undo",
-  redo: "Redo",
+  undo: "실행 취소",
+  redo: "실행 복구",
 }
 
 /**

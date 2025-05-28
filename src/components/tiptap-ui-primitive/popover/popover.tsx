@@ -1,24 +1,24 @@
 "use client"
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import * as React from "react"
+import "@/components/tiptap-ui-primitive/popover/popover.scss"
 import type { Placement } from "@floating-ui/react"
 import {
-  useFloating,
   autoUpdate,
-  offset,
   flip,
+  FloatingFocusManager,
+  FloatingPortal,
+  limitShift,
+  offset,
   shift,
   useClick,
   useDismiss,
-  useRole,
+  useFloating,
   useInteractions,
   useMergeRefs,
-  FloatingFocusManager,
-  limitShift,
-  FloatingPortal,
+  useRole,
 } from "@floating-ui/react"
-import "@/components/tiptap-ui-primitive/popover/popover.scss"
+import * as React from "react"
 
 type PopoverContextValue = ReturnType<typeof usePopover> & {
   setLabelId: (id: string | undefined) => void
@@ -51,7 +51,7 @@ const PopoverContext = React.createContext<PopoverContextValue | null>(null)
 function usePopoverContext() {
   const context = React.useContext(PopoverContext)
   if (!context) {
-    throw new Error("Popover components must be wrapped in <Popover />")
+    throw new Error("팝오버 요소는 반드시 <Popover /> 안에 싸여 있어야 해요")
   }
   return context
 }
@@ -284,4 +284,5 @@ const PopoverContent = React.forwardRef<HTMLDivElement, PopoverContentProps>(
 PopoverTrigger.displayName = "PopoverTrigger"
 PopoverContent.displayName = "PopoverContent"
 
-export { Popover, PopoverTrigger, PopoverContent }
+export { Popover, PopoverContent, PopoverTrigger }
+

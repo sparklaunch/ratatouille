@@ -1,7 +1,7 @@
 "use client"
 
-import * as React from "react"
 import { isNodeSelection, type Editor } from "@tiptap/react"
+import * as React from "react"
 
 // --- Hooks ---
 import { useTiptapEditor } from "@/hooks/use-tiptap-editor"
@@ -27,10 +27,10 @@ import type { ButtonProps } from "@/components/tiptap-ui-primitive/button"
 import { Button } from "@/components/tiptap-ui-primitive/button"
 import {
   DropdownMenu,
-  DropdownMenuTrigger,
   DropdownMenuContent,
   DropdownMenuGroup,
   DropdownMenuItem,
+  DropdownMenuTrigger,
 } from "@/components/tiptap-ui-primitive/dropdown-menu"
 
 export interface ListDropdownMenuProps extends Omit<ButtonProps, "type"> {
@@ -198,8 +198,8 @@ export function ListDropdownMenu({
           data-active-state={isAnyActive ? "on" : "off"}
           role="button"
           tabIndex={-1}
-          aria-label="List options"
-          tooltip="List"
+          aria-label="목록 옵션"
+          tooltip="목록"
           {...props}
         >
           {getActiveIcon()}

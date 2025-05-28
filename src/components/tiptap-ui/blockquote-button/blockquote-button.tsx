@@ -1,7 +1,7 @@
 "use client"
 
-import * as React from "react"
 import { isNodeSelection, type Editor } from "@tiptap/react"
+import * as React from "react"
 
 // --- Hooks ---
 import { useTiptapEditor } from "@/hooks/use-tiptap-editor"
@@ -114,7 +114,7 @@ export function useBlockquoteState(
   }, [editor, isDisabled])
 
   const shortcutKey = "Ctrl-Shift-b"
-  const label = "Blockquote"
+  const label = "인용구"
 
   return {
     nodeInSchema,
@@ -181,7 +181,7 @@ export const BlockQuoteButton = React.forwardRef<
         data-disabled={isDisabled}
         role="button"
         tabIndex={-1}
-        aria-label="blockquote"
+        aria-label="인용구"
         aria-pressed={isActive}
         tooltip={label}
         shortcutKeys={shortcutKey}

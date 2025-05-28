@@ -1,18 +1,18 @@
 "use client"
 
-import * as React from "react"
 import { isNodeSelection, type Editor } from "@tiptap/react"
+import * as React from "react"
 
 // --- Hooks ---
 import { useTiptapEditor } from "@/hooks/use-tiptap-editor"
 
 // --- Icons ---
-import { HeadingOneIcon } from "@/components/tiptap-icons/heading-one-icon"
-import { HeadingTwoIcon } from "@/components/tiptap-icons/heading-two-icon"
-import { HeadingThreeIcon } from "@/components/tiptap-icons/heading-three-icon"
-import { HeadingFourIcon } from "@/components/tiptap-icons/heading-four-icon"
 import { HeadingFiveIcon } from "@/components/tiptap-icons/heading-five-icon"
+import { HeadingFourIcon } from "@/components/tiptap-icons/heading-four-icon"
+import { HeadingOneIcon } from "@/components/tiptap-icons/heading-one-icon"
 import { HeadingSixIcon } from "@/components/tiptap-icons/heading-six-icon"
+import { HeadingThreeIcon } from "@/components/tiptap-icons/heading-three-icon"
+import { HeadingTwoIcon } from "@/components/tiptap-icons/heading-two-icon"
 
 // --- Lib ---
 import { isNodeInSchema } from "@/lib/tiptap-utils"
@@ -119,7 +119,7 @@ export function shouldShowHeadingButton(params: {
 }
 
 export function getFormattedHeadingName(level: Level): string {
-  return `Heading ${level}`
+  return `헤딩 ${level}`
 }
 
 export function useHeadingState(

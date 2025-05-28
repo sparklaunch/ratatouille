@@ -1,7 +1,7 @@
 "use client"
 
-import * as React from "react"
 import { isNodeSelection, type Editor } from "@tiptap/react"
+import * as React from "react"
 
 // --- Hooks ---
 import { useTiptapEditor } from "@/hooks/use-tiptap-editor"
@@ -15,10 +15,10 @@ import { isNodeInSchema } from "@/lib/tiptap-utils"
 
 // --- Tiptap UI ---
 import {
+  getFormattedHeadingName,
   HeadingButton,
   headingIcons,
   type Level,
-  getFormattedHeadingName,
 } from "@/components/tiptap-ui/heading-button/heading-button"
 
 // --- UI Primitives ---
@@ -26,10 +26,10 @@ import type { ButtonProps } from "@/components/tiptap-ui-primitive/button"
 import { Button } from "@/components/tiptap-ui-primitive/button"
 import {
   DropdownMenu,
-  DropdownMenuTrigger,
   DropdownMenuContent,
-  DropdownMenuItem,
   DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
 } from "@/components/tiptap-ui-primitive/dropdown-menu"
 
 export interface HeadingDropdownMenuProps extends Omit<ButtonProps, "type"> {
@@ -111,9 +111,9 @@ export function HeadingDropdownMenu({
           data-disabled={isDisabled}
           role="button"
           tabIndex={-1}
-          aria-label="Format text as heading"
+          aria-label="헤딩으로 포맷"
           aria-pressed={isAnyHeadingActive}
-          tooltip="Heading"
+          tooltip="헤딩"
           {...props}
         >
           {getActiveIcon()}

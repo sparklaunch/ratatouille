@@ -1,7 +1,7 @@
 "use client"
 
-import * as React from "react"
 import { isNodeSelection, type Editor } from "@tiptap/react"
+import * as React from "react"
 
 // --- Hooks ---
 import { useMenuNavigation } from "@/hooks/use-menu-navigation"
@@ -19,8 +19,8 @@ import type { ButtonProps } from "@/components/tiptap-ui-primitive/button"
 import { Button } from "@/components/tiptap-ui-primitive/button"
 import {
   Popover,
-  PopoverTrigger,
   PopoverContent,
+  PopoverTrigger,
 } from "@/components/tiptap-ui-primitive/popover"
 import { Separator } from "@/components/tiptap-ui-primitive/separator"
 
@@ -56,27 +56,27 @@ export interface ColorHighlightPopoverProps extends Omit<ButtonProps, "type"> {
 
 export const DEFAULT_HIGHLIGHT_COLORS: ColorHighlightPopoverColor[] = [
   {
-    label: "Green",
+    label: "초록",
     value: "var(--tt-color-highlight-green)",
     border: "var(--tt-color-highlight-green-contrast)",
   },
   {
-    label: "Blue",
+    label: "파랑",
     value: "var(--tt-color-highlight-blue)",
     border: "var(--tt-color-highlight-blue-contrast)",
   },
   {
-    label: "Red",
+    label: "빨강",
     value: "var(--tt-color-highlight-red)",
     border: "var(--tt-color-highlight-red-contrast)",
   },
   {
-    label: "Purple",
+    label: "보라",
     value: "var(--tt-color-highlight-purple)",
     border: "var(--tt-color-highlight-purple-contrast)",
   },
   {
-    label: "Yellow",
+    label: "노랑",
     value: "var(--tt-color-highlight-yellow)",
     border: "var(--tt-color-highlight-yellow-contrast)",
   },
@@ -93,8 +93,8 @@ export const ColorHighlightPopoverButton = React.forwardRef<
     data-appearance="default"
     role="button"
     tabIndex={-1}
-    aria-label="Highlight text"
-    tooltip="Highlight"
+    aria-label="강조 텍스트"
+    tooltip="강조"
     ref={ref}
     {...props}
   >
@@ -119,7 +119,7 @@ export function ColorHighlightPopoverContent({
   }, [editor, onClose])
 
   const menuItems = React.useMemo(
-    () => [...colors, { label: "Remove highlight", value: "none" }],
+    () => [...colors, { label: "강조색 지우기", value: "none" }],
     [colors]
   )
 
@@ -149,7 +149,7 @@ export function ColorHighlightPopoverContent({
             key={color.value}
             editor={editor}
             color={color.value}
-            aria-label={`${color.label} highlight color`}
+            aria-label={`${color.label} 강조색`}
             tabIndex={index === selectedIndex ? 0 : -1}
             data-highlighted={selectedIndex === index}
             onClick={onClose}
@@ -162,7 +162,7 @@ export function ColorHighlightPopoverContent({
       <div className="tiptap-button-group">
         <Button
           onClick={removeHighlight}
-          aria-label="Remove highlight"
+          aria-label="강조색 지우기"
           tabIndex={selectedIndex === colors.length ? 0 : -1}
           type="button"
           role="menuitem"
@@ -245,7 +245,7 @@ export function ColorHighlightPopover({
         />
       </PopoverTrigger>
 
-      <PopoverContent aria-label="Highlight colors">
+      <PopoverContent aria-label="강조색들">
         <ColorHighlightPopoverContent
           editor={editor}
           colors={colors}

@@ -1,7 +1,7 @@
 "use client"
 
+import { type ChainedCommands, type Editor } from "@tiptap/react"
 import * as React from "react"
-import { type Editor, type ChainedCommands } from "@tiptap/react"
 
 // --- Hooks ---
 import { useTiptapEditor } from "@/hooks/use-tiptap-editor"
@@ -53,10 +53,10 @@ export const textAlignShortcutKeys: Partial<Record<TextAlign, string>> = {
 }
 
 export const textAlignLabels: Record<TextAlign, string> = {
-  left: "Align left",
-  center: "Align center",
-  right: "Align right",
-  justify: "Align justify",
+  left: "왼쪽 정렬",
+  center: "가운데 정렬",
+  right: "오른쪽 정렬",
+  justify: "양쪽 정렬",
 }
 
 export function hasSetTextAlign(
@@ -76,8 +76,8 @@ export function checkTextAlignExtension(editor: Editor | null): boolean {
 
   if (!hasExtension) {
     console.warn(
-      "TextAlign extension is not available. " +
-        "Make sure it is included in your editor configuration."
+      "글 정렬 확장 기능이 사용 불가합니다. " +
+      "에디터 설정에 포함되어 있는지 확인해주세요."
     )
   }
 

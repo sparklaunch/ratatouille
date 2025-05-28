@@ -1,8 +1,8 @@
 "use client"
 
-import * as React from "react"
 import { Separator } from "@/components/tiptap-ui-primitive/separator"
 import "@/components/tiptap-ui-primitive/toolbar/toolbar.scss"
+import * as React from "react"
 
 type BaseProps = React.HTMLAttributes<HTMLDivElement>
 
@@ -18,7 +18,7 @@ const mergeRefs = <T,>(
       if (typeof ref === "function") {
         ref(value)
       } else if (ref != null) {
-        ;(ref as React.MutableRefObject<T | null>).current = value
+        ; (ref as React.MutableRefObject<T | null>).current = value
       }
     })
   }
@@ -274,7 +274,7 @@ export const Toolbar = React.forwardRef<HTMLDivElement, ToolbarProps>(
       <div
         ref={mergeRefs([toolbarRef, ref])}
         role="toolbar"
-        aria-label="toolbar"
+        aria-label="툴바"
         data-variant={variant}
         className={`tiptap-toolbar ${className || ""}`}
         {...props}

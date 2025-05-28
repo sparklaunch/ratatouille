@@ -189,7 +189,7 @@ export function SimpleEditor({ content, onChange }: { content: string, onChange:
         autocomplete: "off",
         autocorrect: "off",
         autocapitalize: "off",
-        "aria-label": "Main content area, start typing to enter text."
+        "aria-label": "메인 본문 영역, 텍스트를 입력하여 작성을 시작하세요"
       },
     },
     extensions: [
@@ -210,7 +210,7 @@ export function SimpleEditor({ content, onChange }: { content: string, onChange:
         maxSize: MAX_FILE_SIZE,
         limit: 3,
         upload: handleImageUpload,
-        onError: (error) => console.error("Upload failed:", error),
+        onError: (error) => console.error("업로드 실패: ", error),
       }),
       TrailingNode,
       Link.configure({ openOnClick: false }),

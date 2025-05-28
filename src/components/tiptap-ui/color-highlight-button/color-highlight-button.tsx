@@ -1,8 +1,8 @@
 "use client"
 
-import * as React from "react"
-import { isNodeSelection, type Editor } from "@tiptap/react"
 import type { Node } from "@tiptap/pm/model"
+import { isNodeSelection, type Editor } from "@tiptap/react"
+import * as React from "react"
 
 // --- Hooks ---
 import { useTiptapEditor } from "@/hooks/use-tiptap-editor"
@@ -23,52 +23,52 @@ import "@/components/tiptap-ui/color-highlight-button/color-highlight-button.scs
 
 export const HIGHLIGHT_COLORS = [
   {
-    label: "Default background",
+    label: "기본색",
     value: "var(--tt-bg-color)",
     border: "var(--tt-bg-color-contrast)",
   },
   {
-    label: "Gray background",
+    label: "회색",
     value: "var(--tt-color-highlight-gray)",
     border: "var(--tt-color-highlight-gray-contrast)",
   },
   {
-    label: "Brown background",
+    label: "갈색",
     value: "var(--tt-color-highlight-brown)",
     border: "var(--tt-color-highlight-brown-contrast)",
   },
   {
-    label: "Orange background",
+    label: "주황색",
     value: "var(--tt-color-highlight-orange)",
     border: "var(--tt-color-highlight-orange-contrast)",
   },
   {
-    label: "Yellow background",
+    label: "노란색",
     value: "var(--tt-color-highlight-yellow)",
     border: "var(--tt-color-highlight-yellow-contrast)",
   },
   {
-    label: "Green background",
+    label: "초록색",
     value: "var(--tt-color-highlight-green)",
     border: "var(--tt-color-highlight-green-contrast)",
   },
   {
-    label: "Blue background",
+    label: "파란색",
     value: "var(--tt-color-highlight-blue)",
     border: "var(--tt-color-highlight-blue-contrast)",
   },
   {
-    label: "Purple background",
+    label: "보라색",
     value: "var(--tt-color-highlight-purple)",
     border: "var(--tt-color-highlight-purple-contrast)",
   },
   {
-    label: "Pink background",
+    label: "분홍색",
     value: "var(--tt-color-highlight-pink)",
     border: "var(--tt-color-highlight-pink-contrast)",
   },
   {
-    label: "Red background",
+    label: "빨간색",
     value: "var(--tt-color-highlight-red)",
     border: "var(--tt-color-highlight-red-contrast)",
   },
@@ -164,7 +164,7 @@ export function toggleHighlight(
 
     editor.chain().setMeta("hideDragHandle", true).run()
   } catch (error) {
-    console.error("Failed to apply highlight:", error)
+    console.error("하이라이트 적용에 실패했어요: ", error)
   }
 }
 
@@ -306,7 +306,7 @@ export const ColorHighlightButton = React.forwardRef<
         data-disabled={isDisabled}
         role="button"
         tabIndex={-1}
-        aria-label={`${color} highlight color`}
+        aria-label={`${color} 강조색`}
         aria-pressed={isActive}
         onClick={handleClick}
         style={buttonStyle}
