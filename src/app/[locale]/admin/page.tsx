@@ -19,17 +19,18 @@ export default function AdminPage() {
         if (response?.ok) {
             router.push("/admin/main");
         } else {
-            alert("Failed to sign in");
+            alert("로그인에 실패하였습니다.");
         }
     };
     return <div className={styles.container}>
         <div className={styles.formContainer}>
+            <h1 className={styles.header}>관리자 페이지</h1>
             <form className={styles.form} onSubmit={handleSubmit}>
-                <label htmlFor="email">Email</label>
+                <label htmlFor="email">이메일</label>
                 <input type="email" id="email" name="email" placeholder="Email" value={email} onChange={event => setEmail(event.target.value)} />
-                <label htmlFor="password">Password</label>
+                <label htmlFor="password">비밀번호</label>
                 <input type="password" id="password" name="password" placeholder="Password" value={password} onChange={event => setPassword(event.target.value)} />
-                <button type="submit">Sign In</button>
+                <button type="submit">로그인</button>
             </form>
         </div>
     </div>;
