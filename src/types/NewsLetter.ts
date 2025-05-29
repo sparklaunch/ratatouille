@@ -4,6 +4,7 @@ type NewsLetter = {
     title: string;
     createdAt: Date;
     content: string;
+    attachedFiles?: string;
     thumbnail?: string;
 }
 

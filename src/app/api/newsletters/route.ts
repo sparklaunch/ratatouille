@@ -5,14 +5,14 @@ export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
     const page = parseInt(searchParams.get("page") as string);
     const pageSize = 12;
-    const newsLetters = await prisma.newsletters.findMany({
+    const newsLetters = await prisma.newsLetter.findMany({
         orderBy: {
             createdAt: "desc"
         },
         skip: (page - 1) * pageSize,
         take: pageSize
     });
-    const totalCount = await prisma.newsletters.count();
+    const totalCount = await prisma.newsLetter.count();
     return NextResponse.json({
         newsLetters,
         totalCount

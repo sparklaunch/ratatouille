@@ -27,13 +27,14 @@ model Article {
   thumbnail String? @db.Text
 }
 
-model newsletters {
+model NewsLetter {
   id String @id @default(uuid())
   index Int @default(autoincrement())
   title     String   @db.VarChar(255)
   createdAt DateTime @default(now()) @db.Timestamptz(6)
-  content   String
-  thumbnail Bytes?
+  content   String @db.Text
+  attachedFiles String? @db.Text
+  thumbnail String? @db.Text
 }
 
 model inquiries {
