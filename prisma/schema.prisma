@@ -12,7 +12,7 @@ model Notice {
   index Int @default(autoincrement())
   title     String   @db.VarChar(255)
   content   String @db.Text
-  attachedFiles String? @db.Text
+  attachedFiles String @db.Text
   createdAt DateTime @default(now()) @db.Timestamptz(6)
   isFixed   Boolean  @default(false)
 }
@@ -23,7 +23,7 @@ model Article {
   title     String   @db.VarChar(255)
   createdAt DateTime @default(now()) @db.Timestamptz(6)
   content   String @db.Text
-  attachedFiles String? @db.Text
+  attachedFiles String @db.Text
   thumbnail String? @db.Text
 }
 
@@ -33,8 +33,8 @@ model NewsLetter {
   title     String   @db.VarChar(255)
   createdAt DateTime @default(now()) @db.Timestamptz(6)
   content   String @db.Text
-  attachedFiles String? @db.Text
-  thumbnail String? @db.Text
+  attachedFiles String @db.Text
+  thumbnail String @db.Text
 }
 
 model Inquiry {
