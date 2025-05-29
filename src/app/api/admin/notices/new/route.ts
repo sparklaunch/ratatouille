@@ -34,17 +34,19 @@ export async function POST(request: NextRequest) {
                 type: attachedFile.type
             } as FileMetaData;
         });
-        const uploadDirectory = "/root/uploads";
         const noticeID = uuid();
-        const targetDirectory = join(uploadDirectory, noticeID);
-        if (!fs.existsSync(targetDirectory)) {
-            fs.mkdirSync(targetDirectory, { recursive: true });
-        }
-        for (const attachedFile of attachedFiles) {
-            const arrayBuffer = await attachedFile.arrayBuffer();
-            const buffer = Buffer.from(arrayBuffer);
-            const targetURL = join(targetDirectory, attachedFile.name);
-            fs.writeFileSync(targetURL, buffer);
+        if (attachedFiles) {
+            const uploadDirectory = "/root/uploads/notices";
+            const targetDirectory = join(uploadDirectory, noticeID);
+            if (!fs.existsSync(targetDirectory)) {
+                fs.mkdirSync(targetDirectory, { recursive: true });
+            }
+            for (const attachedFile of attachedFiles) {
+                const arrayBuffer = await attachedFile.arrayBuffer();
+                const buffer = Buffer.from(arrayBuffer);
+                const targetURL = join(targetDirectory, attachedFile.name);
+                fs.writeFileSync(targetURL, buffer);
+            }
         }
         const newNotice = await prisma.notice.create({
             data: {

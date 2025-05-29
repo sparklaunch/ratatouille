@@ -57,11 +57,10 @@
     align-items: flex-end;
     margin-bottom: 50px;
     gap: 5px;
-    & > li {
-        cursor: pointer;
+    & a {
         transition: all 0.3s;
     }
-    & > li:hover {
+    & a:hover {
         color: blue;
         text-decoration: underline;
     }

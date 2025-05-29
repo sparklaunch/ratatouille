@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter } from "@/i18n/routing";
+import { Link, useRouter } from "@/i18n/routing";
 import { FileMetaData } from "@/types/FileMetaData";
 import defaultNotice, { Notice } from "@/types/Notice";
 import formatDate from "@/utilities/formatDate";
@@ -42,10 +42,12 @@ export default function AdminNoticeContentPage() {
                     }} />
                 </div>
             </div>
-            {metaData && <div className={styles.attachedFiles}>
+            {metaData.length > 0 && <div className={styles.attachedFiles}>
                 <h4 className={styles.attachedFilesHeader}>첨부 파일</h4>
                 <ol className={styles.attachedFileList}>
-                    {metaData.map(meta => <li key={meta.name}>{meta.name}</li>)}
+                    {metaData.map(meta => <li key={meta.name}>
+                        <Link href={`/api/file?type=notices&id=${notice.id}&name=${meta.name}&meme=${meta.type}`}>{meta.name}</Link>
+                    </li>)}
                 </ol>
             </div>}
             <div className={styles.goBackToListButton}>
