@@ -1,4 +1,7 @@
+import fs from "fs";
 import { NextRequest, NextResponse } from "next/server";
+import { join } from "path";
+import { v4 as uuid } from "uuid";
 import { z } from "zod/v4";
 import { prisma } from "../../../../../../lib/prisma";
 
@@ -30,10 +33,23 @@ export async function POST(request: NextRequest) {
                 type: attachedFile.type
             }
         });
+        const uploadDirectory = "/root/uploads";
+        const noticeID = uuid();
+        const targetDirectory = join(uploadDirectory, noticeID);
+        if (!fs.existsSync(targetDirectory)) {
+            fs.mkdirSync(targetDirectory, { recursive: true });
+        }
+        for (const attachedFile of attachedFiles) {
+            const arrayBuffer = await attachedFile.arrayBuffer();
+            const buffer = Buffer.from(arrayBuffer);
+            const targetURL = join(targetDirectory, attachedFile.name);
+            fs.writeFileSync(targetURL, buffer);
+        }
         const newNotice = await prisma.notice.create({
             data: {
                 ...validatedData,
-                attachedFiles: JSON.stringify(metaData)
+                attachedFiles: JSON.stringify(metaData),
+                id: noticeID
             }
         });
         return NextResponse.json({
