@@ -3,6 +3,7 @@
 import { Link, useRouter } from "@/i18n/routing";
 import { FileMetaData } from "@/types/FileMetaData";
 import defaultNotice, { Notice } from "@/types/Notice";
+import formatBytes from "@/utilities/formatBytes";
 import formatDate from "@/utilities/formatDate";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -46,7 +47,7 @@ export default function AdminNoticeContentPage() {
                 <h4 className={styles.attachedFilesHeader}>첨부 파일</h4>
                 <ol className={styles.attachedFileList}>
                     {metaData.map(meta => <li key={meta.name}>
-                        <Link href={`/api/file?type=notices&id=${notice.id}&name=${meta.name}&meme=${meta.type}`}>{meta.name}</Link>
+                        <Link href={`/api/file?type=notices&id=${notice.id}&name=${meta.name}&meme=${meta.type}`}>{meta.name} - {formatBytes(meta.size)}</Link>
                     </li>)}
                 </ol>
             </div>}
