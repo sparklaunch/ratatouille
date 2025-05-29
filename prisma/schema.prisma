@@ -37,13 +37,13 @@ model NewsLetter {
   thumbnail String? @db.Text
 }
 
-model inquiries {
+model Inquiry {
   id String @id @default(uuid())
   name String @db.VarChar(100)
-  affiliation String @db.VarChar(100)
+  affiliation String? @db.VarChar(100)
   contact String @db.VarChar(100)
   email String @db.VarChar(100)
-  other String
+  other String? @db.Text
   termsAgreed Boolean
   sentAt DateTime @default(now()) @db.Timestamptz(6)
 }

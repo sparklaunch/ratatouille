@@ -15,7 +15,7 @@ export async function POST(request: NextRequest) {
     try {
         const body = await request.json();
         inquirySchema.parse(body);
-        await prisma.inquiries.create({
+        await prisma.inquiry.create({
             data: body
         });
         return NextResponse.json({
