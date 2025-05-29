@@ -4,6 +4,7 @@ import { Link, useRouter } from "@/i18n/routing";
 import { NoticeData } from "@/types/NoticeData";
 import defaultNotices, { Notices } from "@/types/Notices";
 import formatDate from "@/utilities/formatDate";
+import AttachFileIcon from '@mui/icons-material/AttachFile';
 import SearchIcon from '@mui/icons-material/Search';
 import { InputAdornment, OutlinedInput } from "@mui/material";
 import { useSearchParams } from "next/navigation";
@@ -55,14 +56,14 @@ export default function AdminNoticesList() {
             {notices.fixedNotices.map((notice, index) => (
                 <Link key={`fixed-${index}`} className={styles.fixedNotice} href={`/admin/main/notices/${notice.id}`}>
                     <p>{notice.index}</p>
-                    <p>{notice.title}</p>
+                    <p>{notice.title}<span className={styles.attachedFileIcon}>{notice.attachedFiles.length > 2 && <AttachFileIcon />}</span></p>
                     <p>{formatDate(notice.createdAt)}</p>
                 </Link>
             ))}
             {notices.normalNotices.map((notice, index) => (
                 <Link key={`normal-${index}`} className={styles.normalNotice} href={`/admin/main/notices/${notice.id}`}>
                     <p>{notice.index}</p>
-                    <p>{notice.title}</p>
+                    <p>{notice.title}<span className={styles.attachedFileIcon}>{notice.attachedFiles.length > 2 && <AttachFileIcon />}</span></p>
                     <p>{formatDate(notice.createdAt)}</p>
                 </Link>
             ))}
