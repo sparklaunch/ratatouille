@@ -48,10 +48,10 @@ model Inquiry {
   sentAt DateTime @default(now()) @db.Timestamptz(6)
 }
 
-model visits {
+model Visit {
   id String @id @default(uuid())
   name String @db.VarChar(100)
-  affiliation String @db.VarChar(100)
+  affiliation String? @db.VarChar(100)
   contact String @db.VarChar(100)
   email String @db.VarChar(100)
   applicationDate DateTime @db.Timestamptz(6)
@@ -59,7 +59,7 @@ model visits {
   headCount Int
   purposeOfFieldTrip Boolean
   purposeOfListening Boolean
-  other String
+  other String? @db.Text
   termsAgreed Boolean
   sentAt DateTime @default(now()) @db.Timestamptz(6)
 }

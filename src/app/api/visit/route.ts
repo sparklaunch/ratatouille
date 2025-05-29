@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { z } from "zod";
+import { z } from "zod/v4";
 import { prisma } from "../../../../lib/prisma";
 
 const visitSchema = z.object({
@@ -20,7 +20,7 @@ export async function POST(request: NextRequest) {
     try {
         const body = await request.json();
         visitSchema.parse(body);
-        await prisma.visits.create({
+        await prisma.visit.create({
             data: body
         });
         return NextResponse.json({
