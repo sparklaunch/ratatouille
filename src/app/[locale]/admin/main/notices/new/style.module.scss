@@ -35,6 +35,14 @@
     padding: 5px;
 }
 
+.fileUploader {
+    margin: 20px 0;
+}
+
+.uploadedFiles > li {
+    line-height: 20px;
+}
+
 .submitButton {
     margin: 20px 0 100px 0;
     display: block;

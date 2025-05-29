@@ -6,7 +6,7 @@ import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import dayjs, { Dayjs } from "dayjs";
 import "dayjs/locale/ko";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import "../../../../../../styles/_keyframe-animations.css";
 import "../../../../../../styles/_variables.css";
 import styles from "./style.module.scss";
@@ -17,18 +17,19 @@ export default function AdminNewNoticeEditor() {
     const [content, setContent] = useState("");
     const [createdAt, setCreatedAt] = useState<Dayjs | null>(dayjs());
     const [isFixed, setIsFixed] = useState(false);
+    const [attachedFiles, setAttachedFiles] = useState<File[]>([]);
     const handleSubmit = async () => {
+        const formData = new FormData();
+        formData.append("title", title);
+        formData.append("content", content);
+        formData.append("createdAt", createdAt?.toISOString() ?? new Date().toISOString());
+        formData.append("isFixed", isFixed.toString());
+        for (const attachedFile of attachedFiles) {
+            formData.append("attachedFiles", attachedFile);
+        }
         const response = await fetch("/api/admin/notices/new", {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                title,
-                content,
-                createdAt,
-                isFixed
-            })
+            body: formData
         });
         if (response.ok) {
             const data = await response.json();
@@ -38,6 +39,11 @@ export default function AdminNewNoticeEditor() {
             } else {
                 alert(data.errorMessage);
             }
+        }
+    };
+    const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
+        if (event.target.files) {
+            setAttachedFiles(Array.from(event.target.files));
         }
     };
     return <>
@@ -52,6 +58,13 @@ export default function AdminNewNoticeEditor() {
                 <DatePicker label="작성일" value={createdAt} onChange={setCreatedAt} />
                 <p>작성일을 지정하지 않을 경우, 기본값은 현재 날짜</p>
             </LocalizationProvider>
+        </div>
+        <div className={styles.fileUploader}>
+            <label htmlFor="file-uploader">파일 첨부</label>
+            <input id="file-uploader" type="file" multiple onChange={handleFileChange} />
+            <ol className={styles.uploadedFiles}>
+                {attachedFiles.map(attachedFile => <li key={attachedFile.name}>{attachedFile.name}</li>)}
+            </ol>
         </div>
         <button onClick={handleSubmit} className={styles.submitButton}>게시</button>
     </>;
