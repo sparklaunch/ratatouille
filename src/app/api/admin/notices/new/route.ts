@@ -1,3 +1,4 @@
+import { FileMetaData } from "@/types/FileMetaData";
 import fs from "fs";
 import { NextRequest, NextResponse } from "next/server";
 import { join } from "path";
@@ -31,7 +32,7 @@ export async function POST(request: NextRequest) {
                 name: attachedFile.name,
                 size: attachedFile.size,
                 type: attachedFile.type
-            }
+            } as FileMetaData;
         });
         const uploadDirectory = "/root/uploads";
         const noticeID = uuid();

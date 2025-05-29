@@ -38,6 +38,35 @@
     margin-bottom: 300px;
 }
 
+.attachedFiles {
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.attachedFilesHeader {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.attachedFileList {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-bottom: 50px;
+    gap: 5px;
+    & > li {
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+    & > li:hover {
+        color: blue;
+        text-decoration: underline;
+    }
+}
+
 .goBackToListButton > p {
     cursor: pointer;
     padding: 18px 30px;
