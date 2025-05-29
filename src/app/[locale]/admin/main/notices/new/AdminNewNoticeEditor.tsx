@@ -1,6 +1,7 @@
 "use client";
 
 import { SimpleEditor } from "@/components/tiptap-templates/simple/simple-editor";
+import { useRouter } from "@/i18n/routing";
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import dayjs, { Dayjs } from "dayjs";
@@ -11,6 +12,7 @@ import "../../../../../../styles/_variables.css";
 import styles from "./style.module.scss";
 
 export default function AdminNewNoticeEditor() {
+    const router = useRouter();
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
     const [createdAt, setCreatedAt] = useState<Dayjs | null>(dayjs());
@@ -32,6 +34,7 @@ export default function AdminNewNoticeEditor() {
             const data = await response.json();
             if (data.hasSucceeded) {
                 alert("공지 사항을 성공적으로 등록하였습니다.");
+                router.push("/admin/main/notices");
             } else {
                 alert(data.errorMessage);
             }
