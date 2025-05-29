@@ -4,8 +4,8 @@ type NewsLetter = {
     title: string;
     createdAt: Date;
     content: string;
-    attachedFiles?: string;
-    thumbnail?: string;
+    attachedFiles: string;
+    thumbnail: string;
 }
 
 const defaultNewsLetter: NewsLetter = {
@@ -13,7 +13,9 @@ const defaultNewsLetter: NewsLetter = {
     index: 1,
     title: "씨즈",
     createdAt: new Date(),
-    content: "This is a default newsletter"
+    content: "This is a default newsletter",
+    attachedFiles: "[]",
+    thumbnail: "[]"
 }
 
 export default defaultNewsLetter;

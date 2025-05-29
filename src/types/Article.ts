@@ -4,8 +4,8 @@ type Article = {
     title: string;
     createdAt: Date;
     content: string;
-    attachedFiles?: string;
-    thumbnail?: string;
+    attachedFiles: string;
+    thumbnail: string;
 }
 
 const defaultArticle: Article = {
@@ -13,7 +13,9 @@ const defaultArticle: Article = {
     index: 1,
     title: "씨즈",
     createdAt: new Date(),
-    content: "This is a default article"
+    content: "This is a default article",
+    attachedFiles: "[]",
+    thumbnail: "[]"
 }
 
 export default defaultArticle;

@@ -3,7 +3,7 @@ type Notice = {
     index: number;
     title: string;
     content: string;
-    attachedFiles?: string;
+    attachedFiles: string;
     createdAt: Date;
     isFixed: boolean;
 };
@@ -14,7 +14,8 @@ const defaultNotice: Notice = {
     title: "씨즈",
     content: "This is a default notice",
     createdAt: new Date(),
-    isFixed: false
+    isFixed: false,
+    attachedFiles: "[]"
 };
 
 export default defaultNotice;

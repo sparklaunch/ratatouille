@@ -24,7 +24,7 @@ model Article {
   createdAt DateTime @default(now()) @db.Timestamptz(6)
   content   String @db.Text
   attachedFiles String @db.Text
-  thumbnail String? @db.Text
+  thumbnail String @db.Text
 }
 
 model NewsLetter {
