@@ -42,9 +42,16 @@ export default function AdminNewNoticeEditor() {
         }
     };
     const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
-        if (event.target.files) {
-            setAttachedFiles(Array.from(event.target.files));
-        }
+        setAttachedFiles(previousFiles => {
+            const newFiles = Array.from(event.target.files ?? []);
+            const finalFiles = [...previousFiles, ...newFiles];
+            const finalFileNames = finalFiles.map(finalFile => finalFile.name);
+            const finalFileNameSet = Array.from(new Set(finalFileNames));
+            const uniqueFiles = finalFileNameSet.map(finalFileName => {
+                return finalFiles.find(finalFile => finalFile.name === finalFileName)!;
+            });
+            return uniqueFiles;
+        });
     };
     return <>
         <input type="text" value={title} onChange={event => setTitle(event.target.value)} placeholder="제목 입력" className={styles.titleInput} required />
