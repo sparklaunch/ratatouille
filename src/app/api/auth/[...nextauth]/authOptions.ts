@@ -19,7 +19,7 @@ export const authOptions: NextAuthOptions = {
             },
             async authorize(credentials) {
                 try {
-                    const administrator = await prisma.administrators.findFirst({
+                    const administrator = await prisma.administrator.findFirst({
                         where: {
                             email: credentials?.email
                         }

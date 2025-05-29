@@ -64,7 +64,7 @@ model Visit {
   sentAt DateTime @default(now()) @db.Timestamptz(6)
 }
 
-model administrators {
+model Administrator {
   id String @id @default(uuid())
   email String @db.VarChar(100)
   password String @db.VarChar(100)
