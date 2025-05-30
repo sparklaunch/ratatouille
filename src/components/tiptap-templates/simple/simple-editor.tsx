@@ -72,6 +72,7 @@ import { handleImageUpload, MAX_FILE_SIZE } from "@/lib/tiptap-utils"
 
 // --- Styles ---
 import "@/components/tiptap-templates/simple/simple-editor.scss"
+import PostType from "@/enums/PostType"
 
 const MainToolbarContent = ({
   onHighlighterClick,
@@ -174,7 +175,7 @@ const MobileToolbarContent = ({
   </>
 )
 
-export function SimpleEditor({ content, onChange }: { content: string, onChange: (html: string) => void }) {
+export function SimpleEditor({ content, onChange, postType, postID }: { content: string, onChange: (html: string) => void, postType: PostType, postID: string }) {
   const isMobile = useMobile()
   const windowSize = useWindowSize()
   const [mobileView, setMobileView] = React.useState<
@@ -209,7 +210,7 @@ export function SimpleEditor({ content, onChange }: { content: string, onChange:
         accept: "image/*",
         maxSize: MAX_FILE_SIZE,
         limit: 3,
-        upload: handleImageUpload,
+        upload: (file, onProgress, abortSignal) => handleImageUpload(file, postType, postID, onProgress, abortSignal),
         onError: (error) => console.error("업로드 실패: ", error),
       }),
       TrailingNode,

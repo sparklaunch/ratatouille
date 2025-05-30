@@ -1,3 +1,4 @@
+import PostType from "@/enums/PostType";
 import type { Attrs, Node } from "@tiptap/pm/model";
 import type { Editor } from "@tiptap/react";
 
@@ -126,6 +127,8 @@ export function findNodePosition(props: {
  */
 export const handleImageUpload = async (
 	file: File,
+	postType: PostType,
+	postID: string,
 	_onProgress?: (event: { progress: number }) => void,
 	abortSignal?: AbortSignal
 ): Promise<string> => {
@@ -138,7 +141,7 @@ export const handleImageUpload = async (
 	}
 	const formData = new FormData();
 	formData.append("image", file);
-	const response = await fetch("/api/image", {
+	const response = await fetch(`/api/image?type=${postType.toString()}&id=${postID}`, {
 		method: "POST",
 		body: formData,
 		signal: abortSignal

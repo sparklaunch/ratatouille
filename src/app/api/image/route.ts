@@ -1,15 +1,49 @@
+import PostType from "@/enums/PostType";
+import fs from "fs";
 import { NextResponse } from "next/server";
 import path from "path";
 import sharp from "sharp";
+import { v4 as uuid } from "uuid";
 
 export async function POST(request: Request) {
+    const { searchParams } = new URL(request.url);
+    const postType = searchParams.get("type") as PostType;
+    const id = searchParams.get("id") as string;
     const formData = await request.formData();
-    const file = formData.get("image") as File;
-    const buffer = Buffer.from(await file.arrayBuffer());
-    const originalName = file.name.replace(/\.[^/.]+$/, "");
+    const image = formData.get("image") as File;
+    const buffer = Buffer.from(await image.arrayBuffer());
     const uploadDirectory = "/root/uploads";
-    const fileName = `${Date.now()}-${originalName}.webp`;
-    const filePath = path.join(uploadDirectory, fileName);
-    await sharp(buffer).webp({ quality: 80 }).toFile(filePath);
-    return NextResponse.json({ url: `/uploads/${fileName}` });
+    const fileName = `${uuid()}.webp`;
+    switch (postType) {
+        case PostType.Notice: {
+            const targetDirectory = path.join(uploadDirectory, "notices", id);
+            if (!fs.existsSync(targetDirectory)) {
+                fs.mkdirSync(targetDirectory, { recursive: true });
+            }
+            const filePath = path.join(uploadDirectory, "notices", id, fileName);
+            const uploadedPath = path.join("/uploads/notices", id, fileName);
+            await sharp(buffer).webp({ quality: 80 }).toFile(filePath);
+            return NextResponse.json({ url: uploadedPath });
+        }
+        case PostType.Article: {
+            const targetDirectory = path.join(uploadDirectory, "articles", id);
+            if (!fs.existsSync(targetDirectory)) {
+                fs.mkdirSync(targetDirectory, { recursive: true });
+            }
+            const filePath = path.join(uploadDirectory, "articles", id, fileName);
+            const uploadedPath = path.join("/uploads/articles", id, fileName);
+            await sharp(buffer).webp({ quality: 80 }).toFile(filePath);
+            return NextResponse.json({ url: uploadedPath });
+        }
+        case PostType.NewsLetter: {
+            const targetDirectory = path.join(uploadDirectory, "newsletters", id);
+            if (!fs.existsSync(targetDirectory)) {
+                fs.mkdirSync(targetDirectory, { recursive: true });
+            }
+            const filePath = path.join(uploadDirectory, "newsletters", id, fileName);
+            const uploadedPath = path.join("/uploads/newsletters", id, fileName);
+            await sharp(buffer).webp({ quality: 80 }).toFile(filePath);
+            return NextResponse.json({ url: uploadedPath });
+        }
+    }
 }

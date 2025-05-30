@@ -1,12 +1,14 @@
 "use client";
 
 import { SimpleEditor } from "@/components/tiptap-templates/simple/simple-editor";
+import PostType from "@/enums/PostType";
 import { useRouter } from "@/i18n/routing";
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import dayjs, { Dayjs } from "dayjs";
 import "dayjs/locale/ko";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useMemo, useState } from "react";
+import { v4 as uuid } from "uuid";
 import "../../../../../../styles/_keyframe-animations.css";
 import "../../../../../../styles/_variables.css";
 import styles from "./style.module.scss";
@@ -20,6 +22,7 @@ export default function AdminNewNoticeEditor() {
     const [attachedFiles, setAttachedFiles] = useState<File[]>([]);
     const handleSubmit = async () => {
         const formData = new FormData();
+        formData.append("id", id);
         formData.append("title", title);
         formData.append("content", content);
         formData.append("createdAt", createdAt?.toISOString() ?? new Date().toISOString());
@@ -41,6 +44,9 @@ export default function AdminNewNoticeEditor() {
             }
         }
     };
+    const id = useMemo(() => {
+        return uuid();
+    }, []);
     const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
         setAttachedFiles(previousFiles => {
             const newFiles = Array.from(event.target.files ?? []);
@@ -55,7 +61,7 @@ export default function AdminNewNoticeEditor() {
     };
     return <>
         <input type="text" value={title} onChange={event => setTitle(event.target.value)} placeholder="제목 입력" className={styles.titleInput} required />
-        <SimpleEditor content={content} onChange={setContent} />
+        <SimpleEditor content={content} onChange={setContent} postType={PostType.Notice} postID={id} />
         <div className={styles.isFixedCheckBox}>
             <input type="checkbox" checked={isFixed} id="is-fixed" onChange={event => setIsFixed(event.target.checked)} />
             <label htmlFor="is-fixed">상단 고정 여부</label>
