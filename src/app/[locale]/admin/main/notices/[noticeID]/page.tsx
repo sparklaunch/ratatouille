@@ -51,6 +51,10 @@ export default function AdminNoticeContentPage() {
                     </li>)}
                 </ol>
             </div>}
+            <div className={styles.miscellaneous}>
+                <p>삭제</p>
+                <p>수정</p>
+            </div>
             <div className={styles.goBackToListButton}>
                 <p onClick={() => router.back()}>목록 보기</p>
             </div>

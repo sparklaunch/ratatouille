@@ -66,6 +66,21 @@
     }
 }
 
+.miscellaneous {
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+    gap: 10px;
+    & > p {
+        transition: all 0.3s;
+        cursor: pointer;
+    }
+    & > p:hover {
+        color: blue;
+        text-decoration: underline;
+    }
+}
+
 .goBackToListButton > p {
     cursor: pointer;
     padding: 18px 30px;
