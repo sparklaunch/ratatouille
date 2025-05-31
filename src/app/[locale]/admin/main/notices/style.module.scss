@@ -11,6 +11,22 @@
     margin-bottom: 100px;
 }
 
+.subheader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cleanUpButton {
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+        color: blue;
+        text-decoration: underline;
+    }
+}
+
 .newNoticeLink {
     display: inline-block;
     padding: 15px 20px;
