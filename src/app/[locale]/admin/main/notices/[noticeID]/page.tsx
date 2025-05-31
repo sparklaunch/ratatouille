@@ -30,6 +30,14 @@ export default function AdminNoticeContentPage() {
         };
         getNotice();
     }, [noticeID]);
+    const handleDelete = async () => {
+        const response = await fetch(`/api/notice/delete?id=${noticeID}`, {
+            method: "POST"
+        });
+        if (response.ok) {
+            router.back();
+        }
+    };
     return <>
         <div className={styles.container}>
             <div className={styles.contentContainer}>
@@ -52,7 +60,7 @@ export default function AdminNoticeContentPage() {
                 </ol>
             </div>}
             <div className={styles.miscellaneous}>
-                <p>삭제</p>
+                <p onClick={handleDelete}>삭제</p>
                 <p>수정</p>
             </div>
             <div className={styles.goBackToListButton}>
