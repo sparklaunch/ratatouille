@@ -7,6 +7,7 @@ import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import dayjs, { Dayjs } from "dayjs";
 import "dayjs/locale/ko";
+import path from "path";
 import { ChangeEvent, useMemo, useState } from "react";
 import { v4 as uuid } from "uuid";
 import "../../../../../../styles/_keyframe-animations.css";
@@ -30,6 +31,14 @@ export default function AdminNewNoticeEditor() {
         for (const attachedFile of attachedFiles) {
             formData.append("attachedFiles", attachedFile);
         }
+        const matches = Array.from(content.matchAll(/<img[^>]+src="([^">]+)"/g)).map(match => match[1]);
+        const usedImageNames = matches.map(match => path.basename(match));
+        await fetch(`/api/images/filter?type=notice&id=${id}`, {
+            method: "POST",
+            body: JSON.stringify({
+                usedImageNames
+            })
+        });
         const response = await fetch("/api/admin/notices/new", {
             method: "POST",
             body: formData
