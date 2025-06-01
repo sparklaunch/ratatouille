@@ -3,7 +3,7 @@ import fs from "fs";
 import { NextRequest, NextResponse } from "next/server";
 import { join } from "path";
 import { z } from "zod/v4";
-import { prisma } from "../../../../../../lib/prisma";
+import { prisma } from "../../../../../lib/prisma";
 
 const newNoticeSchema = z.object({
     id: z.string().trim().min(1),

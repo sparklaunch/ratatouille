@@ -39,7 +39,7 @@ export default function AdminNewNoticeEditor() {
                 usedImageNames
             })
         });
-        const response = await fetch("/api/admin/notices/new", {
+        const response = await fetch("/api/notice/new", {
             method: "POST",
             body: formData
         });
@@ -47,7 +47,7 @@ export default function AdminNewNoticeEditor() {
             const data = await response.json();
             if (data.hasSucceeded) {
                 alert("공지 사항을 성공적으로 등록하였습니다.");
-                router.push("/admin/main/notices");
+                router.back();
             } else {
                 alert(data.errorMessage);
             }
