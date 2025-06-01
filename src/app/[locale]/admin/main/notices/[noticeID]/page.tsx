@@ -38,6 +38,9 @@ export default function AdminNoticeContentPage() {
             router.back();
         }
     };
+    const handleEdit = () => {
+        router.push(`/admin/main/notices/${noticeID}/edit`);
+    };
     return <>
         <div className={styles.container}>
             <div className={styles.contentContainer}>
@@ -61,7 +64,7 @@ export default function AdminNoticeContentPage() {
             </div>}
             <div className={styles.miscellaneous}>
                 <p onClick={handleDelete}>삭제</p>
-                <p>수정</p>
+                <p onClick={handleEdit}>수정</p>
             </div>
             <div className={styles.goBackToListButton}>
                 <p onClick={() => router.back()}>목록 보기</p>

@@ -1,0 +1,31 @@
+.container {
+    padding-top: 200px;
+    width: 1200px;
+    margin: auto;
+}
+
+.titleInput {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.isFixedCheckBox {
+    margin: 20px 0;
+}
+
+.datePicker p {
+    margin-top: 5px;
+}
+
+.fileUploader {
+    margin: 20px 0;
+}
+
+.uploadedFiles > li {
+    line-height: 20px;
+}
+
+.submitButton {
+    margin: 20px 0 100px 0;
+    display: block;
+}
