@@ -50,7 +50,7 @@ export default function AdminEditNoticePage() {
             }
         };
         fetchNotice();
-    }, []);
+    }, [noticeID]);
     const handleSubmit = async () => {
         const formData = new FormData();
         formData.append("id", noticeID);
