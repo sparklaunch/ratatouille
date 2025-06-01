@@ -6,6 +6,7 @@ import styles from "./style.module.scss";
 
 export default async function Footer() {
     const t = await getTranslations("footer");
+    const currentYear = new Date().getFullYear();
     return <div className={styles.outerContainer}>
         <div className={styles.innerContainer}>
             <Image src={Logo} width={161} height={50} alt={t("logo-alternate")} priority />
@@ -48,7 +49,7 @@ export default async function Footer() {
                     <Link href="#" className={styles.bottomLink}>
                         <span>{t("visit-information")}</span>
                     </Link>
-                    <p className={styles.copyright}>&copy; 2025 SEED:S All Rights Reserved</p>
+                    <p className={styles.copyright}>&copy; {currentYear} SEED:S All Rights Reserved</p>
                 </div>
             </div>
         </div>
