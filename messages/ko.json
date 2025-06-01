@@ -210,7 +210,10 @@
         "introduction": "소개"
     },
     "miscellaneous": {
-        "not-found": "페이지가 존재하지 않습니다."
+        "error-image-alternate": "에러 이미지",
+        "error-title": "문제가 발생하였습니다.",
+        "not-found": "페이지가 존재하지 않습니다.",
+        "retry": "다시 시도하기"
     },
     "news-letter": {
         "communication": "소통",

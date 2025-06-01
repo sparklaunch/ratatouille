@@ -210,7 +210,10 @@
         "introduction": "About"
     },
     "miscellaneous": {
-        "not-found": "The page does not exist."
+        "error-image-alternate": "Error image",
+        "error-title": "Something went wrong.",
+        "not-found": "The page does not exist.",
+        "retry": "Retry"
     },
     "news-letter": {
         "communication": "Communication",

@@ -210,7 +210,10 @@
         "introduction": "Présentation"
     },
     "miscellaneous": {
-        "not-found": "La page n'existe pas."
+        "error-image-alternate": "Image d’erreur",
+        "error-title": "Un problème est survenu.",
+        "not-found": "La page n'existe pas.",
+        "retry": "Réessayer"
     },
     "news-letter": {
         "communication": "Communication",

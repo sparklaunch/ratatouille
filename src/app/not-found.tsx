@@ -7,7 +7,7 @@ export default async function NotFoundPage() {
     const locale = await getLocale();
     return <html lang={locale}>
         <body>
-            <div className={styles.container}>
+            <div className={styles.notFoundContainer}>
                 <Image src="/images/NotFound.jpg" alt="Not found image" fill />
                 <h1>{t("not-found")}</h1>
             </div>

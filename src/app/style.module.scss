@@ -1,4 +1,5 @@
-.container {
+.notFoundContainer,
+.errorContainer {
     width: 600px;
     height: 100vh;
     margin: auto;
@@ -14,5 +15,31 @@
     & > h1 {
         font-weight: bolder;
         font-size: 48px;
+    }
+}
+
+.errorContainer > p {
+    font-family: monospace !important;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px 20px;
+    background-color: gainsboro;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 10px;
+}
+
+.errorContainer > button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid transparent;
+    transition: all 0.3s;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 18px;
+    &:hover {
+        border: 1px solid gainsboro;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     }
 }

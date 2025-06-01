@@ -210,7 +210,10 @@
         "introduction": "紹介"
     },
     "miscellaneous": {
-        "not-found": "ページが存在しません。"
+        "error-image-alternate": "エラー画像",
+        "error-title": "問題が発生しました。",
+        "not-found": "ページが存在しません。",
+        "retry": "再試行"
     },
     "news-letter": {
         "communication": "コミュニケーション",
