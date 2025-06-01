@@ -4,6 +4,7 @@ import { SimpleEditor } from "@/components/tiptap-templates/simple/simple-editor
 import PostType from "@/enums/PostType";
 import { useRouter } from "@/i18n/routing";
 import { Notice } from "@/types/Notice";
+import formatBytes from "@/utilities/formatBytes";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
@@ -95,6 +96,11 @@ export default function AdminEditNoticePage() {
             return uniqueFiles;
         });
     };
+    const removeAttachedFile = (attachedFile: File) => {
+        setAttachedFiles(previousFiles => {
+            return previousFiles.filter(file => file !== attachedFile);
+        });
+    };
     return <div className={styles.container}>
         <input type="text" value={title} onChange={event => setTitle(event.target.value)} placeholder="제목 입력" className={styles.titleInput} required />
         <SimpleEditor content={content} onChange={setContent} postType={PostType.Notice} postID={noticeID} />
@@ -112,7 +118,10 @@ export default function AdminEditNoticePage() {
             <label htmlFor="file-uploader">파일 첨부</label>
             <input id="file-uploader" type="file" multiple onChange={handleFileChange} />
             <ol className={styles.uploadedFiles}>
-                {attachedFiles.map(attachedFile => <li key={attachedFile.name}>{attachedFile.name}</li>)}
+                {attachedFiles.map(attachedFile => <li key={attachedFile.name}>
+                    <p>{attachedFile.name} - {formatBytes(attachedFile.size)}</p>
+                    <button onClick={() => removeAttachedFile(attachedFile)}>제거</button>
+                </li>)}
             </ol>
         </div>
         <button onClick={handleSubmit} className={styles.submitButton}>게시</button>

@@ -22,6 +22,9 @@
 }
 
 .uploadedFiles > li {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
     line-height: 20px;
 }
 
