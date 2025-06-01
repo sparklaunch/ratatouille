@@ -7,12 +7,14 @@ import LocaleSwitcher from "./LocaleSwitcher";
 import styles from "./style.module.scss";
 
 export default async function Header() {
+    const signTexts = [
+        "SEED:S KEEPER",
+        "WE BELIEVE IN THE POWER OF SMALL SEEDS"
+    ];
     const t = await getTranslations("header");
     return <div className={styles.container}>
         <Link href="#" className={styles.keeper}>
-            <span>
-                <SplitFlap>SEED:S KEEPER</SplitFlap>
-            </span>
+            <SplitFlap texts={signTexts} />
         </Link>
         <div className={styles.menuContainer}>
             <div className={styles.menu}>
