@@ -2,6 +2,7 @@ import Logo from "@/../public/logos/Logo.svg";
 import { Link } from "@/i18n/routing";
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
+import SplitFlap from "../splitFlap/SplitFlap";
 import LocaleSwitcher from "./LocaleSwitcher";
 import styles from "./style.module.scss";
 
@@ -9,7 +10,9 @@ export default async function Header() {
     const t = await getTranslations("header");
     return <div className={styles.container}>
         <Link href="#" className={styles.keeper}>
-            <span>SEED:S KEEPER</span>
+            <span>
+                <SplitFlap>SEED:S KEEPER</SplitFlap>
+            </span>
         </Link>
         <div className={styles.menuContainer}>
             <div className={styles.menu}>
