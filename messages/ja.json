@@ -209,6 +209,9 @@
         "history": "沿革",
         "introduction": "紹介"
     },
+    "miscellaneous": {
+        "not-found": "ページが存在しません。"
+    },
     "news-letter": {
         "communication": "コミュニケーション",
         "date": "作成日",

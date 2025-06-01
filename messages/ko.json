@@ -209,6 +209,9 @@
         "history": "연혁",
         "introduction": "소개"
     },
+    "miscellaneous": {
+        "not-found": "페이지가 존재하지 않습니다."
+    },
     "news-letter": {
         "communication": "소통",
         "date": "작성일",

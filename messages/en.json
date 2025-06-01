@@ -209,6 +209,9 @@
         "history": "Our History",
         "introduction": "About"
     },
+    "miscellaneous": {
+        "not-found": "The page does not exist."
+    },
     "news-letter": {
         "communication": "Communication",
         "date": "Date",
