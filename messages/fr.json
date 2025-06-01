@@ -212,7 +212,8 @@
     "miscellaneous": {
         "error-image-alternate": "Image d’erreur",
         "error-title": "Un problème est survenu.",
-        "not-found": "La page n'existe pas.",
+        "not-found-image-alternate": "Image de 'La page n'existe pas'",
+        "not-found-title": "La page n'existe pas.",
         "retry": "Réessayer"
     },
     "news-letter": {

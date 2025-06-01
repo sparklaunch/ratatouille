@@ -212,7 +212,8 @@
     "miscellaneous": {
         "error-image-alternate": "エラー画像",
         "error-title": "問題が発生しました。",
-        "not-found": "ページが存在しません。",
+        "not-found-image-alternate": "「ページが存在しません」画像",
+        "not-found-title": "ページが存在しません。",
         "retry": "再試行"
     },
     "news-letter": {
