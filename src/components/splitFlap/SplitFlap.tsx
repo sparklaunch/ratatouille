@@ -23,6 +23,7 @@ export default function SplitFlap({ texts }: { texts: string[] }) {
 	const maxLength = useMemo(() => {
 		return texts.reduce((accumulator, currentValue) => Math.max(accumulator, currentValue.length), 0);
 	}, [texts]);
+	const [flippingIndices, setFlippingIndices] = useState<boolean[]>(Array(maxLength).fill(false));
 	const paddedTarget = useMemo(() => {
 		const rawText = texts[currentTextIndex].toUpperCase();
 		const padLength = maxLength - rawText.length;
@@ -49,14 +50,28 @@ export default function SplitFlap({ texts }: { texts: string[] }) {
 				let j = 0;
 				const interval = 30;
 				const spin = async () => {
-					if (isCancelled) return;
+					if (isCancelled)
+						return;
+					setFlippingIndices((previousFlippingIndices) => {
+						const copy = [...previousFlippingIndices];
+						copy[index] = true;
+						return copy;
+					});
 					const nextCharacter = characterSet[j % characterSet.length];
 					setSlots((previousSlots) => {
 						const copy = [...previousSlots];
 						copy[index] = nextCharacter;
 						return copy;
 					});
-					if (nextCharacter === targetCharacter) return;
+					if (nextCharacter === targetCharacter) {
+						await sleep(interval);
+						setFlippingIndices((previousFlippingIndices) => {
+							const copy = [...previousFlippingIndices];
+							copy[index] = false;
+							return copy;
+						});
+						return;
+					}
 					j++;
 					await sleep(interval);
 					spin();
@@ -80,7 +95,7 @@ export default function SplitFlap({ texts }: { texts: string[] }) {
 		{slots.map((character, index) => (
 			<div key={index} className={styles.slotContainer}>
 				<div className={styles.slot}>
-					<span>{character}</span>
+					<span className={flippingIndices[index] ? styles.flippingCharacter : ""}>{character}</span>
 				</div>
 			</div>
 		))}

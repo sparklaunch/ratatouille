@@ -35,3 +35,9 @@
         transform: rotateX(0deg);
     }
 }
+
+.flippingCharacter {
+    filter: blur(1px);
+    transition: filter 0.1s ease;
+    will-change: transform, filter;
+}
