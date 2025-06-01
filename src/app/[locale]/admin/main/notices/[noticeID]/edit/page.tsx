@@ -2,6 +2,7 @@
 
 import { SimpleEditor } from "@/components/tiptap-templates/simple/simple-editor";
 import PostType from "@/enums/PostType";
+import { useRouter } from "@/i18n/routing";
 import { Notice } from "@/types/Notice";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
@@ -9,10 +10,12 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import dayjs, { Dayjs } from "dayjs";
 import { unzipSync } from "fflate";
 import { useParams } from "next/navigation";
+import path from "path";
 import { ChangeEvent, useEffect, useState } from "react";
 import styles from "./style.module.scss";
 
 export default function AdminEditNoticePage() {
+    const router = useRouter();
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
     const [isFixed, setIsFixed] = useState(false);
@@ -48,7 +51,38 @@ export default function AdminEditNoticePage() {
         };
         fetchNotice();
     }, []);
-    const handleSubmit = async () => { };
+    const handleSubmit = async () => {
+        const formData = new FormData();
+        formData.append("id", noticeID);
+        formData.append("title", title);
+        formData.append("content", content);
+        formData.append("createdAt", createdAt?.toISOString() ?? new Date().toISOString());
+        formData.append("isFixed", isFixed.toString());
+        for (const attachedFile of attachedFiles) {
+            formData.append("attachedFiles", attachedFile);
+        }
+        const matches = Array.from(content.matchAll(/<img[^>]+src="([^">]+)"/g)).map(match => match[1]);
+        const usedImageNames = matches.map(match => path.basename(match));
+        await fetch(`/api/images/filter?type=notice&id=${noticeID}`, {
+            method: "POST",
+            body: JSON.stringify({
+                usedImageNames
+            })
+        });
+        const response = await fetch("/api/notice/edit", {
+            method: "POST",
+            body: formData
+        });
+        if (response.ok) {
+            const data = await response.json();
+            if (data.hasSucceeded) {
+                alert("공지 사항을 성공적으로 수정하였습니다.");
+                router.back();
+            } else {
+                alert(data.errorMessage);
+            }
+        }
+    };
     const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
         setAttachedFiles(previousFiles => {
             const newFiles = Array.from(event.target.files ?? []);
