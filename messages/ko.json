@@ -53,7 +53,10 @@
         "notices": "공지 사항",
         "press": "언론 보도",
         "projects": "프로젝트",
-        "sponsor": "후원하기"
+        "social-innovation": "사회 혁신",
+        "solidarity": "연대",
+        "sponsor": "후원하기",
+        "sustainability": "지속 가능성"
     },
     "history": {
         "acrc-alternate": "국민권익위원회 로고",
@@ -248,5 +251,11 @@
         "notice": "공지 사항",
         "press-release": "언론 보도",
         "title": "제목"
+    },
+    "social-innovation": {
+        "projects": "프로젝트",
+        "social-innovation": "사회 혁신",
+        "solidarity": "연대",
+        "sustainability": "지속 가능성"
     }
 }

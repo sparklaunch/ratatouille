@@ -38,9 +38,24 @@ export default async function Header() {
                                 </div>
                             </div>
                         </div>
-                        <Link href="#" className={styles.menuItem}>
-                            <span>{t("projects")}</span>
-                        </Link>
+                        <div className={styles.subMenuContainer}>
+                            <Link href="/projects/innovation" className={styles.menuItem}>
+                                <span>{t("projects")}</span>
+                            </Link>
+                            <div className={styles.subMenuOuterContainer}>
+                                <div className={styles.subMenu}>
+                                    <Link href="/projects/innovation" className={styles.subMenuItem}>
+                                        <span>{t("social-innovation")}</span>
+                                    </Link>
+                                    <Link href="/projects/sustainability" className={styles.subMenuItem}>
+                                        <span>{t("sustainability")}</span>
+                                    </Link>
+                                    <Link href="/projects/solidarity" className={styles.subMenuItem}>
+                                        <span>{t("solidarity")}</span>
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
                         <div className={styles.subMenuContainer}>
                             <Link href="/news/notice" className={styles.menuItem}>
                                 <span>{t("news")}</span>

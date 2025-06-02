@@ -53,7 +53,10 @@
         "notices": "Notices",
         "press": "Press Releases",
         "projects": "Projects",
-        "sponsor": "Donate"
+        "social-innovation": "Social Innovation",
+        "solidarity": "Solidarity",
+        "sponsor": "Donate",
+        "sustainability": "Sustainability"
     },
     "history": {
         "acrc-alternate": "ACRC Logo",
