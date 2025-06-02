@@ -251,5 +251,23 @@
         "notice": "Notices",
         "press-release": "Press Releases",
         "title": "Title"
+    },
+    "social-innovation": {
+        "projects": "Projects",
+        "social-innovation": "Social Innovation",
+        "solidarity": "Solidarity",
+        "sustainability": "Sustainability"
+    },
+    "solidarity": {
+        "projects": "Projects",
+        "social-innovation": "Social Innovation",
+        "solidarity": "Solidarity",
+        "sustainability": "Sustainability"
+    },
+    "sustainability": {
+        "projects": "Projects",
+        "social-innovation": "Social Innovation",
+        "solidarity": "Solidarity",
+        "sustainability": "Sustainability"
     }
 }

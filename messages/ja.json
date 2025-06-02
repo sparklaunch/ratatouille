@@ -251,5 +251,23 @@
         "notice": "お知らせ",
         "press-release": "報道",
         "title": "タイトル"
+    },
+    "social-innovation": {
+        "projects": "プロジェクト",
+        "social-innovation": "社会イノベーション",
+        "solidarity": "連帯",
+        "sustainability": "持続可能性"
+    },
+    "solidarity": {
+        "projects": "プロジェクト",
+        "social-innovation": "社会イノベーション",
+        "solidarity": "連帯",
+        "sustainability": "持続可能性"
+    },
+    "sustainability": {
+        "projects": "プロジェクト",
+        "social-innovation": "社会イノベーション",
+        "solidarity": "連帯",
+        "sustainability": "持続可能性"
     }
 }

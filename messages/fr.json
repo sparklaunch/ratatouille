@@ -53,7 +53,7 @@
         "notices": "Annonces",
         "press": "Communiqués de presse",
         "projects": "Projets",
-        "social-innovation": "Innovation sociale",
+        "social-innovation": "Innovation Sociale",
         "solidarity": "Solidarité",
         "sponsor": "Soutenir",
         "sustainability": "Durabilité"
@@ -251,5 +251,23 @@
         "notice": "Annonces",
         "press-release": "Communiqués de presse",
         "title": "Titre"
+    },
+    "social-innovation": {
+        "projects": "Projets",
+        "social-innovation": "Innovation Sociale",
+        "solidarity": "Solidarité",
+        "sustainability": "Durabilité"
+    },
+    "solidarity": {
+        "projects": "Projets",
+        "social-innovation": "Innovation Sociale",
+        "solidarity": "Solidarité",
+        "sustainability": "Durabilité"
+    },
+    "sustainability": {
+        "projects": "Projets",
+        "social-innovation": "Innovation Sociale",
+        "solidarity": "Solidarité",
+        "sustainability": "Durabilité"
     }
 }
