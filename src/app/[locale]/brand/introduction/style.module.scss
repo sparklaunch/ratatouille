@@ -31,3 +31,145 @@
 .activeSubheader {
     color: var(--primary-color);
 }
+
+.overtureContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 70px;
+    margin-bottom: 360px;
+    & > img {
+        position: relative !important;
+    }
+    & > p {
+        font-size: 25px;
+        line-height: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+}
+
+.valuesContainer {
+    & > h2 {
+        font-weight: bolder;
+        font-size: 50px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    & > h3 {
+        font-size: 25px;
+        margin-bottom: 125px;
+        text-align: center;
+    }
+}
+
+.socialInnovationContainer,
+.sustainabilityContainer,
+.solidarityContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 70px;
+    margin-bottom: 135px;
+    & > img {
+        position: relative !important;
+    }
+}
+
+.socialInnovationText,
+.sustainabilityText,
+.solidarityText {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    & h4,
+    & h5 {
+        font-weight: bold;
+        font-size: 50px;
+        line-height: 55px;
+    }
+    & > p {
+        font-size: 25px;
+        line-height: 42px;
+    }
+}
+
+.fermeture {
+    margin: 300px 0 240px 0;
+    & > img {
+        position: relative !important;
+    }
+    & > h6 {
+        margin: auto;
+        width: 700px;
+        font-size: 50px;
+        text-align: center;
+        line-height: 80px;
+        transform: translateY(-60px);
+    }
+}
+
+.peopleContainer {
+    margin-bottom: 180px;
+    & > h2 {
+        font-weight: bolder;
+        font-size: 50px;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    & > p {
+        font-size: 25px;
+        text-align: center;
+        margin-bottom: 150px;
+    }
+    & > img {
+        position: relative !important;
+        margin-bottom: 100px;
+    }
+}
+
+.people {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 170px;
+}
+
+.person {
+    & > img {
+        position: relative !important;
+        object-fit: cover;
+        margin-bottom: 30px;
+    }
+    & > h3 {
+        font-weight: bold;
+        font-size: 25px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    & > p {
+        font-size: 25px;
+        line-height: 30px;
+        text-align: center;
+    }
+}
+
+.testimonials {
+    margin-bottom: 250px;
+    & > h2 {
+        font-weight: bolder;
+        font-size: 50px;
+        text-align: center;
+        margin-bottom: 80px;
+    }
+}
+
+.testimonial {
+    position: relative;
+    & > img:first-child {
+        position: relative !important;
+    }
+    & > img:last-child {
+        position: absolute !important;
+        object-fit: contain;
+        transform: scale(0.92);
+    }
+}
