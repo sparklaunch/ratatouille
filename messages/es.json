@@ -215,6 +215,9 @@
     "miscellaneous": {
         "error-image-alternate": "Imagen de error",
         "error-title": "Ha ocurrido un problema.",
+        "go-back": "Atrás",
+        "language-not-supported": "Lo sentimos, esta página no está disponible actualmente en el idioma seleccionado.",
+        "language-not-supported-image-alternate": "Imagen de 'Esta página no está disponible actualmente en el idioma seleccionado'",
         "not-found-image-alternate": "Imagen de 'La página no existe'",
         "not-found-title": "La página no existe.",
         "retry": "Reintentar"

@@ -215,6 +215,9 @@
     "miscellaneous": {
         "error-image-alternate": "エラー画像",
         "error-title": "問題が発生しました。",
+        "go-back": "戻る",
+        "language-not-supported": "申し訳ありません。このページは現在、選択された言語ではご利用いただけません。",
+        "language-not-supported-image-alternate": "'このページは現在、選択された言語ではご利用いただけません'のイメージ",
         "not-found-image-alternate": "「ページが存在しません」画像",
         "not-found-title": "ページが存在しません。",
         "retry": "再試行"

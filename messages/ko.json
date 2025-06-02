@@ -234,6 +234,9 @@
     "miscellaneous": {
         "error-image-alternate": "에러 이미지",
         "error-title": "문제가 발생하였습니다.",
+        "go-back": "뒤로 가기",
+        "language-not-supported": "죄송합니다. 현재 이 페이지는 해당 언어로 제공되지 않습니다.",
+        "language-not-supported-image-alternate": "'현재 이 페이지는 해당 언어로 제공되지 않습니다' 이미지",
         "not-found-image-alternate": "'페이지가 존재하지 않습니다' 이미지",
         "not-found-title": "페이지가 존재하지 않습니다.",
         "retry": "다시 시도하기"

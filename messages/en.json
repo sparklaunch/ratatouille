@@ -234,6 +234,9 @@
     "miscellaneous": {
         "error-image-alternate": "Error image",
         "error-title": "Something went wrong.",
+        "go-back": "Back",
+        "language-not-supported": "Sorry, this page is not currently available in the selected language.",
+        "language-not-supported-image-alternate": "'Unavailable language' image",
         "not-found-image-alternate": "'Page not found' image",
         "not-found-title": "The page does not exist.",
         "retry": "Retry"

@@ -1,5 +1,6 @@
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
+import LanguageNotSupportedPage from "@/components/languageNotSupportedPage/LanguageNotSupportedPage";
 import { Link } from "@/i18n/routing";
 import { getLocale, getTranslations } from "next-intl/server";
 import Image from "next/image";
@@ -8,6 +9,9 @@ import styles from "./style.module.scss";
 export default async function IntroductionPage() {
     const locale = await getLocale();
     const t = await getTranslations("introduction");
+    if (["ja", "es", "fr"].includes(locale)) {
+        return <LanguageNotSupportedPage />;
+    }
     return <>
         <Header />
         <div className={styles.container}>
