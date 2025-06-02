@@ -209,8 +209,27 @@
     },
     "introduction": {
         "brand-story": "Brand Story",
+        "fermeture-image-alternate": "Fermeture image",
+        "fermeture-text": "We foster growth that expands outward, not upward. Among young people experiencing disconnection and isolation, we are reviving the power of connection.",
         "history": "Our History",
-        "introduction": "About"
+        "introduction": "About",
+        "overture-image-alternate": "Overture image",
+        "overture-text": "Since 2010, Seeds has been building a youth-led social innovation ecosystem. In the post-pandemic era, we are shifting away from growth driven by high-energy youth to a new strategy focused on embracing low-energy youth and creating citizen-shared commons that lead a local circular economy. We will continue to work in solidarity with diverse members of society to address social issues and build a sustainable future.",
+        "people-header": "Meet the team walking forward together with Seeds.",
+        "people-image-alternate": "People's image",
+        "social-innovation": "Social Innovation",
+        "social-innovation-image-alternate": "Social innovation image",
+        "social-innovation-text": "We start from the lived experiences of young people. Going beyond traditional frameworks, we support youth in defining problems and creating their own solutions. Through collaboration among the public sector, private organizations, and civil society, we strive to build a better society in new and innovative ways.",
+        "solidarity": "Solidarity",
+        "solidarity-image-alternate": "Solidarity image",
+        "solidarity-text": "All life is interconnected. We help isolated youth reconnect with society and build solidarity across generations and communities. Grounded in a culture of hospitality and trust, we work to create a society where differences are respected and people live together in mutual support.",
+        "sustainability": "Sustainability",
+        "sustainability-image-alternate": "Sustainability image",
+        "sustainability-text": "We focus not on short-term outcomes, but on deep-rooted change for a better tomorrow for all. We aim to create a sustainable ecosystem where the environment, community, and individual lives are in harmony. Just as a small seed grows into a tree and then a forest, we dream of growing together and living together.",
+        "testimonial-frame-alternate": "Frame image",
+        "testimonial-header": "Stories of the People at Seeds",
+        "testimonial-image-alternate": "Testimonial image",
+        "values-header": "All life grows by leaning on one another. We believe in the power of solidarity."
     },
     "miscellaneous": {
         "error-image-alternate": "Error image",

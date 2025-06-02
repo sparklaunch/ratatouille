@@ -1,11 +1,12 @@
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
 import { Link } from "@/i18n/routing";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import Image from "next/image";
 import styles from "./style.module.scss";
 
 export default async function IntroductionPage() {
+    const locale = await getLocale();
     const t = await getTranslations("introduction");
     return <>
         <Header />
@@ -30,7 +31,7 @@ export default async function IntroductionPage() {
                     <div className={styles.socialInnovationText}>
                         <div>
                             <h4>{t("social-innovation")}</h4>
-                            <h5>(Social Innovation)</h5>
+                            {locale !== "en" && <h5>(Social Innovation)</h5>}
                         </div>
                         <p>{t("social-innovation-text")}</p>
                     </div>
@@ -40,7 +41,7 @@ export default async function IntroductionPage() {
                     <div className={styles.sustainabilityText}>
                         <div>
                             <h4>{t("sustainability")}</h4>
-                            <h5>(Sustainability)</h5>
+                            {locale !== "en" && <h5>(Sustainability)</h5>}
                         </div>
                         <p>{t("sustainability-text")}</p>
                     </div>
@@ -50,7 +51,7 @@ export default async function IntroductionPage() {
                     <div className={styles.solidarityText}>
                         <div>
                             <h4>{t("solidarity")}</h4>
-                            <h5>(Solidarity)</h5>
+                            {locale !== "en" && <h5>(Solidarity)</h5>}
                         </div>
                         <p>{t("solidarity-text")}</p>
                     </div>
