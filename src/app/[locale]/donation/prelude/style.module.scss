@@ -93,3 +93,40 @@
         text-align: center;
     }
 }
+
+.firstAmbientContainer,
+.lastAmbientContainer {
+    position: relative;
+    & > img {
+        position: relative !important;
+        display: block;
+    }
+}
+
+.firstAmbientContent,
+.lastAmbientContent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    & > h5 {
+        font-weight: bold;
+        font-size: 70px;
+        color: white;
+        text-align: center;
+        line-height: 90px;
+        margin-bottom: 80px;
+    }
+    & > p {
+        font-weight: bold;
+        font-size: 40px;
+        line-height: 70px;
+        text-align: center;
+        color: white;
+        margin-bottom: 50px;
+    }
+    & > img {
+        position: relative !important;
+        display: block;
+    }
+}
