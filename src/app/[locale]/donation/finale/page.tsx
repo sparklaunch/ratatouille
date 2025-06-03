@@ -27,5 +27,21 @@ export default async function FinalePage() {
                 <Image src="/images/Hope.webp" alt="Hope image" fill />
             </div>
         </div>
+        <div className={styles.segueContainer}>
+            <Image src="/images/Segue.png" alt="Segue image" fill />
+            <div className={styles.segueContent}>
+                <h3>청년의 이야기가 더 궁금하시다면</h3>
+                <div className={styles.segues}>
+                    <Link href="/donation/main" className={styles.segue}>
+                        <p>후원하기</p>
+                        <Image src="/icons/RightArrow.svg" alt="Right arrow icon" width={31} height={22} />
+                    </Link>
+                    <Link href="/" className={styles.segue}>
+                        <p>홈페이지</p>
+                        <Image src="/icons/RightArrow.svg" alt="Right arrow icon" width={31} height={22} />
+                    </Link>
+                </div>
+            </div>
+        </div>
     </>;
 }
