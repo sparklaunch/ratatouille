@@ -60,7 +60,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    transform: translate(-50%, -50%);
     & > h3 {
         font-weight: bold;
         font-size: 40px;
@@ -74,5 +74,25 @@
     & > img {
         position: relative !important;
         display: block;
+    }
+}
+
+.statisticContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 500px);
+    gap: 200px;
+    width: 1200px;
+    margin: 180px auto;
+}
+
+.statistic {
+    position: relative;
+    & > h4 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-weight: bold;
+        font-size: 60px;
     }
 }

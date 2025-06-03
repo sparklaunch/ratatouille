@@ -1,3 +1,4 @@
+import ProgressDonut from "@/components/progressDonut/ProgressDonut";
 import { Link } from "@/i18n/routing";
 import Image from "next/image";
 import styles from "./style.module.scss";
@@ -19,6 +20,16 @@ export default async function PreludePage() {
             <div className={styles.preludeBackgroundContent}>
                 <h3>그 한마디로 버텨낸 시간.<br />그 따뜻한 눈빛으로 다시 일어선 날.<br />우리 모두는 누군가의 온기로 살아왔습니다.<br />이제, 당신이 그 온기가 되어주세요.<br />단절된 청년들에게 다시 연결될 수 있는 희망을 건네는 일.<br />씨즈와 함께라면 가능합니다.</h3>
                 <Image src="/images/PreludeForeground.png" alt="Prelude foreground image" fill />
+            </div>
+        </div>
+        <div className={styles.statisticContainer}>
+            <div className={styles.statistic}>
+                <ProgressDonut percentage={5.2} size={500} strokeWidth={80} />
+                <h4>5.2%</h4>
+            </div>
+            <div className={styles.statistic}>
+                <ProgressDonut percentage={92.7} size={500} strokeWidth={80} />
+                <h4>92.7%</h4>
             </div>
         </div>
     </>;
