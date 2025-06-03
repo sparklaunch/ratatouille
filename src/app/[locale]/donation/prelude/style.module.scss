@@ -1,0 +1,26 @@
+.preludeMainContainer {
+    position: relative;
+    & > img {
+        position: relative !important;
+    }
+    & > h2 {
+        position: absolute;
+        bottom: 200px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-weight: bold;
+        font-size: 96px;
+        color: white;
+        line-height: 120px;
+        text-align: center;
+        text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    }
+}
+
+.logo {
+    position: absolute;
+    width: 160px !important;
+    height: auto !important;
+    top: 80px !important;
+    left: 100px !important;
+}

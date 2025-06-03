@@ -90,7 +90,7 @@ export default async function Header() {
                             </div>
                         </div>
                     </div>
-                    <Link href="#" className={styles.sponsor}>
+                    <Link href="/donation/prelude" className={styles.sponsor}>
                         <span>{t("sponsor")}</span>
                     </Link>
                     <LocaleSwitcher />
