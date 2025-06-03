@@ -50,5 +50,9 @@ export default async function PreludePage() {
                 <Image src="/images/LastAmbient.jpg" alt="Last ambient image" fill />
             </div>
         </div>
+        <div className={styles.segueContainer}>
+            <Image src="/images/Segue.png" alt="Segue image" fill />
+            <Link href="/donation/finale">혜진의 이야기 보러 가기</Link>
+        </div>
     </>;
 }
