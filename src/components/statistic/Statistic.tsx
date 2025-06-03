@@ -13,13 +13,13 @@ interface StatisticProps {
 
 export default function Statistic({ percentage, size, strokeWidth }: StatisticProps) {
     const { ref, inView } = useInView({
-        triggerOnce: true,
+        triggerOnce: false,
         threshold: 0.4
     });
     return <div ref={ref}>
-        {inView && <div className={styles.statistic}>
-            <ProgressDonut percentage={percentage} size={size} strokeWidth={strokeWidth} />
+        <div className={styles.statistic}>
+            <ProgressDonut percentage={percentage} isTriggered={inView} size={size} strokeWidth={strokeWidth} />
             <AnimatedCounter target={percentage} />
-        </div>}
+        </div>
     </div>;
 }

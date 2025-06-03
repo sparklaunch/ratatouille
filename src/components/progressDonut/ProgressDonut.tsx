@@ -1,18 +1,51 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import styles from "./style.module.scss";
+import { useEffect, useRef, useState } from "react";
 
-export default function ProgressDonut({ percentage = 90, size = 200, strokeWidth = 20 }) {
-    const [progress, setProgress] = useState(0);
-    useEffect(() => {
-        const timeOut = setTimeout(() => setProgress(percentage), 100);
-        return () => clearTimeout(timeOut);
-    }, [percentage]);
+interface ProgressDonutProps {
+    percentage: number;
+    isTriggered: boolean;
+    size?: number;
+    strokeWidth?: number;
+}
+
+export default function ProgressDonut({
+    percentage,
+    isTriggered,
+    size = 200,
+    strokeWidth = 20
+}: ProgressDonutProps) {
     const radius = (size - strokeWidth) / 2;
     const circumference = 2 * Math.PI * radius;
-    const offset = circumference - (progress / 100) * circumference;
-    return <svg width={size} height={size} className={styles.donut}>
+    const [animatedPercent, setAnimatedPercent] = useState(0);
+    const animationRef = useRef<number>(0);
+    useEffect(() => {
+        let startTime: number | null = null;
+        const animate = (timeStamp: number) => {
+            if (!startTime)
+                startTime = timeStamp;
+            const progress = Math.min((timeStamp - startTime) / 1500, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const current = parseFloat((eased * percentage).toFixed(1));
+            setAnimatedPercent(current);
+            if (progress < 1) {
+                animationRef.current = requestAnimationFrame(animate);
+            }
+        };
+        if (isTriggered) {
+            animationRef.current = requestAnimationFrame(animate);
+        } else {
+            setAnimatedPercent(0);
+            if (animationRef.current)
+                cancelAnimationFrame(animationRef.current);
+        }
+        return () => {
+            if (animationRef.current)
+                cancelAnimationFrame(animationRef.current);
+        };
+    }, [isTriggered, percentage]);
+    const dashOffset = circumference - (animatedPercent / 100) * circumference;
+    return <svg width={size} height={size} style={{ transform: "rotate(-90deg)" }}>
         <circle
             stroke="#eee"
             fill="transparent"
@@ -22,12 +55,11 @@ export default function ProgressDonut({ percentage = 90, size = 200, strokeWidth
             cy={size / 2}
         />
         <circle
-            className={styles.donutRing}
             stroke="#FF301E"
             fill="transparent"
             strokeWidth={strokeWidth}
             strokeDasharray={circumference}
-            strokeDashoffset={offset}
+            strokeDashoffset={dashOffset}
             strokeLinecap="butt"
             r={radius}
             cx={size / 2}
