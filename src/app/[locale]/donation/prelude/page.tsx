@@ -23,8 +23,14 @@ export default async function PreludePage() {
             </div>
         </div>
         <div className={styles.statisticContainer}>
-            <Statistic percentage={5.2} size={500} strokeWidth={80} />
-            <Statistic percentage={92.7} size={500} strokeWidth={80} />
+            <div className={styles.statistic}>
+                <Statistic percentage={5.2} size={500} strokeWidth={80} />
+                <h4>고립·은둔 청년의 비율은 청년 인구의 5%, 약 51만 명으로 추정.</h4>
+            </div>
+            <div className={styles.statistic}>
+                <Statistic percentage={92.7} size={500} strokeWidth={80} />
+                <h4>고립·은둔 청년의 92.7%는 고립 상태를 벗어나고 싶어 하며, 일상 생활 회복을 가장 많이 원하고 있습니다.</h4>
+            </div>
         </div>
     </>;
 }

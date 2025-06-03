@@ -84,3 +84,12 @@
     width: 1200px;
     margin: 180px auto;
 }
+
+.statistic {
+    & > h4 {
+        margin-top: 60px;
+        font-size: 40px;
+        line-height: 50px;
+        text-align: center;
+    }
+}
