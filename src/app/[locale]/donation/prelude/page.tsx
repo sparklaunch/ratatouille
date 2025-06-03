@@ -4,6 +4,9 @@ import styles from "./style.module.scss";
 
 export default async function PreludePage() {
     return <>
+        <div className={styles.donateButton}>
+            <Link href="#">후원하기</Link>
+        </div>
         <div className={styles.preludeMainContainer}>
             <Image src="/images/PreludeMain.png" alt="Prelude main image" fill />
             <Link href="/">
