@@ -7,13 +7,15 @@ interface ProgressDonutProps {
     isTriggered: boolean;
     size?: number;
     strokeWidth?: number;
+    duration: number;
 }
 
 export default function ProgressDonut({
     percentage,
     isTriggered,
     size = 200,
-    strokeWidth = 20
+    strokeWidth = 20,
+    duration
 }: ProgressDonutProps) {
     const radius = (size - strokeWidth) / 2;
     const circumference = 2 * Math.PI * radius;
@@ -24,7 +26,7 @@ export default function ProgressDonut({
         const animate = (timeStamp: number) => {
             if (!startTime)
                 startTime = timeStamp;
-            const progress = Math.min((timeStamp - startTime) / 1500, 1);
+            const progress = Math.min((timeStamp - startTime) / duration, 1);
             const eased = 1 - Math.pow(1 - progress, 3);
             const current = parseFloat((eased * percentage).toFixed(1));
             setAnimatedPercent(current);

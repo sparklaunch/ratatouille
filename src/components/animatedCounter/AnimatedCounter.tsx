@@ -1,32 +1,40 @@
 "use client";
 
-import { useEffect, useState } from "react";
-
-function easeOutCubic(t: number) {
-    return 1 - Math.pow(1 - t, 3);
-}
+import { useEffect, useRef, useState } from "react";
 
 interface AnimatedCounterProps {
     target: number;
-    duration?: number;
+    isTriggered: boolean;
+    duration: number;
 }
 
-export default function AnimatedCounter({ target, duration = 1500 }: AnimatedCounterProps) {
+export default function AnimatedCounter({ target, isTriggered, duration }: AnimatedCounterProps) {
     const [value, setValue] = useState(0);
+    const animationRef = useRef<number>(0);
     useEffect(() => {
-        let start: number | null = null;
+        let startTime: number | null = null;
         const animate = (timeStamp: number) => {
-            if (!start)
-                start = timeStamp;
-            const elapsed = timeStamp - start;
-            const t = Math.min(elapsed / duration, 1);
-            const eased = easeOutCubic(t);
+            if (!startTime)
+                startTime = timeStamp;
+            const progress = Math.min((timeStamp - startTime) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
             const current = parseFloat((eased * target).toFixed(1));
             setValue(current);
-            if (t < 1)
-                requestAnimationFrame(animate);
+            if (progress < 1) {
+                animationRef.current = requestAnimationFrame(animate);
+            }
         };
-        requestAnimationFrame(animate);
-    }, [target, duration]);
+        if (isTriggered) {
+            animationRef.current = requestAnimationFrame(animate);
+        } else {
+            setValue(0);
+            if (animationRef.current)
+                cancelAnimationFrame(animationRef.current);
+        }
+        return () => {
+            if (animationRef.current)
+                cancelAnimationFrame(animationRef.current);
+        };
+    }, [isTriggered, target]);
     return <p>{value.toFixed(1)}%</p>;
 }
