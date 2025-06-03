@@ -1,3 +1,4 @@
+import AnimatedCounter from "@/components/animatedCounter/AnimatedCounter";
 import ProgressDonut from "@/components/progressDonut/ProgressDonut";
 import { Link } from "@/i18n/routing";
 import Image from "next/image";
@@ -25,11 +26,11 @@ export default async function PreludePage() {
         <div className={styles.statisticContainer}>
             <div className={styles.statistic}>
                 <ProgressDonut percentage={5.2} size={500} strokeWidth={80} />
-                <h4>5.2%</h4>
+                <AnimatedCounter target={5.2} />
             </div>
             <div className={styles.statistic}>
                 <ProgressDonut percentage={92.7} size={500} strokeWidth={80} />
-                <h4>92.7%</h4>
+                <AnimatedCounter target={92.7} />
             </div>
         </div>
     </>;
