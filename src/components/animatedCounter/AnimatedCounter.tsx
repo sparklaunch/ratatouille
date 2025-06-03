@@ -23,5 +23,5 @@ export default function AnimatedCounter({ target, duration = 1500 }: AnimatedCou
         };
         requestAnimationFrame(animate);
     }, [target, duration]);
-    return <h4>{value.toFixed(1)}%</h4>;
+    return <p>{value.toFixed(1)}%</p>;
 }

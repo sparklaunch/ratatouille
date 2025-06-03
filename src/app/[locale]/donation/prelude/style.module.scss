@@ -84,15 +84,3 @@
     width: 1200px;
     margin: 180px auto;
 }
-
-.statistic {
-    position: relative;
-    & > h4 {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-weight: bold;
-        font-size: 60px;
-    }
-}
