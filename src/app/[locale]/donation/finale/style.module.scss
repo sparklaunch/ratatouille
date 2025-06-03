@@ -51,7 +51,7 @@
         text-shadow: 0 0 4px rgba(255, 255, 255, 0.7),
             0 0 8px rgba(255, 255, 255, 0.4), 0 0 12px rgba(255, 255, 255, 0.2);
     }
-    & > p {
+    & > blockquote {
         font-weight: bold;
         font-size: 40px;
         text-align: center;
@@ -60,6 +60,13 @@
         margin-bottom: 100px;
         text-shadow: 0 0 4px rgba(255, 255, 255, 0.7),
             0 0 8px rgba(255, 255, 255, 0.4), 0 0 12px rgba(255, 255, 255, 0.2);
+        quotes: "\201C""\201D";
+        &::before {
+            content: open-quote;
+        }
+        &::after {
+            content: close-quote;
+        }
     }
     & > img {
         position: relative !important;

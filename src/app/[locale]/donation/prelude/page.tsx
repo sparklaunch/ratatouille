@@ -13,7 +13,7 @@ export default async function PreludePage() {
             <Link href="/">
                 <Image src="/logos/Logo.svg" alt="Seeds logo" fill className={styles.logo} />
             </Link>
-            <h2>누군가의 '혼자가 아니야'라는 한마디가,<br />당신을 살린 적이 있나요?</h2>
+            <h2>누군가의 &lsquo;혼자가 아니야&rsquo;라는 한마디가,<br />당신을 살린 적이 있나요?</h2>
         </div>
         <div className={styles.preludeBackgroundContainer}>
             <Image src="/images/PreludeBackground.png" alt="Prelude background image" fill />
@@ -36,7 +36,7 @@ export default async function PreludePage() {
             <Image src="/images/FirstAmbientBackground.png" alt="First ambient background image" fill />
             <div className={styles.firstAmbientContent}>
                 <h5>단절된 사회, 혼자가 아닌 함께하는 세상을 만들 수 있을까요?</h5>
-                <p>씨즈는 '그렇다'고 믿습니다.<br />그리고 그 시작은 당신의 연대입니다.</p>
+                <p>씨즈는 &lsquo;그렇다&rsquo;고 믿습니다.<br />그리고 그 시작은 당신의 연대입니다.</p>
                 <p>우리는 함께 집밥을 만들어 먹으며,<br />잠시 쉬어갈 수 있는 제주 리트릿에서 서로를 만납니다.<br />비폭력 대화를 통해 건강한 관계를 배우며,<br />인문학 속에서 사회와 연결된 나를 발견합니다.<br />치유와 회복을 위한 다양한 프로그램들을 통해,<br />청년들은 다시 연결되고, 삶은 조금씩 자라납니다.</p>
                 <p>당신의 후원은 이 모든 여정을 가능케 합니다.<br />씨앗처럼 작은 손길이,<br />숲처럼 울창한 변화를 만들어냅니다.</p>
                 <Image src="/images/FirstAmbient.jpg" alt="First ambient image" fill />
