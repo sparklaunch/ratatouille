@@ -35,6 +35,6 @@ export default function AnimatedCounter({ target, isTriggered, duration }: Anima
             if (animationRef.current)
                 cancelAnimationFrame(animationRef.current);
         };
-    }, [isTriggered, target]);
+    }, [isTriggered, target, duration]);
     return <p>{value.toFixed(1)}%</p>;
 }

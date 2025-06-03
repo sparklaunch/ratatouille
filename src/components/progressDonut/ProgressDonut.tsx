@@ -45,7 +45,7 @@ export default function ProgressDonut({
             if (animationRef.current)
                 cancelAnimationFrame(animationRef.current);
         };
-    }, [isTriggered, percentage]);
+    }, [isTriggered, percentage, duration]);
     const dashOffset = circumference - (animatedPercent / 100) * circumference;
     return <svg width={size} height={size} style={{ transform: "rotate(-90deg)" }}>
         <circle
