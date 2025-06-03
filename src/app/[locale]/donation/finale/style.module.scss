@@ -1,0 +1,68 @@
+.donateButton {
+    position: fixed;
+    z-index: 1;
+    bottom: 80px;
+    right: 100px;
+    & > a {
+        padding: 12px 40px;
+        background-color: var(--primary-color);
+        border-radius: 50px;
+        color: white;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 23px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        transition: all 0.3s;
+        &:hover {
+            color: var(--primary-color);
+            background-color: white;
+        }
+    }
+}
+
+.finaleMainContainer {
+    position: relative;
+    & > img {
+        position: relative !important;
+        display: block;
+    }
+}
+
+.logo {
+    position: absolute;
+    width: 160px !important;
+    height: auto !important;
+    top: 80px !important;
+    left: 100px !important;
+}
+
+.finaleMainContent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    & > h1 {
+        font-weight: bold;
+        font-size: 70px;
+        line-height: 90px;
+        margin-bottom: 130px;
+        text-align: center;
+        color: white;
+        text-shadow: 0 0 4px rgba(255, 255, 255, 0.7),
+            0 0 8px rgba(255, 255, 255, 0.4), 0 0 12px rgba(255, 255, 255, 0.2);
+    }
+    & > p {
+        font-weight: bold;
+        font-size: 40px;
+        text-align: center;
+        color: white;
+        line-height: 70px;
+        margin-bottom: 100px;
+        text-shadow: 0 0 4px rgba(255, 255, 255, 0.7),
+            0 0 8px rgba(255, 255, 255, 0.4), 0 0 12px rgba(255, 255, 255, 0.2);
+    }
+    & > img {
+        position: relative !important;
+        display: block;
+    }
+}
