@@ -109,4 +109,8 @@
         text-shadow: 0 0 4px rgba(255, 255, 255, 0.7),
             0 0 8px rgba(255, 255, 255, 0.4), 0 0 12px rgba(255, 255, 255, 0.2);
     }
+    & > img {
+        position: relative !important;
+        display: block;
+    }
 }

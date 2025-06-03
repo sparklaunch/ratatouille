@@ -19,11 +19,12 @@ export default async function FinalePage() {
             </div>
         </div>
         <div className={styles.hopeContainer}>
-            <Image src="/images/Hope.png" alt="Hope image" fill />
+            <Image src="/images/HopeBackground.png" alt="Hope background image" fill />
             <div className={styles.hopeContent}>
                 <p>그녀의 이야기는 단지 한 사람의 변화에 그치지 않습니다.</p>
                 <h2>혜진의 변화처럼,<br />당신의 손길이 청년의 삶을 바꿉니다.<br />우리는 청년들이 혼자가 아닌 세상에서,<br />자신을 돌아보고 함께 성장할 수 있도록 돕습니다.<br />이 여정은 씨즈의 활동을 통해 이루어집니다.<br />집밥 모임, 제주 리트릿, 치유 프로그램, 비폭력 대화 등<br />다양한 프로그램이 바로 혜진처럼 많은 청년들에게 기회를 제공합니다.</h2>
                 <p>당신의 연대가, 혜진과 같은 청년들에게 새로운 내일을 선물합니다.<br />오늘, 당신도 그 변화를 함께 만들어 갈 수 있습니다.</p>
+                <Image src="/images/Hope.webp" alt="Hope image" fill />
             </div>
         </div>
     </>;
