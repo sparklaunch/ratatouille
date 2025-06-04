@@ -28,6 +28,23 @@
         "news-letter": "Boletinos",
         "photo": "Foto de 두더집"
     },
+    "finale": {
+        "donate": "Donar",
+        "homepage": "Página principal",
+        "hope-background-image-alternate": "Imagen de fondo de esperanza",
+        "hope-image-alternate": "Imagen de esperanza",
+        "hope-text-0": "Su historia no es solo un cambio individual.",
+        "hope-text-1": "Al igual que el cambio de Hyejin,<br></br>tu apoyo puede transformar la vida de un joven.<br></br>Ayudamos a que los jóvenes puedan reflexionar sobre sí mismos y crecer juntos,<br></br>en un mundo donde no están solos.<br></br>Este camino es posible gracias a las actividades de Seeds.<br></br>Reuniones con comidas caseras, retiros en Jeju, programas de sanación, comunicación no violenta…<br></br>una amplia variedad de programas ofrece oportunidades a muchos jóvenes como Hyejin.",
+        "hope-text-2": "Tu solidaridad regala un nuevo mañana a jóvenes como Hyejin.<br></br>Hoy, tú también puedes formar parte de ese cambio.",
+        "logo": "Logotipo de Seeds",
+        "main-background-image-alternate": "Imagen de fondo de cierre",
+        "main-image-alternate": "Imagen principal de cierre",
+        "right-arrow-icon": "Icono de flecha hacia la derecha",
+        "segue-image-alternate": "Imagen de transición",
+        "segue-text": "Si quieres conocer más historias de jóvenes",
+        "story-text": "Al principio me volqué por completo en preparar oposiciones.<br></br>Tras repetidos fracasos, experimenté el aislamiento y la soledad.<br></br>Pero al encontrarme con 두더집 de Seeds,<br></br>empecé poco a poco a salir de ese aislamiento y a caminar hacia una vida más luminosa.<br></br>Así fue como comprendí que no estaba sola.",
+        "story-title": "La historia de Hyejin, una joven en situación de aislamiento social"
+    },
     "footer": {
         "address": "Dirección: (03355) 89-4, Calle Bulgwang, Distrito de Eunpyeong, Seúl",
         "facebook-alternate": "Logo de Facebook",
@@ -254,6 +271,29 @@
         "notice": "Anuncios",
         "press-release": "Notas de prensa",
         "title": "Título"
+    },
+    "prelude": {
+        "ambient-first-background-image-alternate": "Primera imagen de fondo ambiental",
+        "ambient-first-image-alternate": "Primera imagen ambiental",
+        "ambient-first-text-0": "¿Es posible construir un mundo en el que estemos juntos y no solos, en una sociedad fragmentada?",
+        "ambient-first-text-1": "Seeds cree que sí.<br></br>Y todo comienza con tu solidaridad.",
+        "ambient-first-text-2": "Nos reunimos en un retiro en la isla de Jeju, donde cocinamos y compartimos comidas caseras.<br></br>Descansamos y nos encontramos unos a otros.<br></br>Aprendemos a construir relaciones sanas a través de la comunicación no violenta.<br></br>Descubrimos nuestro vínculo con la sociedad a través de las humanidades.<br></br>Mediante diversos programas de sanación y recuperación,<br></br>los jóvenes vuelven a conectarse, y sus vidas crecen poco a poco.",
+        "ambient-first-text-3": "Tu apoyo hace posible todo este camino.<br></br>Un pequeño gesto, como una semilla,<br></br>puede generar un cambio frondoso como un bosque.",
+        "ambient-last-background-image-alternate": "Última imagen de fondo ambiental",
+        "ambient-last-image-alternate": "Última imagen ambiental",
+        "ambient-last-text-0": "¿Y si el mañana de alguien cambiara gracias a ti?",
+        "ambient-last-text-1": "La luz del sol vuelve a un corazón cansado,<br></br>una voz surge en medio del silencio del aislamiento,<br></br>una pequeña semilla crece y se convierte en un árbol.<br></br>Los árboles se agrupan, formando un bosque frondoso que se protege mutuamente.<br></br>Conviértete en un Seeds Keeper, alguien que protege esas pequeñas semillas.",
+        "background-image-alternate": "Imagen de fondo introductoria",
+        "background-text": "El tiempo que resistimos gracias a una sola palabra.<br></br>El día en que nos levantamos de nuevo gracias a una mirada cálida.<br></br>Todos hemos vivido gracias al calor de alguien.<br></br>Ahora, sé tú ese calor.<br></br>Ofrecer esperanza de reconexión a jóvenes aislados.<br></br>Con Seeds, es posible.",
+        "donate": "Donar",
+        "foreground-image-alternate": "Imagen frontal de introducción",
+        "logo-alternate": "Logotipo de Seeds",
+        "main-image-alternate": "Imagen de introducción",
+        "main-text": "¿Alguna vez te ha salvado la frase de alguien: “No estás solo”?",
+        "proportion-first-text": "Se estima que el 5 % de la población joven —unas 510.000 personas— vive en aislamiento o reclusión.",
+        "proportion-last-text": "El 92,7 % de los jóvenes en aislamiento desean salir de esa situación, y la mayoría anhela recuperar una vida cotidiana normal.",
+        "segue-image-alternate": "Imagen de transición",
+        "segue-text": "Ver la historia de Hyejin"
     },
     "social-innovation": {
         "projects": "Proyectos",
