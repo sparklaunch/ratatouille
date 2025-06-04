@@ -28,6 +28,23 @@
         "news-letter": "Lettres d'information",
         "photo": "Photo de 두더집"
     },
+    "finale": {
+        "donate": "Soutenir",
+        "homepage": "Page d’accueil",
+        "hope-background-image-alternate": "Image de fond de l’espoir",
+        "hope-image-alternate": "Image de l’espoir",
+        "hope-text-0": "Son histoire ne se limite pas à un simple changement individuel.",
+        "hope-text-1": "Comme dans le cas de Hyejin,<br></br>votre geste peut transformer la vie d’un(e) jeune.<br></br>Nous aidons les jeunes à réfléchir sur eux-mêmes et à grandir ensemble<br></br>dans un monde où ils ne sont pas seuls.<br></br>Ce parcours est rendu possible grâce aux actions de Seeds.<br></br>Des repas faits maison, des retraites à Jeju, des programmes de guérison, la communication non violente…<br></br>autant de programmes qui offrent des opportunités à de nombreux jeunes comme Hyejin.",
+        "hope-text-2": "Votre solidarité offre un nouvel avenir à des jeunes comme Hyejin.<br></br>Aujourd’hui, vous aussi pouvez contribuer à ce changement.",
+        "logo": "Logo de Seeds",
+        "main-background-image-alternate": "Image de fond de clôture",
+        "main-image-alternate": "Image principale de clôture",
+        "right-arrow-icon": "Icône de flèche vers la droite",
+        "segue-image-alternate": "Image de transition",
+        "segue-text": "Si vous souhaitez découvrir davantage d’histoires de jeunes",
+        "story-text": "Au début, je me consacrais entièrement à la préparation des concours de la fonction publique.<br></br>Mais après plusieurs échecs, je me suis retrouvée isolée et seule.<br></br>Puis, en rencontrant 두더집 de Seeds,<br></br>j’ai commencé peu à peu à sortir de l’isolement et à avancer vers une vie plus lumineuse.<br></br>C’est ainsi que j’ai compris que je n’étais pas seule.",
+        "story-title": "L’histoire de Hyejin, une jeune en situation d’isolement social"
+    },
     "footer": {
         "address": "Adresse : (03355) 89-4, Bulgwang-ro, Eunpyeong-gu, Séoul",
         "facebook-alternate": "Logo Facebook",
@@ -254,6 +271,29 @@
         "notice": "Annonces",
         "press-release": "Communiqués de presse",
         "title": "Titre"
+    },
+    "prelude": {
+        "ambient-first-background-image-alternate": "Première image de fond ambiante",
+        "ambient-first-image-alternate": "Première image ambiante",
+        "ambient-first-text-0": "Dans une société fragmentée, est-il possible de construire un monde où l’on est ensemble plutôt que seul?",
+        "ambient-first-text-1": "Seeds croit que oui.<br></br>Et tout commence par votre solidarité.",
+        "ambient-first-text-2": "Nous nous retrouvons dans un lieu de retraite à Jeju, où nous cuisinons et partageons des repas faits maison.<br></br>Nous faisons une pause et faisons connaissance.<br></br>Grâce à la communication non violente, nous apprenons à construire des relations saines.<br></br>À travers les sciences humaines, nous redécouvrons notre lien avec la société.<br></br>Et grâce à divers programmes de guérison et de rétablissement,<br></br>les jeunes se reconnectent peu à peu, et leur vie reprend doucement son cours.",
+        "ambient-first-text-3": "Votre soutien rend tout ce parcours possible.<br></br>Un geste minuscule, tel une graine,<br></br>peut engendrer un changement dense comme une forêt.",
+        "ambient-last-background-image-alternate": "Dernière image de fond ambiante",
+        "ambient-last-image-alternate": "Dernière image ambiante",
+        "ambient-last-text-0": "Et si le lendemain de quelqu’un changeait grâce à vous?",
+        "ambient-last-text-1": "Un rayon de soleil éclaire à nouveau un cœur fatigué,<br></br>une voix émerge dans l’isolement silencieux,<br></br>une petite graine pousse et devient un arbre.<br></br>Les arbres se rassemblent, formant une forêt dense qui se protège mutuellement.<br></br>Devenez un Seeds Keeper, gardien de ces petites graines.",
+        "background-image-alternate": "Image de fond d’introduction",
+        "background-text": "Le temps tenu grâce à une simple parole.<br></br>Le jour où l’on s’est relevé grâce à un regard chaleureux.<br></br>Nous avons tous vécu grâce à la chaleur de quelqu’un.<br></br>À présent, soyez cette chaleur.<br></br>Offrir un espoir de reconnexion aux jeunes isolés,<br></br>c’est possible avec Seeds.",
+        "donate": "Soutenir",
+        "foreground-image-alternate": "Image frontale d’introduction",
+        "logo-alternate": "Logo de Seeds",
+        "main-image-alternate": "Image d’introduction",
+        "main-text": "Une simple phrase — “Tu n’es pas seul(e)” — vous a-t-elle déjà sauvé la vie?",
+        "proportion-first-text": "On estime que 5 % des jeunes, soit environ 510 000 personnes, vivent en isolement ou en retrait social.",
+        "proportion-last-text": "92,7 % des jeunes isolés souhaitent sortir de cette situation, et la majorité d’entre eux aspirent à retrouver une vie quotidienne normale.",
+        "segue-image-alternate": "Image de transition",
+        "segue-text": "Voir l’histoire de Hyejin"
     },
     "social-innovation": {
         "projects": "Projets",
