@@ -28,6 +28,23 @@
         "news-letter": "Newsletters",
         "photo": "두더집 photo"
     },
+    "finale": {
+        "donate": "Donate",
+        "homepage": "Homepage",
+        "hope-background-image-alternate": "Hope background image",
+        "hope-image-alternate": "Hope image",
+        "hope-text-0": "Her story is more than just one person’s transformation.",
+        "hope-text-1": "Just like Hyejin’s transformation,<br></br>your support can change the lives of young people.<br></br>We help youth reflect on themselves and grow together in a world where they are not alone.<br></br>This journey is made possible through the work of Seeds.<br></br>Home-cooked meal gatherings, Jeju retreats, healing programs, and nonviolent communication—<br></br>these diverse programs offer opportunities to many young people, just like they did for Hyejin.",
+        "hope-text-2": "Your solidarity gives young people like Hyejin the gift of a new tomorrow.<br></br>Today, you too can help create that change.",
+        "logo": "Seeds logo",
+        "main-background-image-alternate": "Closing background image",
+        "main-image-alternate": "Closing image",
+        "right-arrow-icon": "Right arrow icon",
+        "segue-image-alternate": "Segue image",
+        "segue-text": "If you'd like to hear more stories from youth",
+        "story-text": "At first, I devoted myself to preparing for the civil service exam.<br></br>But repeated failure left me feeling isolated and alone.<br></br>Then I found Seeds’ 두더집,<br></br>and slowly began to move toward a brighter life, away from isolation.<br></br>That’s when I realized—I’m not alone.",
+        "story-title": "Hyejin’s story as a socially withdrawn youth"
+    },
     "footer": {
         "address": "Address: (03355) 89-4, Bulgwang-ro, Eunpyeong-gu, Seoul",
         "facebook-alternate": "Facebook Logo",
@@ -273,6 +290,29 @@
         "notice": "Notices",
         "press-release": "Press Releases",
         "title": "Title"
+    },
+    "prelude": {
+        "ambient-first-background-image-alternate": "First ambient background image",
+        "ambient-first-image-alternate": "First ambient image",
+        "ambient-first-text-0": "In a disconnected society, is it possible to create a world where we are together, not alone?",
+        "ambient-first-text-1": "Seeds believes the answer is yes.<br></br>And it all begins with your solidarity.",
+        "ambient-first-text-2": "We gather in a retreat on Jeju Island, cooking and sharing homemade meals together.<br></br>We meet one another, take a break, and learn how to build healthy relationships through nonviolent communication.<br></br>We rediscover ourselves as connected to society through the lens of the humanities.<br></br>Through various programs for healing and restoration,<br></br>young people reconnect—and their lives begin to grow again, little by little.",
+        "ambient-first-text-3": "Your support makes this entire journey possible.<br></br>A small gesture, like a seed,<br></br>can grow into a forest of transformation.",
+        "ambient-last-background-image-alternate": "Last ambient background image",
+        "ambient-last-image-alternate": "Last ambient image",
+        "ambient-last-text-0": "What if someone's tomorrow changed—because of you?",
+        "ambient-last-text-1": "Sunlight returns to a weary heart,<br></br>a voice emerges from quiet isolation,<br></br>and a tiny seed grows into a tree.<br></br>Trees gather into a dense forest, protecting one another.<br></br>Become a Seeds Keeper—someone who nurtures the small seeds.",
+        "background-image-alternate": "Introductory background image",
+        "background-text": "The time endured because of just one word.<br></br>The day we stood up again thanks to a warm gaze.<br></br>All of us have lived on someone’s warmth.<br></br>Now, it’s your turn to be that warmth.<br></br>Offering hope of reconnection to isolated youth—<br></br>it’s possible, with Seeds.",
+        "donate": "Donate",
+        "foreground-image-alternate": "Introductory foreground image",
+        "logo-alternate": "Seeds logo",
+        "main-image-alternate": "Introductory image",
+        "main-text": "Has someone’s simple words—“You’re not alone”—ever saved you?",
+        "proportion-first-text": "It’s estimated that 5% of the youth population—about 510,000 young people—are living in isolation or social withdrawal.",
+        "proportion-last-text": "92.7% of isolated youth want to break free from their isolation, with most of them longing to return to everyday life.",
+        "segue-image-alternate": "Segue image",
+        "segue-text": "Read Hyejin’s story"
     },
     "social-innovation": {
         "projects": "Projects",
