@@ -28,6 +28,23 @@
         "news-letter": "뉴스레터",
         "photo": "두더집 사진"
     },
+    "finale": {
+        "donate": "후원하기",
+        "homepage": "홈페이지",
+        "hope-background-image-alternate": "희망 배경 이미지",
+        "hope-image-alternate": "희망 이미지",
+        "hope-text-0": "그녀의 이야기는 단지 한 사람의 변화에 그치지 않습니다.",
+        "hope-text-1": "혜진의 변화처럼,<br></br>당신의 손길이 청년의 삶을 바꿉니다.<br></br>우리는 청년들이 혼자가 아닌 세상에서,<br></br>자신을 돌아보고 함께 성장할 수 있도록 돕습니다.<br></br>이 여정은 씨즈의 활동을 통해 이루어집니다.<br></br>집밥 모임, 제주 리트릿, 치유 프로그램, 비폭력 대화 등<br></br>다양한 프로그램이 바로 혜진처럼 많은 청년들에게 기회를 제공합니다.",
+        "hope-text-2": "당신의 연대가, 혜진과 같은 청년들에게 새로운 내일을 선물합니다.<br></br>오늘, 당신도 그 변화를 함께 만들어 갈 수 있습니다.",
+        "logo": "씨즈 로고",
+        "main-background-image-alternate": "종결부 배경 이미지",
+        "main-image-alternate": "종결부 메인 이미지",
+        "right-arrow-icon": "오른쪽 화살표 아이콘",
+        "segue-image-alternate": "전환부 이미지",
+        "segue-text": "청년의 이야기가 더 궁금하시다면",
+        "story-text": "처음엔 공무원 시험 준비에 매달렸습니다.<br></br>지속되는 실패에 고립과 외로움을 경험했지요.<br></br>그런데, 씨즈 두더집을 만나며<br></br>고립에서 벗어나 조금씩 밝은 삶으로 나아가기 시작했어요.<br></br>그렇게 저는, 혼자가 아니란 걸 알게 되었습니다.",
+        "story-title": "고립·은둔 청년인 혜진의 이야기"
+    },
     "footer": {
         "address": "주소: (03355) 서울시 은평구 불광로 89-4",
         "facebook-alternate": "페이스북 로고",
