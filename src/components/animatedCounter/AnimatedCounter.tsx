@@ -1,6 +1,8 @@
 "use client";
 
+import { useLocale } from "next-intl";
 import { useEffect, useRef, useState } from "react";
+import localeMapper from "../../utilities/localeMapper.json";
 
 interface AnimatedCounterProps {
     target: number;
@@ -10,6 +12,7 @@ interface AnimatedCounterProps {
 
 export default function AnimatedCounter({ target, isTriggered, duration }: AnimatedCounterProps) {
     const [value, setValue] = useState(0);
+    const locale = useLocale();
     const animationRef = useRef<number>(0);
     useEffect(() => {
         let startTime: number | null = null;
@@ -36,5 +39,5 @@ export default function AnimatedCounter({ target, isTriggered, duration }: Anima
                 cancelAnimationFrame(animationRef.current);
         };
     }, [isTriggered, target, duration]);
-    return <p>{value.toFixed(1)}%</p>;
+    return <p>{value.toLocaleString(localeMapper[locale].code, { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%</p>;
 }

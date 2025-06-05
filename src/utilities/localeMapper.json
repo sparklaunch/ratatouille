@@ -1,21 +1,26 @@
 {
     "en": {
+        "code": "en-US",
         "flag": "Union Jack",
         "language": "English"
     },
     "es": {
+        "code": "es-ES",
         "flag": "Rojigualda",
         "language": "Español"
     },
     "fr": {
+        "code": "fr-FR",
         "flag": "Drapeau tricolore",
         "language": "Français"
     },
     "ja": {
+        "code": "ja-JP",
         "flag": "日章旗",
         "language": "日本語"
     },
     "ko": {
+        "code": "ko-KR",
         "flag": "태극기",
         "language": "한국어"
     }
