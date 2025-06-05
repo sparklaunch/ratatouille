@@ -32,7 +32,6 @@
         "next": "15.3.1",
         "next-auth": "^4.24.11",
         "next-intl": "^4.1.0",
-        "node-cron": "^4.1.0",
         "npm": "^11.4.1",
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
@@ -59,10 +58,10 @@
     "private": true,
     "scripts": {
         "build": "next build",
+        "clean-up": "ts-node scripts/cleanUp.ts",
         "dev": "next dev --turbopack",
         "lint": "next lint",
-        "start": "next start",
-        "start:cron": "ts-node cron-jobs/cleanUpScheduler.ts"
+        "start": "next start"
     },
     "version": "0.1.0"
 }

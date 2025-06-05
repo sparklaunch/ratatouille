@@ -2,13 +2,14 @@ import { FileMetaData } from "@/types/FileMetaData";
 import fs from "fs";
 import path from "path";
 import { prisma } from "../lib/prisma";
-import { logger } from "./logger";
+import logger from "./logger";
 
-export async function cleanUp() {
+const cleanUp = async () => {
     await cleanUpNotices();
 }
 
-const cleanUpNotices = async () => {
+const cleanUpNotices: () => Promise<void> = async () => {
+    await logger("Clean-up started. (0:00 KST)");
     const notices = await prisma.notice.findMany({
         select: {
             id: true,
@@ -33,11 +34,7 @@ const cleanUpNotices = async () => {
     for (const notice of notices) {
         const { id, attachedFiles } = notice;
         const targetDirectory = `/root/uploads/notices/${id}`;
-        const files = fs.readdirSync(targetDirectory);
-        if ("images" in files) {
-            const indexOfImages = files.indexOf("images");
-            files.splice(indexOfImages, 1);
-        }
+        const files = fs.readdirSync(targetDirectory).filter(file => file !== "images");
         const attachments = JSON.parse(attachedFiles) as FileMetaData[];
         const attachedNames = attachments.map(attachment => attachment.name);
         const orphanAttachedFiles = files.filter(file => !attachedNames.includes(file));
@@ -67,4 +64,7 @@ const cleanUpNotices = async () => {
             }
         }
     }
+    await logger("Clean-up finished.");
 };
+
+cleanUp();
