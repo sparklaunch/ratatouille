@@ -41,11 +41,13 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 900px;
+    margin: auto;
     & > h1 {
         font-weight: bold;
         font-size: 70px;
         line-height: 80px;
-        margin-bottom: 100px;
+        margin-bottom: 80px;
         text-align: center;
         color: white;
         text-shadow: 0 0 4px rgba(255, 255, 255, 0.7),
@@ -57,7 +59,7 @@
         text-align: center;
         color: white;
         line-height: 50px;
-        margin-bottom: 100px;
+        margin-bottom: 80px;
         text-shadow: 0 0 4px rgba(255, 255, 255, 0.7),
             0 0 8px rgba(255, 255, 255, 0.4), 0 0 12px rgba(255, 255, 255, 0.2);
         quotes: "\201C""\201D";
@@ -71,6 +73,8 @@
     & > img {
         position: relative !important;
         display: block;
+        width: 500px !important;
+        margin: auto;
     }
 }
 
@@ -93,8 +97,8 @@
         color: white;
         text-align: center;
         line-height: 50px;
-        margin-bottom: 100px;
-        letter-spacing: -2px;
+        width: 1000px;
+        margin: 0 auto 50px auto;
         text-shadow: 0 0 4px rgba(255, 255, 255, 0.7),
             0 0 8px rgba(255, 255, 255, 0.4), 0 0 12px rgba(255, 255, 255, 0.2);
     }
@@ -103,15 +107,17 @@
         font-size: 50px;
         color: white;
         text-align: center;
-        margin-bottom: 130px;
         line-height: 70px;
-        letter-spacing: -3px;
+        width: 1000px;
+        margin: 0 auto 50px auto;
         text-shadow: 0 0 4px rgba(255, 255, 255, 0.7),
             0 0 8px rgba(255, 255, 255, 0.4), 0 0 12px rgba(255, 255, 255, 0.2);
     }
     & > img {
         position: relative !important;
         display: block;
+        width: 500px !important;
+        margin: auto;
     }
 }
 
@@ -131,12 +137,13 @@
     & > h3 {
         font-size: 72px;
         font-weight: bold;
-        line-height: 120px;
+        line-height: 80px;
         text-align: center;
         color: white;
         text-shadow: 0 0 4px rgba(255, 255, 255, 0.7),
             0 0 8px rgba(255, 255, 255, 0.4), 0 0 12px rgba(255, 255, 255, 0.2);
-        margin-bottom: 70px;
+        width: 1200px;
+        margin: 0 auto 70px auto;
     }
 }
 
