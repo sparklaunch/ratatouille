@@ -47,6 +47,7 @@
         "@types/bcrypt": "^5.0.2",
         "@types/navermaps": "^3.7.10",
         "@types/node": "^20",
+        "@types/pluralize": "^0.0.33",
         "@types/react": "^19",
         "@types/react-dom": "^19",
         "eslint": "^9",

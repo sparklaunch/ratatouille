@@ -1,6 +1,7 @@
 import { FileMetaData } from "@/types/FileMetaData";
 import fs from "fs";
 import path from "path";
+import pluralize from "pluralize";
 import { prisma } from "../lib/prisma";
 import logger from "./logger";
 
@@ -28,7 +29,7 @@ const cleanUpNotices: () => Promise<void> = async () => {
     if (count === 0) {
         await logger("There is no orphan directory.");
     } else {
-        await logger(`Successfully deleted ${count} orphan directories.`);
+        await logger(`Successfully deleted ${count} orphan ${pluralize("directory", count)}.`);
     }
     count = 0;
     for (const notice of notices) {
@@ -45,7 +46,7 @@ const cleanUpNotices: () => Promise<void> = async () => {
         if (count === 0) {
             await logger("There is no orphan attached file.");
         } else {
-            await logger(`Successfully deleted ${count} orphan attached files.`);
+            await logger(`Successfully deleted ${count} orphan attached ${pluralize("file", count)}.`);
         }
         count = 0;
         if (fs.existsSync(`${targetDirectory}/images`)) {
@@ -60,7 +61,7 @@ const cleanUpNotices: () => Promise<void> = async () => {
             if (count === 0) {
                 await logger("There is no orphan image.");
             } else {
-                await logger(`Successfully deleted ${count} orphan images.`);
+                await logger(`Successfully deleted ${count} orphan ${pluralize("image", count)}.`);
             }
         }
     }
