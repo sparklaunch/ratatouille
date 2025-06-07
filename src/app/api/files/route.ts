@@ -28,7 +28,7 @@ export async function GET(request: Request) {
                 }
             });
         }
-        case PostType.Article: {
+        case PostType.PressRelease: {
 
         }
         case PostType.NewsLetter: {
