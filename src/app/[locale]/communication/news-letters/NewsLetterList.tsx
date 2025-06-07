@@ -44,7 +44,7 @@ export default function NewsLetterList() {
     return <div className={styles.newsLetterContainer}>
         <div className={styles.newsLettersContainer}>
             {newsLetters.map(newsLetter => {
-                return <Link href={`/communication/newsletters/${newsLetter.id}`} className={styles.newsLetterItemContainer} key={newsLetter.id}>
+                return <Link href={`/communication/news-letters/${newsLetter.id}`} className={styles.newsLetterItemContainer} key={newsLetter.id}>
                     <Image src="/images/Placeholder.jpg" alt="Placeholder image" fill className={styles.newsLetterThumbnail} />
                     <div className={styles.newsLetterTitle}>
                         <h2>{newsLetter.title}</h2>
@@ -62,7 +62,7 @@ export default function NewsLetterList() {
             <p
                 onClick={() => {
                     if (currentPage > 1) {
-                        router.push(`/communication/newsletters?page=${currentPage - 1}`);
+                        router.push(`/communication/news-letters?page=${currentPage - 1}`);
                     }
                 }}
                 className={`${styles.leftCaret} ${currentPage === 1 && styles.disabledCaret}`}
@@ -76,7 +76,7 @@ export default function NewsLetterList() {
                         <p
                             key={page}
                             onClick={() => {
-                                router.push(`/communication/newsletters?page=${page}`);
+                                router.push(`/communication/news-letters?page=${page}`);
                             }}
                             className={page === currentPage ? styles.activePage : styles.inactivePage}
                         >
@@ -87,7 +87,7 @@ export default function NewsLetterList() {
             <p
                 onClick={() => {
                     if (currentPage < totalPages) {
-                        router.push(`/communication/newsletters?page=${currentPage + 1}`);
+                        router.push(`/communication/news-letters?page=${currentPage + 1}`);
                     }
                 }}
                 className={`${styles.rightCaret} ${currentPage === totalPages && styles.disabledCaret}`}

@@ -72,12 +72,12 @@ export default async function Header() {
                             </div>
                         </div>
                         <div className={styles.subMenuContainer}>
-                            <Link href="/communication/newsletters" className={styles.menuItem}>
+                            <Link href="/communication/news-letters" className={styles.menuItem}>
                                 <span>{t("communication")}</span>
                             </Link>
                             <div className={styles.subMenuOuterContainer}>
                                 <div className={styles.subMenu}>
-                                    <Link href="/communication/newsletters" className={styles.subMenuItem}>
+                                    <Link href="/communication/news-letters" className={styles.subMenuItem}>
                                         <span>{t("news-letters")}</span>
                                     </Link>
                                     <Link href="/communication/directions" className={styles.subMenuItem}>
