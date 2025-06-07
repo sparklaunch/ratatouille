@@ -4,7 +4,7 @@ import { Link } from "@/i18n/routing";
 import { Skeleton } from "@mui/material";
 import { getTranslations } from "next-intl/server";
 import { Suspense } from "react";
-import ArticleList from "./ArticleList";
+import PressReleaseList from "./PressReleaseList";
 import styles from "./style.module.scss";
 
 export default async function PressReleasesPage() {
@@ -22,7 +22,7 @@ export default async function PressReleasesPage() {
                 </Link>
             </div>
             <Suspense fallback={<Skeleton />}>
-                <ArticleList />
+                <PressReleaseList />
             </Suspense>
         </div>
         <Footer />

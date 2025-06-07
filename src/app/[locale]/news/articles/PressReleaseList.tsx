@@ -11,7 +11,7 @@ import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import styles from "./style.module.scss";
 
-export default function ArticleList() {
+export default function PressReleaseList() {
     const router = useRouter();
     const searchParams = useSearchParams();
     const [articles, setArticles] = useState<Article[]>([]);
