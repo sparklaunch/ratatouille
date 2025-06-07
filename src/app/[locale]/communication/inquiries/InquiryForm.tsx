@@ -33,7 +33,7 @@ const menuItemSharedStyles = {
 
 export default function InquiryForm() {
     const locale = useLocale();
-    const t = useTranslations("inquiry");
+    const t = useTranslations("inquiries");
     const [type, setType] = useState(InquiryType.Inquiry);
     const [name, setName] = useState("");
     const [affiliation, setAffiliation] = useState("");
