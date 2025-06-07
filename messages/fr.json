@@ -24,9 +24,9 @@
         "email-title": "E-mail",
         "hours": "Mercredi à samedi de 12h00 à 18h00",
         "hours-title": "Heures d'ouverture",
-        "inquiry": "Contacter",
-        "news-letter": "Lettres d'information",
-        "photo": "Photo de 두더집"
+        "house-photo-alternate": "Photo de 두더집",
+        "inquiries": "Contacter",
+        "news-letters": "Lettres d'information"
     },
     "finale": {
         "donate": "Soutenir",

@@ -24,9 +24,9 @@
         "email-title": "Correo electrónico",
         "hours": "De miércoles a sábado, de 12:00 a 18:00",
         "hours-title": "Horario de atención",
-        "inquiry": "Contactar",
-        "news-letter": "Boletinos",
-        "photo": "Foto de 두더집"
+        "house-photo-alternate": "Foto de 두더집",
+        "inquiries": "Contactar",
+        "news-letters": "Boletinos"
     },
     "finale": {
         "donate": "Donar",

@@ -24,9 +24,9 @@
         "email-title": "Email",
         "hours": "Wed ~ Sat 12:00 PM ~ 6:00 PM",
         "hours-title": "Opening Hours",
-        "inquiry": "Contact Us",
-        "news-letter": "Newsletters",
-        "photo": "두더집 photo"
+        "house-photo-alternate": "두더집 photo",
+        "inquiries": "Contact Us",
+        "news-letters": "Newsletters"
     },
     "finale": {
         "donate": "Donate",

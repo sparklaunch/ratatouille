@@ -24,9 +24,9 @@
         "email-title": "メール",
         "hours": "水 〜 土 12:00 ~ 18:00",
         "hours-title": "営業時間",
-        "inquiry": "お問い合わせ",
-        "news-letter": "ニュースレター",
-        "photo": "두더집の写真"
+        "house-photo-alternate": "두더집の写真",
+        "inquiries": "お問い合わせ",
+        "news-letters": "ニュースレター"
     },
     "finale": {
         "donate": "寄付する",
