@@ -11,7 +11,7 @@ import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import styles from "./style.module.scss";
 
-export default function AdminNewsLettersList() {
+export default function AdminNewsLetterList() {
     const router = useRouter();
     const searchParams = useSearchParams();
     const [newsLetters, setNewsLetters] = useState<NewsLetter[]>([]);
@@ -44,7 +44,7 @@ export default function AdminNewsLettersList() {
     return <div className={styles.newsLetterContainer}>
         <div className={styles.newsLettersContainer}>
             {newsLetters.map(newsLetter => {
-                return <Link href={`/admin/main/newsletters/${newsLetter.id}`} className={styles.newsLetterItemContainer} key={newsLetter.id}>
+                return <Link href={`/admin/main/news-letters/${newsLetter.id}`} className={styles.newsLetterItemContainer} key={newsLetter.id}>
                     <Image src="/images/Placeholder.jpg" alt="Placeholder image" fill className={styles.newsLetterThumbnail} />
                     <div className={styles.newsLetterTitle}>
                         <h2>{newsLetter.title}</h2>
@@ -62,7 +62,7 @@ export default function AdminNewsLettersList() {
             <p
                 onClick={() => {
                     if (currentPage > 1) {
-                        router.push(`/admin/main/newsletters?page=${currentPage - 1}`);
+                        router.push(`/admin/main/news-letters?page=${currentPage - 1}`);
                     }
                 }}
                 className={`${styles.leftCaret} ${currentPage === 1 && styles.disabledCaret}`}
@@ -76,7 +76,7 @@ export default function AdminNewsLettersList() {
                         <p
                             key={page}
                             onClick={() => {
-                                router.push(`/admin/main/newsletters?page=${page}`);
+                                router.push(`/admin/main/news-letters?page=${page}`);
                             }}
                             className={page === currentPage ? styles.activePage : styles.inactivePage}
                         >
@@ -87,7 +87,7 @@ export default function AdminNewsLettersList() {
             <p
                 onClick={() => {
                     if (currentPage < totalPages) {
-                        router.push(`/admin/main/newsletters?page=${currentPage + 1}`);
+                        router.push(`/admin/main/news-letters?page=${currentPage + 1}`);
                     }
                 }}
                 className={`${styles.rightCaret} ${currentPage === totalPages && styles.disabledCaret}`}
