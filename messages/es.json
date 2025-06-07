@@ -268,8 +268,8 @@
         "date": "Fecha de redacción",
         "index": "N.º",
         "news": "Noticias",
-        "notice": "Anuncios",
-        "press-release": "Notas de prensa",
+        "notices": "Anuncios",
+        "press-releases": "Notas de prensa",
         "title": "Título"
     },
     "prelude": {

@@ -287,8 +287,8 @@
         "date": "Date",
         "index": "No.",
         "news": "News",
-        "notice": "Notices",
-        "press-release": "Press Releases",
+        "notices": "Notices",
+        "press-releases": "Press Releases",
         "title": "Title"
     },
     "prelude": {

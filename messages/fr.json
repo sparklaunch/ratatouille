@@ -268,8 +268,8 @@
         "date": "Date de rédaction",
         "index": "n°",
         "news": "Actualités",
-        "notice": "Annonces",
-        "press-release": "Communiqués de presse",
+        "notices": "Annonces",
+        "press-releases": "Communiqués de presse",
         "title": "Titre"
     },
     "prelude": {

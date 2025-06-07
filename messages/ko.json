@@ -287,8 +287,8 @@
         "date": "작성일",
         "index": "번호",
         "news": "소식",
-        "notice": "공지 사항",
-        "press-release": "언론 보도",
+        "notices": "공지 사항",
+        "press-releases": "언론 보도",
         "title": "제목"
     },
     "prelude": {

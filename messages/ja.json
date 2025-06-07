@@ -268,8 +268,8 @@
         "date": "作成日",
         "index": "番号",
         "news": "ニュース",
-        "notice": "お知らせ",
-        "press-release": "報道",
+        "notices": "お知らせ",
+        "press-releases": "報道",
         "title": "タイトル"
     },
     "prelude": {
