@@ -99,7 +99,7 @@ export default function InquiryForm() {
                     other,
                     termsAgreed
                 };
-                const response = await fetch("/api/inquiry", {
+                const response = await fetch("/api/inquiry/new", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
@@ -133,7 +133,7 @@ export default function InquiryForm() {
                     other,
                     termsAgreed
                 };
-                const response = await fetch("/api/visit", {
+                const response = await fetch("/api/visit/new", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
