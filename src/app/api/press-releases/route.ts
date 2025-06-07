@@ -5,7 +5,7 @@ export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
     const page = parseInt(searchParams.get("page") as string);
     const pageSize = 12;
-    const articles = await prisma.article.findMany({
+    const pressReleases = await prisma.article.findMany({
         orderBy: {
             createdAt: "desc"
         },
@@ -14,7 +14,7 @@ export async function GET(request: Request) {
     });
     const totalCount = await prisma.article.count();
     return NextResponse.json({
-        articles,
+        pressReleases,
         totalCount
     });
 }

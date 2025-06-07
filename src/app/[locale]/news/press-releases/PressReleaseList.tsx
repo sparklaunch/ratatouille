@@ -1,8 +1,8 @@
 "use client";
 
 import { Link, useRouter } from "@/i18n/routing";
-import { Article } from "@/types/Article";
-import { ArticleData } from "@/types/ArticleData";
+import { PressRelease } from "@/types/PressRelease";
+import { PressReleaseData } from "@/types/PressReleaseData";
 import formatDate from "@/utilities/formatDate";
 import SearchIcon from "@mui/icons-material/SearchOutlined";
 import { InputAdornment, OutlinedInput } from "@mui/material";
@@ -14,21 +14,21 @@ import styles from "./style.module.scss";
 export default function PressReleaseList() {
     const router = useRouter();
     const searchParams = useSearchParams();
-    const [articles, setArticles] = useState<Article[]>([]);
+    const [pressReleases, setPressReleases] = useState<PressRelease[]>([]);
     const [totalPages, setTotalPages] = useState(1);
     let currentPage = 1;
     if (searchParams.has("page")) {
         currentPage = Number(searchParams.get("page"));
     }
     useEffect(() => {
-        const getArticles = async () => {
+        const getPressReleases = async () => {
             try {
-                const response = await fetch(`/api/articles?page=${currentPage}`, {
+                const response = await fetch(`/api/press-releases?page=${currentPage}`, {
                     cache: "no-store"
                 });
                 if (response.ok) {
-                    const { totalCount, articles } = await response.json() as ArticleData;
-                    setArticles(articles);
+                    const { totalCount, pressReleases } = await response.json() as PressReleaseData;
+                    setPressReleases(pressReleases);
                     const computedPages = Math.ceil(totalCount / 12);
                     setTotalPages(computedPages);
                 }
@@ -36,19 +36,19 @@ export default function PressReleaseList() {
                 console.error(error);
             }
         }
-        getArticles();
+        getPressReleases();
     }, [currentPage]);
     const startPage = Math.floor((currentPage - 1) / 5) * 5 + 1;
     const endPage = Math.min(startPage + 5 - 1, totalPages);
     const pageRange = Math.max(0, endPage - startPage + 1);
     return <div className={styles.pressContainer}>
-        <div className={styles.articlesContainer}>
-            {articles.map(article => {
-                return <Link href={`/news/press-releases/${article.id}`} className={styles.articleContainer} key={article.id}>
-                    <Image src="/images/Placeholder.jpg" alt="Placeholder image" fill className={styles.articleThumbnail} />
-                    <div className={styles.articleTitle}>
-                        <h2>{article.title}</h2>
-                        <p>{formatDate(article.createdAt)}</p>
+        <div className={styles.pressReleasesContainer}>
+            {pressReleases.map(pressRelease => {
+                return <Link href={`/news/press-releases/${pressRelease.id}`} className={styles.pressReleaseContainer} key={pressRelease.id}>
+                    <Image src="/images/Placeholder.jpg" alt="Placeholder image" fill className={styles.pressReleaseThumbnail} />
+                    <div className={styles.pressReleaseTitle}>
+                        <h2>{pressRelease.title}</h2>
+                        <p>{formatDate(pressRelease.createdAt)}</p>
                     </div>
                 </Link>;
             })}

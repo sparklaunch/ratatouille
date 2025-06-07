@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "@/i18n/routing";
-import defaultArticle, { Article } from "@/types/Article";
+import defaultArticle, { Article } from "@/types/PressRelease";
 import formatDate from "@/utilities/formatDate";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";

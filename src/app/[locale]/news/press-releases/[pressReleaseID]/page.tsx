@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "@/i18n/routing";
-import defaultArticle, { Article } from "@/types/Article";
+import defaultPressRelease, { PressRelease } from "@/types/PressRelease";
 import formatDate from "@/utilities/formatDate";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
@@ -14,20 +14,20 @@ export default function PressReleaseContentPage() {
     const t = useTranslations("press-release");
     const { pressReleaseID } = useParams() as { pressReleaseID: string };
     const router = useRouter();
-    const [article, setArticle] = useState<Article>(defaultArticle);
+    const [pressRelease, setPressRelease] = useState<PressRelease>(defaultPressRelease);
     useEffect(() => {
-        const getArticle = async () => {
+        const getPressRelease = async () => {
             try {
                 const response = await fetch(`/api/article?id=${pressReleaseID}`);
                 if (response.ok) {
-                    const article = await response.json() as Article;
-                    setArticle(article);
+                    const pressRelease = await response.json() as PressRelease;
+                    setPressRelease(pressRelease);
                 }
             } catch (error) {
                 console.error(error);
             }
         };
-        getArticle();
+        getPressRelease();
     }, [pressReleaseID]);
     return <>
         <div className={styles.container}>
@@ -42,12 +42,12 @@ export default function PressReleaseContentPage() {
             </div>
             <div className={styles.contentContainer}>
                 <div className={styles.titleContainer}>
-                    <h2 className={styles.title}>{article.title}</h2>
-                    <h3 className={styles.createdDate}>{t("date")}: {formatDate(article.createdAt)}</h3>
+                    <h2 className={styles.title}>{pressRelease.title}</h2>
+                    <h3 className={styles.createdDate}>{t("date")}: {formatDate(pressRelease.createdAt)}</h3>
                 </div>
                 <div className={styles.bodyContainer}>
                     <div dangerouslySetInnerHTML={{
-                        __html: article.content
+                        __html: pressRelease.content
                     }} />
                 </div>
             </div>

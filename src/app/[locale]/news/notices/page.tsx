@@ -17,7 +17,7 @@ export default async function NoticesPage() {
                 <Link href="/news/notices">
                     <span className={styles.activeSubheader}>{t("notices")}</span>
                 </Link>
-                <Link href="/news/articles">
+                <Link href="/news/press-releases">
                     <span>{t("press-releases")}</span>
                 </Link>
             </div>

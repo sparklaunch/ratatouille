@@ -1,8 +1,8 @@
 "use client";
 
 import { Link, useRouter } from "@/i18n/routing";
-import { Article } from "@/types/Article";
-import { ArticleData } from "@/types/ArticleData";
+import { Article } from "@/types/PressRelease";
+import { ArticleData } from "@/types/PressReleaseData";
 import formatDate from "@/utilities/formatDate";
 import SearchIcon from "@mui/icons-material/SearchOutlined";
 import { InputAdornment, OutlinedInput } from "@mui/material";

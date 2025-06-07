@@ -1,4 +1,4 @@
-type Article = {
+type PressRelease = {
     id: string;
     index: number;
     title: string;
@@ -8,15 +8,15 @@ type Article = {
     thumbnail: string;
 }
 
-const defaultArticle: Article = {
+const defaultPressRelease: PressRelease = {
     id: "Sample UUID",
     index: 1,
     title: "씨즈",
     createdAt: new Date(),
-    content: "This is a default article",
+    content: "This is a default press release",
     attachedFiles: "[]",
     thumbnail: "[]"
 }
 
-export default defaultArticle;
-export type { Article };
+export default defaultPressRelease;
+export type { PressRelease };
