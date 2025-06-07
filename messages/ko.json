@@ -8,11 +8,6 @@
         "print-alternate": "인쇄",
         "share-alternate": "공유"
     },
-    "articles": {
-        "news": "소식",
-        "notices": "공지 사항",
-        "press-releases": "언론 보도"
-    },
     "directions": {
         "address": "서울시 은평구 불광로 89-4",
         "address-title": "주소",
@@ -313,6 +308,11 @@
         "proportion-last-text": "고립·은둔 청년의 92.7%는 고립 상태를 벗어나고 싶어 하며, 일상 생활 회복을 가장 많이 원하고 있습니다.",
         "segue-image-alternate": "전환부 이미지",
         "segue-text": "혜진의 이야기 보러 가기"
+    },
+    "press-releases": {
+        "news": "소식",
+        "notices": "공지 사항",
+        "press-releases": "언론 보도"
     },
     "social-innovation": {
         "projects": "프로젝트",

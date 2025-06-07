@@ -8,11 +8,6 @@
         "print-alternate": "Imprimir",
         "share-alternate": "Compartir"
     },
-    "articles": {
-        "news": "Noticias",
-        "notices": "Anuncios",
-        "press-releases": "Notas de prensa"
-    },
     "directions": {
         "address": "89-4, Calle Bulgwang, Distrito de Eunpyeong, Seúl",
         "address-title": "Dirección",
@@ -294,6 +289,11 @@
         "proportion-last-text": "El 92,7 % de los jóvenes en aislamiento desean salir de esa situación, y la mayoría anhela recuperar una vida cotidiana normal.",
         "segue-image-alternate": "Imagen de transición",
         "segue-text": "Ver la historia de Hyejin"
+    },
+    "press-releases": {
+        "news": "Noticias",
+        "notices": "Anuncios",
+        "press-releases": "Notas de prensa"
     },
     "social-innovation": {
         "projects": "Proyectos",

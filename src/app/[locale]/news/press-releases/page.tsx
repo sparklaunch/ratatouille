@@ -8,7 +8,7 @@ import PressReleaseList from "./PressReleaseList";
 import styles from "./style.module.scss";
 
 export default async function PressReleasesPage() {
-    const t = await getTranslations("articles");
+    const t = await getTranslations("press-releases");
     return <>
         <Header />
         <div className={styles.container}>
@@ -17,7 +17,7 @@ export default async function PressReleasesPage() {
                 <Link href="/news/notices">
                     <span>{t("notices")}</span>
                 </Link>
-                <Link href="/news/articles">
+                <Link href="/news/press-releases">
                     <span className={styles.activeSubheader}>{t("press-releases")}</span>
                 </Link>
             </div>

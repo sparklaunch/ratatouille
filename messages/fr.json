@@ -8,11 +8,6 @@
         "print-alternate": "Imprimer",
         "share-alternate": "Partager"
     },
-    "articles": {
-        "news": "Actualités",
-        "notices": "Annonces",
-        "press-releases": "Communiqués de presse"
-    },
     "directions": {
         "address": "89-4, Bulgwang-ro, Eunpyeong-gu, Séoul",
         "address-title": "Adresse",
@@ -294,6 +289,11 @@
         "proportion-last-text": "92,7 % des jeunes isolés souhaitent sortir de cette situation, et la majorité d’entre eux aspirent à retrouver une vie quotidienne normale.",
         "segue-image-alternate": "Image de transition",
         "segue-text": "Voir l’histoire de Hyejin"
+    },
+    "press-releases": {
+        "news": "Actualités",
+        "notices": "Annonces",
+        "press-releases": "Communiqués de presse"
     },
     "social-innovation": {
         "projects": "Projets",

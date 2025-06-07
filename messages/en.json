@@ -8,11 +8,6 @@
         "print-alternate": "Print",
         "share-alternate": "Share"
     },
-    "articles": {
-        "news": "News",
-        "notices": "Notices",
-        "press-releases": "Press Releases"
-    },
     "directions": {
         "address": "89-4, Bulgwang-ro, Eunpyeong-gu, Seoul",
         "address-title": "Address",
@@ -313,6 +308,11 @@
         "proportion-last-text": "92.7% of isolated youth want to break free from their isolation, with most of them longing to return to everyday life.",
         "segue-image-alternate": "Segue image",
         "segue-text": "Read Hyejin’s story"
+    },
+    "press-releases": {
+        "news": "News",
+        "notices": "Notices",
+        "press-releases": "Press Releases"
     },
     "social-innovation": {
         "projects": "Projects",
