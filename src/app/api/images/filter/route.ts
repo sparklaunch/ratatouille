@@ -25,7 +25,7 @@ export async function POST(request: Request) {
             break;
         }
         case PostType.Article: {
-            const targetDirectory = `/root/uploads/articles/${id}/images`;
+            const targetDirectory = `/root/uploads/press-releases/${id}/images`;
             if (fs.existsSync(targetDirectory)) {
                 const images = fs.readdirSync(targetDirectory);
                 const unusedImages = images.filter(image => !usedImageNames.includes(image));
@@ -40,7 +40,7 @@ export async function POST(request: Request) {
             break;
         }
         case PostType.NewsLetter: {
-            const targetDirectory = `/root/uploads/newsletters/${id}/images`;
+            const targetDirectory = `/root/uploads/news-letters/${id}/images`;
             if (fs.existsSync(targetDirectory)) {
                 const images = fs.readdirSync(targetDirectory);
                 const unusedImages = images.filter(image => !usedImageNames.includes(image));

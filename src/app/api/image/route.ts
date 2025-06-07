@@ -26,22 +26,22 @@ export async function POST(request: Request) {
             return NextResponse.json({ url: uploadedPath });
         }
         case PostType.Article: {
-            const targetDirectory = path.join(uploadDirectory, "articles", id, "images");
+            const targetDirectory = path.join(uploadDirectory, "press-releases", id, "images");
             if (!fs.existsSync(targetDirectory)) {
                 fs.mkdirSync(targetDirectory, { recursive: true });
             }
-            const filePath = path.join(uploadDirectory, "articles", id, "images", fileName);
-            const uploadedPath = path.join("/uploads/articles", id, "images", fileName);
+            const filePath = path.join(uploadDirectory, "press-releases", id, "images", fileName);
+            const uploadedPath = path.join("/uploads/press-releases", id, "images", fileName);
             await sharp(buffer).webp({ quality: 80 }).toFile(filePath);
             return NextResponse.json({ url: uploadedPath });
         }
         case PostType.NewsLetter: {
-            const targetDirectory = path.join(uploadDirectory, "newsletters", id, "images");
+            const targetDirectory = path.join(uploadDirectory, "news-letters", id, "images");
             if (!fs.existsSync(targetDirectory)) {
                 fs.mkdirSync(targetDirectory, { recursive: true });
             }
-            const filePath = path.join(uploadDirectory, "newsletters", id, "images", fileName);
-            const uploadedPath = path.join("/uploads/newsletters", id, "images", fileName);
+            const filePath = path.join(uploadDirectory, "news-letters", id, "images", fileName);
+            const uploadedPath = path.join("/uploads/news-letters", id, "images", fileName);
             await sharp(buffer).webp({ quality: 80 }).toFile(filePath);
             return NextResponse.json({ url: uploadedPath });
         }
