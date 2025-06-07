@@ -33,11 +33,11 @@ export default function NoticeContentPage() {
         <div className={styles.container}>
             <h1 className={styles.header}>{t("news")}</h1>
             <div className={styles.subheader}>
-                <Link href="/news/notice">
-                    <span className={styles.activeSubheader}>{t("notice")}</span>
+                <Link href="/news/notices">
+                    <span className={styles.activeSubheader}>{t("notices")}</span>
                 </Link>
-                <Link href="/news/press">
-                    <span>{t("press-release")}</span>
+                <Link href="/news/articles">
+                    <span>{t("press-releases")}</span>
                 </Link>
             </div>
             <div className={styles.contentContainer}>

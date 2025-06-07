@@ -259,8 +259,8 @@
         "date": "Date de rédaction",
         "go-back": "Voir la liste",
         "news": "Actualités",
-        "notice": "Annonces",
-        "press-release": "Communiqués de presse",
+        "notices": "Annonces",
+        "press-releases": "Communiqués de presse",
         "print-alternate": "Imprimer",
         "share-alternate": "Partager"
     },

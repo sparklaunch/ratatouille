@@ -55,14 +55,14 @@ export default function NoticeList() {
         </div>
         <div className={styles.boardContent}>
             {notices.fixedNotices.map((notice, index) => (
-                <Link key={`fixed-${index}`} className={styles.fixedNotice} href={`/news/notice/${notice.id}`}>
+                <Link key={`fixed-${index}`} className={styles.fixedNotice} href={`/news/notices/${notice.id}`}>
                     <p>{notice.index}</p>
                     <p>{notice.title}</p>
                     <p>{formatDate(notice.createdAt)}</p>
                 </Link>
             ))}
             {notices.normalNotices.map((notice, index) => (
-                <Link key={`normal-${index}`} className={styles.normalNotice} href={`/news/notice/${notice.id}`}>
+                <Link key={`normal-${index}`} className={styles.normalNotice} href={`/news/notices/${notice.id}`}>
                     <p>{notice.index}</p>
                     <p>{notice.title}</p>
                     <p>{formatDate(notice.createdAt)}</p>
@@ -78,7 +78,7 @@ export default function NoticeList() {
             <p
                 onClick={() => {
                     if (currentPage > 1) {
-                        router.push(`/news/notice?page=${currentPage - 1}`);
+                        router.push(`/news/notices?page=${currentPage - 1}`);
                     }
                 }}
                 className={`${styles.leftCaret} ${currentPage === 1 && styles.disabledCaret}`}
@@ -91,7 +91,7 @@ export default function NoticeList() {
                     return (
                         <p
                             key={page}
-                            onClick={() => router.push(`/news/notice?page=${page}`)}
+                            onClick={() => router.push(`/news/notices?page=${page}`)}
                             className={page === currentPage ? styles.activePage : styles.inactivePage}
                         >
                             {page}
@@ -102,7 +102,7 @@ export default function NoticeList() {
             <p
                 onClick={() => {
                     if (currentPage < totalPages) {
-                        router.push(`/news/notice?page=${currentPage + 1}`);
+                        router.push(`/news/notices?page=${currentPage + 1}`);
                     }
                 }}
                 className={`${styles.rightCaret} ${currentPage === totalPages && styles.disabledCaret}`}

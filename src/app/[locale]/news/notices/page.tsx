@@ -7,7 +7,7 @@ import { Suspense } from "react";
 import NoticeList from "./NoticeList";
 import styles from "./style.module.scss";
 
-export default async function NoticePage() {
+export default async function NoticesPage() {
     const t = await getTranslations("notices");
     return <>
         <Header />

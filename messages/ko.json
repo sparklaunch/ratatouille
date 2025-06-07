@@ -278,8 +278,8 @@
         "date": "작성일",
         "go-back": "목록 보기",
         "news": "소식",
-        "notice": "공지 사항",
-        "press-release": "언론 보도",
+        "notices": "공지 사항",
+        "press-releases": "언론 보도",
         "print-alternate": "인쇄",
         "share-alternate": "공유"
     },
