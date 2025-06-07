@@ -18,7 +18,7 @@
     align-items: stretch;
 }
 
-.articlesContainer {
+.pressReleasesContainer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 20px;
@@ -26,19 +26,19 @@
     margin-bottom: 65px;
 }
 
-.articleContainer {
+.pressReleaseContainer {
     border: 1px solid #d9d9d9;
     &:hover {
         border: 1px solid #656565;
     }
 }
 
-.articleThumbnail {
+.pressReleaseThumbnail {
     position: relative !important;
     height: inherit !important;
 }
 
-.articleTitle {
+.pressReleaseTitle {
     padding: 20px;
     & > h2 {
         font-size: 17px;

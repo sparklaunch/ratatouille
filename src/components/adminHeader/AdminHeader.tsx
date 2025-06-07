@@ -16,10 +16,10 @@ export default async function AdminHeader() {
                         <Link href="/admin/main/notices" className={styles.menuItem}>
                             <span>공지 사항</span>
                         </Link>
-                        <Link href="/admin/main/articles" className={styles.menuItem}>
+                        <Link href="/admin/main/press-releases" className={styles.menuItem}>
                             <span>언론 보도</span>
                         </Link>
-                        <Link href="/admin/main/newsletters" className={styles.menuItem}>
+                        <Link href="/admin/main/news-letters" className={styles.menuItem}>
                             <span>뉴스레터</span>
                         </Link>
                     </div>
