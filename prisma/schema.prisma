@@ -17,7 +17,7 @@ model Notice {
   isFixed   Boolean  @default(false)
 }
 
-model Article {
+model PressRelease {
   id String @id @default(uuid())
   index Int @default(autoincrement())
   title     String   @db.VarChar(255)
