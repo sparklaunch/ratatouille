@@ -58,21 +58,21 @@
         "youtube-alternate": "YouTube Logo"
     },
     "header": {
+        "articles": "Press Releases",
         "brand-story": "Brand Story",
         "communication": "Communication",
         "directions": "Directions",
+        "donate": "Donate",
         "history": "Our History",
-        "inquiry": "Contact Us",
+        "inquiries": "Contact Us",
         "introduction": "About",
         "logo-alternate": "Seeds Logo",
         "news": "News",
         "news-letters": "Newsletters",
         "notices": "Notices",
-        "press": "Press Releases",
         "projects": "Projects",
         "social-innovation": "Social Innovation",
         "solidarity": "Solidarity",
-        "sponsor": "Donate",
         "sustainability": "Sustainability"
     },
     "history": {

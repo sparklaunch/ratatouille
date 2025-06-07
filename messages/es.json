@@ -58,21 +58,21 @@
         "youtube-alternate": "Logo de YouTube"
     },
     "header": {
+        "articles": "Notas de prensa",
         "brand-story": "Historia de la marca",
         "communication": "Comunicación",
         "directions": "Cómo llegar",
+        "donate": "Donar",
         "history": "Historia",
-        "inquiry": "Contactar",
+        "inquiries": "Contactar",
         "introduction": "Presentación",
         "logo-alternate": "Logo de Seeds",
         "news": "Noticias",
         "news-letters": "Boletinos",
         "notices": "Anuncios",
-        "press": "Notas de prensa",
         "projects": "Proyectos",
         "social-innovation": "Innovación Social",
         "solidarity": "Solidaridad",
-        "sponsor": "Donar",
         "sustainability": "Sostenibilidad"
     },
     "history": {

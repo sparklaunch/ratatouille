@@ -57,41 +57,41 @@ export default async function Header() {
                             </div>
                         </div>
                         <div className={styles.subMenuContainer}>
-                            <Link href="/news/notice" className={styles.menuItem}>
+                            <Link href="/news/notices" className={styles.menuItem}>
                                 <span>{t("news")}</span>
                             </Link>
                             <div className={styles.subMenuOuterContainer}>
                                 <div className={styles.subMenu}>
-                                    <Link href="/news/notice" className={styles.subMenuItem}>
+                                    <Link href="/news/notices" className={styles.subMenuItem}>
                                         <span>{t("notices")}</span>
                                     </Link>
-                                    <Link href="/news/press" className={styles.subMenuItem}>
-                                        <span>{t("press")}</span>
+                                    <Link href="/news/articles" className={styles.subMenuItem}>
+                                        <span>{t("articles")}</span>
                                     </Link>
                                 </div>
                             </div>
                         </div>
                         <div className={styles.subMenuContainer}>
-                            <Link href="/communication/newsletter" className={styles.menuItem}>
+                            <Link href="/communication/newsletters" className={styles.menuItem}>
                                 <span>{t("communication")}</span>
                             </Link>
                             <div className={styles.subMenuOuterContainer}>
                                 <div className={styles.subMenu}>
-                                    <Link href="/communication/newsletter" className={styles.subMenuItem}>
+                                    <Link href="/communication/newsletters" className={styles.subMenuItem}>
                                         <span>{t("news-letters")}</span>
                                     </Link>
-                                    <Link href="/communication/direction" className={styles.subMenuItem}>
+                                    <Link href="/communication/directions" className={styles.subMenuItem}>
                                         <span>{t("directions")}</span>
                                     </Link>
-                                    <Link href="/communication/inquiry" className={styles.subMenuItem}>
-                                        <span>{t("inquiry")}</span>
+                                    <Link href="/communication/inquiries" className={styles.subMenuItem}>
+                                        <span>{t("inquiries")}</span>
                                     </Link>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <Link href="/donation/prelude" className={styles.sponsor}>
-                        <span>{t("sponsor")}</span>
+                        <span>{t("donate")}</span>
                     </Link>
                     <LocaleSwitcher />
                 </div>

@@ -58,21 +58,21 @@
         "youtube-alternate": "YouTubeのロゴ"
     },
     "header": {
+        "articles": "報道",
         "brand-story": "ブランドストーリー",
         "communication": "コミュニケーション",
         "directions": "アクセス",
+        "donate": "寄付する",
         "history": "沿革",
-        "inquiry": "お問い合わせ",
+        "inquiries": "お問い合わせ",
         "introduction": "紹介",
         "logo-alternate": "Seedsのロゴ",
         "news": "ニュース",
         "news-letters": "ニュースレター",
         "notices": "お知らせ",
-        "press": "報道",
         "projects": "プロジェクト",
         "social-innovation": "社会イノベーション",
         "solidarity": "連帯",
-        "sponsor": "寄付する",
         "sustainability": "持続可能性"
     },
     "history": {
