@@ -18,7 +18,7 @@ export default function PressReleaseContentPage() {
     useEffect(() => {
         const getPressRelease = async () => {
             try {
-                const response = await fetch(`/api/article?id=${pressReleaseID}`);
+                const response = await fetch(`/api/press-release?id=${pressReleaseID}`);
                 if (response.ok) {
                     const pressRelease = await response.json() as PressRelease;
                     setPressRelease(pressRelease);

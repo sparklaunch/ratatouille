@@ -4,10 +4,10 @@ import { prisma } from "../../../../lib/prisma";
 export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
     const id = searchParams.get("id") as string;
-    const article = await prisma.article.findUnique({
+    const pressRelease = await prisma.article.findUnique({
         where: {
             id
         }
     });
-    return NextResponse.json(article);
+    return NextResponse.json(pressRelease);
 }
