@@ -44,7 +44,7 @@ export default function PressReleaseList() {
     return <div className={styles.pressContainer}>
         <div className={styles.articlesContainer}>
             {articles.map(article => {
-                return <Link href={`/news/press/${article.id}`} className={styles.articleContainer} key={article.id}>
+                return <Link href={`/news/press-releases/${article.id}`} className={styles.articleContainer} key={article.id}>
                     <Image src="/images/Placeholder.jpg" alt="Placeholder image" fill className={styles.articleThumbnail} />
                     <div className={styles.articleTitle}>
                         <h2>{article.title}</h2>
@@ -62,7 +62,7 @@ export default function PressReleaseList() {
             <p
                 onClick={() => {
                     if (currentPage > 1) {
-                        router.push(`/news/press?page=${currentPage - 1}`);
+                        router.push(`/news/press-releases?page=${currentPage - 1}`);
                     }
                 }}
                 className={`${styles.leftCaret} ${currentPage === 1 && styles.disabledCaret}`}
@@ -76,7 +76,7 @@ export default function PressReleaseList() {
                         <p
                             key={page}
                             onClick={() => {
-                                router.push(`/news/press?page=${page}`);
+                                router.push(`/news/press-releases?page=${page}`);
                             }}
                             className={page === currentPage ? styles.activePage : styles.inactivePage}
                         >
@@ -87,7 +87,7 @@ export default function PressReleaseList() {
             <p
                 onClick={() => {
                     if (currentPage < totalPages) {
-                        router.push(`/news/press?page=${currentPage + 1}`);
+                        router.push(`/news/press-releases?page=${currentPage + 1}`);
                     }
                 }}
                 className={`${styles.rightCaret} ${currentPage === totalPages && styles.disabledCaret}`}

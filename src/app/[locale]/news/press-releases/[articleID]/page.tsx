@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 import styles from "./style.module.scss";
 
 export default function PressReleaseContentPage() {
-    const t = useTranslations("article");
+    const t = useTranslations("press-release");
     const { articleID } = useParams() as { articleID: string };
     const router = useRouter();
     const [article, setArticle] = useState<Article>(defaultArticle);
@@ -36,7 +36,7 @@ export default function PressReleaseContentPage() {
                 <Link href="/news/notices">
                     <span>{t("notices")}</span>
                 </Link>
-                <Link href="/news/articles">
+                <Link href="/news/press-releases">
                     <span className={styles.activeSubheader}>{t("press-releases")}</span>
                 </Link>
             </div>

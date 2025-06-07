@@ -1,13 +1,4 @@
 {
-    "article": {
-        "date": "作成日",
-        "go-back": "一覧を見る",
-        "news": "ニュース",
-        "notices": "お知らせ",
-        "press-releases": "報道",
-        "print-alternate": "印刷",
-        "share-alternate": "シェア"
-    },
     "directions": {
         "address": "ソウル特別市 恩平区 仏光路 89-4",
         "address-title": "住所",
@@ -289,6 +280,15 @@
         "proportion-last-text": "孤立・ひきこもりの若者の92.7％が、孤立から抜け出したいと望み、日常生活の回復を最も求めています。",
         "segue-image-alternate": "転換部の画像",
         "segue-text": "ヘジンのストーリーを見る"
+    },
+    "press-release": {
+        "date": "作成日",
+        "go-back": "一覧を見る",
+        "news": "ニュース",
+        "notices": "お知らせ",
+        "press-releases": "報道",
+        "print-alternate": "印刷",
+        "share-alternate": "シェア"
     },
     "press-releases": {
         "news": "ニュース",
