@@ -252,8 +252,8 @@
     "news-letters": {
         "communication": "Comunicación",
         "directions": "Cómo llegar",
-        "inquiry": "Consulta",
-        "news-letter": "Boletinos"
+        "inquiries": "Consulta",
+        "news-letters": "Boletinos"
     },
     "notice": {
         "date": "Fecha de redacción",

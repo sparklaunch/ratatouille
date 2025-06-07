@@ -271,8 +271,8 @@
     "news-letters": {
         "communication": "Communication",
         "directions": "Directions",
-        "inquiry": "Contact Us",
-        "news-letter": "Newsletters"
+        "inquiries": "Contact Us",
+        "news-letters": "Newsletters"
     },
     "notice": {
         "date": "Date",

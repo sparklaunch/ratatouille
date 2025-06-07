@@ -252,8 +252,8 @@
     "news-letters": {
         "communication": "コミュニケーション",
         "directions": "アクセス",
-        "inquiry": "お問い合わせ",
-        "news-letter": "ニュースレター"
+        "inquiries": "お問い合わせ",
+        "news-letters": "ニュースレター"
     },
     "notice": {
         "date": "作成日",

@@ -271,8 +271,8 @@
     "news-letters": {
         "communication": "소통",
         "directions": "찾아오시는 길",
-        "inquiry": "문의하기",
-        "news-letter": "뉴스레터"
+        "inquiries": "문의하기",
+        "news-letters": "뉴스레터"
     },
     "notice": {
         "date": "작성일",
