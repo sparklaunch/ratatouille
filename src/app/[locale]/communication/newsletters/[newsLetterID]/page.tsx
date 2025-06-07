@@ -32,14 +32,14 @@ export default function NewsLetterContentPage() {
         <div className={styles.container}>
             <h1 className={styles.header}>{t("communication")}</h1>
             <div className={styles.subheader}>
-                <Link href="/communication/newsletter">
-                    <span className={styles.activeSubheader}>{t("news-letter")}</span>
+                <Link href="/communication/newsletters">
+                    <span className={styles.activeSubheader}>{t("news-letters")}</span>
                 </Link>
-                <Link href="/communication/direction">
+                <Link href="/communication/directions">
                     <span>{t("directions")}</span>
                 </Link>
-                <Link href="/communication/inquiry">
-                    <span>{t("inquiry")}</span>
+                <Link href="/communication/inquiries">
+                    <span>{t("inquiries")}</span>
                 </Link>
             </div>
             <div className={styles.contentContainer}>
