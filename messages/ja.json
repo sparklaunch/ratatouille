@@ -58,7 +58,6 @@
         "youtube-alternate": "YouTubeのロゴ"
     },
     "header": {
-        "articles": "報道",
         "brand-story": "ブランドストーリー",
         "communication": "コミュニケーション",
         "directions": "アクセス",
@@ -70,6 +69,7 @@
         "news": "ニュース",
         "news-letters": "ニュースレター",
         "notices": "お知らせ",
+        "press-releases": "報道",
         "projects": "プロジェクト",
         "social-innovation": "社会イノベーション",
         "solidarity": "連帯",

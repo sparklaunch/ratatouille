@@ -65,8 +65,8 @@ export default async function Header() {
                                     <Link href="/news/notices" className={styles.subMenuItem}>
                                         <span>{t("notices")}</span>
                                     </Link>
-                                    <Link href="/news/articles" className={styles.subMenuItem}>
-                                        <span>{t("articles")}</span>
+                                    <Link href="/news/press-releases" className={styles.subMenuItem}>
+                                        <span>{t("press-releases")}</span>
                                     </Link>
                                 </div>
                             </div>

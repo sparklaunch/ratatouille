@@ -58,7 +58,6 @@
         "youtube-alternate": "Logo de YouTube"
     },
     "header": {
-        "articles": "Notas de prensa",
         "brand-story": "Historia de la marca",
         "communication": "Comunicación",
         "directions": "Cómo llegar",
@@ -70,6 +69,7 @@
         "news": "Noticias",
         "news-letters": "Boletinos",
         "notices": "Anuncios",
+        "press-releases": "Notas de prensa",
         "projects": "Proyectos",
         "social-innovation": "Innovación Social",
         "solidarity": "Solidaridad",

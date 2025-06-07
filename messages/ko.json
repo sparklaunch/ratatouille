@@ -58,7 +58,6 @@
         "youtube-alternate": "유투브 로고"
     },
     "header": {
-        "articles": "언론 보도",
         "brand-story": "브랜드 스토리",
         "communication": "소통",
         "directions": "찾아오시는 길",
@@ -70,6 +69,7 @@
         "news": "소식",
         "news-letters": "뉴스레터",
         "notices": "공지 사항",
+        "press-releases": "언론 보도",
         "projects": "프로젝트",
         "social-innovation": "사회 혁신",
         "solidarity": "연대",

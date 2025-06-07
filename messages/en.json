@@ -58,7 +58,6 @@
         "youtube-alternate": "YouTube Logo"
     },
     "header": {
-        "articles": "Press Releases",
         "brand-story": "Brand Story",
         "communication": "Communication",
         "directions": "Directions",
@@ -70,6 +69,7 @@
         "news": "News",
         "news-letters": "Newsletters",
         "notices": "Notices",
+        "press-releases": "Press Releases",
         "projects": "Projects",
         "social-innovation": "Social Innovation",
         "solidarity": "Solidarity",
