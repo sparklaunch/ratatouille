@@ -175,7 +175,7 @@
         "ubuntu-alternate": "事務金融ウブントゥ財団のロゴ",
         "world-vision-alternate": "ワールドビジョンのロゴ"
     },
-    "inquiry": {
+    "inquiries": {
         "affiliation": "所属",
         "affiliation-placeholder": "所属チーム",
         "application-date": "申請日",
@@ -202,7 +202,7 @@
         "hours-content": "• 水 ~ 土：12:00 ~ 18:00",
         "hours-title": "- 営業時間のご案内",
         "inquire": "お問い合わせ",
-        "inquiry": "お問い合わせ",
+        "inquiries": "お問い合わせ",
         "inquiry-accepted-alert": "お問い合わせが正常に送信されました",
         "inquiry-alternate": "お問い合わせの画像",
         "invalid-contact-alert": "正しい連絡先を入力してください",
@@ -211,7 +211,7 @@
         "name": "氏名",
         "name-alert": "名前を入力してください",
         "name-placeholder": "名前を入力してください",
-        "news-letter": "ニュースレター",
+        "news-letters": "ニュースレター",
         "other": "その他",
         "other-placeholder": "その他を入力してください",
         "submit": "送信",

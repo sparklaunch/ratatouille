@@ -175,7 +175,7 @@
         "ubuntu-alternate": "Ubuntu Fund Logo",
         "world-vision-alternate": "World Vision Logo"
     },
-    "inquiry": {
+    "inquiries": {
         "affiliation": "Affiliation",
         "affiliation-placeholder": "Your Team",
         "application-date": "Application Date",
@@ -202,7 +202,7 @@
         "hours-content": "• Wed ~ Sat: 12:00 PM ~ 6:00 PM",
         "hours-title": "- Operating Hours",
         "inquire": "Submit Inquiry",
-        "inquiry": "Contact Us",
+        "inquiries": "Contact Us",
         "inquiry-accepted-alert": "Your inquiry has been received successfully",
         "inquiry-alternate": "Inquiry Image",
         "invalid-contact-alert": "Please enter a valid contact number",
@@ -211,7 +211,7 @@
         "name": "Name",
         "name-alert": "Please enter your name",
         "name-placeholder": "Enter your name",
-        "news-letter": "Newsletters",
+        "news-letters": "Newsletters",
         "other": "Other Details",
         "other-placeholder": "Enter other information",
         "submit": "Submit",

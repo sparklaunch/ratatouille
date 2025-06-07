@@ -175,7 +175,7 @@
         "ubuntu-alternate": "Logo de la Fundación Ubuntu de Servicios Financieros y Oficinas",
         "world-vision-alternate": "Logo de World Vision"
     },
-    "inquiry": {
+    "inquiries": {
         "affiliation": "Afiliación",
         "affiliation-placeholder": "Equipo de afiliación",
         "application-date": "Fecha de solicitud",
@@ -202,7 +202,7 @@
         "hours-content": "• Miércoles a sábado: de 12:00 a 18:00",
         "hours-title": "- Información sobre el horario de atención",
         "inquire": "Contactar",
-        "inquiry": "Contactar",
+        "inquiries": "Contactar",
         "inquiry-accepted-alert": "La consulta se ha recibido correctamente",
         "inquiry-alternate": "Imagen para contactar",
         "invalid-contact-alert": "Por favor, introduzca un número de contacto válido",
@@ -211,7 +211,7 @@
         "name": "Nombre",
         "name-alert": "Por favor, introduzca su nombre",
         "name-placeholder": "Por favor, introduzca su nombre",
-        "news-letter": "Boletinos",
+        "news-letters": "Boletinos",
         "other": "Otros",
         "other-placeholder": "Introduzca información adicional",
         "submit": "Enviar",

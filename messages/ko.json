@@ -175,7 +175,7 @@
         "ubuntu-alternate": "사무금융우분투재단 로고",
         "world-vision-alternate": "월드비전 로고"
     },
-    "inquiry": {
+    "inquiries": {
         "affiliation": "소속",
         "affiliation-placeholder": "소속팀",
         "application-date": "신청 날짜",
@@ -202,7 +202,7 @@
         "hours-content": "• 수 ~ 토: 12:00 ~ 18:00",
         "hours-title": "- 운영 시간 안내",
         "inquire": "문의하기",
-        "inquiry": "문의하기",
+        "inquiries": "문의하기",
         "inquiry-accepted-alert": "문의가 성공적으로 접수되었습니다",
         "inquiry-alternate": "문의하기 이미지",
         "invalid-contact-alert": "올바른 연락처를 입력해주세요",
@@ -211,7 +211,7 @@
         "name": "성명",
         "name-alert": "이름을 입력해주세요",
         "name-placeholder": "이름을 입력해주세요",
-        "news-letter": "뉴스레터",
+        "news-letters": "뉴스레터",
         "other": "기타 사항",
         "other-placeholder": "기타 사항을 입력하세요",
         "submit": "보내기",
