@@ -1,7 +1,7 @@
 const enum PostType {
     Notice = "notice",
-    Article = "article",
-    NewsLetter = "newsletter"
+    PressRelease = "press-release",
+    NewsLetter = "news-letter"
 };
 
 export default PostType;

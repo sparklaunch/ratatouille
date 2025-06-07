@@ -24,7 +24,7 @@ export async function POST(request: Request) {
             }
             break;
         }
-        case PostType.Article: {
+        case PostType.PressRelease: {
             const targetDirectory = `/root/uploads/press-releases/${id}/images`;
             if (fs.existsSync(targetDirectory)) {
                 const images = fs.readdirSync(targetDirectory);

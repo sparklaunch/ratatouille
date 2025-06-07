@@ -25,7 +25,7 @@ export async function POST(request: Request) {
             await sharp(buffer).webp({ quality: 80 }).toFile(filePath);
             return NextResponse.json({ url: uploadedPath });
         }
-        case PostType.Article: {
+        case PostType.PressRelease: {
             const targetDirectory = path.join(uploadDirectory, "press-releases", id, "images");
             if (!fs.existsSync(targetDirectory)) {
                 fs.mkdirSync(targetDirectory, { recursive: true });
