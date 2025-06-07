@@ -14,7 +14,7 @@ export default function AdminNewsLetterContentPage() {
     useEffect(() => {
         const getNewsLetter = async () => {
             try {
-                const response = await fetch(`/api/newsletter?id=${newsLetterID}`);
+                const response = await fetch(`/api/news-letter?id=${newsLetterID}`);
                 if (response.ok) {
                     const newsLetter = await response.json() as NewsLetter;
                     setNewsLetter(newsLetter);

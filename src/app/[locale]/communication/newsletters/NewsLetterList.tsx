@@ -23,7 +23,7 @@ export default function NewsLetterList() {
     useEffect(() => {
         const getNewsLetters = async () => {
             try {
-                const response = await fetch(`/api/newsletters?page=${currentPage}`, {
+                const response = await fetch(`/api/news-letters?page=${currentPage}`, {
                     cache: "no-store"
                 });
                 if (response.ok) {
