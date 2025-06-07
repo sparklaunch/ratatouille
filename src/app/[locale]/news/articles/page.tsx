@@ -7,18 +7,18 @@ import { Suspense } from "react";
 import ArticleList from "./ArticleList";
 import styles from "./style.module.scss";
 
-export default async function PressPage() {
+export default async function PressReleasesPage() {
     const t = await getTranslations("articles");
     return <>
         <Header />
         <div className={styles.container}>
             <h1 className={styles.header}>{t("news")}</h1>
             <div className={styles.subheader}>
-                <Link href="/news/notice">
-                    <span>{t("notice")}</span>
+                <Link href="/news/notices">
+                    <span>{t("notices")}</span>
                 </Link>
-                <Link href="/news/press">
-                    <span className={styles.activeSubheader}>{t("press-release")}</span>
+                <Link href="/news/articles">
+                    <span className={styles.activeSubheader}>{t("press-releases")}</span>
                 </Link>
             </div>
             <Suspense fallback={<Skeleton />}>

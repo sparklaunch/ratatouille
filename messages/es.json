@@ -10,8 +10,8 @@
     },
     "articles": {
         "news": "Noticias",
-        "notice": "Anuncios",
-        "press-release": "Notas de prensa"
+        "notices": "Anuncios",
+        "press-releases": "Notas de prensa"
     },
     "directions": {
         "address": "89-4, Calle Bulgwang, Distrito de Eunpyeong, Seúl",

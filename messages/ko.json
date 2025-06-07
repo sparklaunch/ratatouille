@@ -10,8 +10,8 @@
     },
     "articles": {
         "news": "소식",
-        "notice": "공지 사항",
-        "press-release": "언론 보도"
+        "notices": "공지 사항",
+        "press-releases": "언론 보도"
     },
     "directions": {
         "address": "서울시 은평구 불광로 89-4",

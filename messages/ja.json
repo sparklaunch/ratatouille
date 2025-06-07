@@ -10,8 +10,8 @@
     },
     "articles": {
         "news": "ニュース",
-        "notice": "お知らせ",
-        "press-release": "報道"
+        "notices": "お知らせ",
+        "press-releases": "報道"
     },
     "directions": {
         "address": "ソウル特別市 恩平区 仏光路 89-4",

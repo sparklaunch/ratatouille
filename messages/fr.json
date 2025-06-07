@@ -10,8 +10,8 @@
     },
     "articles": {
         "news": "Actualités",
-        "notice": "Annonces",
-        "press-release": "Communiqués de presse"
+        "notices": "Annonces",
+        "press-releases": "Communiqués de presse"
     },
     "directions": {
         "address": "89-4, Bulgwang-ro, Eunpyeong-gu, Séoul",
