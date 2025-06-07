@@ -12,13 +12,13 @@ import styles from "./style.module.scss";
 
 export default function PressReleaseContentPage() {
     const t = useTranslations("press-release");
-    const { articleID } = useParams() as { articleID: string };
+    const { pressReleaseID } = useParams() as { pressReleaseID: string };
     const router = useRouter();
     const [article, setArticle] = useState<Article>(defaultArticle);
     useEffect(() => {
         const getArticle = async () => {
             try {
-                const response = await fetch(`/api/article?id=${articleID}`);
+                const response = await fetch(`/api/article?id=${pressReleaseID}`);
                 if (response.ok) {
                     const article = await response.json() as Article;
                     setArticle(article);
@@ -28,7 +28,7 @@ export default function PressReleaseContentPage() {
             }
         };
         getArticle();
-    }, [articleID]);
+    }, [pressReleaseID]);
     return <>
         <div className={styles.container}>
             <h1 className={styles.header}>{t("news")}</h1>
