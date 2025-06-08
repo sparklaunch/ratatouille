@@ -45,7 +45,7 @@ export default function AdminNewsLetterList() {
         <div className={styles.newsLettersContainer}>
             {newsLetters.map(newsLetter => {
                 return <Link href={`/admin/main/news-letters/${newsLetter.id}`} className={styles.newsLetterItemContainer} key={newsLetter.id}>
-                    <Image src="/images/Placeholder.jpg" alt="Placeholder image" fill className={styles.newsLetterThumbnail} />
+                    <Image src="/images/Placeholder.webp" alt="Placeholder image" fill className={styles.newsLetterThumbnail} />
                     <div className={styles.newsLetterTitle}>
                         <h2>{newsLetter.title}</h2>
                         <p>{formatDate(newsLetter.createdAt)}</p>

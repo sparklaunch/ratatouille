@@ -45,7 +45,7 @@ export default function PressReleaseList() {
         <div className={styles.pressReleasesContainer}>
             {pressReleases.map(pressRelease => {
                 return <Link href={`/news/press-releases/${pressRelease.id}`} className={styles.pressReleaseContainer} key={pressRelease.id}>
-                    <Image src="/images/Placeholder.jpg" alt="Placeholder image" fill className={styles.pressReleaseThumbnail} />
+                    <Image src="/images/Placeholder.webp" alt="Placeholder image" fill className={styles.pressReleaseThumbnail} />
                     <div className={styles.pressReleaseTitle}>
                         <h2>{pressRelease.title}</h2>
                         <p>{formatDate(pressRelease.createdAt)}</p>

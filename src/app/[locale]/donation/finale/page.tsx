@@ -11,18 +11,18 @@ export default async function FinalePage() {
             <Link href="#">{t("donate")}</Link>
         </div>
         <div className={styles.finaleMainContainer}>
-            <Image src="/images/FinaleMainBackground.png" alt={t("main-background-image-alternate")} fill />
+            <Image src="/images/FinaleMainBackground.webp" alt={t("main-background-image-alternate")} fill />
             <Link href="/">
                 <Image src="/logos/Logo.svg" alt={t("logo")} fill className={styles.logo} />
             </Link>
             <div className={styles.finaleMainContent}>
                 <h1>{t("story-title")}</h1>
                 <blockquote>{t.rich("story-text", richFormatter())}</blockquote>
-                <Image src="/images/FinaleMain.jpg" alt={t("main-image-alternate")} fill />
+                <Image src="/images/FinaleMain.webp" alt={t("main-image-alternate")} fill />
             </div>
         </div>
         <div className={styles.hopeContainer}>
-            <Image src="/images/HopeBackground.png" alt={t("hope-background-image-alternate")} fill />
+            <Image src="/images/HopeBackground.webp" alt={t("hope-background-image-alternate")} fill />
             <div className={styles.hopeContent}>
                 <p>{t("hope-text-0")}</p>
                 <h2>{t.rich("hope-text-1", richFormatter())}</h2>
@@ -31,7 +31,7 @@ export default async function FinalePage() {
             </div>
         </div>
         <div className={styles.segueContainer}>
-            <Image src="/images/Segue.png" alt={t("segue-image-alternate")} fill />
+            <Image src="/images/Segue.webp" alt={t("segue-image-alternate")} fill />
             <div className={styles.segueContent}>
                 <h3>{t("segue-text")}</h3>
                 <div className={styles.segues}>

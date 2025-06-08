@@ -11,7 +11,7 @@ export default function ErrorPage({ error, reset }: { error: Error; reset: () =>
     return <html lang={locale}>
         <body>
             <div className={styles.errorContainer}>
-                <Image src="/images/Error.jpg" alt={t("error-image-alternate")} fill />
+                <Image src="/images/Error.webp" alt={t("error-image-alternate")} fill />
                 <h1>{t("error-title")}</h1>
                 <p>{error.message}</p>
                 <button onClick={reset}>{t("retry")}</button>

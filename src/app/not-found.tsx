@@ -8,7 +8,7 @@ export default async function NotFoundPage() {
     return <html lang={locale}>
         <body>
             <div className={styles.notFoundContainer}>
-                <Image src="/images/NotFound.jpg" alt={t("not-found-image-alternate")} fill />
+                <Image src="/images/NotFound.webp" alt={t("not-found-image-alternate")} fill />
                 <h1>{t("not-found-title")}</h1>
             </div>
         </body>

@@ -25,7 +25,7 @@ export default async function IntroductionPage() {
                 </Link>
             </div>
             <div className={styles.overtureContainer}>
-                <Image src="/images/Overture.jpg" alt={t("overture-image-alternate")} fill />
+                <Image src="/images/Overture.webp" alt={t("overture-image-alternate")} fill />
                 <p>{t("overture-text")}</p>
             </div>
             <div className={styles.valuesContainer}>
@@ -39,7 +39,7 @@ export default async function IntroductionPage() {
                         </div>
                         <p>{t("social-innovation-text")}</p>
                     </div>
-                    <Image src="/images/SocialInnovation.jpg" alt={t("social-innovation-image-alternate")} fill />
+                    <Image src="/images/SocialInnovation.webp" alt={t("social-innovation-image-alternate")} fill />
                 </div>
                 <div className={styles.sustainabilityContainer}>
                     <div className={styles.sustainabilityText}>
@@ -49,7 +49,7 @@ export default async function IntroductionPage() {
                         </div>
                         <p>{t("sustainability-text")}</p>
                     </div>
-                    <Image src="/images/Sustainability.jpg" alt={t("sustainability-image-alternate")} fill />
+                    <Image src="/images/Sustainability.webp" alt={t("sustainability-image-alternate")} fill />
                 </div>
                 <div className={styles.solidarityContainer}>
                     <div className={styles.solidarityText}>
@@ -59,16 +59,16 @@ export default async function IntroductionPage() {
                         </div>
                         <p>{t("solidarity-text")}</p>
                     </div>
-                    <Image src="/images/Solidarity.jpg" alt={t("solidarity-image-alternate")} fill />
+                    <Image src="/images/Solidarity.webp" alt={t("solidarity-image-alternate")} fill />
                 </div>
                 <div className={styles.fermeture}>
-                    <Image src="/images/Fermeture.png" alt={t("fermeture-image-alternate")} fill />
+                    <Image src="/images/Fermeture.webp" alt={t("fermeture-image-alternate")} fill />
                     <h6>{t("fermeture-text")}</h6>
                 </div>
                 <div className={styles.peopleContainer}>
                     <h2>PEOPLE</h2>
                     <p>{t("people-header")}</p>
-                    <Image src="/images/People.jpg" alt={t("people-image-alternate")} fill />
+                    <Image src="/images/People.webp" alt={t("people-image-alternate")} fill />
                     <div className={styles.people}>
                         <div className={styles.person}>
                             <Image src="/images/FirstPerson.webp" alt="First person image" width={286} height={286} />
@@ -81,7 +81,7 @@ export default async function IntroductionPage() {
                             <p>팍팍한 현실 속에서도 꿈을 잃지 않는 청춘들을 응원하는 또 다른 동료. 청년들의 이야기에 귀 기울이며, 함께 희망을 만들어 갑니다.</p>
                         </div>
                         <div className={styles.person}>
-                            <Image src="/images/ThirdPerson.jpg" alt="Third person image" width={286} height={286} />
+                            <Image src="/images/ThirdPerson.webp" alt="Third person image" width={286} height={286} />
                             <h3>시고르 자브종</h3>
                             <p>청년들이 겪는 고충을 그 누구보다 잘 이해하는 동료. 그의 존재는 팀에 작지만 밝은 미래를 향해 나아가는 힘이 됩니다.</p>
                         </div>
@@ -90,8 +90,8 @@ export default async function IntroductionPage() {
                 <div className={styles.testimonials}>
                     <h2>{t("testimonial-header")}</h2>
                     <div className={styles.testimonial}>
-                        <Image src="/images/Frame.png" alt={t("testimonial-frame-alternate")} fill />
-                        <Image src="/images/Testimonial.png" alt={t("testimonial-image-alternate")} fill />
+                        <Image src="/images/Frame.webp" alt={t("testimonial-frame-alternate")} fill />
+                        <Image src="/images/Testimonial.webp" alt={t("testimonial-image-alternate")} fill />
                     </div>
                 </div>
             </div>

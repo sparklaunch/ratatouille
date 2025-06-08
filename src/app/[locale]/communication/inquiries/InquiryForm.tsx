@@ -156,7 +156,7 @@ export default function InquiryForm() {
         }
     };
     return <div className={styles.inquiryContainer}>
-        <Image src="/images/Inquiry.png" alt={t("inquiry-alternate")} fill className={styles.inquiryImage} />
+        <Image src="/images/Inquiry.webp" alt={t("inquiry-alternate")} fill className={styles.inquiryImage} />
         <form onSubmit={handleSubmit} className={styles.inquiryForm}>
             <FormControl fullWidth sx={{ marginBottom: "20px" }}>
                 <InputLabel id="type">{t("type")}</InputLabel>
